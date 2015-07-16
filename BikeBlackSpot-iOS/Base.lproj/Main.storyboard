@@ -7,7 +7,7 @@
         <!--Location-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LocationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="BikeBlackSpot_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LocationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoctionViewController" customModule="BikeBlackSpot_iOS" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -47,7 +47,7 @@
         <!--Thank You!-->
         <scene sceneID="jGI-Of-PLr">
             <objects>
-                <viewController storyboardIdentifier="ThanksController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lsj-SY-bHK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThanksController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lsj-SY-bHK" customClass="ThankyouViewController" customModule="BikeBlackSpot_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6LP-Th-2GT"/>
                         <viewControllerLayoutGuide type="bottom" id="AMC-9i-s01"/>
@@ -70,12 +70,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAb-2G-AYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1460" y="505"/>
+            <point key="canvasLocation" x="1536" y="429"/>
         </scene>
         <!--DetailsController-->
         <scene sceneID="bPR-LL-3Yf">
             <objects>
-                <viewController title="DetailsController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4MV-d5-fNw" sceneMemberID="viewController">
+                <viewController title="DetailsController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4MV-d5-fNw" customClass="DetailsViewController" customModule="BikeBlackSpot_iOS" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="w3A-W7-jhZ"/>
                         <viewControllerLayoutGuide type="bottom" id="C4Z-T1-kqc"/>
@@ -124,7 +124,7 @@
         <!--ReviewController-->
         <scene sceneID="Zsh-pE-e3t">
             <objects>
-                <viewController title="ReviewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2zU-Pw-4Fa" sceneMemberID="viewController">
+                <viewController title="ReviewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2zU-Pw-4Fa" customClass="ReviewViewController" customModule="BikeBlackSpot_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gmg-To-RbX"/>
                         <viewControllerLayoutGuide type="bottom" id="YfU-Ai-3Ja"/>
@@ -152,7 +152,7 @@
         <!--Photo-->
         <scene sceneID="k9H-Ug-W46">
             <objects>
-                <viewController storyboardIdentifier="PhotoController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nrw-Wj-BL7" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nrw-Wj-BL7" customClass="PhotoViewController" customModule="BikeBlackSpot_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8xT-j5-383"/>
                         <viewControllerLayoutGuide type="bottom" id="oSk-GM-hnb"/>

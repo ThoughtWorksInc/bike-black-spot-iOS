@@ -1,15 +1,7 @@
-//
-//  ViewController.swift
-//  BikeBlackSpot-iOS
-//
-//  Created by Sarah Nelson on 1/07/2015.
-//  Copyright (c) 2015 ThoughtWorks. All rights reserved.
-//
-
 import UIKit
 import GoogleMaps
 
-class ViewController: UIViewController {
+class LoctionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
