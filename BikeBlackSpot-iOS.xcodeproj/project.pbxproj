@@ -14,7 +14,6 @@
 		26CF8CB11B4382D500C82362 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26CF8CB01B4382D500C82362 /* Images.xcassets */; };
 		26CF8CB41B4382D500C82362 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26CF8CB21B4382D500C82362 /* LaunchScreen.xib */; };
 		26CF8CC01B4382D600C82362 /* BikeBlackSpot_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF8CBF1B4382D600C82362 /* BikeBlackSpot_iOSTests.swift */; };
-		4CA058871B562ECD00DEB9FB /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 4CA058861B562ECD00DEB9FB /* Podfile */; };
 		4CA829A91B57272F00D614E8 /* GoogleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA829A81B57272F00D614E8 /* GoogleDataProvider.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +38,6 @@
 		26CF8CB91B4382D600C82362 /* BikeBlackSpot-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BikeBlackSpot-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CF8CBE1B4382D600C82362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26CF8CBF1B4382D600C82362 /* BikeBlackSpot_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeBlackSpot_iOSTests.swift; sourceTree = "<group>"; };
-		4CA058861B562ECD00DEB9FB /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = "../../Projects/bike-black-spot-iOS/Podfile"; sourceTree = "<group>"; };
 		4CA829A81B57272F00D614E8 /* GoogleDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleDataProvider.swift; sourceTree = "<group>"; };
 		576EDB4856F93B46ACAF5C9C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		66D3FE1427BF8ECF58C6917A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -76,7 +74,6 @@
 		26CF8C9B1B4382D500C82362 = {
 			isa = PBXGroup;
 			children = (
-				4CA058861B562ECD00DEB9FB /* Podfile */,
 				26CF8CA61B4382D500C82362 /* BikeBlackSpot-iOS */,
 				26CF8CBC1B4382D600C82362 /* BikeBlackSpot-iOSTests */,
 				26CF8CA51B4382D500C82362 /* Products */,
@@ -228,7 +225,6 @@
 			files = (
 				26CF8CAF1B4382D500C82362 /* Main.storyboard in Resources */,
 				26CF8CB41B4382D500C82362 /* LaunchScreen.xib in Resources */,
-				4CA058871B562ECD00DEB9FB /* Podfile in Resources */,
 				26CF8CB11B4382D500C82362 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
