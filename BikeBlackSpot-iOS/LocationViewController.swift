@@ -55,5 +55,10 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {
+        var coordinate = mapView.camera.target
+        println("lat \(coordinate.latitude) - long \(coordinate.longitude)")
+    }
 }
 
