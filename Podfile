@@ -1,3 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.1'
+use_frameworks!
+platform :ios, '8.0'
 pod 'GoogleMaps'
+pod 'Cartography', '~> 0.5.0'

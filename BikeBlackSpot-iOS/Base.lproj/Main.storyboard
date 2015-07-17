@@ -7,7 +7,7 @@
         <!--Location-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LocationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoctionViewController" customModule="BikeBlackSpot_iOS" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LocationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LocationViewController" customModule="BikeBlackSpot_iOS" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,19 +15,7 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C8N-qW-jNy">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="C8N-qW-jNy" secondAttribute="trailing" id="Wl0-gu-Yuq"/>
-                            <constraint firstItem="C8N-qW-jNy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ajC-aw-AOx"/>
-                            <constraint firstAttribute="bottom" secondItem="C8N-qW-jNy" secondAttribute="bottom" id="gtA-4V-ace"/>
-                            <constraint firstItem="C8N-qW-jNy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ndd-rh-b4L"/>
-                        </constraints>
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Dvx-7N-Ild"/>

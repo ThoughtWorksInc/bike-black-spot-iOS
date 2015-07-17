@@ -1,10 +1,13 @@
 PODS:
+  - Cartography (0.5.0)
   - GoogleMaps (1.10.1)
 
 DEPENDENCIES:
+  - Cartography (~> 0.5.0)
   - GoogleMaps
 
 SPEC CHECKSUMS:
+  Cartography: 774e5cc446f5a6bca5d4345c5aa6af9a1fe74dc6
   GoogleMaps: ebf08677f181d9c2dcdbd1721d206f02beccc9b1
 
 COCOAPODS: 0.37.2

@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17609E406988246FDFF5841E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E455CE6B8CC0A8B295B30B /* libPods.a */; };
 		26CF8CAA1B4382D500C82362 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF8CA91B4382D500C82362 /* AppDelegate.swift */; };
 		26CF8CAC1B4382D500C82362 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF8CAB1B4382D500C82362 /* LocationViewController.swift */; };
 		26CF8CAF1B4382D500C82362 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26CF8CAD1B4382D500C82362 /* Main.storyboard */; };
 		26CF8CB11B4382D500C82362 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26CF8CB01B4382D500C82362 /* Images.xcassets */; };
 		26CF8CB41B4382D500C82362 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26CF8CB21B4382D500C82362 /* LaunchScreen.xib */; };
 		26CF8CC01B4382D600C82362 /* BikeBlackSpot_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF8CBF1B4382D600C82362 /* BikeBlackSpot_iOSTests.swift */; };
+		3990DCD9859E1BF303D3349E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FAFD4A26F66D6C9A7A4DCEB /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4CA829A91B57272F00D614E8 /* GoogleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA829A81B57272F00D614E8 /* GoogleDataProvider.swift */; };
 		4CA829AC1B57652D00D614E8 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA829AB1B57652D00D614E8 /* DetailsViewController.swift */; };
 		4CA829AE1B5766E000D614E8 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA829AD1B5766E000D614E8 /* PhotoViewController.swift */; };
 		4CA829B01B57675A00D614E8 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA829AF1B57675A00D614E8 /* ReviewViewController.swift */; };
 		4CA829B21B57679800D614E8 /* ThankyouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA829B11B57679800D614E8 /* ThankyouViewController.swift */; };
 		7E3C6BC81B58BAB5000BAB2C /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BC71B58BAB5000BAB2C /* UserDetailsViewController.swift */; };
+		7E3C6BCB1B58C3A7000BAB2C /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BCA1B58C3A7000BAB2C /* LocationService.swift */; };
+		7E3C6BCD1B58CA50000BAB2C /* NSNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BCC1B58CA50000BAB2C /* NSNotifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,9 +51,11 @@
 		4CA829AF1B57675A00D614E8 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		4CA829B11B57679800D614E8 /* ThankyouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankyouViewController.swift; sourceTree = "<group>"; };
 		576EDB4856F93B46ACAF5C9C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		5FAFD4A26F66D6C9A7A4DCEB /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D3FE1427BF8ECF58C6917A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7E3C6BC71B58BAB5000BAB2C /* UserDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
-		F9E455CE6B8CC0A8B295B30B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E3C6BCA1B58C3A7000BAB2C /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		7E3C6BCC1B58CA50000BAB2C /* NSNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17609E406988246FDFF5841E /* libPods.a in Frameworks */,
+				3990DCD9859E1BF303D3349E /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,7 +80,7 @@
 		0990FA85AF0B8F65E02CEF43 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F9E455CE6B8CC0A8B295B30B /* libPods.a */,
+				5FAFD4A26F66D6C9A7A4DCEB /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -104,6 +108,7 @@
 		26CF8CA61B4382D500C82362 /* BikeBlackSpot-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				7E3C6BC91B58C388000BAB2C /* Service */,
 				4CA829AA1B5764EB00D614E8 /* Controllers */,
 				26CF8CA91B4382D500C82362 /* AppDelegate.swift */,
 				26CF8CAD1B4382D500C82362 /* Main.storyboard */,
@@ -153,6 +158,15 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		7E3C6BC91B58C388000BAB2C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7E3C6BCA1B58C3A7000BAB2C /* LocationService.swift */,
+				7E3C6BCC1B58CA50000BAB2C /* NSNotifications.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
 		C45662D5BC568FABF2F6CB0A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +188,7 @@
 				26CF8CA11B4382D500C82362 /* Frameworks */,
 				26CF8CA21B4382D500C82362 /* Resources */,
 				42F96C8E4BCB028FBD864460 /* Copy Pods Resources */,
+				D7C577391A5A5CE88F9E6354 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -292,6 +307,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		D7C577391A5A5CE88F9E6354 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -306,7 +336,9 @@
 				4CA829A91B57272F00D614E8 /* GoogleDataProvider.swift in Sources */,
 				26CF8CAA1B4382D500C82362 /* AppDelegate.swift in Sources */,
 				4CA829AE1B5766E000D614E8 /* PhotoViewController.swift in Sources */,
+				7E3C6BCB1B58C3A7000BAB2C /* LocationService.swift in Sources */,
 				4CA829B21B57679800D614E8 /* ThankyouViewController.swift in Sources */,
+				7E3C6BCD1B58CA50000BAB2C /* NSNotifications.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +417,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "6d2f43e5-7a45-46eb-bc5d-633e14d47457";
@@ -426,7 +458,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "6d2f43e5-7a45-46eb-bc5d-633e14d47457";
 				SDKROOT = iphoneos;

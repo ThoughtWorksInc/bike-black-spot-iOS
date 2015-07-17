@@ -1,21 +1,54 @@
 import UIKit
 import GoogleMaps
+import Cartography
 
 class LocationViewController: UIViewController, GMSMapViewDelegate {
     
+    var mapView:GMSMapView?
+    
+//    init() {
+//        super.init(nibName: nil, bundle: nil)
+//    }
+    
+    required init(coder aDecoder:NSCoder) {
+        super.init(coder:aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var camera = GMSCameraPosition.cameraWithLatitude(-37.816684, longitude: 144.963962, zoom: 15)
-        var mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
+
+        var mapView = GMSMapView.mapWithFrame(CGRectZero, camera: nil)
         mapView.myLocationEnabled = true
         mapView.delegate = self
-        self.view = mapView
+        self.view.addSubview(mapView)
         
-        var marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(-37.816684, 144.963962)
-        marker.draggable = true
-        marker.map = mapView
+        var markerView = UIImageView(image: UIImage(named: "map-marker"))
+        self.view.addSubview(markerView)
+        
+        constrain(mapView, markerView) { mapView, markerView in
+            mapView.edges == mapView.superview!.edges
+            markerView.bottom == markerView.superview!.centerY
+            markerView.centerX == markerView.superview!.centerX
+        }
+        
+        self.mapView = mapView
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "locationUpdated:", name: CurrentLocationUpdated, object: nil)
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func locationUpdated(sender:NSNotification) {
+        if let currentLocation = LocationService.sharedInstance.getCurrentLocation() {
+            println("lat \(currentLocation.coordinate.latitude) - long \(currentLocation.coordinate.longitude)")
+            mapView!.camera = GMSCameraPosition.cameraWithTarget(currentLocation.coordinate, zoom: 15)
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        LocationService.sharedInstance.requestAuthorization()
     }
     
     override func didReceiveMemoryWarning() {
