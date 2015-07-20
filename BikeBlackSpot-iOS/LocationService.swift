@@ -1,5 +1,6 @@
 import Foundation
 import CoreLocation
+import PromiseKit
 
 public class LocationService : NSObject, CLLocationManagerDelegate {
     
@@ -40,11 +41,36 @@ public class LocationService : NSObject, CLLocationManagerDelegate {
         } else if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedWhenInUse {
             locationMgr.startUpdatingLocation()
         } else {
-            // TODO if user declined
+            locationUpdated(nil)
         }
     }
     
     public func getCurrentLocation() -> CLLocation? {
         return currentLocation
+    }
+    
+    public func addressFromGeocode(location:CLLocation, handler: (CLPlacemark?) -> ()) -> Void {
+
+        CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
+            println(location)
+            
+            if error != nil {
+                println("Reverse geocoder failed with error" + error.localizedDescription)
+                handler(nil)
+            }
+            
+            if !placemarks.isEmpty {
+                if let placemark = placemarks.first as? CLPlacemark {
+                    var dict = placemark.addressDictionary
+                    handler(placemark)
+                }
+            }
+            else {
+                println("Problem with the data received from geocoder")
+                handler(nil)
+            }
+        })
+        
+        
     }
 }
