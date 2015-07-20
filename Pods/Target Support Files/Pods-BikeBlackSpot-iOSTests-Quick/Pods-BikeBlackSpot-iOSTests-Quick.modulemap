@@ -1,0 +1,6 @@
+framework module Quick {
+  umbrella header "Pods-BikeBlackSpot-iOSTests-Quick-umbrella.h"
+
+  export *
+  module * { export * }
+}

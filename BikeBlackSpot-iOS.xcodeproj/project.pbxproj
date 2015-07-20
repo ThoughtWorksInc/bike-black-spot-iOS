@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		082B74871B5CD018004DB225 /* APIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B74861B5CD018004DB225 /* APIServiceTests.swift */; };
+		082B74891B5CD1D7004DB225 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B74881B5CD1D7004DB225 /* APIService.swift */; };
+		082B748A1B5CD2AA004DB225 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B74881B5CD1D7004DB225 /* APIService.swift */; };
+		082B748C1B5CD363004DB225 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B748B1B5CD363004DB225 /* Category.swift */; };
 		26CF8CAA1B4382D500C82362 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF8CA91B4382D500C82362 /* AppDelegate.swift */; };
 		26CF8CAC1B4382D500C82362 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF8CAB1B4382D500C82362 /* LocationViewController.swift */; };
 		26CF8CAF1B4382D500C82362 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26CF8CAD1B4382D500C82362 /* Main.storyboard */; };
@@ -14,11 +18,13 @@
 		26CF8CB41B4382D500C82362 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26CF8CB21B4382D500C82362 /* LaunchScreen.xib */; };
 		26CF8CC01B4382D600C82362 /* BikeBlackSpot_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF8CBF1B4382D600C82362 /* BikeBlackSpot_iOSTests.swift */; };
 		3990DCD9859E1BF303D3349E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FAFD4A26F66D6C9A7A4DCEB /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4391143C0543301C2F0DC678 /* Pods_BikeBlackSpot_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD2BD68CD059784B300B724 /* Pods_BikeBlackSpot_iOSTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4CA829A91B57272F00D614E8 /* GoogleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA829A81B57272F00D614E8 /* GoogleDataProvider.swift */; };
 		4CA829AC1B57652D00D614E8 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA829AB1B57652D00D614E8 /* DetailsViewController.swift */; };
 		4CA829AE1B5766E000D614E8 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA829AD1B5766E000D614E8 /* PhotoViewController.swift */; };
 		4CA829B01B57675A00D614E8 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA829AF1B57675A00D614E8 /* ReviewViewController.swift */; };
 		4CA829B21B57679800D614E8 /* ThankyouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA829B11B57679800D614E8 /* ThankyouViewController.swift */; };
+		4D9D7990A4A6FE1505F91B22 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FAFD4A26F66D6C9A7A4DCEB /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7E3C6BC81B58BAB5000BAB2C /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BC71B58BAB5000BAB2C /* UserDetailsViewController.swift */; };
 		7E3C6BCB1B58C3A7000BAB2C /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BCA1B58C3A7000BAB2C /* LocationService.swift */; };
 		7E3C6BCD1B58CA50000BAB2C /* NSNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BCC1B58CA50000BAB2C /* NSNotifications.swift */; };
@@ -38,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		082B74861B5CD018004DB225 /* APIServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
+		082B74881B5CD1D7004DB225 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		082B748B1B5CD363004DB225 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		26CF8CA41B4382D500C82362 /* BikeBlackSpot-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BikeBlackSpot-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CF8CA81B4382D500C82362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26CF8CA91B4382D500C82362 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +57,7 @@
 		26CF8CB91B4382D600C82362 /* BikeBlackSpot-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BikeBlackSpot-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CF8CBE1B4382D600C82362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26CF8CBF1B4382D600C82362 /* BikeBlackSpot_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeBlackSpot_iOSTests.swift; sourceTree = "<group>"; };
+		3FD2BD68CD059784B300B724 /* Pods_BikeBlackSpot_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikeBlackSpot_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA829A81B57272F00D614E8 /* GoogleDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleDataProvider.swift; sourceTree = "<group>"; };
 		4CA829AB1B57652D00D614E8 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		4CA829AD1B5766E000D614E8 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +87,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D9D7990A4A6FE1505F91B22 /* Pods.framework in Frameworks */,
+				4391143C0543301C2F0DC678 /* Pods_BikeBlackSpot_iOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				5FAFD4A26F66D6C9A7A4DCEB /* Pods.framework */,
+				3FD2BD68CD059784B300B724 /* Pods_BikeBlackSpot_iOSTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -142,6 +155,7 @@
 			children = (
 				26CF8CBF1B4382D600C82362 /* BikeBlackSpot_iOSTests.swift */,
 				26CF8CBD1B4382D600C82362 /* Supporting Files */,
+				082B74861B5CD018004DB225 /* APIServiceTests.swift */,
 			);
 			path = "BikeBlackSpot-iOSTests";
 			sourceTree = "<group>";
@@ -172,6 +186,7 @@
 			children = (
 				7E3C6BCA1B58C3A7000BAB2C /* LocationService.swift */,
 				7E3C6BCC1B58CA50000BAB2C /* NSNotifications.swift */,
+				082B74881B5CD1D7004DB225 /* APIService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -180,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				7E3C6BD11B5C80F0000BAB2C /* Report.swift */,
+				082B748B1B5CD363004DB225 /* Category.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -228,9 +244,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 26CF8CC61B4382D600C82362 /* Build configuration list for PBXNativeTarget "BikeBlackSpot-iOSTests" */;
 			buildPhases = (
+				93916B5D42EE4C61EAFD54D6 /* Check Pods Manifest.lock */,
 				26CF8CB51B4382D600C82362 /* Sources */,
 				26CF8CB61B4382D600C82362 /* Frameworks */,
 				26CF8CB71B4382D600C82362 /* Resources */,
+				EE87240B69C7F4DBF4670024 /* Embed Pods Frameworks */,
+				55A0F56DD523C553AE66E80F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -317,6 +336,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		55A0F56DD523C553AE66E80F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BikeBlackSpot-iOSTests/Pods-BikeBlackSpot-iOSTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93916B5D42EE4C61EAFD54D6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		AED5B0953FC9B5E5A6E5BD76 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -347,6 +396,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EE87240B69C7F4DBF4670024 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BikeBlackSpot-iOSTests/Pods-BikeBlackSpot-iOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -362,8 +426,10 @@
 				26CF8CAA1B4382D500C82362 /* AppDelegate.swift in Sources */,
 				4CA829AE1B5766E000D614E8 /* PhotoViewController.swift in Sources */,
 				7E3C6BD41B5CB13D000BAB2C /* Constants.swift in Sources */,
+				082B74891B5CD1D7004DB225 /* APIService.swift in Sources */,
 				7E3C6BCB1B58C3A7000BAB2C /* LocationService.swift in Sources */,
 				4CA829B21B57679800D614E8 /* ThankyouViewController.swift in Sources */,
+				082B748C1B5CD363004DB225 /* Category.swift in Sources */,
 				7E3C6BD01B5C79AC000BAB2C /* LocationViewModel.swift in Sources */,
 				7E3C6BCD1B58CA50000BAB2C /* NSNotifications.swift in Sources */,
 				7E3C6BD21B5C80F0000BAB2C /* Report.swift in Sources */,
@@ -374,6 +440,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				082B74871B5CD018004DB225 /* APIServiceTests.swift in Sources */,
+				082B748A1B5CD2AA004DB225 /* APIService.swift in Sources */,
 				26CF8CC01B4382D600C82362 /* BikeBlackSpot_iOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,6 +598,7 @@
 		};
 		26CF8CC71B4382D600C82362 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66D3FE1427BF8ECF58C6917A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -552,6 +621,7 @@
 		};
 		26CF8CC81B4382D600C82362 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 576EDB4856F93B46ACAF5C9C /* Pods.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
