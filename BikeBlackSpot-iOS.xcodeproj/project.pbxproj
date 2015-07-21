@@ -10,7 +10,8 @@
 		082B74871B5CD018004DB225 /* APIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B74861B5CD018004DB225 /* APIServiceTests.swift */; };
 		082B74891B5CD1D7004DB225 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B74881B5CD1D7004DB225 /* APIService.swift */; };
 		082B748A1B5CD2AA004DB225 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B74881B5CD1D7004DB225 /* APIService.swift */; };
-		082B748C1B5CD363004DB225 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B748B1B5CD363004DB225 /* Category.swift */; };
+		082B748C1B5CD363004DB225 /* ReportCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B748B1B5CD363004DB225 /* ReportCategory.swift */; };
+		088321151B5DC394003B95DB /* ReportCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B748B1B5CD363004DB225 /* ReportCategory.swift */; };
 		26CF8CAA1B4382D500C82362 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF8CA91B4382D500C82362 /* AppDelegate.swift */; };
 		26CF8CAC1B4382D500C82362 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF8CAB1B4382D500C82362 /* LocationViewController.swift */; };
 		26CF8CAF1B4382D500C82362 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26CF8CAD1B4382D500C82362 /* Main.storyboard */; };
@@ -46,7 +47,7 @@
 /* Begin PBXFileReference section */
 		082B74861B5CD018004DB225 /* APIServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
 		082B74881B5CD1D7004DB225 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		082B748B1B5CD363004DB225 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		082B748B1B5CD363004DB225 /* ReportCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCategory.swift; sourceTree = "<group>"; };
 		26CF8CA41B4382D500C82362 /* BikeBlackSpot-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BikeBlackSpot-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CF8CA81B4382D500C82362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26CF8CA91B4382D500C82362 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -195,7 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				7E3C6BD11B5C80F0000BAB2C /* Report.swift */,
-				082B748B1B5CD363004DB225 /* Category.swift */,
+				082B748B1B5CD363004DB225 /* ReportCategory.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -429,7 +430,7 @@
 				082B74891B5CD1D7004DB225 /* APIService.swift in Sources */,
 				7E3C6BCB1B58C3A7000BAB2C /* LocationService.swift in Sources */,
 				4CA829B21B57679800D614E8 /* ThankyouViewController.swift in Sources */,
-				082B748C1B5CD363004DB225 /* Category.swift in Sources */,
+				082B748C1B5CD363004DB225 /* ReportCategory.swift in Sources */,
 				7E3C6BD01B5C79AC000BAB2C /* LocationViewModel.swift in Sources */,
 				7E3C6BCD1B58CA50000BAB2C /* NSNotifications.swift in Sources */,
 				7E3C6BD21B5C80F0000BAB2C /* Report.swift in Sources */,
@@ -441,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				082B74871B5CD018004DB225 /* APIServiceTests.swift in Sources */,
+				088321151B5DC394003B95DB /* ReportCategory.swift in Sources */,
 				082B748A1B5CD2AA004DB225 /* APIService.swift in Sources */,
 				26CF8CC01B4382D600C82362 /* BikeBlackSpot_iOSTests.swift in Sources */,
 			);
