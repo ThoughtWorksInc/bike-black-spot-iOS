@@ -19,9 +19,13 @@ public class LocationViewModel {
         var desc = String()
         if let placemark = self.placemark {
             if(mapZoomLevel <= Constants.DEFAULT_ZOOM_LEVEL) {
-                desc = placemark.country
+                if let country = placemark.country{
+                    desc = country
+                }
             }  else if(mapZoomLevel <= Constants.STATE_ZOOM_LEVEL) {
-                desc = placemark.administrativeArea
+                if let state = placemark.administrativeArea{
+                    desc = state
+                }
             } else {
                 
                 if let no = placemark.subThoroughfare {
@@ -38,15 +42,12 @@ public class LocationViewModel {
                     }
                 }
                 
-                if(!desc.isEmpty) {
-                    desc += ", "
-                }
                 if let suburb = placemark.locality {
-                    desc += suburb + " "
+                    desc += ", " + suburb
                 }
                 
                 if let postcode = placemark.postalCode {
-                    desc += postcode
+                    desc += " " + postcode
                 }
             }
         }
