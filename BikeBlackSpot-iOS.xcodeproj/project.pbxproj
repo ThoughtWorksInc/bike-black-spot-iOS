@@ -32,6 +32,7 @@
 		7E3C6BD01B5C79AC000BAB2C /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BCF1B5C79AC000BAB2C /* LocationViewModel.swift */; };
 		7E3C6BD21B5C80F0000BAB2C /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BD11B5C80F0000BAB2C /* Report.swift */; };
 		7E3C6BD41B5CB13D000BAB2C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BD31B5CB13D000BAB2C /* Constants.swift */; };
+		8373A5CBDA48D8642F002F09 /* Pods_BikeBlackSpot_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB502AD5307A699F56F0C0A /* Pods_BikeBlackSpot_iOS.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,9 @@
 		7E3C6BCF1B5C79AC000BAB2C /* LocationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		7E3C6BD11B5C80F0000BAB2C /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		7E3C6BD31B5CB13D000BAB2C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		834D251975389590A9F48D8F /* Pods-BikeBlackSpot-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeBlackSpot-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BikeBlackSpot-iOSTests/Pods-BikeBlackSpot-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AFB502AD5307A699F56F0C0A /* Pods_BikeBlackSpot_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikeBlackSpot_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D290F822402E11B6FA16E818 /* Pods-BikeBlackSpot-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeBlackSpot-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BikeBlackSpot-iOS/Pods-BikeBlackSpot-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3990DCD9859E1BF303D3349E /* Pods.framework in Frameworks */,
+				8373A5CBDA48D8642F002F09 /* Pods_BikeBlackSpot_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +106,7 @@
 			children = (
 				5FAFD4A26F66D6C9A7A4DCEB /* Pods.framework */,
 				3FD2BD68CD059784B300B724 /* Pods_BikeBlackSpot_iOSTests.framework */,
+				AFB502AD5307A699F56F0C0A /* Pods_BikeBlackSpot_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -214,6 +220,8 @@
 			children = (
 				66D3FE1427BF8ECF58C6917A /* Pods.debug.xcconfig */,
 				576EDB4856F93B46ACAF5C9C /* Pods.release.xcconfig */,
+				D290F822402E11B6FA16E818 /* Pods-BikeBlackSpot-iOS.debug.xcconfig */,
+				834D251975389590A9F48D8F /* Pods-BikeBlackSpot-iOSTests.debug.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -334,7 +342,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BikeBlackSpot-iOS/Pods-BikeBlackSpot-iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		55A0F56DD523C553AE66E80F /* Copy Pods Resources */ = {
@@ -394,7 +402,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BikeBlackSpot-iOS/Pods-BikeBlackSpot-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EE87240B69C7F4DBF4670024 /* Embed Pods Frameworks */ = {
@@ -567,7 +575,7 @@
 		};
 		26CF8CC41B4382D600C82362 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66D3FE1427BF8ECF58C6917A /* Pods.debug.xcconfig */;
+			baseConfigurationReference = D290F822402E11B6FA16E818 /* Pods-BikeBlackSpot-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -600,7 +608,7 @@
 		};
 		26CF8CC71B4382D600C82362 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66D3FE1427BF8ECF58C6917A /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 834D251975389590A9F48D8F /* Pods-BikeBlackSpot-iOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
