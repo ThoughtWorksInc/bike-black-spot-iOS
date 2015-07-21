@@ -3,6 +3,7 @@ import GoogleMaps
 import Cartography
 
 let LOCATION_PLACEHOLDER = "Please select your location"
+let LOCATION_ERROR_PLACEHOLDER = LOCATION_PLACEHOLDER + " within Australia"
 let DEFAULT_COORDINATES = CLLocationCoordinate2D(latitude: -27.921,longitude:133.247)
 
 class LocationViewController: UIViewController, GMSMapViewDelegate {
@@ -98,12 +99,38 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
                 
                 self.viewModel.mapZoomLevel = self.mapView?.camera.zoom
                 self.viewModel.placemark = currentPlacemark
+                if self.viewModel.isValid(){
+                    Report.getCurrentReport().setLocation(location.coordinate.latitude, longitude: location.coordinate.longitude)
                 
-                Report.getCurrentReport().setLocation(location.coordinate.latitude, longitude: location.coordinate.longitude)
+                    self.labelView!.text = self.viewModel.getDescription()
+                }
+                else
+                {
+                    Report.getCurrentReport().setLocation(0.0, longitude: 0.0)
+                    self.labelView!.text = LOCATION_ERROR_PLACEHOLDER
+                }
                 
-                self.labelView!.text = self.viewModel.getDescription()
             }
         })
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        
+        if self.mapView!.camera.zoom <= Constants.STATE_ZOOM_LEVEL {
+            self.mapView!.animateToZoom(15)
+            return false
+        }
+        
+        
+        // content validation
+        if(!Report.getCurrentReport().isLocationSet()) {
+            let alert = UIAlertView(title: "Error", message: LOCATION_ERROR_PLACEHOLDER, delegate: nil, cancelButtonTitle: "OK")
+            alert.promise().then { object -> Void in
+                
+            }
+            return false
+        }
+        return true
     }
 }
 

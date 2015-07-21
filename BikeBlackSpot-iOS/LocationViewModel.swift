@@ -14,6 +14,14 @@ public class LocationViewModel {
     public var mapZoomLevel:Float! = 0.0
     
     public init() {}
+    public func isValid() -> Bool {
+        if let currPlacemark = placemark {
+            if let country = currPlacemark.country {
+                return country == "Australia"
+            }
+        }
+        return false
+    }
     
     public func getDescription() -> String {
         var desc = String()

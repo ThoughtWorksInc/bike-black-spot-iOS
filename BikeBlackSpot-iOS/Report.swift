@@ -30,4 +30,7 @@ public class Report {
         self.latitude = latitude
         self.longitude = longitude
     }
+    public func isLocationSet() -> Bool {
+        return latitude != 0.0 && longitude != 0.0
+    }
 }
