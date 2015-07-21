@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qsh-3z-Bs8">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Location-->
@@ -72,7 +73,34 @@
                     <view key="view" contentMode="scaleToFill" id="zh4-8I-Rbh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select report category" adjustsFontSizeToFit="NO" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="V99-cg-mNf">
+                                <rect key="frame" x="26" y="84" width="548" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="zLV-jk-1R9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Enter description" translatesAutoresizingMaskIntoConstraints="NO" id="Mte-eP-496">
+                                <rect key="frame" x="26" y="134" width="548" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="paC-bZ-9ko"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="V99-cg-mNf" firstAttribute="leading" secondItem="zh4-8I-Rbh" secondAttribute="leadingMargin" constant="10" id="RtY-xb-H6L"/>
+                            <constraint firstItem="Mte-eP-496" firstAttribute="top" secondItem="V99-cg-mNf" secondAttribute="bottom" constant="20" id="UT9-k5-kFT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mte-eP-496" secondAttribute="trailing" constant="10" id="WtB-30-ZyN"/>
+                            <constraint firstItem="V99-cg-mNf" firstAttribute="top" secondItem="w3A-W7-jhZ" secondAttribute="bottom" constant="20" id="iu9-ct-0sn"/>
+                            <constraint firstItem="Mte-eP-496" firstAttribute="leading" secondItem="zh4-8I-Rbh" secondAttribute="leadingMargin" constant="10" id="qJn-9H-f9U"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="V99-cg-mNf" secondAttribute="trailing" constant="10" id="sm1-KA-PPc"/>
+                        </constraints>
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="lMa-tp-P2s"/>
@@ -84,6 +112,10 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="mLr-QW-sbE"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Details" id="a4N-PQ-r65"/>
+                    <connections>
+                        <outlet property="categoryTextField" destination="V99-cg-mNf" id="1pk-w9-Mtb"/>
+                        <outlet property="descTextView" destination="Mte-eP-496" id="Xno-vJ-drn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bCt-ze-qPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -17,7 +17,7 @@ public class Report {
     public var userId:String?
     
     public var description:String?
-    public var category:String?
+    public var category:ReportCategory?
     
     public static func getCurrentReport() -> Report {
         if currentReport == nil {
