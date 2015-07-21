@@ -8,6 +8,10 @@ class DetailsViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     @IBOutlet var descTextView: UITextView!
     @IBOutlet var categoryTextField: UITextField!
     
+    let placeholderTextColor = UIColor.lightGrayColor()
+    let textFieldBorderColor = UIColor.lightGrayColor()
+    let textColor = UIColor.blackColor()
+    
     var alert:UIAlertController?
     var pickerView:UIPickerView?
     var categories:[ReportCategory] = [ReportCategory]()
@@ -16,12 +20,13 @@ class DetailsViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         super.viewDidLoad()
         
         descTextView.delegate = self
-        descTextView.textColor = UIColor.lightGrayColor()
-        showDefaultState(descTextView, show: true)
+        descTextView.textColor = textColor
         
+        categoryTextField.attributedPlaceholder = NSAttributedString(string: "Select report category", attributes: [NSForegroundColorAttributeName: placeholderTextColor])
         categoryTextField.delegate = self
+        
         for view in [descTextView, categoryTextField] {
-            view.layer.borderColor = UIColor.lightGrayColor().CGColor
+            view.layer.borderColor = textFieldBorderColor.CGColor
             view.layer.borderWidth = 1.0
             view.layer.cornerRadius = 5.0
         }
@@ -41,11 +46,24 @@ class DetailsViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         self.alert = alert
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        
+        // set description
+        Report.getCurrentReport().description = !descTextView.text.isEmpty && descTextView.text != DESC_TEXTVIEW_PLACEHOLDER ? descTextView.text : nil
+        
+        super.viewWillDisappear(animated)
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        // TODO set selected values if any
+        // set selected values if any
+        descTextView.text = Report.getCurrentReport().description
+        categoryTextField.text = Report.getCurrentReport().category?.name
         
+        showDefaultState(descTextView, show: descTextView.text.isEmpty)
+        
+        // fetch categories
         APIService.sharedInstance.getCategories().then { object -> Void in
             self.categories = object
             self.pickerView?.reloadAllComponents()
@@ -73,14 +91,8 @@ class DetailsViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         return true
     }
     
-    func textViewDidEndEditing(textView: UITextView) {
-        if(textView.text.isEmpty) {
-            showDefaultState(textView, show: true)
-        }
-    }
-    
     func showDefaultState(textView:UITextView, show:Bool) {
-        textView.textColor = show ? UIColor.lightGrayColor() : UIColor.blackColor()
+        textView.textColor = show ? placeholderTextColor : textColor
         if(show) {
             textView.text = DESC_TEXTVIEW_PLACEHOLDER
         }
@@ -108,9 +120,6 @@ class DetailsViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-        
-        // set description
-        Report.getCurrentReport().description = !descTextView.text.isEmpty ? descTextView.text : nil
         
         // content validation
         if(Report.getCurrentReport().category == nil || Report.getCurrentReport().description == nil) {
