@@ -12,6 +12,8 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
     var labelView:UILabel?
     var viewModel:LocationViewModel
     
+    @IBOutlet weak var reportButton: UIBarButtonItem!
+    
     required init(coder aDecoder:NSCoder) {
         self.viewModel = LocationViewModel()
         super.init(coder:aDecoder)
@@ -86,6 +88,10 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    // same as below but disable on move
+    func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {
+        self.reportButton.enabled = false
+    }
     func mapView(mapView: GMSMapView!, idleAtCameraPosition position: GMSCameraPosition!) {
         var coordinate = mapView.camera.target
         println("lat \(coordinate.latitude) - long \(coordinate.longitude)")
@@ -93,39 +99,40 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func setCurrentLocation( location: CLLocation){
-        
         LocationService.sharedInstance.addressFromGeocode(location, handler: {(placemark) -> Void in
             if let currentPlacemark = placemark {
-                
                 self.viewModel.mapZoomLevel = self.mapView?.camera.zoom
                 self.viewModel.placemark = currentPlacemark
-                if self.viewModel.isValid(){
-
+                
+                if self.viewModel.isValid() {
                     Report.getCurrentReport().location = Location(latitude:location.coordinate.latitude, longitude: location.coordinate.longitude)
-
+                    
+                    self.reportButton.enabled = true
                     self.labelView!.text = self.viewModel.getDescription()
                 }
-                else
-                {
+                else {
                     Report.getCurrentReport().location = nil
                     self.labelView!.text = LOCATION_ERROR_PLACEHOLDER
                 }
             }
         })
     }
-    
+    //zoom out slower
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-        // content validation
+        //
+        //        var coordinate = self.mapView!.camera.target
+        //        setCurrentLocation( CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude))
+        
+        // content validation, should never actually run
         if(Report.getCurrentReport().location == nil) {
             let alert = UIAlertView(title: "Error", message: LOCATION_ERROR_PLACEHOLDER, delegate: nil, cancelButtonTitle: "OK")
-            alert.promise().then { object -> Void in
-                
-            }
+            alert.promise().then { object -> Void in}
             return false
         }
+        
         // not zoomed too far out
         if self.mapView!.camera.zoom <= Constants.STATE_ZOOM_LEVEL {
-            self.mapView!.animateToZoom(15)
+            self.mapView!.animateToZoom(Constants.STATE_ZOOM_LEVEL+1)
             return false
         }
         return true
