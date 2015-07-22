@@ -93,14 +93,16 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func setCurrentLocation( location: CLLocation){
-
+        
         LocationService.sharedInstance.addressFromGeocode(location, handler: {(placemark) -> Void in
             if let currentPlacemark = placemark {
                 
                 self.viewModel.mapZoomLevel = self.mapView?.camera.zoom
                 self.viewModel.placemark = currentPlacemark
                 if self.viewModel.isValid(){
+
                     Report.getCurrentReport().location = Location(latitude:location.coordinate.latitude, longitude: location.coordinate.longitude)
+
                     self.labelView!.text = self.viewModel.getDescription()
                 }
                 else
@@ -113,18 +115,17 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-        
-        if self.mapView!.camera.zoom <= Constants.STATE_ZOOM_LEVEL {
-            self.mapView!.animateToZoom(15)
-            return false
-        }
-        
         // content validation
         if(Report.getCurrentReport().location == nil) {
             let alert = UIAlertView(title: "Error", message: LOCATION_ERROR_PLACEHOLDER, delegate: nil, cancelButtonTitle: "OK")
             alert.promise().then { object -> Void in
                 
             }
+            return false
+        }
+        // not zoomed too far out
+        if self.mapView!.camera.zoom <= Constants.STATE_ZOOM_LEVEL {
+            self.mapView!.animateToZoom(15)
             return false
         }
         return true
