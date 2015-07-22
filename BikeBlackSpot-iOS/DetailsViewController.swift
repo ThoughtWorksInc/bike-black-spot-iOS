@@ -29,7 +29,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         registerTextFields([descTextView, categoryTextField])
         
         var alert = UIAlertController(title: nil, message: "\n\n\n\n\n\n\n\n\n", preferredStyle: UIAlertControllerStyle.ActionSheet)
-        let cancel = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+        let cancel = UIAlertAction(title: "Select", style: .Default) { (action) in
             self.dismissViewControllerAnimated(true, completion: nil)
         }
         alert.addAction(cancel)
@@ -97,8 +97,6 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         var selected = categories[row]
         Report.getCurrentReport().category = selected
         categoryTextField.text = selected.name
-        
-        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func setReportDescription() {
