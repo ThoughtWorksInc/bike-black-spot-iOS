@@ -2,8 +2,10 @@ import UIKit
 import PromiseKit
 
 let DESC_TEXTVIEW_PLACEHOLDER = "Enter report description"
+let SERVICE_UNAVAILABLE = "Service is currently unavailable"
 let PICKER_HEIGHT:CGFloat = 216.0
 let KEYBOARD_TOOLBAR_HEIGHT:CGFloat = 50.0
+
 
 class DetailsViewController: FormViewController, UITextViewDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -47,7 +49,10 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
             self.pickerView?.reloadAllComponents()
             }
             .catch { error in
-                // TODO if error
+                let alert = UIAlertView(title: "Error", message: SERVICE_UNAVAILABLE, delegate: nil, cancelButtonTitle: "OK")
+                alert.promise().then { object -> Void in
+                }
+                //Change to show unavailable screen on OK press
         }
     }
 
@@ -89,7 +94,6 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
         var selected = categories[row]
         Report.getCurrentReport().category = selected
         categoryTextField.text = selected.name
