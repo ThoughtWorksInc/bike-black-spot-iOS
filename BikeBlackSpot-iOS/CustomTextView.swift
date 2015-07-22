@@ -21,8 +21,10 @@ class CustomTextView : UITextView, UITextViewDelegate {
     }
     
     func textViewShouldEndEditing(textView: UITextView) -> Bool {
-        if(self.text.isEmpty) {
-            self.text = placeholderText
+        if let value = self.text {
+            if value.trim().isEmpty {
+                self.text = placeholderText
+            }
         }
         updateTextColor()
         return true
@@ -37,7 +39,7 @@ class CustomTextView : UITextView, UITextViewDelegate {
     }
     
     func setDefaultText(text:String?) {
-        if text != nil && !text!.isEmpty {
+        if text != nil && !text!.trim().isEmpty {
             self.text = text
         } else {
             self.text = placeholderText
@@ -46,8 +48,10 @@ class CustomTextView : UITextView, UITextViewDelegate {
     }
     
     func getText() -> String? {
-        if(self.text == placeholderText) {
-            return nil
+        if let value = self.text {
+            if(value.trim() == placeholderText || value.trim().isEmpty) {
+                return nil
+            }
         }
         return self.text
     }

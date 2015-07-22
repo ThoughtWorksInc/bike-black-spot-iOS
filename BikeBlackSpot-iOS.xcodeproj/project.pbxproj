@@ -12,6 +12,7 @@
 		082B748A1B5CD2AA004DB225 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B74881B5CD1D7004DB225 /* APIService.swift */; };
 		082B748C1B5CD363004DB225 /* ReportCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B748B1B5CD363004DB225 /* ReportCategory.swift */; };
 		083EE3D41B5F2D6C00201C3F /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083EE3D31B5F2D6C00201C3F /* CustomTextView.swift */; };
+		083EE3D71B5F379E00201C3F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083EE3D61B5F379E00201C3F /* StringExtension.swift */; };
 		084C5F6D1B5F0FBF00DD5586 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5F6C1B5F0FBF00DD5586 /* FormViewController.swift */; };
 		084C5F6F1B5F17B700DD5586 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5F6E1B5F17B700DD5586 /* Location.swift */; };
 		084C5F711B5F1E6A00DD5586 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5F701B5F1E6A00DD5586 /* User.swift */; };
@@ -53,6 +54,7 @@
 		082B74881B5CD1D7004DB225 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		082B748B1B5CD363004DB225 /* ReportCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCategory.swift; sourceTree = "<group>"; };
 		083EE3D31B5F2D6C00201C3F /* CustomTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
+		083EE3D61B5F379E00201C3F /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		084C5F6C1B5F0FBF00DD5586 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		084C5F6E1B5F17B700DD5586 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		084C5F701B5F1E6A00DD5586 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -116,6 +118,14 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		083EE3D51B5F379200201C3F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				083EE3D61B5F379E00201C3F /* StringExtension.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
 		0990FA85AF0B8F65E02CEF43 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +160,7 @@
 		26CF8CA61B4382D500C82362 /* BikeBlackSpot-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				083EE3D51B5F379200201C3F /* Extension */,
 				083EE3D21B5F2D5A00201C3F /* View */,
 				7E3C6BD51B5CB330000BAB2C /* ViewModel */,
 				7E3C6BCE1B5C79A2000BAB2C /* Model */,
@@ -456,6 +467,7 @@
 				084C5F6F1B5F17B700DD5586 /* Location.swift in Sources */,
 				084C5F731B5F1ED600DD5586 /* RegistrationService.swift in Sources */,
 				26CF8CAA1B4382D500C82362 /* AppDelegate.swift in Sources */,
+				083EE3D71B5F379E00201C3F /* StringExtension.swift in Sources */,
 				084C5F6D1B5F0FBF00DD5586 /* FormViewController.swift in Sources */,
 				4CA829AE1B5766E000D614E8 /* PhotoViewController.swift in Sources */,
 				7E3C6BD41B5CB13D000BAB2C /* Constants.swift in Sources */,
