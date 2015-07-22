@@ -11,6 +11,7 @@
 		082B74891B5CD1D7004DB225 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B74881B5CD1D7004DB225 /* APIService.swift */; };
 		082B748A1B5CD2AA004DB225 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B74881B5CD1D7004DB225 /* APIService.swift */; };
 		082B748C1B5CD363004DB225 /* ReportCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B748B1B5CD363004DB225 /* ReportCategory.swift */; };
+		083EE3D41B5F2D6C00201C3F /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083EE3D31B5F2D6C00201C3F /* CustomTextView.swift */; };
 		084C5F6D1B5F0FBF00DD5586 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5F6C1B5F0FBF00DD5586 /* FormViewController.swift */; };
 		084C5F6F1B5F17B700DD5586 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5F6E1B5F17B700DD5586 /* Location.swift */; };
 		084C5F711B5F1E6A00DD5586 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5F701B5F1E6A00DD5586 /* User.swift */; };
@@ -51,6 +52,7 @@
 		082B74861B5CD018004DB225 /* APIServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
 		082B74881B5CD1D7004DB225 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		082B748B1B5CD363004DB225 /* ReportCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCategory.swift; sourceTree = "<group>"; };
+		083EE3D31B5F2D6C00201C3F /* CustomTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		084C5F6C1B5F0FBF00DD5586 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		084C5F6E1B5F17B700DD5586 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		084C5F701B5F1E6A00DD5586 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -106,6 +108,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		083EE3D21B5F2D5A00201C3F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				083EE3D31B5F2D6C00201C3F /* CustomTextView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		0990FA85AF0B8F65E02CEF43 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +150,7 @@
 		26CF8CA61B4382D500C82362 /* BikeBlackSpot-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				083EE3D21B5F2D5A00201C3F /* View */,
 				7E3C6BD51B5CB330000BAB2C /* ViewModel */,
 				7E3C6BCE1B5C79A2000BAB2C /* Model */,
 				7E3C6BC91B58C388000BAB2C /* Service */,
@@ -448,6 +459,7 @@
 				084C5F6D1B5F0FBF00DD5586 /* FormViewController.swift in Sources */,
 				4CA829AE1B5766E000D614E8 /* PhotoViewController.swift in Sources */,
 				7E3C6BD41B5CB13D000BAB2C /* Constants.swift in Sources */,
+				083EE3D41B5F2D6C00201C3F /* CustomTextView.swift in Sources */,
 				082B74891B5CD1D7004DB225 /* APIService.swift in Sources */,
 				7E3C6BCB1B58C3A7000BAB2C /* LocationService.swift in Sources */,
 				4CA829B21B57679800D614E8 /* ThankyouViewController.swift in Sources */,

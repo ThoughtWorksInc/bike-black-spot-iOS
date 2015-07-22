@@ -7,7 +7,7 @@ let KEYBOARD_TOOLBAR_HEIGHT:CGFloat = 50.0
 
 class DetailsViewController: FormViewController, UITextViewDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    @IBOutlet var descTextView: UITextView!
+    @IBOutlet var descTextView: CustomTextView!
     @IBOutlet var categoryTextField: UITextField!
     
     var alert:UIAlertController?
@@ -17,8 +17,9 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        descTextView.delegate = self
         descTextView.textColor = textColor
+        descTextView.placeholderTextColor = placeholderTextColor
+        descTextView.placeholderText = DESC_TEXTVIEW_PLACEHOLDER
         
         categoryTextField.attributedPlaceholder = NSAttributedString(string: "Select report category", attributes: [NSForegroundColorAttributeName: placeholderTextColor])
         categoryTextField.delegate = self
@@ -62,10 +63,8 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         self.pickerView?.reloadAllComponents()
         
         // set selected values if any
-        descTextView.text = Report.getCurrentReport().description
+        descTextView.setDefaultText(Report.getCurrentReport().description)
         categoryTextField.text = Report.getCurrentReport().category?.name
-        
-        showDefaultState(descTextView, show: descTextView.text.isEmpty)
     }
     
     override func didReceiveMemoryWarning() {
@@ -76,22 +75,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         presentViewController(alert!, animated: true, completion: nil)
         return false
     }
-    
-    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
-        if(textView.text == DESC_TEXTVIEW_PLACEHOLDER) {
-            textView.text = nil
-            showDefaultState(textView, show: false)
-        }
-        return true
-    }
-    
-    func showDefaultState(textView:UITextView, show:Bool) {
-        textView.textColor = show ? placeholderTextColor : textColor
-        if(show) {
-            textView.text = DESC_TEXTVIEW_PLACEHOLDER
-        }
-    }
-    
+   
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -114,9 +98,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     }
     
     func setReportDescription() {
-        
-        // TODO custom UITextView with placeholder
-        Report.getCurrentReport().description = !descTextView.text.isEmpty && descTextView.text != DESC_TEXTVIEW_PLACEHOLDER ? descTextView.text : nil
+        Report.getCurrentReport().description = descTextView.getText()
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {

@@ -82,7 +82,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter description" translatesAutoresizingMaskIntoConstraints="NO" id="Mte-eP-496">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter description" translatesAutoresizingMaskIntoConstraints="NO" id="Mte-eP-496" customClass="CustomTextView" customModule="BikeBlackSpot_iOS" customModuleProvider="target">
                                 <rect key="frame" x="21" y="144" width="558" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
