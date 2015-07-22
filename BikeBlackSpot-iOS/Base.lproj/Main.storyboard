@@ -74,19 +74,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select report category" adjustsFontSizeToFit="NO" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="V99-cg-mNf">
-                                <rect key="frame" x="26" y="84" width="548" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select report category" adjustsFontSizeToFit="NO" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="V99-cg-mNf">
+                                <rect key="frame" x="21" y="84" width="558" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="zLV-jk-1R9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Enter description" translatesAutoresizingMaskIntoConstraints="NO" id="Mte-eP-496">
-                                <rect key="frame" x="26" y="134" width="548" height="200"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter description" translatesAutoresizingMaskIntoConstraints="NO" id="Mte-eP-496">
+                                <rect key="frame" x="21" y="144" width="558" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="paC-bZ-9ko"/>
+                                    <constraint firstAttribute="height" constant="150" id="paC-bZ-9ko"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -94,12 +94,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="V99-cg-mNf" firstAttribute="leading" secondItem="zh4-8I-Rbh" secondAttribute="leadingMargin" constant="10" id="RtY-xb-H6L"/>
+                            <constraint firstItem="V99-cg-mNf" firstAttribute="leading" secondItem="zh4-8I-Rbh" secondAttribute="leadingMargin" constant="5" id="RtY-xb-H6L"/>
                             <constraint firstItem="Mte-eP-496" firstAttribute="top" secondItem="V99-cg-mNf" secondAttribute="bottom" constant="20" id="UT9-k5-kFT"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Mte-eP-496" secondAttribute="trailing" constant="10" id="WtB-30-ZyN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mte-eP-496" secondAttribute="trailing" constant="5" id="WtB-30-ZyN"/>
                             <constraint firstItem="V99-cg-mNf" firstAttribute="top" secondItem="w3A-W7-jhZ" secondAttribute="bottom" constant="20" id="iu9-ct-0sn"/>
-                            <constraint firstItem="Mte-eP-496" firstAttribute="leading" secondItem="zh4-8I-Rbh" secondAttribute="leadingMargin" constant="10" id="qJn-9H-f9U"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="V99-cg-mNf" secondAttribute="trailing" constant="10" id="sm1-KA-PPc"/>
+                            <constraint firstItem="Mte-eP-496" firstAttribute="leading" secondItem="zh4-8I-Rbh" secondAttribute="leadingMargin" constant="5" id="qJn-9H-f9U"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="V99-cg-mNf" secondAttribute="trailing" constant="5" id="sm1-KA-PPc"/>
                         </constraints>
                     </view>
                     <toolbarItems>
@@ -188,7 +188,56 @@
                     <view key="view" contentMode="scaleToFill" id="yGH-QO-2Ry">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="As a first time user, please provide a few details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xd-Dp-Gm1">
+                                <rect key="frame" x="21" y="84" width="558" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mzo-TA-FNS">
+                                <rect key="frame" x="21" y="125" width="558" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ugg-6X-y8G"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GrT-ia-PDP">
+                                <rect key="frame" x="21" y="185" width="558" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="irL-kj-wPK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Postcode" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SzA-cw-dNg">
+                                <rect key="frame" x="21" y="245" width="558" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ZWw-yF-SVg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="9xd-Dp-Gm1" secondAttribute="trailing" constant="5" id="3G5-IJ-UbB"/>
+                            <constraint firstItem="9xd-Dp-Gm1" firstAttribute="leading" secondItem="yGH-QO-2Ry" secondAttribute="leadingMargin" constant="5" id="9FV-2L-R1v"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SzA-cw-dNg" secondAttribute="trailing" constant="5" id="9YN-mf-CXm"/>
+                            <constraint firstItem="SzA-cw-dNg" firstAttribute="top" secondItem="GrT-ia-PDP" secondAttribute="bottom" constant="20" id="Amb-yt-lmE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9xd-Dp-Gm1" secondAttribute="trailing" constant="5" id="LGb-JT-KX4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mzo-TA-FNS" secondAttribute="trailing" constant="5" id="MVy-tS-arr"/>
+                            <constraint firstItem="GrT-ia-PDP" firstAttribute="top" secondItem="Mzo-TA-FNS" secondAttribute="bottom" constant="20" id="OTS-DT-W8t"/>
+                            <constraint firstItem="9xd-Dp-Gm1" firstAttribute="leading" secondItem="yGH-QO-2Ry" secondAttribute="leadingMargin" constant="5" id="SFB-Ub-2ci"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GrT-ia-PDP" secondAttribute="trailing" constant="5" id="b2x-WQ-A4b"/>
+                            <constraint firstItem="SzA-cw-dNg" firstAttribute="leading" secondItem="yGH-QO-2Ry" secondAttribute="leadingMargin" constant="5" id="bA9-Kc-LLR"/>
+                            <constraint firstItem="9xd-Dp-Gm1" firstAttribute="top" secondItem="q1K-Mo-Ar1" secondAttribute="bottom" constant="20" id="dW2-Fw-lyd"/>
+                            <constraint firstItem="GrT-ia-PDP" firstAttribute="leading" secondItem="yGH-QO-2Ry" secondAttribute="leadingMargin" constant="5" id="eIH-Zj-7qG"/>
+                            <constraint firstItem="9xd-Dp-Gm1" firstAttribute="top" secondItem="q1K-Mo-Ar1" secondAttribute="bottom" constant="20" id="kSH-0j-zWg"/>
+                            <constraint firstItem="Mzo-TA-FNS" firstAttribute="leading" secondItem="yGH-QO-2Ry" secondAttribute="leadingMargin" constant="5" id="lKF-6J-CVV"/>
+                            <constraint firstItem="Mzo-TA-FNS" firstAttribute="top" secondItem="9xd-Dp-Gm1" secondAttribute="bottom" constant="20" id="vac-uL-zln"/>
+                        </constraints>
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="tGC-4C-Nyl"/>
@@ -199,6 +248,11 @@
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="NRn-pH-bjP"/>
                     </toolbarItems>
+                    <connections>
+                        <outlet property="emailField" destination="GrT-ia-PDP" id="phE-2G-ci9"/>
+                        <outlet property="nameField" destination="Mzo-TA-FNS" id="4l6-Ko-Wwp"/>
+                        <outlet property="postcodeField" destination="SzA-cw-dNg" id="19N-oU-bnU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IzB-EF-KXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

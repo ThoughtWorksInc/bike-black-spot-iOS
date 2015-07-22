@@ -2,15 +2,13 @@ import UIKit
 import PromiseKit
 
 let DESC_TEXTVIEW_PLACEHOLDER = "Enter report description"
+let PICKER_HEIGHT:CGFloat = 216.0
+let KEYBOARD_TOOLBAR_HEIGHT:CGFloat = 50.0
 
-class DetailsViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class DetailsViewController: FormViewController, UITextViewDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet var descTextView: UITextView!
     @IBOutlet var categoryTextField: UITextField!
-    
-    let placeholderTextColor = UIColor.lightGrayColor()
-    let textFieldBorderColor = UIColor.lightGrayColor()
-    let textColor = UIColor.blackColor()
     
     var alert:UIAlertController?
     var pickerView:UIPickerView?
@@ -24,12 +22,8 @@ class DetailsViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         
         categoryTextField.attributedPlaceholder = NSAttributedString(string: "Select report category", attributes: [NSForegroundColorAttributeName: placeholderTextColor])
         categoryTextField.delegate = self
-        
-        for view in [descTextView, categoryTextField] {
-            view.layer.borderColor = textFieldBorderColor.CGColor
-            view.layer.borderWidth = 1.0
-            view.layer.cornerRadius = 5.0
-        }
+
+        registerTextFields([descTextView, categoryTextField])
         
         var alert = UIAlertController(title: nil, message: "\n\n\n\n\n\n\n\n\n", preferredStyle: UIAlertControllerStyle.ActionSheet)
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
@@ -38,19 +32,17 @@ class DetailsViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         alert.addAction(cancel)
         
         var picker = UIPickerView()
-        picker.frame = CGRect(origin: CGPointZero, size: CGSizeMake(CGRectGetWidth(alert.view.frame), 300))
+        picker.frame = CGRect(origin: CGPointZero, size: CGSizeMake(CGRectGetWidth(alert.view.frame), PICKER_HEIGHT))
         picker.delegate = self
         alert.view.addSubview(picker)
         
         self.pickerView = picker
         self.alert = alert
     }
-    
+
     override func viewWillDisappear(animated: Bool) {
         
-        // set description
-        Report.getCurrentReport().description = !descTextView.text.isEmpty && descTextView.text != DESC_TEXTVIEW_PLACEHOLDER ? descTextView.text : nil
-        
+        setReportDescription()
         super.viewWillDisappear(animated)
     }
     
@@ -69,7 +61,6 @@ class DetailsViewController: UIViewController, UITextViewDelegate, UITextFieldDe
             self.pickerView?.reloadAllComponents()
             }
             .catch { error in
-                
                 // TODO if error
         }
     }
@@ -119,14 +110,17 @@ class DetailsViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+    func setReportDescription() {
         
-        // content validation
+        // TODO custom UITextView with placeholder
+        Report.getCurrentReport().description = !descTextView.text.isEmpty && descTextView.text != DESC_TEXTVIEW_PLACEHOLDER ? descTextView.text : nil
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        setReportDescription()
+        
         if(Report.getCurrentReport().category == nil || Report.getCurrentReport().description == nil) {
-            let alert = UIAlertView(title: "Error", message: "Please enter required information", delegate: nil, cancelButtonTitle: "OK")
-            alert.promise().then { object -> Void in
-                
-            }
+            UIAlertView(title: "Error", message: "Please enter required information", delegate: nil, cancelButtonTitle: "OK").show()
             return false
         }
         return true

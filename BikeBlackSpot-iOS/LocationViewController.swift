@@ -101,7 +101,6 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
                 self.viewModel.placemark = currentPlacemark
                 if self.viewModel.isValid(){
                     Report.getCurrentReport().setLocation(location.coordinate.latitude, longitude: location.coordinate.longitude)
-                
                     self.labelView!.text = self.viewModel.getDescription()
                 }
                 else
@@ -109,7 +108,6 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
                     Report.getCurrentReport().setLocation(0.0, longitude: 0.0)
                     self.labelView!.text = LOCATION_ERROR_PLACEHOLDER
                 }
-                
             }
         })
     }

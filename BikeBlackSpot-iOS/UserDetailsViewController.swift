@@ -1,12 +1,15 @@
 import UIKit
 
-class UserDetailsViewController: UIViewController {
+class UserDetailsViewController: FormViewController {
+    
+    @IBOutlet var nameField: UITextField!
+    @IBOutlet var emailField: UITextField!
+    @IBOutlet var postcodeField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+        registerTextFields([nameField, emailField, postcodeField])
     }
     
     override func didReceiveMemoryWarning() {
