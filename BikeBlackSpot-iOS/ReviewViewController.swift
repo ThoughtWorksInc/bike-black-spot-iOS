@@ -14,12 +14,7 @@ class ReviewViewController: UIViewController {
     }
     
     @IBAction func showNextScreen(sender: AnyObject) {
-        let loggedIn = false
-        
-        var segueIdentifier = "UserDetailsSegue"
-        if let uuid = NSUserDefaults.standardUserDefaults().stringForKey("USER_ID") {
-            segueIdentifier = "ThankYouSegue"
-        }
+        var segueIdentifier = RegistrationService.sharedInstance.isRegistered() ? "ThankYouSegue" : "UserDetailsSegue"
         self.performSegueWithIdentifier(segueIdentifier, sender: nil)
     }
 }

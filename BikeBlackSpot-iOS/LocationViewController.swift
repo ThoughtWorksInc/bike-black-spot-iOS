@@ -100,12 +100,12 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
                 self.viewModel.mapZoomLevel = self.mapView?.camera.zoom
                 self.viewModel.placemark = currentPlacemark
                 if self.viewModel.isValid(){
-                    Report.getCurrentReport().setLocation(location.coordinate.latitude, longitude: location.coordinate.longitude)
+                    Report.getCurrentReport().location = Location(latitude:location.coordinate.latitude, longitude: location.coordinate.longitude)
                     self.labelView!.text = self.viewModel.getDescription()
                 }
                 else
                 {
-                    Report.getCurrentReport().setLocation(0.0, longitude: 0.0)
+                    Report.getCurrentReport().location = nil
                     self.labelView!.text = LOCATION_ERROR_PLACEHOLDER
                 }
             }
@@ -119,9 +119,8 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
             return false
         }
         
-        
         // content validation
-        if(!Report.getCurrentReport().isLocationSet()) {
+        if(Report.getCurrentReport().location == nil) {
             let alert = UIAlertView(title: "Error", message: LOCATION_ERROR_PLACEHOLDER, delegate: nil, cancelButtonTitle: "OK")
             alert.promise().then { object -> Void in
                 

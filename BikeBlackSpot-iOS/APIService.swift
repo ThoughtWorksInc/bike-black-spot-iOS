@@ -18,9 +18,7 @@ public class APIService {
     public init() {
         self.serviceURL = NSBundle(forClass:APIService.self).infoDictionary!["ServiceURL"] as! String
     }
-    
-    // TODO need to cache categories locally in case no internet connection
-    
+
     public func getCategories() -> Promise<[ReportCategory]> {
         return Promise{ fulfill, reject in
             let request = Alamofire.request(.GET, serviceURL + "/categories", parameters: nil)

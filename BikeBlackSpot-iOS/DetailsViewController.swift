@@ -32,12 +32,22 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         alert.addAction(cancel)
         
         var picker = UIPickerView()
+        picker.showsSelectionIndicator = true
         picker.frame = CGRect(origin: CGPointZero, size: CGSizeMake(CGRectGetWidth(alert.view.frame), PICKER_HEIGHT))
         picker.delegate = self
         alert.view.addSubview(picker)
         
         self.pickerView = picker
         self.alert = alert
+
+        // fetch categories
+        APIService.sharedInstance.getCategories().then { object -> Void in
+            self.categories = object
+            self.pickerView?.reloadAllComponents()
+            }
+            .catch { error in
+                // TODO if error
+        }
     }
 
     override func viewWillDisappear(animated: Bool) {
@@ -49,20 +59,13 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.pickerView?.reloadAllComponents()
+        
         // set selected values if any
         descTextView.text = Report.getCurrentReport().description
         categoryTextField.text = Report.getCurrentReport().category?.name
         
         showDefaultState(descTextView, show: descTextView.text.isEmpty)
-        
-        // fetch categories
-        APIService.sharedInstance.getCategories().then { object -> Void in
-            self.categories = object
-            self.pickerView?.reloadAllComponents()
-            }
-            .catch { error in
-                // TODO if error
-        }
     }
     
     override func didReceiveMemoryWarning() {
