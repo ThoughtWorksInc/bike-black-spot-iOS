@@ -107,7 +107,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         setReportDescription()
         
         if(Report.getCurrentReport().category == nil || Report.getCurrentReport().description == nil) {
-            UIAlertView(title: "Error", message: "Please enter required information", delegate: nil, cancelButtonTitle: "OK").show()
+            showEmptyFieldsAlert()
             return false
         }
         return true
