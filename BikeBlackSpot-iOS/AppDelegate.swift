@@ -19,23 +19,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSObject: AnyObject]?) -> Bool {
         
         GMSServices.provideAPIKey(gMapsKey)
+            
+        reachability = Reachability.reachabilityForInternetConnection()
+        if !reachability!.isReachable() {
+            showErrorViewController()
+        }
+
         startReachabilityMonitoring()
         return true
     }
     
     func startReachabilityMonitoring() {
-        reachability = Reachability.reachabilityForInternetConnection()
+
         reachability!.whenReachable = { reachability in
             if reachability.isReachableViaWiFi() {
                 println("Reachable via WiFi")
             } else {
                 println("Reachable via Cellular")
             }
+            self.showDefaultViewController()
         }
         reachability!.whenUnreachable = { reachability in
             println("Not reachable")
+            self.showErrorViewController()
         }
         reachability!.startNotifier()
+    }
+    
+    func showDefaultViewController() {
+        var storyboard = UIStoryboard(name:"Main", bundle:nil)
+        self.window?.rootViewController = storyboard.instantiateInitialViewController() as? UIViewController
+    }
+    
+    func showErrorViewController() {
+        var storyboard = UIStoryboard(name:"Main", bundle:nil)
+        self.window?.rootViewController = storyboard.instantiateViewControllerWithIdentifier("ErrorViewController") as? UIViewController
     }
 
     func applicationWillResignActive(application: UIApplication) {

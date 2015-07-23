@@ -58,7 +58,7 @@ public class LocationService : NSObject, CLLocationManagerDelegate {
                 handler(nil)
             }
             
-            if !placemarks.isEmpty {
+            if placemarks != nil && !placemarks.isEmpty {
                 if let placemark = placemarks.first as? CLPlacemark {
                     var dict = placemark.addressDictionary
                     handler(placemark)

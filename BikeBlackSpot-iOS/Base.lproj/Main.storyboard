@@ -150,6 +150,32 @@
             </objects>
             <point key="canvasLocation" x="469" y="-306"/>
         </scene>
+        <!--Error Page-->
+        <scene sceneID="Y0b-pY-Zxq">
+            <objects>
+                <viewController storyboardIdentifier="ErrorViewController" title="Error Page" id="tve-Sk-WPj" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gch-DW-aav"/>
+                        <viewControllerLayoutGuide type="bottom" id="xCI-u2-MQW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8r8-Pr-RT0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ERROR!!!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0u-cy-Gyh">
+                                <rect key="frame" x="271" y="247" width="72" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Fa-ei-9Ct" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="430" y="571"/>
+        </scene>
         <!--ReviewController-->
         <scene sceneID="Zsh-pE-e3t">
             <objects>
