@@ -127,6 +127,9 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         
         if(Report.getCurrentReport().category == nil) {
             UIAlertView(title: "Error", message: PLEASE_SELECT_A_CATEGORY, delegate: nil, cancelButtonTitle: "OK").show()
+            if let textField = categoryTextField {
+                textField.layer.borderColor = UIColor.redColor().CGColor
+            }
             return false
         }
         return true

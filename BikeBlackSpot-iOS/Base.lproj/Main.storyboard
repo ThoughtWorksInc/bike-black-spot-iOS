@@ -30,6 +30,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="0eY-Wh-bVD"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Location" id="4hG-K7-y85"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="reportButton" destination="IL4-rF-Tmr" id="iOg-gJ-sLn"/>
                     </connections>
@@ -61,6 +62,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="dey-3c-8CF"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Thank You!" id="l6s-ti-ARK"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAb-2G-AYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -116,6 +118,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="mLr-QW-sbE"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Details" id="a4N-PQ-r65"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="categoryTextField" destination="V99-cg-mNf" id="1pk-w9-Mtb"/>
                         <outlet property="descTextView" destination="Mte-eP-496" id="Xno-vJ-drn"/>
@@ -130,6 +133,7 @@
             <objects>
                 <navigationController storyboardIdentifier="NavigationController" title="NavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" toolbarHidden="NO" id="qsh-3z-Bs8" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Vz-M7-Ni0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -173,6 +177,7 @@
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Review" id="BXI-ZX-xy1"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <segue destination="lsj-SY-bHK" kind="show" identifier="ThankYouSegue" id="ccZ-dh-abl"/>
                     </connections>
@@ -252,6 +257,7 @@
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="NRn-pH-bjP"/>
                     </toolbarItems>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="emailField" destination="GrT-ia-PDP" id="phE-2G-ci9"/>
                         <outlet property="nameField" destination="Mzo-TA-FNS" id="4l6-Ko-Wwp"/>
@@ -285,6 +291,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="5PY-4L-XBr"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Photo" id="TRh-lX-jyw"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBa-Ez-EOA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
