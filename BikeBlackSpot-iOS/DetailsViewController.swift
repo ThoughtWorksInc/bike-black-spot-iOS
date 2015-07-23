@@ -107,7 +107,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         setReportDescription()
         
         if(Report.getCurrentReport().category == nil || Report.getCurrentReport().description == nil) {
-            showEmptyFieldsAlert()
+            showErrorAlert(nil)
             return false
         }
         return true

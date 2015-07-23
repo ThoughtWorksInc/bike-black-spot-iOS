@@ -71,8 +71,10 @@ class UserDetailsViewController: FormViewController {
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        resetFields()
+        
         if(!allFieldsValid()) {
-            showEmptyFieldsAlert()
+            showErrorAlert("Please provide your details")
             return false
         }
         setUser()

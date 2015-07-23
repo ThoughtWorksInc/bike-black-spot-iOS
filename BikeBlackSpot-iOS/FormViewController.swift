@@ -3,6 +3,8 @@ import UIKit
 
 public class FormViewController : UIViewController {
     
+    let DEFAULT_ERROR_MSG = "Please provide required information"
+    
     let placeholderTextColor = UIColor.lightGrayColor()
     let textFieldBorderColor = UIColor.lightGrayColor()
     let textColor = UIColor.blackColor()
@@ -23,15 +25,31 @@ public class FormViewController : UIViewController {
         self.textFields = textFields
     }
     
-    func allFieldsValid() -> Bool {
+    func resetFields() {
         if let fields = textFields {
             for field in fields {
-                if !isFieldValid(field) {
-                    return false
+                if let textField = field as? UITextField {
+                    textField.layer.borderColor = textFieldBorderColor.CGColor
                 }
             }
         }
-        return true
+    }
+    
+    func allFieldsValid() -> Bool {
+        
+        var valid = true
+        if let fields = textFields {
+            for field in fields {
+                
+                if !isFieldValid(field) {
+                    valid = false
+                    if let textField = field as? UITextField {
+                        textField.layer.borderColor = UIColor.redColor().CGColor
+                    }
+                }
+            }
+        }
+        return valid
     }
     
     func isFieldValid(field:AnyObject) -> Bool {
@@ -55,7 +73,7 @@ public class FormViewController : UIViewController {
         return values
     }
     
-    func showEmptyFieldsAlert() {
-         UIAlertView(title: "Error", message: "Please enter required information", delegate: nil, cancelButtonTitle: "OK").show()
+    func showErrorAlert(message:String?) {
+         UIAlertView(title: "Error", message: message ?? DEFAULT_ERROR_MSG, delegate: nil, cancelButtonTitle: "OK").show()
     }
 }
