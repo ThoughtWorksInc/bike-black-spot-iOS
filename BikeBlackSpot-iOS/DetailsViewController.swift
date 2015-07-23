@@ -50,7 +50,6 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         
         // fetch categories
         APIService.sharedInstance.getCategories().then { object -> Void in
-            println(object)
             self.categories = object
             self.categories.insert(CATEGORY_PLACEHOLDER, atIndex: 0)
             self.pickerView?.reloadAllComponents()

@@ -70,7 +70,6 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
     
     func locationUpdated(sender:NSNotification) {
         if let currentLocation = LocationService.sharedInstance.getCurrentLocation() {
-            println("lat \(currentLocation.coordinate.latitude) - long \(currentLocation.coordinate.longitude)")
             mapView!.camera = GMSCameraPosition.cameraWithTarget(currentLocation.coordinate, zoom: 15)
         }
         else {
@@ -94,7 +93,6 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
     }
     func mapView(mapView: GMSMapView!, idleAtCameraPosition position: GMSCameraPosition!) {
         var coordinate = mapView.camera.target
-        println("lat \(coordinate.latitude) - long \(coordinate.longitude)")
         setCurrentLocation( CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude))
     }
     

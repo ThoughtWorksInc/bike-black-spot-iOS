@@ -52,7 +52,6 @@ public class LocationService : NSObject, CLLocationManagerDelegate {
     public func addressFromGeocode(location:CLLocation, handler: (CLPlacemark?) -> ()) -> Void {
 
         CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
-            println(location)
             
             if error != nil {
                 println("Reverse geocoder failed with error" + error.localizedDescription)
