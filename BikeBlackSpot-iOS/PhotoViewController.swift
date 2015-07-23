@@ -1,7 +1,7 @@
 import UIKit
 import Cartography
 
-class PhotoViewController: UIViewController {
+class PhotoViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     var takePhotoButton:UIButton?
     var galleryPhotoButton:UIButton?
@@ -9,6 +9,8 @@ class PhotoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        picker.delegate = self
         
         takePhotoButton = UIButton()
         takePhotoButton!.setTitle("Take A Photo", forState: UIControlState.Normal)
@@ -34,13 +36,33 @@ class PhotoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // http://makeapppie.com/2014/12/04/swift-swift-using-the-uiimagepickercontroller-for-a-camera-and-photo-library/
     func openCamera(sender:UIButton!)
     {
-        println("Button tapped")
-        picker.allowsEditing = false
-        picker.sourceType = UIImagePickerControllerSourceType.Camera
-        picker.cameraCaptureMode = .Photo
-        presentViewController(picker, animated: true, completion: nil)
+        if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
+            picker.allowsEditing = false
+            picker.sourceType = UIImagePickerControllerSourceType.Camera
+            picker.cameraCaptureMode = .Photo
+            presentViewController(picker, animated: true, completion: nil)
+            
+        }
+        else
+        {
+            let alertVC = UIAlertController(title: "No Camera", message: "Sorry, this device has no camera", preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "OK", style:.Default, handler: nil)
+            alertVC.addAction(okAction)
+            presentViewController(alertVC, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        var chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        println("Image taken~!")
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     
