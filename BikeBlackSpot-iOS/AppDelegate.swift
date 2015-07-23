@@ -13,12 +13,29 @@ import GoogleMaps
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?    
+    var reachability:Reachability?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [
         NSObject: AnyObject]?) -> Bool {
         
         GMSServices.provideAPIKey(gMapsKey)
+        startReachabilityMonitoring()
         return true
+    }
+    
+    func startReachabilityMonitoring() {
+        reachability = Reachability.reachabilityForInternetConnection()
+        reachability!.whenReachable = { reachability in
+            if reachability.isReachableViaWiFi() {
+                println("Reachable via WiFi")
+            } else {
+                println("Reachable via Cellular")
+            }
+        }
+        reachability!.whenUnreachable = { reachability in
+            println("Not reachable")
+        }
+        reachability!.startNotifier()
     }
 
     func applicationWillResignActive(application: UIApplication) {

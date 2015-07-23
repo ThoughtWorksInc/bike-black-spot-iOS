@@ -4,7 +4,7 @@ import Cartography
 
 let LOCATION_PLACEHOLDER = "Please select your location"
 let LOCATION_ERROR_PLACEHOLDER = LOCATION_PLACEHOLDER + " within Australia"
-let DEFAULT_COORDINATES = CLLocationCoordinate2D(latitude: -27.921,longitude:133.247)
+let DEFAULT_COORDINATES = CLLocationCoordinate2D(latitude: Constants.DEFAULT_MAP_LAT,longitude:Constants.DEFAULT_MAP_LONG)
 
 class LocationViewController: UIViewController, GMSMapViewDelegate {
     

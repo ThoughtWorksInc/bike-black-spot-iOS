@@ -43,7 +43,7 @@
       buildConfiguration = "Debug">
       <Testables>
          <TestableReference
-            skipped = "YES">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "26CF8CB81B4382D600C82362"
@@ -51,6 +51,11 @@
                BlueprintName = "BikeBlackSpot-iOSTests"
                ReferencedContainer = "container:BikeBlackSpot-iOS.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "BikeBlackSpot_iOSTests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>
