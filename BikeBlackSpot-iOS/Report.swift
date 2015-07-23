@@ -15,6 +15,7 @@ public class Report {
     public var location:Location?
     public var category:ReportCategory?
     public var user:User?
+    public var image:NSData?
     
     public var userToken:String?
     public var description:String?
