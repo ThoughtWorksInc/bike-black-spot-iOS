@@ -51,12 +51,12 @@ class UserDetailsViewController: FormViewController {
     override func isFieldValid(field: AnyObject) -> Bool {
         if let textField = field as? UITextField {
             var value = textField.text.trim()
-            var valid = !value.isEmpty
+            var valid = textField == postcodeField || !value.isEmpty
             if(valid) {
                 var regex = ""
                 if(textField == emailField) {
                     regex = EMAIL_REGEX
-                } else if(textField == postcodeField) {
+                } else if(textField == postcodeField && !value.isEmpty) {
                     regex = POSTCODE_REGEX
                 }
                 

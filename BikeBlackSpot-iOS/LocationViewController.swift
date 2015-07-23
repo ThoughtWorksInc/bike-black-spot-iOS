@@ -27,7 +27,7 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
         mapView.delegate = self
         self.view.addSubview(mapView)
         
-        var markerView = UIImageView(image: UIImage(named: "map-marker"))
+        var markerView = UIImageView(image: UIImage(named: "pin"))
         self.view.addSubview(markerView)
         
         labelView = UILabel()
