@@ -114,6 +114,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
             if let selectedCategory = categories[row] as? ReportCategory {
                 Report.getCurrentReport().category = selectedCategory
                 categoryTextField.text = selectedCategory.name
+                resetFields()
             }
         }
     }
