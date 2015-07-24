@@ -3,31 +3,46 @@ import Cartography
 
 class PhotoViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
-    var takePhotoButton:UIButton?
+    //var takePhotoButton:UIButton?
     var galleryPhotoButton:UIButton?
     let picker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let cameraIcon = UIImage(named: "camera.png") as UIImage!
+        var galleryIcon = UIImage()
+        
+        println(cameraIcon!.size.width)
+        
         picker.delegate = self
         
-        takePhotoButton = UIButton()
-        takePhotoButton!.setTitle("Take A Photo", forState: UIControlState.Normal)
-        takePhotoButton!.backgroundColor = UIColor.redColor()
+        //takePhotoButton = UIButton()
+        let takePhotoButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+
+        takePhotoButton.setTitle("Take A Photo", forState: UIControlState.Normal)
+        takePhotoButton.setTitleColor(UIColor.greenColor(), forState: .Highlighted)
+        takePhotoButton.titleEdgeInsets = UIEdgeInsetsMake(0, -300, 0, 20) //400
+        takePhotoButton.backgroundColor = UIColor.redColor()
+        takePhotoButton.setImage(cameraIcon, forState: UIControlState.Normal)
+        takePhotoButton.imageEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 200) //200
+        takePhotoButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        takePhotoButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
+        //takePhotoButton!.contentEdgeInsets = UIEdgeInsetsMake(0, 200, 0, 200)
+
         
-        takePhotoButton!.addTarget(self, action: "openCamera:", forControlEvents: UIControlEvents.TouchUpInside)
+        takePhotoButton.addTarget(self, action: "openCamera:", forControlEvents: UIControlEvents.TouchUpInside)
         
-        self.view.addSubview(takePhotoButton!)
+        self.view.addSubview(takePhotoButton)
         
-        constrain(takePhotoButton!) { takePhotoButton in
+        constrain(takePhotoButton) { takePhotoButton in
             takePhotoButton.center == takePhotoButton.superview!.center
             takePhotoButton.width == takePhotoButton.superview!.width * 0.8
-            takePhotoButton.height == 50
+            takePhotoButton.height == takePhotoButton.superview!.height * 0.3334
         }
         
         galleryPhotoButton = UIButton()
-        galleryPhotoButton!.setTitle("Select A Photo From Gallery", forState: UIControlState.Normal)
+        galleryPhotoButton!.setTitle("Select A Photo From Gallery", forState: .Normal)
         
     }
     
@@ -39,6 +54,7 @@ class PhotoViewController: UIViewController,UIImagePickerControllerDelegate,UINa
     // http://makeapppie.com/2014/12/04/swift-swift-using-the-uiimagepickercontroller-for-a-camera-and-photo-library/
     func openCamera(sender:UIButton!)
     {
+        println(sender.frame.size.width)
         if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
             picker.allowsEditing = false
             picker.sourceType = UIImagePickerControllerSourceType.Camera
