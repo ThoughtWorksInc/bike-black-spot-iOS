@@ -19,7 +19,7 @@ enum ReportField {
 class ReportViewModel {
     
     let EMAIL_REGEX = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
-    let POSTCODE_REGEX = "^[0-9]{4}$"
+    let POSTCODE_REGEX = "^([0-9]{4})?$"
     
     var requiredFields:[ReportField]!
     var validationRules:[ReportField:String]!
@@ -34,7 +34,7 @@ class ReportViewModel {
         
         // if required field, check not empty
         if(contains(requiredFields, field)) {
-            valid = value.isEmpty
+            valid = !value.isEmpty
         }
         
         if let regex = validationRules[field] {

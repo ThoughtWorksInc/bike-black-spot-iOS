@@ -1,5 +1,5 @@
 import UIKit
-
+let VALIDATION_ERROR = "Please provide valid details"
 class UserDetailsViewController: FormViewController {
     
     @IBOutlet var nameField: UITextField!
@@ -73,7 +73,7 @@ class UserDetailsViewController: FormViewController {
         resetFields()
         
         if(!allFieldsValid()) {
-            showErrorAlert("Please provide your details")
+            showErrorAlert(VALIDATION_ERROR)
             return false
         }
         setUser()
