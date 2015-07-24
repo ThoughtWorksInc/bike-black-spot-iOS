@@ -117,11 +117,28 @@
 		081C3D1D1B60C77800378F96 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				7E3C6BCC1B58CA50000BAB2C /* NSNotifications.swift */,
 				4CA829A81B57272F00D614E8 /* GoogleDataProvider.swift */,
 				7E3C6BD31B5CB13D000BAB2C /* Constants.swift */,
 				08C5514C1B60C5F300ED48FA /* Reachability.swift */,
 			);
 			name = Global;
+			sourceTree = "<group>";
+		};
+		081C3D1E1B61B82D00378F96 /* Integration */ = {
+			isa = PBXGroup;
+			children = (
+				082B74861B5CD018004DB225 /* APIServiceTests.swift */,
+				08C551461B60C1AC00ED48FA /* LocationServiceTests.swift */,
+			);
+			name = Integration;
+			sourceTree = "<group>";
+		};
+		081C3D1F1B61B83C00378F96 /* Unit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Unit;
 			sourceTree = "<group>";
 		};
 		083EE3D21B5F2D5A00201C3F /* View */ = {
@@ -199,9 +216,9 @@
 		26CF8CBC1B4382D600C82362 /* BikeBlackSpot-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				081C3D1F1B61B83C00378F96 /* Unit */,
+				081C3D1E1B61B82D00378F96 /* Integration */,
 				26CF8CBD1B4382D600C82362 /* Supporting Files */,
-				082B74861B5CD018004DB225 /* APIServiceTests.swift */,
-				08C551461B60C1AC00ED48FA /* LocationServiceTests.swift */,
 			);
 			path = "BikeBlackSpot-iOSTests";
 			sourceTree = "<group>";
@@ -232,7 +249,6 @@
 			isa = PBXGroup;
 			children = (
 				7E3C6BCA1B58C3A7000BAB2C /* LocationService.swift */,
-				7E3C6BCC1B58CA50000BAB2C /* NSNotifications.swift */,
 				082B74881B5CD1D7004DB225 /* APIService.swift */,
 				084C5F721B5F1ED600DD5586 /* RegistrationService.swift */,
 			);

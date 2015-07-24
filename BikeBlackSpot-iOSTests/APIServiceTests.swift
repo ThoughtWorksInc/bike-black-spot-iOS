@@ -2,7 +2,7 @@ import Foundation
 import Quick
 import Nimble
 
-let TIMEOUT_INTERVAL_IN_SECS = 3.0
+let TIMEOUT_INTERVAL_IN_SECS = 5.0
 
 class APIServiceTests : QuickSpec {
     override func spec() {
