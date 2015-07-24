@@ -1,11 +1,3 @@
-//
-//  Report.swift
-//  BikeBlackSpot-iOS
-//
-//  Created by Claire Dodd on 20/07/2015.
-//  Copyright (c) 2015 ThoughtWorks. All rights reserved.
-//
-
 import Foundation
 
 public class Report {

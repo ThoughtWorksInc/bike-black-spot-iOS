@@ -103,7 +103,7 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
                 self.viewModel.placemark = currentPlacemark
                 
                 if self.viewModel.isValid() {
-                    Report.getCurrentReport().location = Location(latitude:location.coordinate.latitude, longitude: location.coordinate.longitude)
+                    Report.getCurrentReport().location = Location(latitude:location.coordinate.latitude, longitude: location.coordinate.longitude, description: self.viewModel.getDescription())
                     
                     self.reportButton.enabled = true
                     self.labelView!.text = self.viewModel.getDescription()
