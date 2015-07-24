@@ -5,9 +5,12 @@ class ReviewViewController: FormViewController {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var imageLabel: UILabel!
+    
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,25 +34,38 @@ class ReviewViewController: FormViewController {
             descriptionLabel.hidden = true
             descriptionTextView.hidden = true
         }
+        
+        if let image = report.image {
+            imageLabel.hidden = false
+            imageLabel.text = "Image attached"
+        }
+        else {
+            imageLabel.hidden = true
+        }
+        
+        constrain(imageLabel) { label in
+            label.left == label.superview!.left+10
+            label.right == label.superview!.right-10
+            label.height == 40
+        }
+        
         constrain(locationTextField) { textView in
-            textView.top == textView.superview!.top+10
             textView.left == textView.superview!.left+10
             textView.right == textView.superview!.right-10
+            textView.height == 40
         }
         
         constrain(categoryTextField) { textView in
             textView.left == textView.superview!.left+10
             textView.right == textView.superview!.right-10
+            textView.height == 40
         }
         
         constrain(descriptionTextView) { textView in
             textView.left == textView.superview!.left+10
             textView.right == textView.superview!.right-10
         }
-
-        
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
