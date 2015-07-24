@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		081C3D261B61BD6200378F96 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081C3D251B61BD6200378F96 /* ReportViewModel.swift */; };
+		082981C71B61C2FC004EE7D5 /* ReportValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082981C61B61C2FC004EE7D5 /* ReportValidationTests.swift */; };
+		082981C81B61C3EB004EE7D5 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081C3D251B61BD6200378F96 /* ReportViewModel.swift */; };
 		082B74871B5CD018004DB225 /* APIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B74861B5CD018004DB225 /* APIServiceTests.swift */; };
 		082B74891B5CD1D7004DB225 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B74881B5CD1D7004DB225 /* APIService.swift */; };
 		082B748A1B5CD2AA004DB225 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B74881B5CD1D7004DB225 /* APIService.swift */; };
@@ -55,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		081C3D251B61BD6200378F96 /* ReportViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
+		082981C61B61C2FC004EE7D5 /* ReportValidationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportValidationTests.swift; sourceTree = "<group>"; };
 		082B74861B5CD018004DB225 /* APIServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
 		082B74881B5CD1D7004DB225 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		082B748B1B5CD363004DB225 /* ReportCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCategory.swift; sourceTree = "<group>"; };
@@ -137,6 +142,7 @@
 		081C3D1F1B61B83C00378F96 /* Unit */ = {
 			isa = PBXGroup;
 			children = (
+				082981C61B61C2FC004EE7D5 /* ReportValidationTests.swift */,
 			);
 			name = Unit;
 			sourceTree = "<group>";
@@ -270,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				7E3C6BCF1B5C79AC000BAB2C /* LocationViewModel.swift */,
+				081C3D251B61BD6200378F96 /* ReportViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -506,6 +513,7 @@
 				084C5F711B5F1E6A00DD5586 /* User.swift in Sources */,
 				08C5514D1B60C5F300ED48FA /* Reachability.swift in Sources */,
 				7E3C6BD01B5C79AC000BAB2C /* LocationViewModel.swift in Sources */,
+				081C3D261B61BD6200378F96 /* ReportViewModel.swift in Sources */,
 				7E3C6BCD1B58CA50000BAB2C /* NSNotifications.swift in Sources */,
 				7E3C6BD21B5C80F0000BAB2C /* Report.swift in Sources */,
 			);
@@ -519,7 +527,9 @@
 				082B74871B5CD018004DB225 /* APIServiceTests.swift in Sources */,
 				088321151B5DC394003B95DB /* ReportCategory.swift in Sources */,
 				08C5514B1B60C37D00ED48FA /* NSNotifications.swift in Sources */,
+				082981C81B61C3EB004EE7D5 /* ReportViewModel.swift in Sources */,
 				08C551471B60C1AC00ED48FA /* LocationServiceTests.swift in Sources */,
+				082981C71B61C2FC004EE7D5 /* ReportValidationTests.swift in Sources */,
 				08C551481B60C1FD00ED48FA /* LocationViewModel.swift in Sources */,
 				082B748A1B5CD2AA004DB225 /* APIService.swift in Sources */,
 				08C551491B60C21A00ED48FA /* Constants.swift in Sources */,

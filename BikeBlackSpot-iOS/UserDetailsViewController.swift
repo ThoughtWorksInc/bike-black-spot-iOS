@@ -6,11 +6,12 @@ class UserDetailsViewController: FormViewController {
     @IBOutlet var emailField: UITextField!
     @IBOutlet var postcodeField: UITextField!
 
-    let EMAIL_REGEX = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
-    let POSTCODE_REGEX = "^[0-9]{4}$"
+    var reportViewModel:ReportViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        reportViewModel = ReportViewModel()
         
         var fields = [nameField, emailField, postcodeField]
         registerTextFields(fields)
@@ -51,19 +52,17 @@ class UserDetailsViewController: FormViewController {
     override func isFieldValid(field: AnyObject) -> Bool {
         if let textField = field as? UITextField {
             var value = textField.text.trim()
-            var valid = textField == postcodeField || !value.isEmpty
-            if(valid) {
-                var regex = ""
-                if(textField == emailField) {
-                    regex = EMAIL_REGEX
-                } else if(textField == postcodeField && !value.isEmpty) {
-                    regex = POSTCODE_REGEX
-                }
-                
-                if(!regex.isEmpty) {
-                    let predicate = NSPredicate(format:"SELF MATCHES %@", regex)
-                    valid = predicate.evaluateWithObject(value)
-                }
+            var valid = false
+            
+            switch (textField) {
+            case nameField:
+                valid = reportViewModel.isValid(ReportField.Name, value: value)
+            case emailField:
+                valid = reportViewModel.isValid(ReportField.Email, value: value)
+            case postcodeField:
+                valid = reportViewModel.isValid(ReportField.Postcode, value: value)
+            default:
+                println("Validation not applied")
             }
             return valid
         }
