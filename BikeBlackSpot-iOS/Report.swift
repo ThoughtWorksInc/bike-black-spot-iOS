@@ -18,4 +18,8 @@ public class Report {
         }
         return currentReport!
     }
+    
+    public static func clearReport() -> Void {
+        currentReport = nil
+    }
 }

@@ -14,5 +14,10 @@ class ThankyouViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        Report.clearReport()
+        return true
+    }
+    
     
 }

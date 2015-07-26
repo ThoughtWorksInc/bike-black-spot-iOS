@@ -34,7 +34,8 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         
         var alert = UIAlertController(title: nil, message: "\n\n\n\n\n\n\n", preferredStyle: UIAlertControllerStyle.ActionSheet)
         let select = UIAlertAction(title: "Select", style: .Cancel) { (action) in
-            self.dismissViewControllerAnimated(true, completion: nil)
+//            self.dismissViewControllerAnimated(true, completion: nil)
+            self.pickerView?.resignFirstResponder()
         }
         alert.addAction(select)
         
