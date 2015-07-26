@@ -117,10 +117,6 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
     }
     //zoom out slower
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-        //
-        //        var coordinate = self.mapView!.camera.target
-        //        setCurrentLocation( CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude))
-        
         // content validation, should never actually run
         if(Report.getCurrentReport().location == nil) {
             let alert = UIAlertView(title: "Error", message: LOCATION_ERROR_PLACEHOLDER, delegate: nil, cancelButtonTitle: "OK")
