@@ -24,14 +24,7 @@ class PhotoViewController: UIViewController,UIImagePickerControllerDelegate,UINa
         buttonSeparatorLabel!.text = "OR"
         
         
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        UIImage(named: "background.png")?.drawInRect(self.view.bounds)
-        
-        var backgroundImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
-        
-        UIGraphicsEndImageContext()
-        
-        self.view.backgroundColor = UIColor(patternImage: backgroundImage)
+        Background.setBackground(self)
         
         takePhotoButton.setTitle("take a photo".uppercaseString, forState: UIControlState.Normal)
         takePhotoButton.setTitleColor(UIColor.greenColor(), forState: .Highlighted)

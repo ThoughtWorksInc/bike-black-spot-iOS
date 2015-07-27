@@ -6,6 +6,9 @@ class ThankyouViewController: UIViewController {
     @IBOutlet var doneButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Background.setBackground(self)
+        
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: navigationController, action: nil)
         navigationItem.leftBarButtonItem = backButton
     }

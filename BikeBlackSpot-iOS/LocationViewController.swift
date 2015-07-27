@@ -23,6 +23,8 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Background.setBackground(self)
+        
         var mapView = GMSMapView.mapWithFrame(CGRectZero, camera: nil)
         mapView.myLocationEnabled = true
         mapView.delegate = self

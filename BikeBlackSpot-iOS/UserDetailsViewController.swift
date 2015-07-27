@@ -11,6 +11,8 @@ class UserDetailsViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Background.setBackground(self)
+        
         reportViewModel = ReportViewModel()
         
         var fields = [nameField, emailField, postcodeField]

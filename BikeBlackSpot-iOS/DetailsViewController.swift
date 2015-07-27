@@ -21,6 +21,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Background.setBackground(self)
         
         descTextView.textColor = textColor
         descTextView.placeholderTextColor = placeholderTextColor

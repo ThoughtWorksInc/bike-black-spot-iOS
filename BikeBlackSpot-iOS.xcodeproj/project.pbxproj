@@ -42,6 +42,7 @@
 		4CA829AE1B5766E000D614E8 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA829AD1B5766E000D614E8 /* PhotoViewController.swift */; };
 		4CA829B01B57675A00D614E8 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA829AF1B57675A00D614E8 /* ReviewViewController.swift */; };
 		4CA829B21B57679800D614E8 /* ThankyouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA829B11B57679800D614E8 /* ThankyouViewController.swift */; };
+		7E13BE4C1B662A0C00EB3BB1 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E13BE4B1B662A0C00EB3BB1 /* Background.swift */; };
 		7E3C6BC81B58BAB5000BAB2C /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BC71B58BAB5000BAB2C /* UserDetailsViewController.swift */; };
 		7E3C6BCB1B58C3A7000BAB2C /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BCA1B58C3A7000BAB2C /* LocationService.swift */; };
 		7E3C6BCD1B58CA50000BAB2C /* NSNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BCC1B58CA50000BAB2C /* NSNotifications.swift */; };
@@ -96,6 +97,7 @@
 		4CA829AD1B5766E000D614E8 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		4CA829AF1B57675A00D614E8 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		4CA829B11B57679800D614E8 /* ThankyouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankyouViewController.swift; sourceTree = "<group>"; };
+		7E13BE4B1B662A0C00EB3BB1 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		7E3C6BC71B58BAB5000BAB2C /* UserDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 		7E3C6BCA1B58C3A7000BAB2C /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		7E3C6BCC1B58CA50000BAB2C /* NSNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotifications.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				4CA829A81B57272F00D614E8 /* GoogleDataProvider.swift */,
 				7E3C6BD31B5CB13D000BAB2C /* Constants.swift */,
 				08C5514C1B60C5F300ED48FA /* Reachability.swift */,
+				7E13BE4B1B662A0C00EB3BB1 /* Background.swift */,
 			);
 			name = Global;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				26CF8CAA1B4382D500C82362 /* AppDelegate.swift in Sources */,
 				083EE3D71B5F379E00201C3F /* StringExtension.swift in Sources */,
 				084C5F6D1B5F0FBF00DD5586 /* FormViewController.swift in Sources */,
+				7E13BE4C1B662A0C00EB3BB1 /* Background.swift in Sources */,
 				4CA829AE1B5766E000D614E8 /* PhotoViewController.swift in Sources */,
 				7E3C6BD41B5CB13D000BAB2C /* Constants.swift in Sources */,
 				083EE3D41B5F2D6C00201C3F /* CustomTextView.swift in Sources */,
