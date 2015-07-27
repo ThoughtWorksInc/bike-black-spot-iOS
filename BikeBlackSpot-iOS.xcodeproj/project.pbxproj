@@ -21,6 +21,8 @@
 		084C5F711B5F1E6A00DD5586 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5F701B5F1E6A00DD5586 /* User.swift */; };
 		084C5F731B5F1ED600DD5586 /* UserTokenMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5F721B5F1ED600DD5586 /* UserTokenMgr.swift */; };
 		086117D61B65AD940042359D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5F701B5F1E6A00DD5586 /* User.swift */; };
+		086117D81B65DCFC0042359D /* UserTokenMgrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086117D71B65DCFC0042359D /* UserTokenMgrTests.swift */; };
+		086117D91B65DDAD0042359D /* UserTokenMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5F721B5F1ED600DD5586 /* UserTokenMgr.swift */; };
 		088321151B5DC394003B95DB /* ReportCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B748B1B5CD363004DB225 /* ReportCategory.swift */; };
 		08C551471B60C1AC00ED48FA /* LocationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C551461B60C1AC00ED48FA /* LocationServiceTests.swift */; };
 		08C551481B60C1FD00ED48FA /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BCF1B5C79AC000BAB2C /* LocationViewModel.swift */; };
@@ -70,6 +72,7 @@
 		084C5F6E1B5F17B700DD5586 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		084C5F701B5F1E6A00DD5586 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		084C5F721B5F1ED600DD5586 /* UserTokenMgr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTokenMgr.swift; sourceTree = "<group>"; };
+		086117D71B65DCFC0042359D /* UserTokenMgrTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTokenMgrTests.swift; sourceTree = "<group>"; };
 		08C551461B60C1AC00ED48FA /* LocationServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServiceTests.swift; sourceTree = "<group>"; };
 		08C5514C1B60C5F300ED48FA /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		26CF8CA41B4382D500C82362 /* BikeBlackSpot-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BikeBlackSpot-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +137,7 @@
 		081C3D1E1B61B82D00378F96 /* Integration */ = {
 			isa = PBXGroup;
 			children = (
+				086117D71B65DCFC0042359D /* UserTokenMgrTests.swift */,
 				082B74861B5CD018004DB225 /* APIServiceTests.swift */,
 				08C551461B60C1AC00ED48FA /* LocationServiceTests.swift */,
 			);
@@ -527,9 +531,11 @@
 				08C5514A1B60C25E00ED48FA /* LocationService.swift in Sources */,
 				082B74871B5CD018004DB225 /* APIServiceTests.swift in Sources */,
 				088321151B5DC394003B95DB /* ReportCategory.swift in Sources */,
+				086117D81B65DCFC0042359D /* UserTokenMgrTests.swift in Sources */,
 				08C5514B1B60C37D00ED48FA /* NSNotifications.swift in Sources */,
 				082981C81B61C3EB004EE7D5 /* ReportViewModel.swift in Sources */,
 				08C551471B60C1AC00ED48FA /* LocationServiceTests.swift in Sources */,
+				086117D91B65DDAD0042359D /* UserTokenMgr.swift in Sources */,
 				082981C71B61C2FC004EE7D5 /* ReportValidationTests.swift in Sources */,
 				08C551481B60C1FD00ED48FA /* LocationViewModel.swift in Sources */,
 				082B748A1B5CD2AA004DB225 /* APIService.swift in Sources */,

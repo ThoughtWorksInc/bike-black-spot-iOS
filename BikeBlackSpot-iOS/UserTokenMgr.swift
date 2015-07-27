@@ -8,11 +8,15 @@ public class UserTokenMgr {
         return token() != nil
     }
     
-    func saveToken(token:String) {
+    func saveToken(token:String?) {
         NSUserDefaults.standardUserDefaults().setObject(token, forKey: USER_TOKEN)
     }
     
     func token() -> String? {
         return NSUserDefaults.standardUserDefaults().stringForKey(USER_TOKEN)
+    }
+    
+    func reset() {
+        saveToken(nil)
     }
 }

@@ -52,6 +52,7 @@ public class APIService {
                     reject(NSError(domain: self.serviceURL, code: statusCode!, userInfo: nil))
                 } else {
                     var uuid = string!.stringByReplacingOccurrencesOfString("\"", withString: "")
+                    UserTokenMgr.sharedInstance.saveToken(uuid)
                     fulfill(uuid)
                 }
             }
