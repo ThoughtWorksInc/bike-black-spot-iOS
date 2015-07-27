@@ -3,6 +3,10 @@ import SwiftLoader
 
 class ThankyouViewController: UIViewController {
     
+    @IBOutlet weak var middleMessage: UILabel!
+    
+    @IBOutlet weak var bottomMessage: UILabel!
+    
     @IBOutlet var doneButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -11,6 +15,20 @@ class ThankyouViewController: UIViewController {
         
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: navigationController, action: nil)
         navigationItem.leftBarButtonItem = backButton
+        
+        APIService.sharedInstance.isUserConfirmed()
+            .then { result -> Void in
+                println(result)
+                if result {
+                    self.middleMessage.text = "THANK YOU FOR SUBMITTING YOUR REPORT"
+                    self.bottomMessage.text = "A copy of your blackspot has been sent via email."
+                }else{
+                    self.middleMessage.text = "PLEASE VERIFY YOUR EMAIL ADDRESS"
+                    self.bottomMessage.text = "Thank you for submitting your report, an email has been sent to your address, please verify your email."
+                }
+        }
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,7 +45,7 @@ class ThankyouViewController: UIViewController {
         var isRegistered = UserTokenMgr.sharedInstance.hasToken()
         let report = Report.getCurrentReport()
         if(!isRegistered) {
-
+            
             if let user = report.user {
                 APIService.sharedInstance.registerUser(user)
                     .then { uuid -> Void in
@@ -39,7 +57,7 @@ class ThankyouViewController: UIViewController {
                     .catch { error in
                         self.setBusy(false)
                         UIAlertView(title: "Error", message: "Error registering user", delegate: nil, cancelButtonTitle: "OK").show()
-                    }
+                }
             }
         } else {
             setBusy(false)

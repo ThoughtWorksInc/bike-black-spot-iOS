@@ -50,7 +50,44 @@
                     <view key="view" contentMode="scaleToFill" id="MEk-o8-PyC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7I-F8-pdq">
+                                <rect key="frame" x="152" y="338" width="297" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="297" id="XSq-79-j3M"/>
+                                    <constraint firstAttribute="height" constant="65" id="YtU-hO-GgQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0B-Yw-Uyj">
+                                <rect key="frame" x="186" y="432" width="229" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="229" id="jt2-Vt-SdE"/>
+                                    <constraint firstAttribute="height" constant="58" id="qXE-0d-q2X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email_sent" translatesAutoresizingMaskIntoConstraints="NO" id="hSh-Qg-XXW">
+                                <rect key="frame" x="211" y="120" width="178" height="204"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="178" id="b24-9L-ER8"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="s0B-Yw-Uyj" firstAttribute="top" secondItem="P7I-F8-pdq" secondAttribute="bottom" constant="29" id="5xk-tY-3xl"/>
+                            <constraint firstItem="s0B-Yw-Uyj" firstAttribute="centerX" secondItem="MEk-o8-PyC" secondAttribute="centerX" id="6to-Tq-wXD"/>
+                            <constraint firstItem="hSh-Qg-XXW" firstAttribute="centerX" secondItem="P7I-F8-pdq" secondAttribute="centerX" id="Mm4-Wj-Ybb"/>
+                            <constraint firstItem="hSh-Qg-XXW" firstAttribute="top" secondItem="6LP-Th-2GT" secondAttribute="bottom" constant="56" id="NUF-zc-Sax"/>
+                            <constraint firstItem="P7I-F8-pdq" firstAttribute="top" secondItem="hSh-Qg-XXW" secondAttribute="bottom" constant="14" id="OIb-7Q-Bmq"/>
+                            <constraint firstItem="s0B-Yw-Uyj" firstAttribute="centerX" secondItem="P7I-F8-pdq" secondAttribute="centerX" id="rEJ-T7-I6h"/>
+                            <constraint firstItem="AMC-9i-s01" firstAttribute="top" secondItem="s0B-Yw-Uyj" secondAttribute="bottom" constant="66" id="wTU-JA-erW"/>
+                        </constraints>
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="1nT-wc-aPy"/>
@@ -64,7 +101,9 @@
                     <navigationItem key="navigationItem" title="Thank You!" id="l6s-ti-ARK"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
+                        <outlet property="bottomMessage" destination="s0B-Yw-Uyj" id="MmH-NU-Wz3"/>
                         <outlet property="doneButton" destination="bux-rT-gJT" id="ujq-y8-a54"/>
+                        <outlet property="middleMessage" destination="P7I-F8-pdq" id="eS5-QO-8MD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAb-2G-AYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -443,6 +482,7 @@
     </scenes>
     <resources>
         <image name="No_Network" width="30" height="30"/>
+        <image name="email_sent" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ccZ-dh-abl"/>

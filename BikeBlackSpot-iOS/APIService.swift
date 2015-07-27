@@ -18,7 +18,7 @@ public class APIService {
     public init() {
         self.serviceURL = NSBundle(forClass:APIService.self).infoDictionary!["ServiceURL"] as! String
     }
-
+    
     public func getCategories() -> Promise<[ReportCategory]> {
         return Promise{ fulfill, reject in
             let request = Alamofire.request(.GET, serviceURL + "/categories", parameters: nil)
@@ -55,6 +55,28 @@ public class APIService {
                     UserTokenMgr.sharedInstance.saveToken(uuid)
                     fulfill(uuid)
                 }
+            }
+        }
+    }
+    
+    public func isUserConfirmed() -> Promise<Bool> {
+        return Promise{ fulfill, reject in
+            if let uuid = UserTokenMgr.sharedInstance.token(){
+                let request = Alamofire.request(.GET, serviceURL + "/users?uuid=" + uuid)
+                request.responseString { _, response, string, error in
+                    if(error != nil) {
+                        reject(error!)
+                    } else if(string == nil) {
+                        let statusCode = response?.statusCode
+                        reject(NSError(domain: self.serviceURL, code: statusCode!, userInfo: nil))
+                    } else {
+                        println(string!)
+                        fulfill(string!.rangeOfString("true") != nil)
+                    }
+                }
+            }
+            else{
+                fulfill(false)
             }
         }
     }
