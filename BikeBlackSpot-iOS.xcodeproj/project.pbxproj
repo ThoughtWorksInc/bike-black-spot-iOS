@@ -20,6 +20,7 @@
 		084C5F6F1B5F17B700DD5586 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5F6E1B5F17B700DD5586 /* Location.swift */; };
 		084C5F711B5F1E6A00DD5586 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5F701B5F1E6A00DD5586 /* User.swift */; };
 		084C5F731B5F1ED600DD5586 /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5F721B5F1ED600DD5586 /* RegistrationService.swift */; };
+		086117D61B65AD940042359D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5F701B5F1E6A00DD5586 /* User.swift */; };
 		088321151B5DC394003B95DB /* ReportCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B748B1B5CD363004DB225 /* ReportCategory.swift */; };
 		08C551471B60C1AC00ED48FA /* LocationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C551461B60C1AC00ED48FA /* LocationServiceTests.swift */; };
 		08C551481B60C1FD00ED48FA /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BCF1B5C79AC000BAB2C /* LocationViewModel.swift */; };
@@ -533,6 +534,7 @@
 				08C551481B60C1FD00ED48FA /* LocationViewModel.swift in Sources */,
 				082B748A1B5CD2AA004DB225 /* APIService.swift in Sources */,
 				08C551491B60C21A00ED48FA /* Constants.swift in Sources */,
+				086117D61B65AD940042359D /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

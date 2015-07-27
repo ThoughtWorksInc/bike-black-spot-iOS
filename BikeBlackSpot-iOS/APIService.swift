@@ -37,9 +37,24 @@ public class APIService {
                     fulfill(categories)
                 }
             }
-//            request.responseString { _, _, string, _ in
-//                println(string)
-//            }
+        }
+    }
+    
+    public func registerUser(user:User) -> Promise<String> {
+        return Promise{ fulfill, reject in
+            var params = user.toDictionary()
+            let request = Alamofire.request(.POST, serviceURL + "/users", parameters: params)
+            request.responseString { _, response, string, error in
+                if(error != nil) {
+                    reject(error!)
+                } else if(string == nil) {
+                    let statusCode = response?.statusCode
+                    reject(NSError(domain: self.serviceURL, code: statusCode!, userInfo: nil))
+                } else {
+                    var uuid = string!.stringByReplacingOccurrencesOfString("\"", withString: "")
+                    fulfill(uuid)
+                }
+            }
         }
     }
 }
