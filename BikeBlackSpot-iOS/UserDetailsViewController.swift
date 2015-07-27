@@ -15,6 +15,8 @@ class UserDetailsViewController: FormViewController, UITextFieldDelegate {
         postcodeField.delegate = self
         Background.setBackground(self)
         
+        Background.setBackground(self)
+        
         reportViewModel = ReportViewModel()
         
         var fields = [nameField, emailField, postcodeField]

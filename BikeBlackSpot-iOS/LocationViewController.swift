@@ -26,6 +26,8 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
 
 
         
+        Background.setBackground(self)
+        
         var mapView = GMSMapView.mapWithFrame(CGRectZero, camera: nil)
         mapView.myLocationEnabled = true
         mapView.delegate = self
