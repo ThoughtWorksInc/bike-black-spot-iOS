@@ -415,12 +415,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				4C5358A61B65E03600C3D41F /* image.jpg in Resources */,
-=======
 				E44EE4811B65BBEE00822F30 /* Linotype - Alternate Gothic LT No2.ttf in Resources */,
 				E44EE47F1B65BBDF00822F30 /* Swiss 721 Light Condensed BT.ttf in Resources */,
->>>>>>> #103 Added button for upload previously taken button. WIP: view styling
 				26CF8CAF1B4382D500C82362 /* Main.storyboard in Resources */,
 				26CF8CB41B4382D500C82362 /* LaunchScreen.xib in Resources */,
 				26CF8CB11B4382D500C82362 /* Images.xcassets in Resources */,
