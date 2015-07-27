@@ -10,13 +10,29 @@ public class FormViewController : UIViewController {
     let textColor = UIColor.blackColor()
     var textFields:[AnyObject]?
     
+    
     public override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
+    
+    public override func viewDidLoad() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: "closeKeyboard:")
+    }
+    func keyboardWillHide(notification: NSNotification) {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Done, target: self, action: "closeKeyboard:")
+    }
+    func closeKeyboard(sender: UIButton){
         self.view.endEditing(true)
     }
     
     func registerTextFields(textFields:[AnyObject]) {
         for field in textFields {
-            if let view = field as? UIView {     
+            if let view = field as? UIView {
                 view.layer.borderColor = textFieldBorderColor.CGColor
                 view.layer.borderWidth = 1.0
                 view.layer.cornerRadius = 5.0
@@ -73,7 +89,8 @@ public class FormViewController : UIViewController {
         return values
     }
     
+    
     func showErrorAlert(message:String?) {
-         UIAlertView(title: "Error", message: message ?? DEFAULT_ERROR_MSG, delegate: nil, cancelButtonTitle: "OK").show()
+        UIAlertView(title: "Error", message: message ?? DEFAULT_ERROR_MSG, delegate: nil, cancelButtonTitle: "OK").show()
     }
 }

@@ -91,16 +91,22 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         super.touchesBegan(touches, withEvent: event)
-        self.view.endEditing(true)
         setReportDescription()
     }
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+
         
         if(textField == categoryTextField) {
             self.view.endEditing(true)
         }
         presentViewController(alert!, animated: true, completion: nil)
         return false
+    }
+    
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        self.navigationItem.rightBarButtonItem?.title = ""
+        return true
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
