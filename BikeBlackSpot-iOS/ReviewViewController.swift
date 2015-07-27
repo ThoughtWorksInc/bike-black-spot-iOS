@@ -53,7 +53,8 @@ class ReviewViewController: FormViewController {
     }
     
     @IBAction func showNextScreen(sender: AnyObject) {
-        var segueIdentifier = UserTokenMgr.sharedInstance.hasToken() ? "ThankYouSegue" : "UserDetailsSegue"
+        var isRegistered = UserTokenMgr.sharedInstance.hasToken()
+        var segueIdentifier = isRegistered ? "ThankYouSegue" : "UserDetailsSegue"
         self.performSegueWithIdentifier(segueIdentifier, sender: nil)
     }
     

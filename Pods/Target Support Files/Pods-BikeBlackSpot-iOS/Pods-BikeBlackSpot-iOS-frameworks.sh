@@ -52,6 +52,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Cartography.framework'
   install_framework 'OMGHTTPURLRQ.framework'
   install_framework 'PromiseKit.framework'
+  install_framework 'SwiftLoader.framework'
   install_framework 'SwiftyJSON.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -59,5 +60,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Cartography.framework'
   install_framework 'OMGHTTPURLRQ.framework'
   install_framework 'PromiseKit.framework'
+  install_framework 'SwiftLoader.framework'
   install_framework 'SwiftyJSON.framework'
 fi

@@ -14,6 +14,7 @@
 		082B74891B5CD1D7004DB225 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B74881B5CD1D7004DB225 /* APIService.swift */; };
 		082B748A1B5CD2AA004DB225 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B74881B5CD1D7004DB225 /* APIService.swift */; };
 		082B748C1B5CD363004DB225 /* ReportCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B748B1B5CD363004DB225 /* ReportCategory.swift */; };
+		0834435C1B65E3BD00A10696 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0834435B1B65E3BD00A10696 /* UIViewExtension.swift */; };
 		083EE3D41B5F2D6C00201C3F /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083EE3D31B5F2D6C00201C3F /* CustomTextView.swift */; };
 		083EE3D71B5F379E00201C3F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083EE3D61B5F379E00201C3F /* StringExtension.swift */; };
 		084C5F6D1B5F0FBF00DD5586 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5F6C1B5F0FBF00DD5586 /* FormViewController.swift */; };
@@ -67,6 +68,7 @@
 		082B74861B5CD018004DB225 /* APIServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
 		082B74881B5CD1D7004DB225 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		082B748B1B5CD363004DB225 /* ReportCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCategory.swift; sourceTree = "<group>"; };
+		0834435B1B65E3BD00A10696 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		083EE3D31B5F2D6C00201C3F /* CustomTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		083EE3D61B5F379E00201C3F /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		084C5F6C1B5F0FBF00DD5586 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				083EE3D61B5F379E00201C3F /* StringExtension.swift */,
+				0834435B1B65E3BD00A10696 /* UIViewExtension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				4CA829B01B57675A00D614E8 /* ReviewViewController.swift in Sources */,
 				4CA829A91B57272F00D614E8 /* GoogleDataProvider.swift in Sources */,
 				084C5F6F1B5F17B700DD5586 /* Location.swift in Sources */,
+				0834435C1B65E3BD00A10696 /* UIViewExtension.swift in Sources */,
 				084C5F731B5F1ED600DD5586 /* UserTokenMgr.swift in Sources */,
 				26CF8CAA1B4382D500C82362 /* AppDelegate.swift in Sources */,
 				083EE3D71B5F379E00201C3F /* StringExtension.swift in Sources */,

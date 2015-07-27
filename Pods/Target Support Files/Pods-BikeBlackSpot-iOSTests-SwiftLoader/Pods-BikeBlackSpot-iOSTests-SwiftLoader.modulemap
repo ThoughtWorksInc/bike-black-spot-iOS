@@ -1,0 +1,6 @@
+framework module SwiftLoader {
+  umbrella header "Pods-BikeBlackSpot-iOSTests-SwiftLoader-umbrella.h"
+
+  export *
+  module * { export * }
+}
