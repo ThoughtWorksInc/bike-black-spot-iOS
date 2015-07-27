@@ -11,6 +11,7 @@ class ReviewViewController: FormViewController {
     @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     
+    @IBOutlet weak var photoView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,7 @@ class ReviewViewController: FormViewController {
         
         
         let report = Report.getCurrentReport()
+        var descFlag = false
         
         if let locationDescription = report.location?.desc {
             locationTextField.text = locationDescription
@@ -29,6 +31,7 @@ class ReviewViewController: FormViewController {
             descriptionLabel.hidden = false
             descriptionTextView.hidden = false
             descriptionTextView.text = description
+            descFlag = true
         }
         else {
             descriptionLabel.hidden = true
@@ -36,34 +39,11 @@ class ReviewViewController: FormViewController {
         }
         
         if let image = report.image {
-            imageLabel.hidden = false
-            imageLabel.text = "Image attached"
-        }
-        else {
-            imageLabel.hidden = true
-        }
-        
-        constrain(imageLabel) { label in
-            label.left == label.superview!.left+10
-            label.right == label.superview!.right-10
-            label.height == 40
-        }
-        
-        constrain(locationTextField) { textView in
-            textView.left == textView.superview!.left+10
-            textView.right == textView.superview!.right-10
-            textView.height == 40
-        }
-        
-        constrain(categoryTextField) { textView in
-            textView.left == textView.superview!.left+10
-            textView.right == textView.superview!.right-10
-            textView.height == 40
-        }
-        
-        constrain(descriptionTextView) { textView in
-            textView.left == textView.superview!.left+10
-            textView.right == textView.superview!.right-10
+            photoView.image = UIImage(data:image);
+            photoView.contentMode = UIViewContentMode.ScaleAspectFit;
+            
+        } else {
+            photoView.hidden = true
         }
     }
     
@@ -76,4 +56,5 @@ class ReviewViewController: FormViewController {
         var segueIdentifier = UserTokenMgr.sharedInstance.hasToken() ? "ThankYouSegue" : "UserDetailsSegue"
         self.performSegueWithIdentifier(segueIdentifier, sender: nil)
     }
+    
 }

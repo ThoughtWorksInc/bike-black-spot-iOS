@@ -36,6 +36,7 @@
 		26CF8CB11B4382D500C82362 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26CF8CB01B4382D500C82362 /* Images.xcassets */; };
 		26CF8CB41B4382D500C82362 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26CF8CB21B4382D500C82362 /* LaunchScreen.xib */; };
 		4391143C0543301C2F0DC678 /* Pods_BikeBlackSpot_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD2BD68CD059784B300B724 /* Pods_BikeBlackSpot_iOSTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4C5358A61B65E03600C3D41F /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C5358A51B65E03600C3D41F /* image.jpg */; };
 		4CA829A91B57272F00D614E8 /* GoogleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA829A81B57272F00D614E8 /* GoogleDataProvider.swift */; };
 		4CA829AC1B57652D00D614E8 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA829AB1B57652D00D614E8 /* DetailsViewController.swift */; };
 		4CA829AE1B5766E000D614E8 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA829AD1B5766E000D614E8 /* PhotoViewController.swift */; };
@@ -85,6 +86,7 @@
 		26CF8CB91B4382D600C82362 /* BikeBlackSpot-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BikeBlackSpot-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CF8CBE1B4382D600C82362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FD2BD68CD059784B300B724 /* Pods_BikeBlackSpot_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikeBlackSpot_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C5358A51B65E03600C3D41F /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
 		4CA829A81B57272F00D614E8 /* GoogleDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleDataProvider.swift; sourceTree = "<group>"; };
 		4CA829AB1B57652D00D614E8 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		4CA829AD1B5766E000D614E8 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 		26CF8CA61B4382D500C82362 /* BikeBlackSpot-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				4C5358A51B65E03600C3D41F /* image.jpg */,
 				081C3D1D1B60C77800378F96 /* Global */,
 				083EE3D51B5F379200201C3F /* Extension */,
 				083EE3D21B5F2D5A00201C3F /* View */,
@@ -385,6 +388,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C5358A61B65E03600C3D41F /* image.jpg in Resources */,
 				26CF8CAF1B4382D500C82362 /* Main.storyboard in Resources */,
 				26CF8CB41B4382D500C82362 /* LaunchScreen.xib in Resources */,
 				26CF8CB11B4382D500C82362 /* Images.xcassets in Resources */,
