@@ -38,6 +38,7 @@ class UserDetailsViewController: FormViewController {
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         super.touchesBegan(touches, withEvent: event)
         self.view.endEditing(true)
+        revalidateFields()
         setUser()
     }
     override func viewWillDisappear(animated: Bool) {
@@ -48,6 +49,10 @@ class UserDetailsViewController: FormViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    func revalidateFields() -> Bool{
+        resetFields()
+        return allFieldsValid()
     }
     
     func setUser() {
@@ -90,9 +95,7 @@ class UserDetailsViewController: FormViewController {
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-        resetFields()
-        
-        if(!allFieldsValid()) {
+        if(!revalidateFields()) {
             showErrorAlert(VALIDATION_ERROR)
             return false
         }
