@@ -11,6 +11,7 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
     var mapView:GMSMapView?
     var labelView:UILabel?
     var viewModel:LocationViewModel
+    var locationLoaded:Bool =  false
     
     @IBOutlet weak var reportButton: UIBarButtonItem!
     
@@ -69,11 +70,19 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func locationUpdated(sender:NSNotification) {
-        if let currentLocation = LocationService.sharedInstance.getCurrentLocation() {
-            mapView!.camera = GMSCameraPosition.cameraWithTarget(currentLocation.coordinate, zoom: 15)
+        let savedLocation = Report.getCurrentReport().location
+        
+        if !self.locationLoaded && savedLocation != nil  {
+            mapView!.camera = GMSCameraPosition.cameraWithTarget(CLLocationCoordinate2D(latitude: savedLocation!.latitude!, longitude: savedLocation!.longitude!), zoom: 15)
+                self.locationLoaded = true
         }
         else {
-            mapView!.camera = GMSCameraPosition.cameraWithTarget(DEFAULT_COORDINATES, zoom: Constants.DEFAULT_ZOOM_LEVEL)
+            if let currentLocation = LocationService.sharedInstance.getCurrentLocation() {
+                mapView!.camera = GMSCameraPosition.cameraWithTarget(currentLocation.coordinate, zoom: 15)
+            }
+            else {
+                mapView!.camera = GMSCameraPosition.cameraWithTarget(DEFAULT_COORDINATES, zoom: Constants.DEFAULT_ZOOM_LEVEL)
+            }
         }
     }
     
@@ -129,6 +138,7 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
             self.mapView!.animateToZoom(Constants.STATE_ZOOM_LEVEL+1)
             return false
         }
+        self.locationLoaded = false
         return true
     }
 }

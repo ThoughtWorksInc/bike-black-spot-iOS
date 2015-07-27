@@ -5,7 +5,7 @@ class UserDetailsViewController: FormViewController {
     @IBOutlet var nameField: UITextField!
     @IBOutlet var emailField: UITextField!
     @IBOutlet var postcodeField: UITextField!
-
+    
     var reportViewModel:ReportViewModel!
     
     override func viewDidLoad() {
@@ -15,11 +15,31 @@ class UserDetailsViewController: FormViewController {
         
         var fields = [nameField, emailField, postcodeField]
         registerTextFields(fields)
+        if let savedUser = Report.getCurrentReport().user {
+            autoFillTextFields(savedUser)
+        }
         
         emailField.keyboardType = UIKeyboardType.EmailAddress
         postcodeField.keyboardType = UIKeyboardType.NumberPad
     }
     
+    func autoFillTextFields(savedUser:User){
+        if let savedName = savedUser.name {
+            nameField.text = savedName
+        }
+        if let savedEmail = savedUser.email {
+            emailField.text = savedEmail
+        }
+        if let savedPostcode = savedUser.postcode {
+            postcodeField.text = savedPostcode
+        }
+        allFieldsValid()
+    }
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        super.touchesBegan(touches, withEvent: event)
+        self.view.endEditing(true)
+        setUser()
+    }
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         setUser() // back button pressed

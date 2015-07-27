@@ -25,16 +25,22 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         descTextView.textColor = textColor
         descTextView.placeholderTextColor = placeholderTextColor
         descTextView.placeholderText = DESC_TEXTVIEW_PLACEHOLDER
+        if let savedDescription = Report.getCurrentReport().description {
+            descTextView.text = savedDescription
+        }
         
         categoryTextField.attributedPlaceholder = NSAttributedString(string: CATEGORY_PLACEHOLDER, attributes: [NSForegroundColorAttributeName: placeholderTextColor])
         categoryTextField.delegate = self
+        if let savedCategory = Report.getCurrentReport().category {
+            categoryTextField.text = savedCategory.name
+            //TODO set description placeholder here too
+        }
 
         
         registerTextFields([descTextView, categoryTextField])
         
         var alert = UIAlertController(title: nil, message: "\n\n\n\n\n\n\n", preferredStyle: UIAlertControllerStyle.ActionSheet)
         let select = UIAlertAction(title: "Select", style: .Cancel) { (action) in
-//            self.dismissViewControllerAnimated(true, completion: nil)
             self.pickerView?.resignFirstResponder()
         }
         alert.addAction(select)
@@ -83,6 +89,11 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         super.didReceiveMemoryWarning()
     }
     
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        super.touchesBegan(touches, withEvent: event)
+        self.view.endEditing(true)
+        setReportDescription()
+    }
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         
         if(textField == categoryTextField) {
