@@ -4,45 +4,74 @@ import Cartography
 class PhotoViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     //var takePhotoButton:UIButton?
-    var galleryPhotoButton:UIButton?
+    //var galleryPhotoButton:UIButton?
     let picker = UIImagePickerController()
+    let buttonAspectRatio = 0.2719486081
+    
+    let takePhotoButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+    let galleryPhotoButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+    var buttonSeparatorLabel:UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let cameraIcon = UIImage(named: "camera.png") as UIImage!
-        var galleryIcon = UIImage()
+        buttonSeparatorLabel = UILabel()
         
-        println(cameraIcon!.size.width)
+        //let cameraIcon = UIImage(named: "camera_button.png") as UIImage!
+        //var galleryIcon = UIImage()
+        
+        //println(cameraIcon!.size.width)
         
         picker.delegate = self
         
-        //takePhotoButton = UIButton()
-        let takePhotoButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
-
-        takePhotoButton.setTitle("Take A Photo", forState: UIControlState.Normal)
+        buttonSeparatorLabel!.text = "OR"
+        
+        takePhotoButton.setTitle("take a photo".uppercaseString, forState: UIControlState.Normal)
         takePhotoButton.setTitleColor(UIColor.greenColor(), forState: .Highlighted)
-        takePhotoButton.titleEdgeInsets = UIEdgeInsetsMake(0, -300, 0, 20) //400
-        takePhotoButton.backgroundColor = UIColor.redColor()
-        takePhotoButton.setImage(cameraIcon, forState: UIControlState.Normal)
-        takePhotoButton.imageEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 200) //200
+        takePhotoButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        takePhotoButton.titleLabel!.font = UIFont(name: "AlternateGothicLT-No2", size: 16)
+        //takePhotoButton.titleEdgeInsets = UIEdgeInsetsMake(0, -300, 0, 20) //400
+        //takePhotoButton.backgroundColor = UIColor.redColor()
+        //takePhotoButton.setImage(cameraIcon, forState: UIControlState.Normal)
+        takePhotoButton.setBackgroundImage(UIImage(named: "camera_button.png"), forState: UIControlState.Normal)
+        //takePhotoButton.imageEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 200) //200
         takePhotoButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
-        takePhotoButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
+        //takePhotoButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
+        takePhotoButton.layer.borderWidth = 2
+        takePhotoButton.layer.borderColor = UIColor.orangeColor().CGColor
+        takePhotoButton.layer.cornerRadius = 5
         //takePhotoButton!.contentEdgeInsets = UIEdgeInsetsMake(0, 200, 0, 200)
-
         
         takePhotoButton.addTarget(self, action: "openCamera:", forControlEvents: UIControlEvents.TouchUpInside)
         
+        
+        galleryPhotoButton.setTitle("Select A Photo From Gallery", forState: .Normal)
+        galleryPhotoButton.addTarget(self, action: "openCamera:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        self.view.addSubview(buttonSeparatorLabel!)
         self.view.addSubview(takePhotoButton)
+        self.view.addSubview(galleryPhotoButton)
         
         constrain(takePhotoButton) { takePhotoButton in
-            takePhotoButton.center == takePhotoButton.superview!.center
+            takePhotoButton.centerX == takePhotoButton.superview!.centerX
+            takePhotoButton.centerY == takePhotoButton.superview!.centerY - 75
             takePhotoButton.width == takePhotoButton.superview!.width * 0.8
-            takePhotoButton.height == takePhotoButton.superview!.height * 0.3334
+            takePhotoButton.height == takePhotoButton.width * self.buttonAspectRatio
         }
         
-        galleryPhotoButton = UIButton()
-        galleryPhotoButton!.setTitle("Select A Photo From Gallery", forState: .Normal)
+        constrain(buttonSeparatorLabel!) { buttonSeparatorLabel in
+            buttonSeparatorLabel.center == buttonSeparatorLabel.superview!.center
+            buttonSeparatorLabel.width == buttonSeparatorLabel.superview!.width * 0.8
+            buttonSeparatorLabel.height == 20
+        }
+        
+        constrain(galleryPhotoButton) { galleryPhotoButton in
+            //galleryPhotoButton.center == galleryPhotoButton.superview!.center
+            galleryPhotoButton.centerX == galleryPhotoButton.superview!.centerX
+            galleryPhotoButton.centerY == galleryPhotoButton.superview!.centerY + 75
+            galleryPhotoButton.width == galleryPhotoButton.superview!.width * 0.8
+            galleryPhotoButton.height == galleryPhotoButton.superview!.height * 0.3334
+        }
         
     }
     

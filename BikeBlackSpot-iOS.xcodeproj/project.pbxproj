@@ -50,6 +50,8 @@
 		7E3C6BD21B5C80F0000BAB2C /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BD11B5C80F0000BAB2C /* Report.swift */; };
 		7E3C6BD41B5CB13D000BAB2C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BD31B5CB13D000BAB2C /* Constants.swift */; };
 		7E5543511B5F587500FEE444 /* Pods_BikeBlackSpot_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB502AD5307A699F56F0C0A /* Pods_BikeBlackSpot_iOS.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		E44EE47F1B65BBDF00822F30 /* Swiss 721 Light Condensed BT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E44EE47E1B65BBDF00822F30 /* Swiss 721 Light Condensed BT.ttf */; };
+		E44EE4811B65BBEE00822F30 /* Linotype - Alternate Gothic LT No2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E44EE4801B65BBEE00822F30 /* Linotype - Alternate Gothic LT No2.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,8 @@
 		AFB502AD5307A699F56F0C0A /* Pods_BikeBlackSpot_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikeBlackSpot_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D290F822402E11B6FA16E818 /* Pods-BikeBlackSpot-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeBlackSpot-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BikeBlackSpot-iOS/Pods-BikeBlackSpot-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D3A2CD095E3E9AA4B600927C /* Pods-BikeBlackSpot-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeBlackSpot-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-BikeBlackSpot-iOS/Pods-BikeBlackSpot-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		E44EE47E1B65BBDF00822F30 /* Swiss 721 Light Condensed BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Swiss 721 Light Condensed BT.ttf"; sourceTree = "<group>"; };
+		E44EE4801B65BBEE00822F30 /* Linotype - Alternate Gothic LT No2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Linotype - Alternate Gothic LT No2.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				4C5358A51B65E03600C3D41F /* image.jpg */,
+				E44EE47C1B65BBBC00822F30 /* Resources */,
 				081C3D1D1B60C77800378F96 /* Global */,
 				083EE3D51B5F379200201C3F /* Extension */,
 				083EE3D21B5F2D5A00201C3F /* View */,
@@ -303,6 +308,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E44EE47C1B65BBBC00822F30 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E44EE47D1B65BBCA00822F30 /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E44EE47D1B65BBCA00822F30 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E44EE4801B65BBEE00822F30 /* Linotype - Alternate Gothic LT No2.ttf */,
+				E44EE47E1B65BBDF00822F30 /* Swiss 721 Light Condensed BT.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -391,7 +413,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				4C5358A61B65E03600C3D41F /* image.jpg in Resources */,
+=======
+				E44EE4811B65BBEE00822F30 /* Linotype - Alternate Gothic LT No2.ttf in Resources */,
+				E44EE47F1B65BBDF00822F30 /* Swiss 721 Light Condensed BT.ttf in Resources */,
+>>>>>>> #103 Added button for upload previously taken button. WIP: view styling
 				26CF8CAF1B4382D500C82362 /* Main.storyboard in Resources */,
 				26CF8CB41B4382D500C82362 /* LaunchScreen.xib in Resources */,
 				26CF8CB11B4382D500C82362 /* Images.xcassets in Resources */,

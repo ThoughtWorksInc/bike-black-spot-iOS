@@ -38,6 +38,11 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Linotype - Alternate Gothic LT No2.ttf</string>
+		<string>Swiss 721 Light Condensed BT.ttf</string>
+	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
