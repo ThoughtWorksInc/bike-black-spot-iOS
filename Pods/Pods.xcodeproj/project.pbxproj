@@ -2526,7 +2526,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B65DECB95DDCCAC591F5934C /* Pods-BikeBlackSpot-iOS.release.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: John Geddes (2PL596X372)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: John Geddes (2PL596X372)";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2960,7 +2961,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BEF5B9126BF10B206B93A3C3 /* Pods-BikeBlackSpot-iOS.debug.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: John Geddes (2PL596X372)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: John Geddes (2PL596X372)";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
