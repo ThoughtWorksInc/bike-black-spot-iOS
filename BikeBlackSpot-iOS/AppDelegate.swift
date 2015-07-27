@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 showErrorViewController()
             }
             startReachabilityMonitoring()
+            
+            Categories.loadCategories()
             return true
     }
 
@@ -36,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             } else {
                 println("Reachable via Cellular")
             }
+            Categories.resetNumberOfAttempts()
             self.showDefaultViewController()
         }
         reachability!.whenUnreachable = { reachability in

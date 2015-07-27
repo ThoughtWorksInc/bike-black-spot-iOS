@@ -17,7 +17,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     
     var alert:UIAlertController?
     var pickerView:UIPickerView?
-    var categories:[AnyObject] = [AnyObject]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +36,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
             categoryTextField.text = savedCategory.name
             //TODO set description placeholder here too
         }
+        
 
         
         registerTextFields([descTextView, categoryTextField])
@@ -50,24 +51,13 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         picker.showsSelectionIndicator = true
         picker.frame = CGRect(origin: CGPointZero, size: CGSizeMake(CGRectGetWidth(alert.view.frame), PICKER_HEIGHT))
         picker.delegate = self
-        
+        picker.dataSource = self
         alert.view.addSubview(picker)
         
         self.pickerView = picker
         self.alert = alert
         
-        // fetch categories
-        APIService.sharedInstance.getCategories().then { object -> Void in
-            self.categories = object
-            self.categories.insert(CATEGORY_PLACEHOLDER, atIndex: 0)
-            self.pickerView?.reloadAllComponents()
-            }
-            .catch { error in
-                let alert = UIAlertView(title: "Error", message: SERVICE_UNAVAILABLE, delegate: nil, cancelButtonTitle: "OK")
-                alert.promise().then { object -> Void in
-                }
-                //TODO: Change to show unavailable screen on OK press
-        }
+
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -115,12 +105,12 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return categories.count
+        return Categories.categories.count
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        if row == 0 {return categories[row] as? String}
-        let category = categories[row] as? ReportCategory
+        if row == 0 {return Categories.categories[row] as? String}
+        let category = Categories.categories[row] as? ReportCategory
         return category!.name
     }
     
@@ -131,7 +121,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
             descTextView.setPlaceHolderText(DESC_TEXTVIEW_PLACEHOLDER)
         }
         else {
-            if let selectedCategory = categories[row] as? ReportCategory {
+            if let selectedCategory = Categories.categories[row] as? ReportCategory {
                 Report.getCurrentReport().category = selectedCategory
                 categoryTextField.text = selectedCategory.name
                 if let categoryDescription = selectedCategory.desc{
