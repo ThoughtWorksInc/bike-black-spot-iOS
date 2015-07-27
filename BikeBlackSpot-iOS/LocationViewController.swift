@@ -22,8 +22,9 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         Background.setBackground(self)
+
+
         
         var mapView = GMSMapView.mapWithFrame(CGRectZero, camera: nil)
         mapView.myLocationEnabled = true
@@ -54,6 +55,13 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
         
         constrain(mapView, markerView, detailsView) { mapView, markerView, detailsView in
             mapView.edges == mapView.superview!.edges
+            
+            //comment above and uncomment below to let background bleed through navbars
+//            mapView.top == mapView.superview!.top + self.navigationController!.navigationBar.frame.height
+//            mapView.left == mapView.superview!.left
+//            mapView.right == mapView.superview!.right
+//            mapView.bottom == mapView.superview!.bottom - self.navigationController!.navigationBar.frame.height
+            
             markerView.bottom == markerView.superview!.centerY
             markerView.centerX == markerView.superview!.centerX
             
