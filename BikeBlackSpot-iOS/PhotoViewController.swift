@@ -112,7 +112,7 @@ class PhotoViewController: UIViewController,UIImagePickerControllerDelegate,UINa
         Report.getCurrentReport().image = UIImageJPEGRepresentation(chosenImage, 1.0) //http://pinkstone.co.uk/how-to-save-a-uiimage-in-core-data-and-retrieve-it/
         println("Image taken~!")
         dismissViewControllerAnimated(true, completion: nil)
-        self.navigationController!.pushViewController(ReviewViewController(), animated: true)
+        //self.navigationController!.pushViewController(ReviewViewController(), animated: true)
         
     }
     

@@ -14,7 +14,6 @@
 		082B74891B5CD1D7004DB225 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B74881B5CD1D7004DB225 /* APIService.swift */; };
 		082B748A1B5CD2AA004DB225 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B74881B5CD1D7004DB225 /* APIService.swift */; };
 		082B748C1B5CD363004DB225 /* ReportCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B748B1B5CD363004DB225 /* ReportCategory.swift */; };
-		0834435C1B65E3BD00A10696 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0834435B1B65E3BD00A10696 /* UIViewExtension.swift */; };
 		083EE3D41B5F2D6C00201C3F /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083EE3D31B5F2D6C00201C3F /* CustomTextView.swift */; };
 		083EE3D71B5F379E00201C3F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083EE3D61B5F379E00201C3F /* StringExtension.swift */; };
 		084C5F6D1B5F0FBF00DD5586 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5F6C1B5F0FBF00DD5586 /* FormViewController.swift */; };
@@ -53,6 +52,7 @@
 		E44EE47F1B65BBDF00822F30 /* Swiss 721 Light Condensed BT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E44EE47E1B65BBDF00822F30 /* Swiss 721 Light Condensed BT.ttf */; };
 		E44EE4811B65BBEE00822F30 /* Linotype - Alternate Gothic LT No2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E44EE4801B65BBEE00822F30 /* Linotype - Alternate Gothic LT No2.ttf */; };
 		E44EE4831B65E41400822F30 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44EE4821B65E41400822F30 /* UILabelExtension.swift */; };
+		E44EE4851B6605FD00822F30 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44EE4841B6605FD00822F30 /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +71,6 @@
 		082B74861B5CD018004DB225 /* APIServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
 		082B74881B5CD1D7004DB225 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		082B748B1B5CD363004DB225 /* ReportCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCategory.swift; sourceTree = "<group>"; };
-		0834435B1B65E3BD00A10696 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		083EE3D31B5F2D6C00201C3F /* CustomTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		083EE3D61B5F379E00201C3F /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		084C5F6C1B5F0FBF00DD5586 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +110,7 @@
 		E44EE47E1B65BBDF00822F30 /* Swiss 721 Light Condensed BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Swiss 721 Light Condensed BT.ttf"; sourceTree = "<group>"; };
 		E44EE4801B65BBEE00822F30 /* Linotype - Alternate Gothic LT No2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Linotype - Alternate Gothic LT No2.ttf"; sourceTree = "<group>"; };
 		E44EE4821B65E41400822F30 /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		E44EE4841B6605FD00822F30 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +173,7 @@
 		083EE3D51B5F379200201C3F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				E44EE4841B6605FD00822F30 /* UIViewExtension.swift */,
 				083EE3D61B5F379E00201C3F /* StringExtension.swift */,
 				E44EE4821B65E41400822F30 /* UILabelExtension.swift */,
 			);
@@ -538,7 +539,6 @@
 				E44EE4831B65E41400822F30 /* UILabelExtension.swift in Sources */,
 				4CA829A91B57272F00D614E8 /* GoogleDataProvider.swift in Sources */,
 				084C5F6F1B5F17B700DD5586 /* Location.swift in Sources */,
-				0834435C1B65E3BD00A10696 /* UIViewExtension.swift in Sources */,
 				084C5F731B5F1ED600DD5586 /* UserTokenMgr.swift in Sources */,
 				26CF8CAA1B4382D500C82362 /* AppDelegate.swift in Sources */,
 				083EE3D71B5F379E00201C3F /* StringExtension.swift in Sources */,
@@ -553,6 +553,7 @@
 				084C5F711B5F1E6A00DD5586 /* User.swift in Sources */,
 				08C5514D1B60C5F300ED48FA /* Reachability.swift in Sources */,
 				7E3C6BD01B5C79AC000BAB2C /* LocationViewModel.swift in Sources */,
+				E44EE4851B6605FD00822F30 /* UIViewExtension.swift in Sources */,
 				081C3D261B61BD6200378F96 /* ReportViewModel.swift in Sources */,
 				7E3C6BCD1B58CA50000BAB2C /* NSNotifications.swift in Sources */,
 				7E3C6BD21B5C80F0000BAB2C /* Report.swift in Sources */,
