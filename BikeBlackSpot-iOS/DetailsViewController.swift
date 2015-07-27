@@ -127,11 +127,15 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         if row == 0 {
             Report.getCurrentReport().category = nil
             categoryTextField.text=nil
+            descTextView.setPlaceHolderText(DESC_TEXTVIEW_PLACEHOLDER)
         }
         else {
             if let selectedCategory = categories[row] as? ReportCategory {
                 Report.getCurrentReport().category = selectedCategory
                 categoryTextField.text = selectedCategory.name
+                if let categoryDescription = selectedCategory.desc{
+                    descTextView.setPlaceHolderText(categoryDescription + " (Tap to edit)")
+                }
                 resetFields()
             }
         }
