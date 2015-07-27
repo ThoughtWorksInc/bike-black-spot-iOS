@@ -52,6 +52,7 @@
 		7E5543511B5F587500FEE444 /* Pods_BikeBlackSpot_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB502AD5307A699F56F0C0A /* Pods_BikeBlackSpot_iOS.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E44EE47F1B65BBDF00822F30 /* Swiss 721 Light Condensed BT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E44EE47E1B65BBDF00822F30 /* Swiss 721 Light Condensed BT.ttf */; };
 		E44EE4811B65BBEE00822F30 /* Linotype - Alternate Gothic LT No2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E44EE4801B65BBEE00822F30 /* Linotype - Alternate Gothic LT No2.ttf */; };
+		E44EE4831B65E41400822F30 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44EE4821B65E41400822F30 /* UILabelExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		D3A2CD095E3E9AA4B600927C /* Pods-BikeBlackSpot-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeBlackSpot-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-BikeBlackSpot-iOS/Pods-BikeBlackSpot-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		E44EE47E1B65BBDF00822F30 /* Swiss 721 Light Condensed BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Swiss 721 Light Condensed BT.ttf"; sourceTree = "<group>"; };
 		E44EE4801B65BBEE00822F30 /* Linotype - Alternate Gothic LT No2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Linotype - Alternate Gothic LT No2.ttf"; sourceTree = "<group>"; };
+		E44EE4821B65E41400822F30 /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				083EE3D61B5F379E00201C3F /* StringExtension.swift */,
-				0834435B1B65E3BD00A10696 /* UIViewExtension.swift */,
+				E44EE4821B65E41400822F30 /* UILabelExtension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -536,6 +538,7 @@
 				26CF8CAC1B4382D500C82362 /* LocationViewController.swift in Sources */,
 				7E3C6BC81B58BAB5000BAB2C /* UserDetailsViewController.swift in Sources */,
 				4CA829B01B57675A00D614E8 /* ReviewViewController.swift in Sources */,
+				E44EE4831B65E41400822F30 /* UILabelExtension.swift in Sources */,
 				4CA829A91B57272F00D614E8 /* GoogleDataProvider.swift in Sources */,
 				084C5F6F1B5F17B700DD5586 /* Location.swift in Sources */,
 				0834435C1B65E3BD00A10696 /* UIViewExtension.swift in Sources */,
