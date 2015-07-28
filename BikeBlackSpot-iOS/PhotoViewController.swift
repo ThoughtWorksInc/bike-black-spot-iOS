@@ -6,6 +6,7 @@ class PhotoViewController: UIViewController,UIImagePickerControllerDelegate,UINa
     let IMAGE_MAX_WIDTH:CGFloat = 1000.0
     let IMAGE_MAX_HEIGHT:CGFloat = 1000.0
     
+    @IBOutlet weak var segueButton: UIBarButtonItem!
     //var takePhotoButton:UIButton?
     //var galleryPhotoButton:UIButton?
     let picker = UIImagePickerController()
@@ -111,6 +112,7 @@ class PhotoViewController: UIViewController,UIImagePickerControllerDelegate,UINa
         var resizedImage = chosenImage.resizeIfRequired(IMAGE_MAX_WIDTH, maxHeight: IMAGE_MAX_HEIGHT)
         
         Report.getCurrentReport().image = UIImageJPEGRepresentation(resizedImage, 1.0) //http://pinkstone.co.uk/how-to-save-a-uiimage-in-core-data-and-retrieve-it/
+        segueButton.title = "Continue"
         println("Image taken~!")
         self.performSegueWithIdentifier("ReportReviewSegue", sender: nil)
         dismissViewControllerAnimated(true, completion: nil)
