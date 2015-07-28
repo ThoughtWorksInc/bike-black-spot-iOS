@@ -3,7 +3,7 @@ import SwiftLoader
 import PromiseKit
 
 class ThankyouViewController: UIViewController {
-   
+    
     @IBOutlet weak var middleMessage: UILabel!
     
     @IBOutlet weak var bottomMessage: UILabel!
@@ -56,23 +56,15 @@ class ThankyouViewController: UIViewController {
             // register user
             if let user = report.user {
                 promise = APIService.sharedInstance.registerUser(user)
-                    .then { uuid in
-                        
-<<<<<<< HEAD
+                    .then { uuid -> Void in
                         // set user uuid on report
                         Report.getCurrentReport().userUUID = uuid
-                        return Promise<Void>()
-=======
+//                        return Promise<Void>()
                         // TODO call create report here
                     }
-                    .catch { error in
+                    promise.catch { error in
                         self.setBusy(false)
                         let alert = UIAlertView(title: "Error", message: "Error registering user", delegate: nil, cancelButtonTitle: "OK")
-                        
-                        alert.promise().then { object -> Void in
-                            //TODO, if we can find a case where this happens, jump back to a previous view ot deal with error
-                        }
->>>>>>> Send another report greys out while loading
                 }
             }
         }
@@ -103,7 +95,7 @@ class ThankyouViewController: UIViewController {
             self.doneButton.enabled = true
         }
     }
-
+    
     @IBAction func doneButtonTapped(sender: AnyObject) {
         Report.clearReport()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
