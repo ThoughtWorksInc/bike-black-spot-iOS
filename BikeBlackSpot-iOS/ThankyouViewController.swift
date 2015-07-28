@@ -49,9 +49,13 @@ class ThankyouViewController: UIViewController {
             if let user = report.user {
                 APIService.sharedInstance.registerUser(user)
                     .then { uuid -> Void in
+                        
+                        Report.getCurrentReport().uuid = uuid // set user uuid
+                        
                         self.setBusy(false)
                         UIAlertView(title: "Success", message: "User has been registered", delegate: nil, cancelButtonTitle: "OK").show()
                         
+//                        APIService.sharedInstance.
                         // TODO call create report here
                     }
                     .catch { error in

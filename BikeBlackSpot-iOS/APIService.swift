@@ -80,4 +80,20 @@ public class APIService {
             }
         }
     }
+    
+    public func createReport(report:Report) -> Promise<Bool> {
+        return Promise{ fulfill, reject in
+            var params = report.toDictionary()
+            let request = Alamofire.request(.POST, serviceURL + "/reports", parameters: params)
+            request.responseJSON{ (request, response, data, error) in
+                var statusCode = response?.statusCode
+                
+                if(error != nil) {
+                    reject(error!)
+                } else {
+                    fulfill(true)
+                }
+            }
+        }
+    }
 }
