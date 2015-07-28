@@ -11,6 +11,7 @@ import SwiftyJSON
 
 public class User {
     
+//    public var uuid:String?
     public var name:String?
     public var email:String?
     public var postcode:String?

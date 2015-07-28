@@ -30,6 +30,9 @@
 		08C5514A1B60C25E00ED48FA /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BCA1B58C3A7000BAB2C /* LocationService.swift */; };
 		08C5514B1B60C37D00ED48FA /* NSNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BCC1B58CA50000BAB2C /* NSNotifications.swift */; };
 		08C5514D1B60C5F300ED48FA /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C5514C1B60C5F300ED48FA /* Reachability.swift */; };
+		08DAD4C31B671F07003493FD /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BD11B5C80F0000BAB2C /* Report.swift */; };
+		08DAD4C41B671F0A003493FD /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5F6E1B5F17B700DD5586 /* Location.swift */; };
+		08DAD4C61B672806003493FD /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 08DAD4C51B672806003493FD /* image.png */; };
 		26CF8CAA1B4382D500C82362 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF8CA91B4382D500C82362 /* AppDelegate.swift */; };
 		26CF8CAC1B4382D500C82362 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF8CAB1B4382D500C82362 /* LocationViewController.swift */; };
 		26CF8CAF1B4382D500C82362 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26CF8CAD1B4382D500C82362 /* Main.storyboard */; };
@@ -83,6 +86,7 @@
 		086117D71B65DCFC0042359D /* UserTokenMgrTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTokenMgrTests.swift; sourceTree = "<group>"; };
 		08C551461B60C1AC00ED48FA /* LocationServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServiceTests.swift; sourceTree = "<group>"; };
 		08C5514C1B60C5F300ED48FA /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		08DAD4C51B672806003493FD /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image.png; path = ../../../Desktop/image.png; sourceTree = "<group>"; };
 		26CF8CA41B4382D500C82362 /* BikeBlackSpot-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BikeBlackSpot-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CF8CA81B4382D500C82362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26CF8CA91B4382D500C82362 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -259,6 +263,7 @@
 		26CF8CBD1B4382D600C82362 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				08DAD4C51B672806003493FD /* image.png */,
 				26CF8CBE1B4382D600C82362 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -438,6 +443,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08DAD4C61B672806003493FD /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,8 +589,10 @@
 				08C5514B1B60C37D00ED48FA /* NSNotifications.swift in Sources */,
 				082981C81B61C3EB004EE7D5 /* ReportViewModel.swift in Sources */,
 				08C551471B60C1AC00ED48FA /* LocationServiceTests.swift in Sources */,
+				08DAD4C41B671F0A003493FD /* Location.swift in Sources */,
 				086117D91B65DDAD0042359D /* UserTokenMgr.swift in Sources */,
 				082981C71B61C2FC004EE7D5 /* ReportValidationTests.swift in Sources */,
+				08DAD4C31B671F07003493FD /* Report.swift in Sources */,
 				08C551481B60C1FD00ED48FA /* LocationViewModel.swift in Sources */,
 				082B748A1B5CD2AA004DB225 /* APIService.swift in Sources */,
 				08C551491B60C21A00ED48FA /* Constants.swift in Sources */,

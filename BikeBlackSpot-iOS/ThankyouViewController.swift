@@ -1,5 +1,6 @@
 import UIKit
 import SwiftLoader
+import PromiseKit
 
 class ThankyouViewController: UIViewController {
     
@@ -38,38 +39,41 @@ class ThankyouViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         setBusy(true)
-        // TODO should this be done in previous screen?
         
         var isRegistered = UserTokenMgr.sharedInstance.hasToken()
         let report = Report.getCurrentReport()
+        var promise = Promise()
+        
         if(!isRegistered) {
             
+            // register user
             if let user = report.user {
-                APIService.sharedInstance.registerUser(user)
-                    .then { uuid -> Void in
+                promise = APIService.sharedInstance.registerUser(user)
+                    .then { uuid in
                         
-                        Report.getCurrentReport().uuid = uuid // set user uuid
-                        
-                        self.setBusy(false)
-                        UIAlertView(title: "Success", message: "User has been registered", delegate: nil, cancelButtonTitle: "OK").show()
-                        
-//                        APIService.sharedInstance.
-                        // TODO call create report here
-                    }
-                    .catch { error in
-                        self.setBusy(false)
-                        UIAlertView(title: "Error", message: "Error registering user", delegate: nil, cancelButtonTitle: "OK").show()
+                        // set user uuid on report
+                        Report.getCurrentReport().userUUID = uuid
+                        return Promise<Void>()
                 }
             }
-        } else {
-            setBusy(false)
-            SwiftLoader.hide()
+        }
+        
+        // now submit report
+        promise
+            .then {
+                APIService.sharedInstance.createReport(report)
+                return Promise<Void>()
+            }
+            . then { () -> Void in
+                self.setBusy(false)
+            }
+            .catch { error -> Void in
+                self.setBusy(false)
+                UIAlertView(title: "Error", message: "Error submitting report", delegate: nil, cancelButtonTitle: "OK").show()
         }
     }
     
-    // TODO move to FormViewController
     func setBusy(busy:Bool) {
         if(busy) {
             SwiftLoader.show(animated: true)

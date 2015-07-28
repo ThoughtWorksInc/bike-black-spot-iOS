@@ -2,7 +2,7 @@ import Foundation
 import Quick
 import Nimble
 
-let TIMEOUT_INTERVAL_IN_SECS = 5.0
+let TIMEOUT_INTERVAL_IN_SECS = 10.0
 
 class APIServiceTests : QuickSpec {
     override func spec() {
@@ -21,7 +21,13 @@ class APIServiceTests : QuickSpec {
                         .catch { error in
                             fail("getCategories returned error")
                     }
+                    // this test seems to take longer to return thus longer timeout
+                    let timeout = 10.0
                     expect(categories).toNotEventually(beEmpty(), timeout:TIMEOUT_INTERVAL_IN_SECS)
+                    expect(category).toNotEventually(beNil(), timeout:TIMEOUT_INTERVAL_IN_SECS)
+                    expect(category?.uuid).toNotEventually(beNil(), timeout:TIMEOUT_INTERVAL_IN_SECS)
+                    expect(category?.name).toNotEventually(beNil(), timeout:TIMEOUT_INTERVAL_IN_SECS)
+                    expect(category?.desc).toNotEventually(beNil(), timeout:TIMEOUT_INTERVAL_IN_SECS)
                 }
             }
         }
@@ -102,13 +108,33 @@ class APIServiceTests : QuickSpec {
         }
         
         context("Report") {
-            it("should create a new report without an image") {
-                var report = Report()
-                report.uuid = userToken
+            
+            // create default report
+            var report:Report!
+            beforeEach {
+                report = Report()
+                report.userUUID = userToken
                 report.location = Location(latitude: Constants.DEFAULT_MAP_LAT, longitude: Constants.DEFAULT_MAP_LONG, description: "")
                 report.category = category
-                
+            }
+            
+            it("should create a new report without an image") {
                 var success = false
+                APIService.sharedInstance.createReport(report)
+                    .then { result -> Void in
+                        success = result
+                    }
+                    .catch { error in
+                }
+                expect(success).toEventually(beTrue(), timeout:TIMEOUT_INTERVAL_IN_SECS)
+
+            }
+            
+            it("should create a new report with an image") {
+                var success = false
+                let imageUrl = NSBundle(forClass: APIServiceTests.self).pathForResource("image", ofType:"png")
+                let data = NSData(contentsOfFile: imageUrl!)
+                report.image = data
                 APIService.sharedInstance.createReport(report)
                     .then { result -> Void in
                         success = result

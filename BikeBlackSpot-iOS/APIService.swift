@@ -48,6 +48,7 @@ public class APIService {
                 if(error != nil) {
                     reject(error!)
                 } else if(string == nil) {
+                    // if no uuid was returned
                     let statusCode = response?.statusCode
                     reject(NSError(domain: self.serviceURL, code: statusCode!, userInfo: nil))
                 } else {
@@ -87,7 +88,6 @@ public class APIService {
             let request = Alamofire.request(.POST, serviceURL + "/reports", parameters: params)
             request.responseJSON{ (request, response, data, error) in
                 var statusCode = response?.statusCode
-                
                 if(error != nil) {
                     reject(error!)
                 } else {

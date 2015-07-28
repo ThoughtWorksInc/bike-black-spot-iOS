@@ -58,7 +58,7 @@ class ReviewViewController: FormViewController {
     @IBAction func showNextScreen(sender: AnyObject) {
         let isRegistered = UserTokenMgr.sharedInstance.hasToken()
         if(isRegistered) {
-            Report.getCurrentReport().uuid = UserTokenMgr.sharedInstance.token()!
+            Report.getCurrentReport().userUUID = UserTokenMgr.sharedInstance.token()!
         }
         var segueIdentifier = isRegistered ? "ThankYouSegue" : "UserDetailsSegue"
         self.performSegueWithIdentifier(segueIdentifier, sender: nil)

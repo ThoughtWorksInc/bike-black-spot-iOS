@@ -7,14 +7,15 @@ public class Report {
     public var location:Location?
     public var category:ReportCategory?
     public var user:User?
+    public var userUUID:String?
+    
     public var image:NSData?
 
-    public var uuid:String?
     public var description:String?
     
     public static func getCurrentReport() -> Report {
         if currentReport == nil {
-            currentReport = Report()
+            currentReport = Report()            
         }
         return currentReport!
     }
@@ -24,16 +25,18 @@ public class Report {
     }
     
     public func toDictionary() -> [String:AnyObject] {
-        var dict = [String:AnyObject]()
-        dict["uuid"] = self.uuid!
-        dict["category"] = self.category!.name
-        dict["lat"] = self.location!.latitude!
-        dict["long"] = self.location!.longitude!
+        var vals = [String:AnyObject]()
+
+        vals["uuid"] = self.userUUID
+        vals["category"] = self.category!.uuid
+        vals["lat"] = self.location!.latitude!
+        vals["long"] = self.location!.longitude!
         
-        // TODO base-64 encode
+        // decode image if attached
         if let image = self.image {
-            // dict.setValue("", forKey: "image")
+            let decodedImage = NSString(data: image, encoding: NSUTF8StringEncoding)
+            vals["image"] = decodedImage
         }
-        return dict
+        return vals
     }
 }
