@@ -11,9 +11,9 @@ import UIKit
 
 extension CustomTextView {
     
-    var setGlobalFont : String {
-        get { return self.font.fontName }
-        set { self.font = UIFont(name: newValue, size: self.font.pointSize) }
+    func setBodyFont() {
+        self.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        self.font = UIFont(name: "Swiss721LightCondensedBT", size: self.font.pointSize)
     }
     
 }

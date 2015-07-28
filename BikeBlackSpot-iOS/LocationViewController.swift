@@ -23,10 +23,6 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         Background.setBackground(self)
-        setupFonts()
-
-        
-        Background.setBackground(self)
         
         var mapView = GMSMapView.mapWithFrame(CGRectZero, camera: nil)
         mapView.myLocationEnabled = true
@@ -38,9 +34,10 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
         
         labelView = UILabel()
         labelView!.text = LOCATION_PLACEHOLDER
+        labelView!.setBodyFont()
         labelView!.backgroundColor = UIColor.clearColor()
         labelView!.textColor = UIColor.whiteColor()
-        labelView!.font = UIFont.systemFontOfSize(13.0)
+        //labelView!.font = UIFont.systemFontOfSize(13.0)
         labelView!.textAlignment = NSTextAlignment.Center
         labelView!.numberOfLines = 0
         

@@ -23,6 +23,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         super.viewDidLoad()
         Background.setBackground(self)
         
+        descTextView.setBodyFont()
         descTextView.textColor = textColor
         descTextView.placeholderTextColor = placeholderTextColor
         descTextView.placeholderText = DESC_TEXTVIEW_PLACEHOLDER
@@ -36,8 +37,6 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
             categoryTextField.text = savedCategory.name
             //TODO set description placeholder here too
         }
-        
-
         
         registerTextFields([descTextView, categoryTextField])
         
@@ -87,9 +86,8 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         super.touchesBegan(touches, withEvent: event)
         setReportDescription()
     }
+    
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-
-        
         if(textField == categoryTextField) {
             self.view.endEditing(true)
         }
@@ -120,8 +118,6 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if row == 0 {
             Report.getCurrentReport().category = nil
-            categoryTextField.text=""
-            descTextView.setPlaceHolderText(DESC_TEXTVIEW_PLACEHOLDER)
         }
         else {
             if let selectedCategory = Categories.categories[row] as? ReportCategory {
@@ -137,8 +133,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     
     func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView!) -> UIView {
         let pickerLabel = UILabel()
-        pickerLabel.font = UIFont(name: "Swiss721LightCondensedBT", size: pickerLabel.font.pointSize)
-        pickerLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        pickerLabel.setBodyFont()
         pickerLabel.textAlignment = NSTextAlignment.Center
         //UIFont(descriptor: <#UIFontDescriptor#>, size: <#CGFloat#>)
         if row == 0 {
