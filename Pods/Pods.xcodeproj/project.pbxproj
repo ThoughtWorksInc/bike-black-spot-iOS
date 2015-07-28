@@ -1877,6 +1877,56 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
+				TargetAttributes = {
+					0EB801CAEB877F6BC6A4B888 = {
+						DevelopmentTeam = V25DK7S622;
+					};
+					119C63E9F37D8ACF62B81EC3 = {
+						DevelopmentTeam = V25DK7S622;
+					};
+					14248B3790C190187D8C0F2E = {
+						DevelopmentTeam = V25DK7S622;
+					};
+					3D241FBF7D13187F358061C8 = {
+						DevelopmentTeam = V25DK7S622;
+					};
+					45DD430B83E6B79D4548E060 = {
+						DevelopmentTeam = V25DK7S622;
+					};
+					4E9ADAFED08F9C7090884842 = {
+						DevelopmentTeam = V25DK7S622;
+					};
+					6752AC28B2AB4A9AE700046E = {
+						DevelopmentTeam = V25DK7S622;
+					};
+					6EB718BBDF2FC1BFB1AC3CD7 = {
+						DevelopmentTeam = V25DK7S622;
+					};
+					A3CCB3176C13D72CD22E82EE = {
+						DevelopmentTeam = V25DK7S622;
+					};
+					A9129915DD186C255E0CB4D6 = {
+						DevelopmentTeam = V25DK7S622;
+					};
+					AF4BBF6B45F512EDC3FCFF57 = {
+						DevelopmentTeam = V25DK7S622;
+					};
+					C1ACE247FD98B20D28195CE1 = {
+						DevelopmentTeam = V25DK7S622;
+					};
+					CAE0D4F3E07453DA587D2457 = {
+						DevelopmentTeam = V25DK7S622;
+					};
+					CC4ED8B980AA7BE45DB2BF6A = {
+						DevelopmentTeam = V25DK7S622;
+					};
+					ED08EBF2F69FC9BA7439E21A = {
+						DevelopmentTeam = V25DK7S622;
+					};
+					FC9E91A11448C39384CEFE67 = {
+						DevelopmentTeam = V25DK7S622;
+					};
+				};
 			};
 			buildConfigurationList = B25CF4C70BA40026A29F8482 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2334,6 +2384,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EE924E758DFFED1C02F44B81 /* Pods-BikeBlackSpot-iOSTests-Alamofire-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2349,6 +2400,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOSTests-Alamofire/Pods-BikeBlackSpot-iOSTests-Alamofire.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = Alamofire;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2361,6 +2413,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7D9554F1D878D94AE432DAC4 /* Pods-BikeBlackSpot-iOSTests-SwiftyJSON-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2376,6 +2429,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOSTests-SwiftyJSON/Pods-BikeBlackSpot-iOSTests-SwiftyJSON.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = SwiftyJSON;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2388,6 +2442,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1B1BDEEB0273124133017E9F /* Pods-BikeBlackSpot-iOSTests-Cartography-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2403,6 +2458,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOSTests-Cartography/Pods-BikeBlackSpot-iOSTests-Cartography.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = Cartography;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2416,6 +2472,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A303AF3CB47F6BF32AA80FBA /* Pods-BikeBlackSpot-iOS-Cartography-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2431,6 +2488,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOS-Cartography/Pods-BikeBlackSpot-iOS-Cartography.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = Cartography;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2444,6 +2502,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6632380C0ABAB58EA8A09E49 /* Pods-BikeBlackSpot-iOS-SwiftyJSON-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2459,6 +2518,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOS-SwiftyJSON/Pods-BikeBlackSpot-iOS-SwiftyJSON.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = SwiftyJSON;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2472,6 +2532,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0EB79D523A3CA4DA8077B270 /* Pods-BikeBlackSpot-iOSTests-SwiftLoader-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2487,6 +2548,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOSTests-SwiftLoader/Pods-BikeBlackSpot-iOSTests-SwiftLoader.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = SwiftLoader;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2499,6 +2561,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 88B1F9CCD49BB274D1B2A169 /* Pods-BikeBlackSpot-iOSTests-OMGHTTPURLRQ-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2514,6 +2577,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOSTests-OMGHTTPURLRQ/Pods-BikeBlackSpot-iOSTests-OMGHTTPURLRQ.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = OMGHTTPURLRQ;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2526,8 +2590,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B65DECB95DDCCAC591F5934C /* Pods-BikeBlackSpot-iOS.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: John Geddes (2PL596X372)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: John Geddes (2PL596X372)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2544,7 +2608,7 @@
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = Pods_BikeBlackSpot_iOS;
-				PROVISIONING_PROFILE = "6d2f43e5-7a45-46eb-bc5d-633e14d47457";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2557,6 +2621,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7191DA92215BF7A171A3E878 /* Pods-BikeBlackSpot-iOS-SwiftLoader-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2572,6 +2637,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOS-SwiftLoader/Pods-BikeBlackSpot-iOS-SwiftLoader.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = SwiftLoader;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2626,6 +2692,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1658B7219E7E92CEE10E8366 /* Pods-BikeBlackSpot-iOSTests-Nimble-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2641,6 +2708,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOSTests-Nimble/Pods-BikeBlackSpot-iOSTests-Nimble.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = Nimble;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2654,6 +2722,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7C2ACC997711E8504CA071EB /* Pods-BikeBlackSpot-iOS-PromiseKit-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2669,6 +2738,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOS-PromiseKit/Pods-BikeBlackSpot-iOS-PromiseKit.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = PromiseKit;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2682,6 +2752,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8815E167B091B2282001D455 /* Pods-BikeBlackSpot-iOSTests-PromiseKit-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2697,6 +2768,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOSTests-PromiseKit/Pods-BikeBlackSpot-iOSTests-PromiseKit.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = PromiseKit;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2746,6 +2818,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4579EBC1FF08B668503691D8 /* Pods-BikeBlackSpot-iOSTests-Quick-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2761,6 +2834,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOSTests-Quick/Pods-BikeBlackSpot-iOSTests-Quick.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = Quick;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2774,6 +2848,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B5AF93C030866DC1607B4B92 /* Pods-BikeBlackSpot-iOS-OMGHTTPURLRQ-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2789,6 +2864,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOS-OMGHTTPURLRQ/Pods-BikeBlackSpot-iOS-OMGHTTPURLRQ.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = OMGHTTPURLRQ;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2801,6 +2877,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B5AF93C030866DC1607B4B92 /* Pods-BikeBlackSpot-iOS-OMGHTTPURLRQ-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2816,6 +2893,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOS-OMGHTTPURLRQ/Pods-BikeBlackSpot-iOS-OMGHTTPURLRQ.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = OMGHTTPURLRQ;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2828,6 +2906,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8815E167B091B2282001D455 /* Pods-BikeBlackSpot-iOSTests-PromiseKit-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2843,6 +2922,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOSTests-PromiseKit/Pods-BikeBlackSpot-iOSTests-PromiseKit.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = PromiseKit;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2855,6 +2935,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1B1BDEEB0273124133017E9F /* Pods-BikeBlackSpot-iOSTests-Cartography-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2870,6 +2951,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOSTests-Cartography/Pods-BikeBlackSpot-iOSTests-Cartography.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = Cartography;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2882,6 +2964,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0B03F749D152F57B669A43AD /* Pods-BikeBlackSpot-iOS-Alamofire-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2897,6 +2980,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOS-Alamofire/Pods-BikeBlackSpot-iOS-Alamofire.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = Alamofire;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2909,6 +2993,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4579EBC1FF08B668503691D8 /* Pods-BikeBlackSpot-iOSTests-Quick-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2924,6 +3009,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOSTests-Quick/Pods-BikeBlackSpot-iOSTests-Quick.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = Quick;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2936,6 +3022,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9E79DF1C5AE98279F103F996 /* Pods-BikeBlackSpot-iOSTests.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2953,6 +3040,7 @@
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = Pods_BikeBlackSpot_iOSTests;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2966,8 +3054,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BEF5B9126BF10B206B93A3C3 /* Pods-BikeBlackSpot-iOS.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: John Geddes (2PL596X372)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: John Geddes (2PL596X372)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2984,7 +3072,7 @@
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = Pods_BikeBlackSpot_iOS;
-				PROVISIONING_PROFILE = "6d2f43e5-7a45-46eb-bc5d-633e14d47457";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2998,6 +3086,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A303AF3CB47F6BF32AA80FBA /* Pods-BikeBlackSpot-iOS-Cartography-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -3013,6 +3102,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOS-Cartography/Pods-BikeBlackSpot-iOS-Cartography.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = Cartography;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3025,6 +3115,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7C2ACC997711E8504CA071EB /* Pods-BikeBlackSpot-iOS-PromiseKit-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -3040,6 +3131,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOS-PromiseKit/Pods-BikeBlackSpot-iOS-PromiseKit.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = PromiseKit;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3052,6 +3144,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EC4593D327B95D6BCD8891B2 /* Pods-BikeBlackSpot-iOSTests.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -3069,6 +3162,7 @@
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = Pods_BikeBlackSpot_iOSTests;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3081,6 +3175,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0EB79D523A3CA4DA8077B270 /* Pods-BikeBlackSpot-iOSTests-SwiftLoader-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -3096,6 +3191,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOSTests-SwiftLoader/Pods-BikeBlackSpot-iOSTests-SwiftLoader.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = SwiftLoader;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3109,6 +3205,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EE924E758DFFED1C02F44B81 /* Pods-BikeBlackSpot-iOSTests-Alamofire-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -3124,6 +3221,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOSTests-Alamofire/Pods-BikeBlackSpot-iOSTests-Alamofire.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = Alamofire;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3137,6 +3235,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6632380C0ABAB58EA8A09E49 /* Pods-BikeBlackSpot-iOS-SwiftyJSON-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -3152,6 +3251,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOS-SwiftyJSON/Pods-BikeBlackSpot-iOS-SwiftyJSON.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = SwiftyJSON;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3164,6 +3264,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7191DA92215BF7A171A3E878 /* Pods-BikeBlackSpot-iOS-SwiftLoader-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -3179,6 +3280,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOS-SwiftLoader/Pods-BikeBlackSpot-iOS-SwiftLoader.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = SwiftLoader;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3191,6 +3293,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1658B7219E7E92CEE10E8366 /* Pods-BikeBlackSpot-iOSTests-Nimble-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -3206,6 +3309,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOSTests-Nimble/Pods-BikeBlackSpot-iOSTests-Nimble.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = Nimble;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3218,6 +3322,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7D9554F1D878D94AE432DAC4 /* Pods-BikeBlackSpot-iOSTests-SwiftyJSON-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -3233,6 +3338,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOSTests-SwiftyJSON/Pods-BikeBlackSpot-iOSTests-SwiftyJSON.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = SwiftyJSON;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3246,6 +3352,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0B03F749D152F57B669A43AD /* Pods-BikeBlackSpot-iOS-Alamofire-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -3261,6 +3368,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOS-Alamofire/Pods-BikeBlackSpot-iOS-Alamofire.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = Alamofire;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3274,6 +3382,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 88B1F9CCD49BB274D1B2A169 /* Pods-BikeBlackSpot-iOSTests-OMGHTTPURLRQ-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -3289,6 +3398,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-BikeBlackSpot-iOSTests-OMGHTTPURLRQ/Pods-BikeBlackSpot-iOSTests-OMGHTTPURLRQ.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = OMGHTTPURLRQ;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

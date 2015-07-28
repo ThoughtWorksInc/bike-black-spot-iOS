@@ -20,4 +20,15 @@ public class Background{
         
         callingView.view.backgroundColor = UIColor(patternImage: backgroundImage)
     }
+    
+    public static func setBackground(callingView:UIView){
+        UIGraphicsBeginImageContext(callingView.frame.size)
+        UIImage(named: "background.png")?.drawInRect(callingView.bounds)
+        
+        var backgroundImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        callingView.backgroundColor = UIColor(patternImage: backgroundImage)
+    }
 }

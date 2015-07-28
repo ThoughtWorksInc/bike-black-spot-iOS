@@ -226,7 +226,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="No_Network" translatesAutoresizingMaskIntoConstraints="NO" id="61w-G0-IgC">
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-internet" translatesAutoresizingMaskIntoConstraints="NO" id="61w-G0-IgC">
                                 <rect key="frame" x="180" y="50" width="240" height="278"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -481,8 +481,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="No_Network" width="30" height="30"/>
         <image name="email_sent" width="30" height="30"/>
+        <image name="no-internet" width="92" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ccZ-dh-abl"/>
