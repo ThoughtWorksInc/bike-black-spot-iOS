@@ -117,7 +117,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if row == 0 {
             Report.getCurrentReport().category = nil
-            categoryTextField.text=nil
+            categoryTextField.text=""
             descTextView.setPlaceHolderText(DESC_TEXTVIEW_PLACEHOLDER)
         }
         else {
