@@ -3,7 +3,7 @@ import SwiftLoader
 import PromiseKit
 
 class ThankyouViewController: UIViewController {
-    
+   
     @IBOutlet weak var middleMessage: UILabel!
     
     @IBOutlet weak var bottomMessage: UILabel!
@@ -85,9 +85,10 @@ class ThankyouViewController: UIViewController {
             self.doneButton.enabled = true
         }
     }
-    
-    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+
+    @IBAction func doneButtonTapped(sender: AnyObject) {
         Report.clearReport()
-        return true
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.showDefaultViewController()
     }
 }

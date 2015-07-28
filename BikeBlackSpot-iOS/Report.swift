@@ -32,10 +32,9 @@ public class Report {
         vals["lat"] = self.location!.latitude!
         vals["long"] = self.location!.longitude!
         
-        // decode image if attached
         if let image = self.image {
-            let decodedImage = NSString(data: image, encoding: NSUTF8StringEncoding)
-            vals["image"] = decodedImage
+            let base64String = image.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue:0))
+            vals["image"] = base64String
         }
         return vals
     }
