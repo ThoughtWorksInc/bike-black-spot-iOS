@@ -3,6 +3,9 @@ import Cartography
 
 class PhotoViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
+    let IMAGE_MAX_WIDTH:CGFloat = 1000.0
+    let IMAGE_MAX_HEIGHT:CGFloat = 1000.0
+    
     //var takePhotoButton:UIButton?
     //var galleryPhotoButton:UIButton?
     let picker = UIImagePickerController()
@@ -100,12 +103,12 @@ class PhotoViewController: UIViewController,UIImagePickerControllerDelegate,UINa
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         var chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        Report.getCurrentReport().image = UIImageJPEGRepresentation(chosenImage, 1.0) //http://pinkstone.co.uk/how-to-save-a-uiimage-in-core-data-and-retrieve-it/
+        var resizedImage = chosenImage.resizeIfRequired(IMAGE_MAX_WIDTH, maxHeight: IMAGE_MAX_HEIGHT)
+        
+        Report.getCurrentReport().image = UIImageJPEGRepresentation(resizedImage, 1.0) //http://pinkstone.co.uk/how-to-save-a-uiimage-in-core-data-and-retrieve-it/
         println("Image taken~!")
         self.performSegueWithIdentifier("ReportReviewSegue", sender: nil)
         dismissViewControllerAnimated(true, completion: nil)
-
-        
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {

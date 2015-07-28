@@ -34,6 +34,7 @@
 		08DAD4C41B671F0A003493FD /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5F6E1B5F17B700DD5586 /* Location.swift */; };
 		08F822191B672E8800A904E5 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F822181B672E8800A904E5 /* Appearance.swift */; };
 		08F8221B1B673E2200A904E5 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 08F8221A1B673E2200A904E5 /* image.png */; };
+		08F8221D1B67415E00A904E5 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F8221C1B67415E00A904E5 /* UIImageExtension.swift */; };
 		26CF8CAA1B4382D500C82362 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF8CA91B4382D500C82362 /* AppDelegate.swift */; };
 		26CF8CAC1B4382D500C82362 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF8CAB1B4382D500C82362 /* LocationViewController.swift */; };
 		26CF8CAF1B4382D500C82362 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26CF8CAD1B4382D500C82362 /* Main.storyboard */; };
@@ -88,6 +89,7 @@
 		08C5514C1B60C5F300ED48FA /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		08F822181B672E8800A904E5 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		08F8221A1B673E2200A904E5 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		08F8221C1B67415E00A904E5 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		26CF8CA41B4382D500C82362 /* BikeBlackSpot-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BikeBlackSpot-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CF8CA81B4382D500C82362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26CF8CA91B4382D500C82362 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			children = (
 				E44EE4841B6605FD00822F30 /* UIViewExtension.swift */,
 				083EE3D61B5F379E00201C3F /* StringExtension.swift */,
+				08F8221C1B67415E00A904E5 /* UIImageExtension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				7E13BE4E1B66387600EB3BB1 /* ErrorPageViewController.swift in Sources */,
 				082B74891B5CD1D7004DB225 /* APIService.swift in Sources */,
 				7E3C6BCB1B58C3A7000BAB2C /* LocationService.swift in Sources */,
+				08F8221D1B67415E00A904E5 /* UIImageExtension.swift in Sources */,
 				4CA829B21B57679800D614E8 /* ThankyouViewController.swift in Sources */,
 				082B748C1B5CD363004DB225 /* ReportCategory.swift in Sources */,
 				084C5F711B5F1E6A00DD5586 /* User.swift in Sources */,
