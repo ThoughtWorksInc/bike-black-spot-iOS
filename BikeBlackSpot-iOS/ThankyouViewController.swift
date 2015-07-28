@@ -19,8 +19,6 @@ class ThankyouViewController: UIViewController {
         navigationItem.leftBarButtonItem = backButton
         sendAnotherReportButton.enabled = false
         sendAnotherReportButton.tintColor = UIColor.grayColor()
-        //        sendAnotherReportButton.style = UIBarButtonItemStyle.
-        
         
         APIService.sharedInstance.isUserConfirmed()
             .then { result -> Void in
@@ -45,10 +43,16 @@ class ThankyouViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        setBusy(true)
+        let report = Report.getCurrentReport()
+        
+        var loadingMsg:String?
+        if(report.hasImage()) {
+            loadingMsg = "Uploading image"
+        }
+        setBusy(true, text:loadingMsg)
         
         var isRegistered = UserTokenMgr.sharedInstance.hasToken()
-        let report = Report.getCurrentReport()
+
         var promise = Promise()
         
         if(!isRegistered) {
@@ -60,7 +64,6 @@ class ThankyouViewController: UIViewController {
                         // set user uuid on report
                         Report.getCurrentReport().userUUID = uuid
 //                        return Promise<Void>()
-                        // TODO call create report here
                     }
                     promise.catch { error in
                         self.setBusy(false)
@@ -84,9 +87,14 @@ class ThankyouViewController: UIViewController {
         }
     }
     
-    func setBusy(busy:Bool) {
+    func setBusy(busy:Bool, text:String? = nil) {
         if(busy) {
-            SwiftLoader.show(animated: true)
+            if let message = text {
+                SwiftLoader.show(title: message, animated: true)
+            } else {
+                SwiftLoader.show(animated: true)
+            }
+
             self.view.enableUserInteraction(false) // why doesn't this work?
             doneButton.enabled = false
         } else {

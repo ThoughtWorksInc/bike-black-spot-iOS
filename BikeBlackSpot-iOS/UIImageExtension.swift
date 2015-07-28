@@ -13,18 +13,20 @@ extension UIImage {
     
     func resizeIfRequired(maxWidth:CGFloat, maxHeight:CGFloat) -> UIImage {
         var oldWidth = size.width
-        var oldHeight = size.height;
+        var oldHeight = size.height
         if(oldWidth <= maxWidth && oldHeight <= maxHeight) {
             return self
         }
         var scaleFactor = (oldWidth > oldHeight) ? maxWidth / oldWidth : maxHeight / oldHeight
-        
-        var newHeight = oldHeight * scaleFactor
-        var newWidth = oldWidth * scaleFactor
+
+        var scale = UIScreen.mainScreen().scale
+        var newWidth = oldWidth * scaleFactor / scale
+        var newHeight = oldHeight * scaleFactor / scale
         var newSize = CGSize(width: newWidth, height: newHeight)
         
-        UIGraphicsBeginImageContext(newSize)
-        self.drawInRect(CGRect(origin:CGPointZero, size:CGSize(width:size.width, height:size.height)))
+        UIGraphicsBeginImageContextWithOptions(newSize, true, scale)
+        
+        self.drawInRect(CGRect(origin:CGPointZero, size:CGSize(width:newSize.width, height:newSize.height)))
         var newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         

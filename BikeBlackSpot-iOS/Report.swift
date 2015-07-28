@@ -13,6 +13,10 @@ public class Report {
 
     public var description:String?
     
+    public func hasImage() -> Bool {
+        return self.image != nil
+    }
+    
     public static func getCurrentReport() -> Report {
         if currentReport == nil {
             currentReport = Report()            
@@ -31,7 +35,12 @@ public class Report {
         vals["category"] = self.category!.uuid
         vals["lat"] = self.location!.latitude!
         vals["long"] = self.location!.longitude!
-        
+
+        // optional
+        if let description = self.description {
+            vals["description"] = description
+        }
+        // optional
         if let image = self.image {
             let base64String = image.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue:0))
             vals["image"] = base64String
