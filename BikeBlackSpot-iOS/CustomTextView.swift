@@ -39,8 +39,11 @@ class CustomTextView : UITextView, UITextViewDelegate {
     }
     
     func setPlaceHolderText(text:String){
+        let oldPlaceholder = self.placeholderText
         self.placeholderText=text
-        setDefaultText(text)
+        if self.text == oldPlaceholder{
+            setDefaultText(text)
+        }
     }
     
     func setDefaultText(text:String?) {
