@@ -105,6 +105,7 @@
                         <outlet property="bottomMessage" destination="s0B-Yw-Uyj" id="MmH-NU-Wz3"/>
                         <outlet property="doneButton" destination="bux-rT-gJT" id="ujq-y8-a54"/>
                         <outlet property="middleMessage" destination="P7I-F8-pdq" id="eS5-QO-8MD"/>
+                        <outlet property="sendAnotherReportButton" destination="bux-rT-gJT" id="7Oo-Gw-w9b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAb-2G-AYd" userLabel="First Responder" sceneMemberID="firstResponder"/>

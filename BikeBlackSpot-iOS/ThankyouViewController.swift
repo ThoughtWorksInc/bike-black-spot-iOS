@@ -8,6 +8,7 @@ class ThankyouViewController: UIViewController {
     
     @IBOutlet weak var bottomMessage: UILabel!
     
+    @IBOutlet weak var sendAnotherReportButton: UIBarButtonItem!
     @IBOutlet var doneButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,10 +17,15 @@ class ThankyouViewController: UIViewController {
         
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: navigationController, action: nil)
         navigationItem.leftBarButtonItem = backButton
+        sendAnotherReportButton.enabled = false
+        sendAnotherReportButton.tintColor = UIColor.grayColor()
+        //        sendAnotherReportButton.style = UIBarButtonItemStyle.
+        
         
         APIService.sharedInstance.isUserConfirmed()
             .then { result -> Void in
-                println(result)
+                self.sendAnotherReportButton.enabled = true
+                self.sendAnotherReportButton.tintColor = UIColor.blueColor()
                 if result {
                     self.middleMessage.text = "THANK YOU FOR SUBMITTING YOUR REPORT"
                     self.bottomMessage.text = "A copy of your blackspot has been sent via email."
@@ -52,9 +58,21 @@ class ThankyouViewController: UIViewController {
                 promise = APIService.sharedInstance.registerUser(user)
                     .then { uuid in
                         
+<<<<<<< HEAD
                         // set user uuid on report
                         Report.getCurrentReport().userUUID = uuid
                         return Promise<Void>()
+=======
+                        // TODO call create report here
+                    }
+                    .catch { error in
+                        self.setBusy(false)
+                        let alert = UIAlertView(title: "Error", message: "Error registering user", delegate: nil, cancelButtonTitle: "OK")
+                        
+                        alert.promise().then { object -> Void in
+                            //TODO, if we can find a case where this happens, jump back to a previous view ot deal with error
+                        }
+>>>>>>> Send another report greys out while loading
                 }
             }
         }
