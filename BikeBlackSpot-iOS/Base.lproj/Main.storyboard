@@ -71,7 +71,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email_sent" translatesAutoresizingMaskIntoConstraints="NO" id="hSh-Qg-XXW">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email-sent" translatesAutoresizingMaskIntoConstraints="NO" id="hSh-Qg-XXW">
                                 <rect key="frame" x="211" y="120" width="178" height="204"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="178" id="b24-9L-ER8"/>
@@ -481,7 +481,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="email_sent" width="30" height="30"/>
+        <image name="email-sent" width="120" height="79"/>
         <image name="no-internet" width="92" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
