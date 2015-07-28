@@ -55,8 +55,8 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7I-F8-pdq">
                                 <rect key="frame" x="152" y="338" width="297" height="65"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="297" id="XSq-79-j3M"/>
-                                    <constraint firstAttribute="height" constant="65" id="YtU-hO-GgQ"/>
+                                    <constraint firstAttribute="width" constant="297" id="3Hd-xx-cfS"/>
+                                    <constraint firstAttribute="height" constant="65" id="NKb-eB-T5k"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -65,29 +65,29 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0B-Yw-Uyj">
                                 <rect key="frame" x="186" y="432" width="229" height="58"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="229" id="jt2-Vt-SdE"/>
-                                    <constraint firstAttribute="height" constant="58" id="qXE-0d-q2X"/>
+                                    <constraint firstAttribute="width" constant="229" id="W4A-eI-NBK"/>
+                                    <constraint firstAttribute="height" constant="58" id="p9H-Eb-rNw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email-sent" translatesAutoresizingMaskIntoConstraints="NO" id="hSh-Qg-XXW">
-                                <rect key="frame" x="211" y="120" width="178" height="204"/>
+                                <rect key="frame" x="250" y="147" width="100" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="178" id="b24-9L-ER8"/>
+                                    <constraint firstAttribute="width" constant="100" id="aa1-OZ-MwT"/>
+                                    <constraint firstAttribute="height" constant="80" id="e49-Kt-9Ag"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="s0B-Yw-Uyj" firstAttribute="top" secondItem="P7I-F8-pdq" secondAttribute="bottom" constant="29" id="5xk-tY-3xl"/>
-                            <constraint firstItem="s0B-Yw-Uyj" firstAttribute="centerX" secondItem="MEk-o8-PyC" secondAttribute="centerX" id="6to-Tq-wXD"/>
-                            <constraint firstItem="hSh-Qg-XXW" firstAttribute="centerX" secondItem="P7I-F8-pdq" secondAttribute="centerX" id="Mm4-Wj-Ybb"/>
-                            <constraint firstItem="hSh-Qg-XXW" firstAttribute="top" secondItem="6LP-Th-2GT" secondAttribute="bottom" constant="56" id="NUF-zc-Sax"/>
-                            <constraint firstItem="P7I-F8-pdq" firstAttribute="top" secondItem="hSh-Qg-XXW" secondAttribute="bottom" constant="14" id="OIb-7Q-Bmq"/>
-                            <constraint firstItem="s0B-Yw-Uyj" firstAttribute="centerX" secondItem="P7I-F8-pdq" secondAttribute="centerX" id="rEJ-T7-I6h"/>
-                            <constraint firstItem="AMC-9i-s01" firstAttribute="top" secondItem="s0B-Yw-Uyj" secondAttribute="bottom" constant="66" id="wTU-JA-erW"/>
+                            <constraint firstItem="hSh-Qg-XXW" firstAttribute="centerX" secondItem="P7I-F8-pdq" secondAttribute="centerX" id="GcO-EO-N3f"/>
+                            <constraint firstItem="AMC-9i-s01" firstAttribute="top" secondItem="s0B-Yw-Uyj" secondAttribute="bottom" constant="66" id="Onk-Pj-IMD"/>
+                            <constraint firstItem="s0B-Yw-Uyj" firstAttribute="top" secondItem="P7I-F8-pdq" secondAttribute="bottom" constant="29" id="X7k-rh-HBh"/>
+                            <constraint firstItem="s0B-Yw-Uyj" firstAttribute="centerX" secondItem="P7I-F8-pdq" secondAttribute="centerX" id="bhJ-KE-VFA"/>
+                            <constraint firstItem="hSh-Qg-XXW" firstAttribute="top" secondItem="6LP-Th-2GT" secondAttribute="bottom" constant="83" id="h8X-he-mhH"/>
+                            <constraint firstItem="P7I-F8-pdq" firstAttribute="centerX" secondItem="MEk-o8-PyC" secondAttribute="centerX" id="vtk-WN-JoC"/>
                         </constraints>
                     </view>
                     <toolbarItems>
@@ -207,44 +207,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OOPS! LOOKS LIKE YOU'VE LOST CONNECTION" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0u-cy-Gyh">
-                                <rect key="frame" x="156" y="336" width="288" height="107"/>
+                                <rect key="frame" x="156" y="199" width="288" height="107"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="288" id="MeA-lg-OG4"/>
-                                    <constraint firstAttribute="height" constant="107" id="bOV-07-fl6"/>
+                                    <constraint firstAttribute="width" constant="288" id="8T8-5k-1HG"/>
+                                    <constraint firstAttribute="height" constant="107" id="QcF-4X-5E9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please check your internet connection." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07W-Sh-5VL">
-                                <rect key="frame" x="170" y="464" width="274" height="55"/>
+                                <rect key="frame" x="170" y="421" width="274" height="55"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="274" id="Q0c-0b-pR3"/>
-                                    <constraint firstAttribute="height" constant="55" id="p4M-5D-ZIJ"/>
+                                    <constraint firstAttribute="width" constant="274" id="fZZ-zR-eSR"/>
+                                    <constraint firstAttribute="height" constant="55" id="rQj-ST-KbI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-internet" translatesAutoresizingMaskIntoConstraints="NO" id="61w-G0-IgC">
-                                <rect key="frame" x="180" y="50" width="240" height="278"/>
+                                <rect key="frame" x="250" y="111" width="100" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="kFE-ge-WzJ"/>
+                                    <constraint firstAttribute="width" constant="100" id="xEb-MU-Oqz"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xCI-u2-MQW" firstAttribute="top" secondItem="07W-Sh-5VL" secondAttribute="bottom" constant="81" id="KI8-VR-Uux"/>
-                            <constraint firstItem="61w-G0-IgC" firstAttribute="centerX" secondItem="c0u-cy-Gyh" secondAttribute="centerX" id="PHr-aN-WaW"/>
-                            <constraint firstItem="c0u-cy-Gyh" firstAttribute="trailing" secondItem="07W-Sh-5VL" secondAttribute="trailing" id="VJr-IF-LMQ"/>
-                            <constraint firstItem="07W-Sh-5VL" firstAttribute="top" secondItem="c0u-cy-Gyh" secondAttribute="bottom" constant="21" id="ZeR-gn-Fgp"/>
-                            <constraint firstItem="c0u-cy-Gyh" firstAttribute="top" secondItem="61w-G0-IgC" secondAttribute="bottom" constant="8" symbolic="YES" id="c9E-vV-enq"/>
-                            <constraint firstItem="61w-G0-IgC" firstAttribute="centerX" secondItem="8r8-Pr-RT0" secondAttribute="centerX" id="gU4-PK-klH"/>
-                            <constraint firstItem="61w-G0-IgC" firstAttribute="top" secondItem="gch-DW-aav" secondAttribute="bottom" constant="30" id="xEr-kf-lc6"/>
+                            <constraint firstItem="61w-G0-IgC" firstAttribute="centerX" secondItem="c0u-cy-Gyh" secondAttribute="centerX" id="7Gm-RW-Cxu"/>
+                            <constraint firstItem="61w-G0-IgC" firstAttribute="top" secondItem="gch-DW-aav" secondAttribute="bottom" constant="91" id="Ejp-mm-5a1"/>
+                            <constraint firstItem="xCI-u2-MQW" firstAttribute="top" secondItem="07W-Sh-5VL" secondAttribute="bottom" constant="124" id="XLA-GI-lVD"/>
+                            <constraint firstItem="c0u-cy-Gyh" firstAttribute="centerX" secondItem="8r8-Pr-RT0" secondAttribute="centerX" id="jhZ-3k-qmR"/>
+                            <constraint firstItem="c0u-cy-Gyh" firstAttribute="trailing" secondItem="07W-Sh-5VL" secondAttribute="trailing" id="lee-54-kgB"/>
+                            <constraint firstItem="c0u-cy-Gyh" firstAttribute="top" secondItem="61w-G0-IgC" secondAttribute="bottom" constant="8" symbolic="YES" id="ujb-8d-qBU"/>
                         </constraints>
                     </view>
                 </viewController>
