@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSObject: AnyObject]?) -> Bool {
             
             GMSServices.provideAPIKey(gMapsKey)
+            Appearance.setupAppearance()
             
             reachability = Reachability.reachabilityForInternetConnection()
             if !reachability!.isReachable() {

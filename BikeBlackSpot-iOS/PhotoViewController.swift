@@ -15,8 +15,6 @@ class PhotoViewController: UIViewController,UIImagePickerControllerDelegate,UINa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UILabel.appearance().substituteFontName = "AlternateGothicLT-No2"
-        
         buttonSeparatorLabel = UILabel()
         
         picker.delegate = self

@@ -33,6 +33,7 @@
 		08DAD4C31B671F07003493FD /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BD11B5C80F0000BAB2C /* Report.swift */; };
 		08DAD4C41B671F0A003493FD /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5F6E1B5F17B700DD5586 /* Location.swift */; };
 		08DAD4C61B672806003493FD /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 08DAD4C51B672806003493FD /* image.png */; };
+		08F822191B672E8800A904E5 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F822181B672E8800A904E5 /* Appearance.swift */; };
 		26CF8CAA1B4382D500C82362 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF8CA91B4382D500C82362 /* AppDelegate.swift */; };
 		26CF8CAC1B4382D500C82362 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF8CAB1B4382D500C82362 /* LocationViewController.swift */; };
 		26CF8CAF1B4382D500C82362 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26CF8CAD1B4382D500C82362 /* Main.storyboard */; };
@@ -57,7 +58,6 @@
 		7E5543511B5F587500FEE444 /* Pods_BikeBlackSpot_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB502AD5307A699F56F0C0A /* Pods_BikeBlackSpot_iOS.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E44EE47F1B65BBDF00822F30 /* Swiss 721 Light Condensed BT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E44EE47E1B65BBDF00822F30 /* Swiss 721 Light Condensed BT.ttf */; };
 		E44EE4811B65BBEE00822F30 /* Linotype - Alternate Gothic LT No2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E44EE4801B65BBEE00822F30 /* Linotype - Alternate Gothic LT No2.ttf */; };
-		E44EE4831B65E41400822F30 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44EE4821B65E41400822F30 /* UILabelExtension.swift */; };
 		E44EE4851B6605FD00822F30 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44EE4841B6605FD00822F30 /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +87,7 @@
 		08C551461B60C1AC00ED48FA /* LocationServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServiceTests.swift; sourceTree = "<group>"; };
 		08C5514C1B60C5F300ED48FA /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		08DAD4C51B672806003493FD /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image.png; path = ../../../Desktop/image.png; sourceTree = "<group>"; };
+		08F822181B672E8800A904E5 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		26CF8CA41B4382D500C82362 /* BikeBlackSpot-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BikeBlackSpot-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CF8CA81B4382D500C82362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26CF8CA91B4382D500C82362 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,7 +120,6 @@
 		D3A2CD095E3E9AA4B600927C /* Pods-BikeBlackSpot-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeBlackSpot-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-BikeBlackSpot-iOS/Pods-BikeBlackSpot-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		E44EE47E1B65BBDF00822F30 /* Swiss 721 Light Condensed BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Swiss 721 Light Condensed BT.ttf"; sourceTree = "<group>"; };
 		E44EE4801B65BBEE00822F30 /* Linotype - Alternate Gothic LT No2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Linotype - Alternate Gothic LT No2.ttf"; sourceTree = "<group>"; };
-		E44EE4821B65E41400822F30 /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		E44EE4841B6605FD00822F30 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +152,7 @@
 				08C5514C1B60C5F300ED48FA /* Reachability.swift */,
 				7E13BE4B1B662A0C00EB3BB1 /* Background.swift */,
 				7E13BE4F1B66461800EB3BB1 /* Categories.swift */,
+				08F822181B672E8800A904E5 /* Appearance.swift */,
 			);
 			name = Global;
 			sourceTree = "<group>";
@@ -187,7 +188,6 @@
 			children = (
 				E44EE4841B6605FD00822F30 /* UIViewExtension.swift */,
 				083EE3D61B5F379E00201C3F /* StringExtension.swift */,
-				E44EE4821B65E41400822F30 /* UILabelExtension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -552,10 +552,10 @@
 				26CF8CAC1B4382D500C82362 /* LocationViewController.swift in Sources */,
 				7E3C6BC81B58BAB5000BAB2C /* UserDetailsViewController.swift in Sources */,
 				4CA829B01B57675A00D614E8 /* ReviewViewController.swift in Sources */,
-				E44EE4831B65E41400822F30 /* UILabelExtension.swift in Sources */,
 				4CA829A91B57272F00D614E8 /* GoogleDataProvider.swift in Sources */,
 				084C5F6F1B5F17B700DD5586 /* Location.swift in Sources */,
 				084C5F731B5F1ED600DD5586 /* UserTokenMgr.swift in Sources */,
+				08F822191B672E8800A904E5 /* Appearance.swift in Sources */,
 				26CF8CAA1B4382D500C82362 /* AppDelegate.swift in Sources */,
 				083EE3D71B5F379E00201C3F /* StringExtension.swift in Sources */,
 				084C5F6D1B5F0FBF00DD5586 /* FormViewController.swift in Sources */,
