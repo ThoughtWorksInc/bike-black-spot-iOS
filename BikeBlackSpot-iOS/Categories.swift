@@ -5,14 +5,19 @@ public class Categories : NSObject {
     // fetch categories
     private static var isLoaded = false
     private static var numberOfAttempts = 0
+    private static var callBackViewController:DetailsViewController?
     public static var categories:[AnyObject] = [AnyObject]()
+    
+    
     public static func loadCategories() {
         if self.numberOfAttempts++ < 3 {
             APIService.sharedInstance.getCategories().then { object -> Void in
                 Categories.categories = object
                 Categories.categories.insert(CATEGORY_PLACEHOLDER, atIndex: 0)
                 self.isLoaded = true
-                }
+                if let callBackController = self.callBackViewController{
+                    callBackController.reloadCategories()
+                }}
                 .catch { error in
                     let alert = UIAlertView(title: "Error", message: SERVICE_UNAVAILABLE, delegate: nil, cancelButtonTitle: "OK")
                     
@@ -30,6 +35,10 @@ public class Categories : NSObject {
     
     public static func isNotLoaded() -> Bool{
         return !isLoaded
+    }
+    
+    static func setupCallback(viewController: DetailsViewController) {
+        callBackViewController = viewController
     }
     
 }

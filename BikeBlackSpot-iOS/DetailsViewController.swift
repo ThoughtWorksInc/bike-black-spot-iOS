@@ -52,6 +52,9 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         picker.frame = CGRect(origin: CGPointZero, size: CGSizeMake(CGRectGetWidth(alert.view.frame), PICKER_HEIGHT))
         picker.delegate = self
         picker.dataSource = self
+        if Categories.isNotLoaded() {
+            Categories.setupCallback(self)
+        }
         alert.view.addSubview(picker)
         
         self.pickerView = picker
@@ -152,6 +155,10 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     
     func setReportDescription() {
         Report.getCurrentReport().description = descTextView.getText()
+    }
+    
+    func reloadCategories() {
+        pickerView!.reloadAllComponents()
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
