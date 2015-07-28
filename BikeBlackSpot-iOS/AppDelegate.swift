@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  BikeBlackSpot-iOS
-//
-//  Created by Sarah Nelson on 1/07/2015.
-//  Copyright (c) 2015 ThoughtWorks. All rights reserved.
-//
-
 import UIKit
 import GoogleMaps
 
@@ -16,19 +8,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var reachability:Reachability?
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [
         NSObject: AnyObject]?) -> Bool {
-            
-            GMSServices.provideAPIKey(gMapsKey)
-            
-            reachability = Reachability.reachabilityForInternetConnection()
-            if !reachability!.isReachable() {
-                showErrorViewController()
-            }
-            startReachabilityMonitoring()
-            
-            Categories.loadCategories()
-            return true
+            return launchApplication()
     }
-
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        return launchApplication()
+    }
+    
+    func launchApplication() -> Bool{
+        GMSServices.provideAPIKey(gMapsKey)
+        
+        reachability = Reachability.reachabilityForInternetConnection()
+        if !reachability!.isReachable() {
+            showErrorViewController()
+        }
+        startReachabilityMonitoring()
+        
+        Categories.loadCategories()
+        return true
+    }
+    
     
     func startReachabilityMonitoring() {
         
