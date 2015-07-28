@@ -23,7 +23,7 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         Background.setBackground(self)
-
+        setupFonts()
 
         
         Background.setBackground(self)
@@ -75,6 +75,10 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
         
         self.mapView = mapView
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "locationUpdated:", name: CurrentLocationUpdated, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "preferredContentSizeChanged:",
+            name: UIContentSizeCategoryDidChangeNotification,
+            object: nil)
     }
     
     deinit {
@@ -152,6 +156,10 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
         }
         self.locationLoaded = false
         return true
+    }
+    
+    func preferredContentSizeChanged(notification: NSNotification) {
+        labelView!.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
     }
 }
 

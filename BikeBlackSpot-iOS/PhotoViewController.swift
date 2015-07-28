@@ -23,14 +23,14 @@ class PhotoViewController: UIViewController,UIImagePickerControllerDelegate,UINa
         picker.delegate = self
         
         buttonSeparatorLabel!.text = "OR"
-        
+        //buttonSeparatorLabel!.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
         
         Background.setBackground(self)
         
         takePhotoButton.setTitle("take a photo".uppercaseString, forState: UIControlState.Normal)
         takePhotoButton.setTitleColor(UIColor.greenColor(), forState: .Highlighted)
         takePhotoButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
-        //takePhotoButton.titleLabel!.font = UIFont(name: "AlternateGothicLT-No2", size: 16)
+        //takePhotoButton.titleLabel!.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
         takePhotoButton.setBackgroundImage(UIImage(named: "camera_button.png"), forState: UIControlState.Normal)
         takePhotoButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
         
@@ -40,7 +40,7 @@ class PhotoViewController: UIViewController,UIImagePickerControllerDelegate,UINa
         galleryPhotoButton.setTitle("Select A Photo From Gallery".uppercaseString, forState: .Normal)
         galleryPhotoButton.setTitleColor(UIColor.greenColor(), forState: .Highlighted)
         galleryPhotoButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
-        galleryPhotoButton.titleLabel!.font = UIFont(name: "AlternateGothicLT-No2", size: 16)
+        //galleryPhotoButton.titleLabel!.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
         galleryPhotoButton.setBackgroundImage(UIImage(named: "album_button.png"), forState: UIControlState.Normal)
         galleryPhotoButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
         
@@ -67,6 +67,11 @@ class PhotoViewController: UIViewController,UIImagePickerControllerDelegate,UINa
             galleryPhotoButton.width == galleryPhotoButton.superview!.width * 0.8
             galleryPhotoButton.height == galleryPhotoButton.width * self.buttonAspectRatio
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "preferredContentSizeChanged:",
+            name: UIContentSizeCategoryDidChangeNotification,
+            object: nil)
         
     }
     
@@ -113,6 +118,10 @@ class PhotoViewController: UIViewController,UIImagePickerControllerDelegate,UINa
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func preferredContentSizeChanged(notification: NSNotification) {
+        takePhotoButton.titleLabel!.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
     }
     
     

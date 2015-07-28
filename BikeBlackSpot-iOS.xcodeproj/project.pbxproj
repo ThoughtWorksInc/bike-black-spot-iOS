@@ -57,6 +57,8 @@
 		7E3C6BD21B5C80F0000BAB2C /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BD11B5C80F0000BAB2C /* Report.swift */; };
 		7E3C6BD41B5CB13D000BAB2C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BD31B5CB13D000BAB2C /* Constants.swift */; };
 		7E5543511B5F587500FEE444 /* Pods_BikeBlackSpot_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB502AD5307A699F56F0C0A /* Pods_BikeBlackSpot_iOS.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		E416EF3D1B6716B300DD3DD6 /* CustomTextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E416EF3C1B6716B300DD3DD6 /* CustomTextViewExtension.swift */; };
+		E416EF3F1B67182000DD3DD6 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E416EF3E1B67182000DD3DD6 /* Fonts.swift */; };
 		E44EE47F1B65BBDF00822F30 /* Swiss 721 Light Condensed BT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E44EE47E1B65BBDF00822F30 /* Swiss 721 Light Condensed BT.ttf */; };
 		E44EE4811B65BBEE00822F30 /* Linotype - Alternate Gothic LT No2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E44EE4801B65BBEE00822F30 /* Linotype - Alternate Gothic LT No2.ttf */; };
 		E44EE4851B6605FD00822F30 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44EE4841B6605FD00822F30 /* UIViewExtension.swift */; };
@@ -120,6 +122,8 @@
 		AFB502AD5307A699F56F0C0A /* Pods_BikeBlackSpot_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikeBlackSpot_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D290F822402E11B6FA16E818 /* Pods-BikeBlackSpot-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeBlackSpot-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BikeBlackSpot-iOS/Pods-BikeBlackSpot-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D3A2CD095E3E9AA4B600927C /* Pods-BikeBlackSpot-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeBlackSpot-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-BikeBlackSpot-iOS/Pods-BikeBlackSpot-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		E416EF3C1B6716B300DD3DD6 /* CustomTextViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextViewExtension.swift; sourceTree = "<group>"; };
+		E416EF3E1B67182000DD3DD6 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		E44EE47E1B65BBDF00822F30 /* Swiss 721 Light Condensed BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Swiss 721 Light Condensed BT.ttf"; sourceTree = "<group>"; };
 		E44EE4801B65BBEE00822F30 /* Linotype - Alternate Gothic LT No2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Linotype - Alternate Gothic LT No2.ttf"; sourceTree = "<group>"; };
 		E44EE4841B6605FD00822F30 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 				7E13BE4B1B662A0C00EB3BB1 /* Background.swift */,
 				7E13BE4F1B66461800EB3BB1 /* Categories.swift */,
 				08F822181B672E8800A904E5 /* Appearance.swift */,
+				E416EF3E1B67182000DD3DD6 /* Fonts.swift */,
 			);
 			name = Global;
 			sourceTree = "<group>";
@@ -191,6 +196,8 @@
 				E44EE4841B6605FD00822F30 /* UIViewExtension.swift */,
 				083EE3D61B5F379E00201C3F /* StringExtension.swift */,
 				08F8221C1B67415E00A904E5 /* UIImageExtension.swift */,
+				E44EE4821B65E41400822F30 /* UILabelExtension.swift */,
+				E416EF3C1B6716B300DD3DD6 /* CustomTextViewExtension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -566,8 +573,10 @@
 				4CA829AE1B5766E000D614E8 /* PhotoViewController.swift in Sources */,
 				7E3C6BD41B5CB13D000BAB2C /* Constants.swift in Sources */,
 				083EE3D41B5F2D6C00201C3F /* CustomTextView.swift in Sources */,
+				E416EF3F1B67182000DD3DD6 /* Fonts.swift in Sources */,
 				7E13BE4E1B66387600EB3BB1 /* ErrorPageViewController.swift in Sources */,
 				082B74891B5CD1D7004DB225 /* APIService.swift in Sources */,
+				E416EF3D1B6716B300DD3DD6 /* CustomTextViewExtension.swift in Sources */,
 				7E3C6BCB1B58C3A7000BAB2C /* LocationService.swift in Sources */,
 				08F8221D1B67415E00A904E5 /* UIImageExtension.swift in Sources */,
 				4CA829B21B57679800D614E8 /* ThankyouViewController.swift in Sources */,

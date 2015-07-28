@@ -57,7 +57,10 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         self.pickerView = picker
         self.alert = alert
         
-
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "preferredContentSizeChanged:",
+            name: UIContentSizeCategoryDidChangeNotification,
+            object: nil)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -132,6 +135,25 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         }
     }
     
+    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView!) -> UIView {
+        let pickerLabel = UILabel()
+        pickerLabel.font = UIFont(name: "Swiss721LightCondensedBT", size: pickerLabel.font.pointSize)
+        pickerLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        pickerLabel.textAlignment = NSTextAlignment.Center
+        //UIFont(descriptor: <#UIFontDescriptor#>, size: <#CGFloat#>)
+        if row == 0 {
+            Report.getCurrentReport().category = nil
+            categoryTextField.text=nil
+            descTextView.setPlaceHolderText(DESC_TEXTVIEW_PLACEHOLDER)
+            pickerLabel.text = DESC_TEXTVIEW_PLACEHOLDER
+            return pickerLabel
+        }
+        let currentCategory = Categories.categories[row] as? ReportCategory
+        pickerLabel.text = currentCategory!.name
+        
+        return pickerLabel
+    }
+    
     func setReportDescription() {
         Report.getCurrentReport().description = descTextView.getText()
     }
@@ -147,5 +169,13 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
             return false
         }
         return true
+    }
+    
+    
+    
+    func preferredContentSizeChanged(notification: NSNotification) {
+        descTextView!.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        categoryTextField!.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        //pickerView!.
     }
 }
