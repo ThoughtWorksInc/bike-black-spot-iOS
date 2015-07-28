@@ -37,10 +37,12 @@ class CustomTextView : UITextView, UITextViewDelegate {
         updateTextColor()
         return true
     }
+    
     func setPlaceHolderText(text:String){
         self.placeholderText=text
         setDefaultText(text)
     }
+    
     func setDefaultText(text:String?) {
         if text != nil && !text!.trim().isEmpty {
             self.text = text

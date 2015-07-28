@@ -1,5 +1,5 @@
 //
-//  CustomTextViewExtension.swift
+//  UITextViewExtension.swift
 //  BikeBlackSpot-iOS
 //
 //  Created by John Geddes on 28/07/2015.
@@ -9,11 +9,15 @@
 import Foundation
 import UIKit
 
-extension CustomTextView {
+extension UITextView {
     
     func setBodyFont() {
         self.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
         self.font = UIFont(name: "Swiss721LightCondensedBT", size: self.font.pointSize)
     }
     
+    func setHeadingFont() {
+        self.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        self.font = UIFont(name: "AlternateGothicLT-No2", size: self.font.pointSize)
+    }
 }

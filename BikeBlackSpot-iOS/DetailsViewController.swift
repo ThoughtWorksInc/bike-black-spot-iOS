@@ -31,6 +31,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
             descTextView.text = savedDescription
         }
         
+        categoryTextField.setHeadingFont()
         categoryTextField.attributedPlaceholder = NSAttributedString(string: CATEGORY_PLACEHOLDER, attributes: [NSForegroundColorAttributeName: placeholderTextColor])
         categoryTextField.delegate = self
         if let savedCategory = Report.getCurrentReport().category {

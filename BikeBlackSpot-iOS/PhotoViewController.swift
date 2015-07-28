@@ -5,10 +5,9 @@ class PhotoViewController: UIViewController,UIImagePickerControllerDelegate,UINa
     
     let IMAGE_MAX_WIDTH:CGFloat = 1000.0
     let IMAGE_MAX_HEIGHT:CGFloat = 1000.0
-    
+
     @IBOutlet weak var segueButton: UIBarButtonItem!
-    //var takePhotoButton:UIButton?
-    //var galleryPhotoButton:UIButton?
+
     let picker = UIImagePickerController()
     let buttonAspectRatio = 0.2719486081
     
@@ -23,25 +22,25 @@ class PhotoViewController: UIViewController,UIImagePickerControllerDelegate,UINa
         
         picker.delegate = self
         
+        buttonSeparatorLabel?.setBodyFont()
         buttonSeparatorLabel!.text = "OR"
-        //buttonSeparatorLabel!.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
         
         Background.setBackground(self)
         
-        takePhotoButton.setTitle("take a photo".uppercaseString, forState: UIControlState.Normal)
+        takePhotoButton.setTitle("Take a photo".uppercaseString, forState: UIControlState.Normal)
         takePhotoButton.setTitleColor(UIColor.greenColor(), forState: .Highlighted)
         takePhotoButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
-        //takePhotoButton.titleLabel!.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        takePhotoButton.titleLabel?.setHeadingFont()
         takePhotoButton.setBackgroundImage(UIImage(named: "camera_button.png"), forState: UIControlState.Normal)
         takePhotoButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
         
         takePhotoButton.addTarget(self, action: "openCamera:", forControlEvents: UIControlEvents.TouchUpInside)
         
         
-        galleryPhotoButton.setTitle("Select A Photo From Gallery".uppercaseString, forState: .Normal)
+        galleryPhotoButton.setTitle("Upload photo".uppercaseString, forState: .Normal)
         galleryPhotoButton.setTitleColor(UIColor.greenColor(), forState: .Highlighted)
         galleryPhotoButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
-        //galleryPhotoButton.titleLabel!.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        galleryPhotoButton.titleLabel?.setHeadingFont()
         galleryPhotoButton.setBackgroundImage(UIImage(named: "album_button.png"), forState: UIControlState.Normal)
         galleryPhotoButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
         
