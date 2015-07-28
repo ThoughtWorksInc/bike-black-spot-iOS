@@ -1,6 +1,6 @@
 import UIKit
 let VALIDATION_ERROR = "Please provide valid details"
-class UserDetailsViewController: FormViewController {
+class UserDetailsViewController: FormViewController, UITextFieldDelegate {
     
     @IBOutlet var nameField: UITextField!
     @IBOutlet var emailField: UITextField!
@@ -10,7 +10,9 @@ class UserDetailsViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        nameField.delegate = self
+        emailField.delegate = self
+        postcodeField.delegate = self
         Background.setBackground(self)
         
         reportViewModel = ReportViewModel()
@@ -40,8 +42,6 @@ class UserDetailsViewController: FormViewController {
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         super.touchesBegan(touches, withEvent: event)
         self.view.endEditing(true)
-        revalidateFields()
-        setUser()
     }
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
@@ -52,10 +52,8 @@ class UserDetailsViewController: FormViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func revalidateFields() -> Bool{
-        resetFields()
-        return allFieldsValid()
-    }
+    
+    
     
     func setUser() {
         var user = User()
@@ -76,6 +74,15 @@ class UserDetailsViewController: FormViewController {
         Report.getCurrentReport().user = user
     }
     
+    func textFieldDidEndEditing(textField:UITextField) {
+        if isFieldValid(textField){
+            textField.layer.borderColor = textFieldBorderColor.CGColor
+        }
+        else{
+            textField.layer.borderColor = UIColor.redColor().CGColor
+        }
+        
+    }
     override func isFieldValid(field: AnyObject) -> Bool {
         if let textField = field as? UITextField {
             var value = textField.text.trim()

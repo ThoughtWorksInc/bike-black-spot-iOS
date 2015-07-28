@@ -27,9 +27,17 @@ public class FormViewController : UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Done, target: self, action: "closeKeyboard:")
     }
     func closeKeyboard(sender: UIButton){
+        
         self.view.endEditing(true)
+        
+        //        revalidateFields()
     }
     
+
+    func revalidateFields() -> Bool{
+        resetFields()
+        return allFieldsValid()
+    }
     func registerTextFields(textFields:[AnyObject]) {
         for field in textFields {
             if let view = field as? UIView {
@@ -69,7 +77,7 @@ public class FormViewController : UIViewController {
     }
     
     func isFieldValid(field:AnyObject) -> Bool {
-        return true
+        return false
     }
     
     func fieldValues() -> [String] {
