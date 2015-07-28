@@ -32,8 +32,8 @@
 		08C5514D1B60C5F300ED48FA /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C5514C1B60C5F300ED48FA /* Reachability.swift */; };
 		08DAD4C31B671F07003493FD /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BD11B5C80F0000BAB2C /* Report.swift */; };
 		08DAD4C41B671F0A003493FD /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5F6E1B5F17B700DD5586 /* Location.swift */; };
-		08DAD4C61B672806003493FD /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 08DAD4C51B672806003493FD /* image.png */; };
 		08F822191B672E8800A904E5 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F822181B672E8800A904E5 /* Appearance.swift */; };
+		08F8221B1B673E2200A904E5 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 08F8221A1B673E2200A904E5 /* image.png */; };
 		26CF8CAA1B4382D500C82362 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF8CA91B4382D500C82362 /* AppDelegate.swift */; };
 		26CF8CAC1B4382D500C82362 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF8CAB1B4382D500C82362 /* LocationViewController.swift */; };
 		26CF8CAF1B4382D500C82362 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26CF8CAD1B4382D500C82362 /* Main.storyboard */; };
@@ -86,8 +86,8 @@
 		086117D71B65DCFC0042359D /* UserTokenMgrTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTokenMgrTests.swift; sourceTree = "<group>"; };
 		08C551461B60C1AC00ED48FA /* LocationServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServiceTests.swift; sourceTree = "<group>"; };
 		08C5514C1B60C5F300ED48FA /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		08DAD4C51B672806003493FD /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image.png; path = ../../../Desktop/image.png; sourceTree = "<group>"; };
 		08F822181B672E8800A904E5 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		08F8221A1B673E2200A904E5 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		26CF8CA41B4382D500C82362 /* BikeBlackSpot-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BikeBlackSpot-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CF8CA81B4382D500C82362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26CF8CA91B4382D500C82362 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -263,7 +263,7 @@
 		26CF8CBD1B4382D600C82362 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				08DAD4C51B672806003493FD /* image.png */,
+				08F8221A1B673E2200A904E5 /* image.png */,
 				26CF8CBE1B4382D600C82362 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -443,7 +443,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08DAD4C61B672806003493FD /* image.png in Resources */,
+				08F8221B1B673E2200A904E5 /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
