@@ -11,8 +11,8 @@ import UIKit
 
 public func setupFonts()
 {
-    UILabel.appearance().font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
-    UILabel.appearance().setGlobalFont = "AlternateGothicLT-No2"
+//    UILabel.appearance().font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+//    UILabel.appearance().setGlobalFont = "AlternateGothicLT-No2"
     
     CustomTextView.appearance().font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
     CustomTextView.appearance().setGlobalFont = "Swiss721LightCondensedBT"
