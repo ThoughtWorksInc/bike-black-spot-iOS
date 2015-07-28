@@ -40,6 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 println("Reachable via Cellular")
             }
             Categories.resetNumberOfAttempts()
+            if Categories.isNotLoaded() {
+                Categories.loadCategories()
+            }
             self.showDefaultViewController()
         }
         reachability!.whenUnreachable = { reachability in
