@@ -44,6 +44,13 @@ class ReviewViewController: FormViewController {
         if let image = report.image {
             photoView.image = UIImage(data:image);
             photoView.contentMode = UIViewContentMode.ScaleAspectFit;
+            if descriptionTextView.hidden {
+                constrain(photoView, categoryTextField) { photoView, categoryTextField in
+                    photoView.top == categoryTextField.bottom+20
+                }
+            }else{
+
+            }
             
         } else {
             photoView.hidden = true
