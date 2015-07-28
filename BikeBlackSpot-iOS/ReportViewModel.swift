@@ -18,7 +18,9 @@ enum ReportField {
 
 class ReportViewModel {
     
-    let EMAIL_REGEX = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+    //CHanged regex to match server side one
+//    let EMAIL_REGEX = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+    let EMAIL_REGEX = "^([^@s]+)@((?:[-a-z0-9]+.)+[a-z]{2,})$"
     let POSTCODE_REGEX = "^([0-9]{4})?$"
     
     var requiredFields:[ReportField]!
