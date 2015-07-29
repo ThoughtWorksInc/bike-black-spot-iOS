@@ -1,7 +1,7 @@
 import UIKit
 import Cartography
 
-class PhotoViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     let IMAGE_MAX_WIDTH:CGFloat = 1000.0
     let IMAGE_MAX_HEIGHT:CGFloat = 1000.0
@@ -17,6 +17,7 @@ class PhotoViewController: UIViewController,UIImagePickerControllerDelegate,UINa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "PHOTO"
         
         buttonSeparatorLabel = UILabel()
         
@@ -24,8 +25,6 @@ class PhotoViewController: UIViewController,UIImagePickerControllerDelegate,UINa
         
         buttonSeparatorLabel?.setBodyFont()
         buttonSeparatorLabel!.text = "OR"
-        
-        Background.setBackground(self)
         
         takePhotoButton.setTitle("Take a photo".uppercaseString, forState: UIControlState.Normal)
         takePhotoButton.setTitleColor(UIColor.greenColor(), forState: .Highlighted)

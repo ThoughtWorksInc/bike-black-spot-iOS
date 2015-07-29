@@ -21,7 +21,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Background.setBackground(self)
+        self.title = "DETAILS"
         
         descTextView.setBodyFont()
         descTextView.textColor = textColor

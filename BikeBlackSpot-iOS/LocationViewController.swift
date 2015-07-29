@@ -6,7 +6,7 @@ let LOCATION_PLACEHOLDER = "Please select your location"
 let LOCATION_ERROR_PLACEHOLDER = LOCATION_PLACEHOLDER + " within Australia"
 let DEFAULT_COORDINATES = CLLocationCoordinate2D(latitude: Constants.DEFAULT_MAP_LAT,longitude:Constants.DEFAULT_MAP_LONG)
 
-class LocationViewController: UIViewController, GMSMapViewDelegate {
+class LocationViewController: BaseViewController, GMSMapViewDelegate {
     
     var mapView:GMSMapView?
     var labelView:UILabel?
@@ -22,7 +22,7 @@ class LocationViewController: UIViewController, GMSMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Background.setBackground(self)
+        self.title = "LOCATION"
         
         var mapView = GMSMapView.mapWithFrame(CGRectZero, camera: nil)
         mapView.myLocationEnabled = true

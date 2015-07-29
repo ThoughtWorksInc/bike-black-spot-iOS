@@ -29,10 +29,20 @@ public class Colour {
 public class Styles {
     
     static func apply() {
+        
+        // nav bar colour
         UINavigationBar.appearance().barTintColor = Colour.Blue
-        UINavigationBar.appearance().tintColor = Colour.Blue
-        UINavigationBar.appearance().backgroundColor = Colour.Blue
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UINavigationBar.appearance().translucent = false
+        
+        // nav bar title font
+        let attributes: [String:AnyObject] = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName : Font.heading(20.0)]
+        UINavigationBar.appearance().titleTextAttributes = attributes
+        
+        // back button font
+        UIBarButtonItem.appearance()
+            .setTitleTextAttributes([NSFontAttributeName : Font.heading(18.0)],
+                forState: UIControlState.Normal)
     }
 }
 

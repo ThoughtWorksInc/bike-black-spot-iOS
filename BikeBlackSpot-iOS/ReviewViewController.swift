@@ -14,8 +14,7 @@ class ReviewViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        Background.setBackground(self)
+        self.title = "REVIEW"
         
         registerTextFields([locationTextField,categoryTextField,descriptionTextView])
         

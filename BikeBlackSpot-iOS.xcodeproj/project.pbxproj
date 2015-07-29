@@ -24,6 +24,8 @@
 		086117D81B65DCFC0042359D /* UserTokenMgrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086117D71B65DCFC0042359D /* UserTokenMgrTests.swift */; };
 		086117D91B65DDAD0042359D /* UserTokenMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5F721B5F1ED600DD5586 /* UserTokenMgr.swift */; };
 		0861335E1B685B4B00511EFD /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0861335D1B685B4B00511EFD /* Styles.swift */; };
+		086133601B68630E00511EFD /* BackgroundExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0861335F1B68630E00511EFD /* BackgroundExtension.swift */; };
+		086133621B6863E600511EFD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086133611B6863E600511EFD /* BaseViewController.swift */; };
 		088321151B5DC394003B95DB /* ReportCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B748B1B5CD363004DB225 /* ReportCategory.swift */; };
 		08C551471B60C1AC00ED48FA /* LocationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C551461B60C1AC00ED48FA /* LocationServiceTests.swift */; };
 		08C551481B60C1FD00ED48FA /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BCF1B5C79AC000BAB2C /* LocationViewModel.swift */; };
@@ -47,7 +49,6 @@
 		4CA829AE1B5766E000D614E8 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA829AD1B5766E000D614E8 /* PhotoViewController.swift */; };
 		4CA829B01B57675A00D614E8 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA829AF1B57675A00D614E8 /* ReviewViewController.swift */; };
 		4CA829B21B57679800D614E8 /* ThankyouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA829B11B57679800D614E8 /* ThankyouViewController.swift */; };
-		7E13BE4C1B662A0C00EB3BB1 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E13BE4B1B662A0C00EB3BB1 /* Background.swift */; };
 		7E13BE4E1B66387600EB3BB1 /* ErrorPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E13BE4D1B66387600EB3BB1 /* ErrorPageViewController.swift */; };
 		7E13BE501B66461800EB3BB1 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E13BE4F1B66461800EB3BB1 /* Categories.swift */; };
 		7E3C6BC81B58BAB5000BAB2C /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BC71B58BAB5000BAB2C /* UserDetailsViewController.swift */; };
@@ -89,6 +90,8 @@
 		084C5F721B5F1ED600DD5586 /* UserTokenMgr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTokenMgr.swift; sourceTree = "<group>"; };
 		086117D71B65DCFC0042359D /* UserTokenMgrTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTokenMgrTests.swift; sourceTree = "<group>"; };
 		0861335D1B685B4B00511EFD /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		0861335F1B68630E00511EFD /* BackgroundExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundExtension.swift; sourceTree = "<group>"; };
+		086133611B6863E600511EFD /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		08C551461B60C1AC00ED48FA /* LocationServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServiceTests.swift; sourceTree = "<group>"; };
 		08C5514C1B60C5F300ED48FA /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		08F8221A1B673E2200A904E5 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
@@ -109,7 +112,6 @@
 		4CA829AD1B5766E000D614E8 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		4CA829AF1B57675A00D614E8 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		4CA829B11B57679800D614E8 /* ThankyouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankyouViewController.swift; sourceTree = "<group>"; };
-		7E13BE4B1B662A0C00EB3BB1 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		7E13BE4D1B66387600EB3BB1 /* ErrorPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorPageViewController.swift; sourceTree = "<group>"; };
 		7E13BE4F1B66461800EB3BB1 /* Categories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		7E3C6BC71B58BAB5000BAB2C /* UserDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
@@ -158,7 +160,6 @@
 				4CA829A81B57272F00D614E8 /* GoogleDataProvider.swift */,
 				7E3C6BD31B5CB13D000BAB2C /* Constants.swift */,
 				08C5514C1B60C5F300ED48FA /* Reachability.swift */,
-				7E13BE4B1B662A0C00EB3BB1 /* Background.swift */,
 				7E13BE4F1B66461800EB3BB1 /* Categories.swift */,
 				0861335D1B685B4B00511EFD /* Styles.swift */,
 			);
@@ -200,6 +201,7 @@
 				E416EF401B67517100DD3DD6 /* UILabelExtension.swift */,
 				E416EF421B6757FA00DD3DD6 /* UITextFieldExtension.swift */,
 				E416EF461B675BD000DD3DD6 /* UITextViewExtension.swift */,
+				0861335F1B68630E00511EFD /* BackgroundExtension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -292,6 +294,7 @@
 				4CA829B11B57679800D614E8 /* ThankyouViewController.swift */,
 				084C5F6C1B5F0FBF00DD5586 /* FormViewController.swift */,
 				7E13BE4D1B66387600EB3BB1 /* ErrorPageViewController.swift */,
+				086133611B6863E600511EFD /* BaseViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 			files = (
 				4CA829AC1B57652D00D614E8 /* DetailsViewController.swift in Sources */,
 				7E13BE501B66461800EB3BB1 /* Categories.swift in Sources */,
+				086133621B6863E600511EFD /* BaseViewController.swift in Sources */,
 				26CF8CAC1B4382D500C82362 /* LocationViewController.swift in Sources */,
 				7E3C6BC81B58BAB5000BAB2C /* UserDetailsViewController.swift in Sources */,
 				4CA829B01B57675A00D614E8 /* ReviewViewController.swift in Sources */,
@@ -573,12 +577,12 @@
 				0861335E1B685B4B00511EFD /* Styles.swift in Sources */,
 				084C5F6D1B5F0FBF00DD5586 /* FormViewController.swift in Sources */,
 				E416EF411B67517100DD3DD6 /* UILabelExtension.swift in Sources */,
-				7E13BE4C1B662A0C00EB3BB1 /* Background.swift in Sources */,
 				4CA829AE1B5766E000D614E8 /* PhotoViewController.swift in Sources */,
 				7E3C6BD41B5CB13D000BAB2C /* Constants.swift in Sources */,
 				083EE3D41B5F2D6C00201C3F /* CustomTextView.swift in Sources */,
 				E416EF471B675BD000DD3DD6 /* UITextViewExtension.swift in Sources */,
 				7E13BE4E1B66387600EB3BB1 /* ErrorPageViewController.swift in Sources */,
+				086133601B68630E00511EFD /* BackgroundExtension.swift in Sources */,
 				082B74891B5CD1D7004DB225 /* APIService.swift in Sources */,
 				7E3C6BCB1B58C3A7000BAB2C /* LocationService.swift in Sources */,
 				08F8221D1B67415E00A904E5 /* UIImageExtension.swift in Sources */,

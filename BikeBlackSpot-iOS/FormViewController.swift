@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-public class FormViewController : UIViewController {
+public class FormViewController : BaseViewController {
     
     let DEFAULT_ERROR_MSG = "Please provide required information"
     

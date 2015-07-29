@@ -2,7 +2,7 @@ import UIKit
 import SwiftLoader
 import PromiseKit
 
-class ThankyouViewController: UIViewController {
+class ThankyouViewController: BaseViewController {
     
     @IBOutlet weak var middleMessage: UILabel!
     
@@ -10,10 +10,10 @@ class ThankyouViewController: UIViewController {
     
     @IBOutlet weak var sendAnotherReportButton: UIBarButtonItem!
     @IBOutlet var doneButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        Background.setBackground(self)
+        self.title = "THANK YOU"
         
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: navigationController, action: nil)
         navigationItem.leftBarButtonItem = backButton

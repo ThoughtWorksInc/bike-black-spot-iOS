@@ -1,5 +1,6 @@
 import UIKit
 let VALIDATION_ERROR = "Please provide valid details"
+
 class UserDetailsViewController: FormViewController, UITextFieldDelegate {
     
     @IBOutlet var nameField: UITextField!
@@ -10,12 +11,11 @@ class UserDetailsViewController: FormViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "USER DETAILS"
+        
         nameField.delegate = self
         emailField.delegate = self
         postcodeField.delegate = self
-        Background.setBackground(self)
-        
-        Background.setBackground(self)
         
         reportViewModel = ReportViewModel()
         
