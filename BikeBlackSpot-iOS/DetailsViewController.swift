@@ -26,20 +26,18 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         descTextView.placeholderTextColor = UIColor.blackColor()
         descTextView.placeholderText = DESC_TEXTVIEW_PLACEHOLDER
         
-        
         if let savedDescription = Report.getCurrentReport().description {
             descTextView.text = savedDescription
         }
         
         categoryTextField.setHeadingFont()
-        categoryTextField.placeholder = CATEGORY_PLACEHOLDER.uppercaseString
-        categoryTextField.attributedPlaceholder = NSAttributedString(string: CATEGORY_PLACEHOLDER, attributes: [NSForegroundColorAttributeName: UIColor.blackColor()])
-        //categoryTextField.text = categoryTextField.text!.uppercaseString
+        categoryTextField.attributedPlaceholder = NSAttributedString(string: CATEGORY_PLACEHOLDER.uppercaseString, attributes: [NSForegroundColorAttributeName: UIColor.blackColor()])
         categoryTextField.delegate = self
-        if let savedCategory = Report.getCurrentReport().category {
-            categoryTextField.text = savedCategory.name
+        
+        /*if let savedCategory = Report.getCurrentReport().category {
+            categoryTextField.text = savedCategory.name!.uppercaseString
             //TODO set description placeholder here too
-        }
+        }*/
         
         registerTextFields([descTextView, categoryTextField])
         
@@ -83,7 +81,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         
         // set selected values if any
         descTextView.setDefaultText(Report.getCurrentReport().description)
-        categoryTextField.text = Report.getCurrentReport().category?.name
+        categoryTextField.text = Report.getCurrentReport().category?.name!.uppercaseString
     }
     
     override func didReceiveMemoryWarning() {
