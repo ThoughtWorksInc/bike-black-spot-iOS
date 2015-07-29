@@ -47,6 +47,11 @@ public class FormViewController : BaseViewController {
                 view.layer.borderWidth = 1.0
                 view.layer.cornerRadius = 5.0
             }
+            if let textField = field as? UITextField {
+                textField.setBodyFont()
+            } else if let textView = field as? UITextView {
+                textView.setBodyFont()
+            }
         }
         self.textFields = textFields
     }

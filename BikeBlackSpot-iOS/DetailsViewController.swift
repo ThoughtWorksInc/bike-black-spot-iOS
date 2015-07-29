@@ -22,7 +22,6 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         super.viewDidLoad()
         self.title = "DETAILS"
         
-        descTextView.setBodyFont()
         descTextView.textColor = textColor
         descTextView.placeholderTextColor = placeholderTextColor
         descTextView.placeholderText = DESC_TEXTVIEW_PLACEHOLDER

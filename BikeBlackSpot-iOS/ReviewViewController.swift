@@ -23,11 +23,8 @@ class ReviewViewController: FormViewController {
         var descFlag = false
         categoryLabel.setHeadingFont()
         categoryLabel.text! = categoryLabel.text!.uppercaseString
-        categoryTextField.setBodyFont()
         locationLabel.setHeadingFont()
         locationLabel.text! = locationLabel.text!.uppercaseString
-        locationTextField.setBodyFont()
-        descriptionTextView.setBodyFont()
         descriptionLabel.setHeadingFont()
         
         if let locationDescription = report.location?.desc {
@@ -35,10 +32,8 @@ class ReviewViewController: FormViewController {
         }
         
         if let categoryName = report.category?.name {
-            categoryTextField.setBodyFont()
             categoryTextField.text = categoryName
-            
-        }
+        } 
         
         if let description = report.description {
             descriptionLabel.hidden = false
