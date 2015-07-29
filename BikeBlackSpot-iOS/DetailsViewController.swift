@@ -23,7 +23,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         self.title = "DETAILS"
         
         descTextView.textColor = textColor
-        descTextView.placeholderTextColor = UIColor.blackColor()
+        descTextView.placeholderTextColor = UIColor.grayColor()
         descTextView.placeholderText = DESC_TEXTVIEW_PLACEHOLDER
         
         if let savedDescription = Report.getCurrentReport().description {
@@ -33,11 +33,6 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         categoryTextField.setHeadingFont()
         categoryTextField.attributedPlaceholder = NSAttributedString(string: CATEGORY_PLACEHOLDER.uppercaseString, attributes: [NSForegroundColorAttributeName: UIColor.blackColor()])
         categoryTextField.delegate = self
-        
-        /*if let savedCategory = Report.getCurrentReport().category {
-            categoryTextField.text = savedCategory.name!.uppercaseString
-            //TODO set description placeholder here too
-        }*/
         
         registerTextFields([descTextView, categoryTextField])
         
