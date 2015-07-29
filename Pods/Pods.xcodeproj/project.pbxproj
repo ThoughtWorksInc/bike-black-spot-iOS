@@ -1888,7 +1888,7 @@
 						DevelopmentTeam = V25DK7S622;
 					};
 					3D241FBF7D13187F358061C8 = {
-						DevelopmentTeam = TX44MTV4A5;
+						DevelopmentTeam = V25DK7S622;
 					};
 					45DD430B83E6B79D4548E060 = {
 						DevelopmentTeam = V25DK7S622;
