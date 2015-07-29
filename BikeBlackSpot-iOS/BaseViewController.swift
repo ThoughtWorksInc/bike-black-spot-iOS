@@ -23,7 +23,7 @@ public class BaseViewController : UIViewController {
     func setNextButton(text:String, segueIdentifier:String? = nil) {
         var button = UIButton()
         button.layer.cornerRadius = 5.0
-        
+        button.clipsToBounds = true
         button.setBackgroundColor(Colour.Yellow, forState:UIControlState.Normal)
         button.setBackgroundColor(Colour.DarkYellow, forState:UIControlState.Disabled)
         
