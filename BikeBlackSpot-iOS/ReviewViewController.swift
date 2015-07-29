@@ -21,11 +21,14 @@ class ReviewViewController: FormViewController {
         
         let report = Report.getCurrentReport()
         var descFlag = false
-        categoryLabel.setHeadingFont()
+        categoryLabel.setHeadingFontSmall()
         categoryLabel.text! = categoryLabel.text!.uppercaseString
-        locationLabel.setHeadingFont()
+        categoryTextField.setBodyFont()
+        locationLabel.setHeadingFontSmall()
         locationLabel.text! = locationLabel.text!.uppercaseString
-        descriptionLabel.setHeadingFont()
+        locationTextField.setBodyFont()
+        descriptionTextView.setBodyFont()
+        descriptionLabel.setHeadingFontSmall()
         
         if let locationDescription = report.location?.desc {
             locationTextField.text = locationDescription

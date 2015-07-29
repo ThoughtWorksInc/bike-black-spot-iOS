@@ -22,22 +22,23 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         picker.delegate = self
         
         buttonSeparatorLabel?.setBodyFont()
-        buttonSeparatorLabel!.text = "OR"
+        buttonSeparatorLabel!.text = "or"
+        buttonSeparatorLabel!.textColor = UIColor.whiteColor()
         
         takePhotoButton.setTitle("Take a photo".uppercaseString, forState: UIControlState.Normal)
         takePhotoButton.setTitleColor(UIColor.greenColor(), forState: .Highlighted)
         takePhotoButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
-        takePhotoButton.titleLabel?.setHeadingFont()
+        takePhotoButton.titleLabel?.setHeadingFontLarge()
         takePhotoButton.setBackgroundImage(UIImage(named: "camera_button.png"), forState: UIControlState.Normal)
         takePhotoButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
         
         takePhotoButton.addTarget(self, action: "openCamera:", forControlEvents: UIControlEvents.TouchUpInside)
         
-        
-        galleryPhotoButton.setTitle("Upload photo".uppercaseString, forState: .Normal)
+        galleryPhotoButton.setTitle("Upload a photo".uppercaseString, forState: .Normal)
         galleryPhotoButton.setTitleColor(UIColor.greenColor(), forState: .Highlighted)
         galleryPhotoButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
-        galleryPhotoButton.titleLabel?.setHeadingFont()
+        galleryPhotoButton.titleLabel?.setHeadingFontLarge()
+        galleryPhotoButton.titleLabel?.font
         galleryPhotoButton.setBackgroundImage(UIImage(named: "album_button.png"), forState: UIControlState.Normal)
         galleryPhotoButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
         

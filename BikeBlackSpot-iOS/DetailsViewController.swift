@@ -3,7 +3,7 @@ import PromiseKit
 import SwiftyJSON
 
 let DESC_TEXTVIEW_PLACEHOLDER = "Enter report description"
-let CATEGORY_PLACEHOLDER = "Select report category"
+let CATEGORY_PLACEHOLDER = "Select a category"
 let SERVICE_UNAVAILABLE = "Service is currently unavailable"
 let PLEASE_SELECT_A_CATEGORY = "Please enter required information"
 let PICKER_HEIGHT:CGFloat = 162.0
@@ -23,14 +23,18 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         self.title = "DETAILS"
         
         descTextView.textColor = textColor
-        descTextView.placeholderTextColor = placeholderTextColor
+        descTextView.placeholderTextColor = UIColor.blackColor()
         descTextView.placeholderText = DESC_TEXTVIEW_PLACEHOLDER
+        
+        
         if let savedDescription = Report.getCurrentReport().description {
             descTextView.text = savedDescription
         }
         
         categoryTextField.setHeadingFont()
-        categoryTextField.attributedPlaceholder = NSAttributedString(string: CATEGORY_PLACEHOLDER, attributes: [NSForegroundColorAttributeName: placeholderTextColor])
+        categoryTextField.placeholder = CATEGORY_PLACEHOLDER.uppercaseString
+        categoryTextField.attributedPlaceholder = NSAttributedString(string: CATEGORY_PLACEHOLDER, attributes: [NSForegroundColorAttributeName: UIColor.blackColor()])
+        //categoryTextField.text = categoryTextField.text!.uppercaseString
         categoryTextField.delegate = self
         if let savedCategory = Report.getCurrentReport().category {
             categoryTextField.text = savedCategory.name
@@ -126,7 +130,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         else {
             if let selectedCategory = Categories.categories[row] as? ReportCategory {
                 Report.getCurrentReport().category = selectedCategory
-                categoryTextField.text = selectedCategory.name
+                categoryTextField.text = selectedCategory.name?.uppercaseString
                 if let categoryDescription = selectedCategory.desc{
                     descTextView.setPlaceHolderText(categoryDescription + " (Tap to edit)")
                 }
@@ -142,9 +146,9 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         //UIFont(descriptor: <#UIFontDescriptor#>, size: <#CGFloat#>)
         if row == 0 {
             Report.getCurrentReport().category = nil
-            categoryTextField.text=nil
+            categoryTextField.text = CATEGORY_PLACEHOLDER.uppercaseString
             descTextView.setPlaceHolderText(DESC_TEXTVIEW_PLACEHOLDER)
-            pickerLabel.text = DESC_TEXTVIEW_PLACEHOLDER
+            pickerLabel.text = CATEGORY_PLACEHOLDER
             return pickerLabel
         }
         let currentCategory = Categories.categories[row] as? ReportCategory
@@ -174,11 +178,8 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         super.performSegueWithIdentifier(identifier, sender: sender)
     }
     
-    
-    
     func preferredContentSizeChanged(notification: NSNotification) {
         descTextView!.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
         categoryTextField!.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
-        //pickerView!.
     }
 }
