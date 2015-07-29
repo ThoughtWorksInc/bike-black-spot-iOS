@@ -78,7 +78,7 @@ class ReviewViewController: FormViewController {
         if(isRegistered) {
             Report.getCurrentReport().userUUID = UserTokenMgr.sharedInstance.token()!
         }
-        var segueIdentifier = isRegistered ? "ThankYouSegue" : "UserDetailsSegue"
+        var segueIdentifier = isRegistered ? "ThankYouSegue" : "SignUpSegue"
         super.performSegueWithIdentifier(segueIdentifier, sender: nil)
     }
     

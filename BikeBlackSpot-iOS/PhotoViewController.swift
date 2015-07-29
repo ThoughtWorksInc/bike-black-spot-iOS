@@ -110,10 +110,10 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         var resizedImage = chosenImage.resizeIfRequired(IMAGE_MAX_WIDTH, maxHeight: IMAGE_MAX_HEIGHT)
         
         Report.getCurrentReport().image = UIImageJPEGRepresentation(resizedImage, 1.0) //http://pinkstone.co.uk/how-to-save-a-uiimage-in-core-data-and-retrieve-it/
+        
         nextButton()!.setTitle("CONTINUE", forState: UIControlState.Normal)
             
         println("Image taken~!")
-        self.performSegueWithIdentifier("ReportReviewSegue", sender: nil)
         dismissViewControllerAnimated(true, completion: nil)
     }
     

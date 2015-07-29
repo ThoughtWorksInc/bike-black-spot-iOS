@@ -336,6 +336,7 @@
                         <outlet property="locationTextField" destination="AAc-bE-5UE" id="odd-cK-esT"/>
                         <outlet property="photoView" destination="oyl-AS-Ap1" id="77X-Ez-jza"/>
                         <segue destination="lsj-SY-bHK" kind="show" identifier="ThankYouSegue" id="ccZ-dh-abl"/>
+                        <segue destination="Jzd-8g-gDU" kind="show" identifier="SignUpSegue" id="0YD-sI-2t7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kus-q5-BCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -354,13 +355,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="As a first time user, please provide a few details" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xd-Dp-Gm1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="As a first time user, please provide a few details" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xd-Dp-Gm1">
                                 <rect key="frame" x="21" y="84" width="558" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mzo-TA-FNS">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mzo-TA-FNS">
                                 <rect key="frame" x="21" y="122" width="558" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ugg-6X-y8G"/>
@@ -368,7 +369,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GrT-ia-PDP">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GrT-ia-PDP">
                                 <rect key="frame" x="21" y="182" width="558" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="irL-kj-wPK"/>
@@ -376,7 +377,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Postcode" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SzA-cw-dNg">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Postcode" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SzA-cw-dNg">
                                 <rect key="frame" x="21" y="242" width="558" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ZWw-yF-SVg"/>
@@ -410,6 +411,7 @@
                         <outlet property="emailField" destination="GrT-ia-PDP" id="phE-2G-ci9"/>
                         <outlet property="nameField" destination="Mzo-TA-FNS" id="4l6-Ko-Wwp"/>
                         <outlet property="postcodeField" destination="SzA-cw-dNg" id="19N-oU-bnU"/>
+                        <segue destination="lsj-SY-bHK" kind="show" identifier="ThankYouSegue" id="QMh-cf-Tjd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IzB-EF-KXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -444,4 +446,7 @@
         <image name="email-sent" width="120" height="79"/>
         <image name="no-internet" width="92" height="80"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="QMh-cf-Tjd"/>
+    </inferredMetricsTieBreakers>
 </document>
