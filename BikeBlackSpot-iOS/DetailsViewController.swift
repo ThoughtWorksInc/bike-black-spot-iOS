@@ -17,7 +17,6 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     
     var alert:UIAlertController?
     var pickerView:UIPickerView?
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +58,8 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         
         self.pickerView = picker
         self.alert = alert
+        
+        setNextButton("NEXT", segueIdentifier: "PhotoSegue")
         
         NSNotificationCenter.defaultCenter().addObserver(self,
             selector: "preferredContentSizeChanged:",
@@ -161,7 +162,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         pickerView!.reloadAllComponents()
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+    override func performSegueWithIdentifier(identifier: String?, sender: AnyObject?) {
         setReportDescription()
         
         if(Report.getCurrentReport().category == nil) {
@@ -169,9 +170,9 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
             if let textField = categoryTextField {
                 textField.layer.borderColor = UIColor.redColor().CGColor
             }
-            return false
+            return
         }
-        return true
+        super.performSegueWithIdentifier(identifier, sender: sender)
     }
     
     

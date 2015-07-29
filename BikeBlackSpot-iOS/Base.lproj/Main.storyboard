@@ -19,21 +19,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Dvx-7N-Ild"/>
-                        <barButtonItem title="Report" id="IL4-rF-Tmr">
-                            <connections>
-                                <segue destination="4MV-d5-fNw" kind="show" id="hC9-rf-F3m"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="0eY-Wh-bVD"/>
-                    </toolbarItems>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Location" id="4hG-K7-y85"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
-                        <outlet property="reportButton" destination="IL4-rF-Tmr" id="iOg-gJ-sLn"/>
+                        <segue destination="4MV-d5-fNw" kind="show" identifier="DetailsSegue" id="tv7-xb-ygd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -52,7 +45,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7I-F8-pdq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7I-F8-pdq">
                                 <rect key="frame" x="152" y="338" width="297" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="297" id="3Hd-xx-cfS"/>
@@ -62,7 +55,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0B-Yw-Uyj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0B-Yw-Uyj">
                                 <rect key="frame" x="186" y="432" width="229" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="229" id="W4A-eI-NBK"/>
@@ -152,20 +145,12 @@
                             <constraint firstAttribute="trailingMargin" secondItem="V99-cg-mNf" secondAttribute="trailing" constant="5" id="sm1-KA-PPc"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="lMa-tp-P2s"/>
-                        <barButtonItem title="Next" id="8sL-nS-pHL">
-                            <connections>
-                                <segue destination="nrw-Wj-BL7" kind="show" id="MUa-Et-zEX"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="mLr-QW-sbE"/>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" title="Details" id="a4N-PQ-r65"/>
+                    <toolbarItems/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="categoryTextField" destination="V99-cg-mNf" id="1pk-w9-Mtb"/>
                         <outlet property="descTextView" destination="Mte-eP-496" id="Xno-vJ-drn"/>
+                        <segue destination="nrw-Wj-BL7" kind="show" identifier="PhotoSegue" id="WAn-6o-ojt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bCt-ze-qPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -175,8 +160,9 @@
         <!--NavigationController-->
         <scene sceneID="Yuv-3u-J7l">
             <objects>
-                <navigationController storyboardIdentifier="NavigationController" title="NavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" toolbarHidden="NO" id="qsh-3z-Bs8" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" title="NavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qsh-3z-Bs8" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Vz-M7-Ni0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -310,7 +296,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oyl-AS-Ap1">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oyl-AS-Ap1">
                                 <rect key="frame" x="25" y="319" width="550" height="220"/>
                             </imageView>
                         </subviews>
@@ -339,20 +325,7 @@
                             <constraint firstItem="EJz-te-Qu4" firstAttribute="top" secondItem="AAc-bE-5UE" secondAttribute="bottom" id="wlL-oT-1v9"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="dfL-qD-2Mk"/>
-                        <barButtonItem title="Submit" id="vbe-93-Ttd">
-                            <connections>
-                                <action selector="showNextScreen:" destination="2zU-Pw-4Fa" id="6wc-ou-kIn"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="vGb-pP-nUI">
-                            <connections>
-                                <segue destination="Jzd-8g-gDU" kind="show" identifier="UserDetailsSegue" id="Wa6-1h-N7t"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" title="Review" id="BXI-ZX-xy1"/>
+                    <toolbarItems/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="categoryLabel" destination="EJz-te-Qu4" id="hjG-cF-rf0"/>
@@ -381,13 +354,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="As a first time user, please provide a few details" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xd-Dp-Gm1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="As a first time user, please provide a few details" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xd-Dp-Gm1">
                                 <rect key="frame" x="21" y="84" width="558" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mzo-TA-FNS">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mzo-TA-FNS">
                                 <rect key="frame" x="21" y="122" width="558" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ugg-6X-y8G"/>
@@ -395,7 +368,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GrT-ia-PDP">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GrT-ia-PDP">
                                 <rect key="frame" x="21" y="182" width="558" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="irL-kj-wPK"/>
@@ -403,7 +376,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Postcode" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SzA-cw-dNg">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Postcode" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SzA-cw-dNg">
                                 <rect key="frame" x="21" y="242" width="558" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ZWw-yF-SVg"/>
@@ -431,15 +404,7 @@
                             <constraint firstItem="Mzo-TA-FNS" firstAttribute="top" secondItem="9xd-Dp-Gm1" secondAttribute="bottom" constant="20" id="vac-uL-zln"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="tGC-4C-Nyl"/>
-                        <barButtonItem title="Submit" id="woD-VK-hwA">
-                            <connections>
-                                <segue destination="lsj-SY-bHK" kind="show" id="pvc-nE-Mcq"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="NRn-pH-bjP"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="emailField" destination="GrT-ia-PDP" id="phE-2G-ci9"/>
@@ -451,7 +416,7 @@
             </objects>
             <point key="canvasLocation" x="4359" y="-306"/>
         </scene>
-        <!--Photo-->
+        <!--Photo View Controller-->
         <scene sceneID="k9H-Ug-W46">
             <objects>
                 <viewController storyboardIdentifier="PhotoController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nrw-Wj-BL7" customClass="PhotoViewController" customModule="BikeBlackSpot_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -464,19 +429,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Ax5-pr-m6N"/>
-                        <barButtonItem title="Skip" id="6hq-e1-AcY">
-                            <connections>
-                                <segue destination="2zU-Pw-4Fa" kind="show" identifier="ReportReviewSegue" id="5QG-fh-ykE"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="5PY-4L-XBr"/>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" title="Photo" id="TRh-lX-jyw"/>
+                    <toolbarItems/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
-                        <outlet property="segueButton" destination="6hq-e1-AcY" id="EJt-QD-vxC"/>
+                        <segue destination="2zU-Pw-4Fa" kind="show" identifier="ReviewSegue" id="qpa-9U-6UO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBa-Ez-EOA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -488,7 +444,4 @@
         <image name="email-sent" width="120" height="79"/>
         <image name="no-internet" width="92" height="80"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="ccZ-dh-abl"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -13,7 +13,7 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
     var viewModel:LocationViewModel
     var locationLoaded:Bool =  false
     
-    @IBOutlet weak var reportButton: UIBarButtonItem!
+//    @IBOutlet weak var reportButton: UIBarButtonItem!
     
     required init(coder aDecoder:NSCoder) {
         self.viewModel = LocationViewModel()
@@ -55,12 +55,6 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
         constrain(mapView, markerView, detailsView) { mapView, markerView, detailsView in
             mapView.edges == mapView.superview!.edges
             
-            //comment above and uncomment below to let background bleed through navbars
-//            mapView.top == mapView.superview!.top + self.navigationController!.navigationBar.frame.height
-//            mapView.left == mapView.superview!.left
-//            mapView.right == mapView.superview!.right
-//            mapView.bottom == mapView.superview!.bottom - self.navigationController!.navigationBar.frame.height
-            
             markerView.bottom == markerView.superview!.centerY
             markerView.centerX == markerView.superview!.centerX
             
@@ -71,6 +65,9 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
         }
         
         self.mapView = mapView
+        
+        setNextButton("REPORT", segueIdentifier:"DetailsSegue")
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "locationUpdated:", name: CurrentLocationUpdated, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self,
             selector: "preferredContentSizeChanged:",
@@ -111,8 +108,9 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
     
     // same as below but disable on move
     func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {
-        self.reportButton.enabled = false
+        nextButton()!.enabled = false
     }
+    
     func mapView(mapView: GMSMapView!, idleAtCameraPosition position: GMSCameraPosition!) {
         var coordinate = mapView.camera.target
         setCurrentLocation( CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude))
@@ -126,8 +124,8 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
                 
                 if self.viewModel.isValid() {
                     Report.getCurrentReport().location = Location(latitude:location.coordinate.latitude, longitude: location.coordinate.longitude, description: self.viewModel.getDescription())
-                    
-                    self.reportButton.enabled = true
+
+                    self.nextButton()!.enabled = true
                     self.labelView!.text = self.viewModel.getDescription()
                 }
                 else {
@@ -137,22 +135,23 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
             }
         })
     }
+    
     //zoom out slower
-    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+    override func performSegueWithIdentifier(identifier: String?, sender: AnyObject?) {
         // content validation, should never actually run
         if(Report.getCurrentReport().location == nil) {
             let alert = UIAlertView(title: "Error", message: LOCATION_ERROR_PLACEHOLDER, delegate: nil, cancelButtonTitle: "OK")
             alert.promise().then { object -> Void in}
-            return false
+            return
         }
         
         // not zoomed too far out
         if self.mapView!.camera.zoom <= Constants.STATE_ZOOM_LEVEL {
             self.mapView!.animateToZoom(Constants.STATE_ZOOM_LEVEL+1)
-            return false
+            return
         }
         self.locationLoaded = false
-        return true
+        super.performSegueWithIdentifier(identifier, sender: sender)
     }
     
     func preferredContentSizeChanged(notification: NSNotification) {

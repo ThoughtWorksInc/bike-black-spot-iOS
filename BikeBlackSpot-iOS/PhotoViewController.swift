@@ -6,8 +6,6 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
     let IMAGE_MAX_WIDTH:CGFloat = 1000.0
     let IMAGE_MAX_HEIGHT:CGFloat = 1000.0
 
-    @IBOutlet weak var segueButton: UIBarButtonItem!
-
     let picker = UIImagePickerController()
     let buttonAspectRatio = 0.2719486081
     
@@ -67,6 +65,8 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
             galleryPhotoButton.height == galleryPhotoButton.width * self.buttonAspectRatio
         }
         
+        setNextButton("SKIP", segueIdentifier: "ReviewSegue")
+        
         NSNotificationCenter.defaultCenter().addObserver(self,
             selector: "preferredContentSizeChanged:",
             name: UIContentSizeCategoryDidChangeNotification,
@@ -110,7 +110,8 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         var resizedImage = chosenImage.resizeIfRequired(IMAGE_MAX_WIDTH, maxHeight: IMAGE_MAX_HEIGHT)
         
         Report.getCurrentReport().image = UIImageJPEGRepresentation(resizedImage, 1.0) //http://pinkstone.co.uk/how-to-save-a-uiimage-in-core-data-and-retrieve-it/
-        segueButton.title = "Continue"
+        nextButton()!.setTitle("CONTINUE", forState: UIControlState.Normal)
+            
         println("Image taken~!")
         self.performSegueWithIdentifier("ReportReviewSegue", sender: nil)
         dismissViewControllerAnimated(true, completion: nil)

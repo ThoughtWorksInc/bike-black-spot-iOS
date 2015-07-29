@@ -64,6 +64,8 @@ class ReviewViewController: FormViewController {
         } else {
             photoView.hidden = true
         }
+        
+        setNextButton("SUBMIT", segueIdentifier: "ThankYouSegue")
     }
     
     override func didReceiveMemoryWarning() {
@@ -71,13 +73,13 @@ class ReviewViewController: FormViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func showNextScreen(sender: AnyObject) {
+    override func performSegueWithIdentifier(identifier: String?, sender: AnyObject?) {
         let isRegistered = UserTokenMgr.sharedInstance.hasToken()
         if(isRegistered) {
             Report.getCurrentReport().userUUID = UserTokenMgr.sharedInstance.token()!
         }
         var segueIdentifier = isRegistered ? "ThankYouSegue" : "UserDetailsSegue"
-        self.performSegueWithIdentifier(segueIdentifier, sender: nil)
+        super.performSegueWithIdentifier(segueIdentifier, sender: nil)
     }
     
 }

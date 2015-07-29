@@ -27,6 +27,8 @@ class UserDetailsViewController: FormViewController, UITextFieldDelegate {
         
         emailField.keyboardType = UIKeyboardType.EmailAddress
         postcodeField.keyboardType = UIKeyboardType.NumberPad
+        
+        setNextButton("SUBMIT", segueIdentifier: "ThankYouSegue")
     }
     
     func autoFillTextFields(savedUser:User){
@@ -105,12 +107,12 @@ class UserDetailsViewController: FormViewController, UITextFieldDelegate {
         return false
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+    override func performSegueWithIdentifier(identifier: String?, sender: AnyObject?) {
         if(!revalidateFields()) {
             showErrorAlert(VALIDATION_ERROR)
-            return false
+            return
         }
         setUser()
-        return true
+        super.performSegueWithIdentifier(identifier, sender: sender)
     }
 }

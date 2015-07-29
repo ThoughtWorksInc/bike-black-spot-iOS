@@ -11,6 +11,10 @@ import UIKit
 
 public class Font {
     
+    static func buttonTitle() -> UIFont {
+        return Font.heading(18.0)
+    }
+    
     static func body(size:CGFloat) -> UIFont {
         return UIFont(name: "Swiss721LightCondensedBT", size: size)!
     }
@@ -22,7 +26,7 @@ public class Font {
 
 public class Colour {
     
-    static let Yellow:UIColor = UIColor(red: 255.0, green: 204.0, blue: 40.0, alpha: 1.0)
+    static let Yellow:UIColor = UIColor(red: 255.0/255.0, green: 204.0/255.0, blue: 40.0/255.0, alpha: 1.0)
     static let Blue:UIColor = UIColor(red: 33.0/255.0, green: 190.0/255.0, blue: 216.0/255.0, alpha: 1.0)
 }
 
@@ -41,7 +45,7 @@ public class Styles {
         
         // back button font
         UIBarButtonItem.appearance()
-            .setTitleTextAttributes([NSFontAttributeName : Font.heading(18.0)],
+            .setTitleTextAttributes([NSFontAttributeName : Font.buttonTitle()],
                 forState: UIControlState.Normal)
     }
 }

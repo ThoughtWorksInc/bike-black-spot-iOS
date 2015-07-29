@@ -3,7 +3,6 @@ import SwiftLoader
 
 class ErrorPageViewController: BaseViewController {
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,10 +17,5 @@ class ErrorPageViewController: BaseViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-    }
-    
-    
-    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-        return true
     }
 }
