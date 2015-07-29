@@ -33,7 +33,7 @@
             </objects>
             <point key="canvasLocation" x="1205" y="-306"/>
         </scene>
-        <!--Thank You!-->
+        <!--Thankyou View Controller-->
         <scene sceneID="jGI-Of-PLr">
             <objects>
                 <viewController storyboardIdentifier="ThanksController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lsj-SY-bHK" customClass="ThankyouViewController" customModule="BikeBlackSpot_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -83,22 +83,11 @@
                             <constraint firstItem="P7I-F8-pdq" firstAttribute="centerX" secondItem="MEk-o8-PyC" secondAttribute="centerX" id="vtk-WN-JoC"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="1nT-wc-aPy"/>
-                        <barButtonItem title="Send Another Report" id="bux-rT-gJT">
-                            <connections>
-                                <action selector="doneButtonTapped:" destination="lsj-SY-bHK" id="VVq-8z-ChM"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="dey-3c-8CF"/>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" title="Thank You!" id="l6s-ti-ARK"/>
+                    <toolbarItems/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="bottomMessage" destination="s0B-Yw-Uyj" id="MmH-NU-Wz3"/>
-                        <outlet property="doneButton" destination="bux-rT-gJT" id="ujq-y8-a54"/>
                         <outlet property="middleMessage" destination="P7I-F8-pdq" id="eS5-QO-8MD"/>
-                        <outlet property="sendAnotherReportButton" destination="bux-rT-gJT" id="7Oo-Gw-w9b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAb-2G-AYd" userLabel="First Responder" sceneMemberID="firstResponder"/>

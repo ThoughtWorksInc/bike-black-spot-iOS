@@ -5,11 +5,8 @@ import PromiseKit
 class ThankyouViewController: BaseViewController {
     
     @IBOutlet weak var middleMessage: UILabel!
-    
     @IBOutlet weak var bottomMessage: UILabel!
     
-    @IBOutlet weak var sendAnotherReportButton: UIBarButtonItem!
-    @IBOutlet var doneButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,13 +14,12 @@ class ThankyouViewController: BaseViewController {
         
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: navigationController, action: nil)
         navigationItem.leftBarButtonItem = backButton
-        sendAnotherReportButton.enabled = false
-        sendAnotherReportButton.tintColor = UIColor.grayColor()
-        
+
+        self.view.enableUserInteraction(false)
         APIService.sharedInstance.isUserConfirmed()
             .then { result -> Void in
-                self.sendAnotherReportButton.enabled = true
-                self.sendAnotherReportButton.tintColor = UIColor.blueColor()
+                
+                self.view.enableUserInteraction(true)
                 if result {
                     self.middleMessage.text = "THANK YOU FOR SUBMITTING YOUR REPORT"
                     self.bottomMessage.text = "A copy of your blackspot has been sent via email."
@@ -33,7 +29,8 @@ class ThankyouViewController: BaseViewController {
                 }
         }
         
-        
+        setNextButton("SEND ANOTHER REPORT")
+        nextButton()?.addTarget(self, action: "nextPage", forControlEvents: UIControlEvents.TouchUpInside)
     }
     
     override func didReceiveMemoryWarning() {
@@ -95,16 +92,14 @@ class ThankyouViewController: BaseViewController {
                 SwiftLoader.show(animated: true)
             }
 
-            self.view.enableUserInteraction(false) // why doesn't this work?
-            doneButton.enabled = false
+            self.view.enableUserInteraction(false)
         } else {
             SwiftLoader.hide()
             self.view.enableUserInteraction(true)
-            self.doneButton.enabled = true
         }
     }
     
-    @IBAction func doneButtonTapped(sender: AnyObject) {
+    func nextPage() {
         Report.clearReport()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.showDefaultViewController()
