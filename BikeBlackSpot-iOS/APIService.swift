@@ -62,7 +62,7 @@ public class APIService {
     
     public func isUserConfirmed() -> Promise<Bool> {
         return Promise{ fulfill, reject in
-            if let uuid = UserTokenMgr.sharedInstance.token(){
+            if let uuid = UserTokenMgr.sharedInstance.token() {
                 let request = Alamofire.request(.GET, serviceURL + "/users?uuid=" + uuid)
                 request.responseString { _, response, string, error in
                     if(error != nil) {
@@ -76,7 +76,7 @@ public class APIService {
                     }
                 }
             }
-            else{
+            else {
                 fulfill(false)
             }
         }
