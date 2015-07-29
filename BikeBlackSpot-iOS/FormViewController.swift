@@ -21,11 +21,13 @@ public class FormViewController : BaseViewController {
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: "closeKeyboard:")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "DONE", style: UIBarButtonItemStyle.Done, target: self, action: "closeKeyboard:")
     }
+    
     func keyboardWillHide(notification: NSNotification) {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Done, target: self, action: "closeKeyboard:")
+        self.navigationItem.rightBarButtonItems = []
     }
+    
     func closeKeyboard(sender: UIButton){
         
         self.view.endEditing(true)
