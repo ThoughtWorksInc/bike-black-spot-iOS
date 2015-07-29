@@ -10,12 +10,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSObject: AnyObject]?) -> Bool {
             return launchApplication()
     }
+    
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
         return launchApplication()
     }
     
     func launchApplication() -> Bool{
         GMSServices.provideAPIKey(gMapsKey)
+        Styles.apply()
         
         reachability = Reachability.reachabilityForInternetConnection()
         if !reachability!.isReachable() {

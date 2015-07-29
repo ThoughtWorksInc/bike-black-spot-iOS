@@ -13,11 +13,11 @@ extension UITextField {
     
     func setBodyFont() {
         self.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
-        self.font = UIFont(name: "Swiss721LightCondensedBT", size: self.font.pointSize)
+        self.font = Font.body(self.font.pointSize)
     }
     
     func setHeadingFont() {
         self.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
-        self.font = UIFont(name: "AlternateGothicLT-No2", size: self.font.pointSize)
+        self.font = Font.heading(self.font.pointSize)
     }
 }
