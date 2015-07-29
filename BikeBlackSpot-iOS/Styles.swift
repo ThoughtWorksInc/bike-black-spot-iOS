@@ -27,6 +27,7 @@ public class Font {
 public class Colour {
     
     static let Yellow:UIColor = UIColor(red: 255.0/255.0, green: 204.0/255.0, blue: 40.0/255.0, alpha: 1.0)
+    static let DarkYellow:UIColor = UIColor(red: 155.0/255.0, green: 124.0/255.0, blue: 0.0/255.0, alpha: 1.0)
     static let Blue:UIColor = UIColor(red: 33.0/255.0, green: 190.0/255.0, blue: 216.0/255.0, alpha: 1.0)
 }
 

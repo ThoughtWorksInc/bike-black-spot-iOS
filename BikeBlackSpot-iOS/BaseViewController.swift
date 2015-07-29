@@ -23,8 +23,10 @@ public class BaseViewController : UIViewController {
     func setNextButton(text:String, segueIdentifier:String? = nil) {
         var button = UIButton()
         button.layer.cornerRadius = 5.0
-        button.backgroundColor = Colour.Yellow
-
+        
+        button.setBackgroundColor(Colour.Yellow, forState:UIControlState.Normal)
+        button.setBackgroundColor(Colour.DarkYellow, forState:UIControlState.Disabled)
+        
         let title = NSMutableAttributedString(string: text, attributes: [NSFontAttributeName:Font.buttonTitle()])
         button.setAttributedTitle(title, forState: UIControlState.Normal)
         

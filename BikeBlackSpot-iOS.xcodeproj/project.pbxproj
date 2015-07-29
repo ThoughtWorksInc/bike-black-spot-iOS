@@ -33,6 +33,7 @@
 		08C5514A1B60C25E00ED48FA /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BCA1B58C3A7000BAB2C /* LocationService.swift */; };
 		08C5514B1B60C37D00ED48FA /* NSNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BCC1B58CA50000BAB2C /* NSNotifications.swift */; };
 		08C5514D1B60C5F300ED48FA /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C5514C1B60C5F300ED48FA /* Reachability.swift */; };
+		08C5669E1B688AC000A04204 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C5669D1B688AC000A04204 /* UIButtonExtension.swift */; };
 		08DAD4C31B671F07003493FD /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C6BD11B5C80F0000BAB2C /* Report.swift */; };
 		08DAD4C41B671F0A003493FD /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5F6E1B5F17B700DD5586 /* Location.swift */; };
 		08F8221B1B673E2200A904E5 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 08F8221A1B673E2200A904E5 /* image.png */; };
@@ -94,6 +95,7 @@
 		086133611B6863E600511EFD /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		08C551461B60C1AC00ED48FA /* LocationServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServiceTests.swift; sourceTree = "<group>"; };
 		08C5514C1B60C5F300ED48FA /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		08C5669D1B688AC000A04204 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		08F8221A1B673E2200A904E5 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		08F8221C1B67415E00A904E5 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		26CF8CA41B4382D500C82362 /* BikeBlackSpot-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BikeBlackSpot-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +197,7 @@
 		083EE3D51B5F379200201C3F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				08C5669D1B688AC000A04204 /* UIButtonExtension.swift */,
 				E44EE4841B6605FD00822F30 /* UIViewExtension.swift */,
 				083EE3D61B5F379E00201C3F /* StringExtension.swift */,
 				08F8221C1B67415E00A904E5 /* UIImageExtension.swift */,
@@ -569,6 +572,7 @@
 				7E3C6BC81B58BAB5000BAB2C /* UserDetailsViewController.swift in Sources */,
 				4CA829B01B57675A00D614E8 /* ReviewViewController.swift in Sources */,
 				4CA829A91B57272F00D614E8 /* GoogleDataProvider.swift in Sources */,
+				08C5669E1B688AC000A04204 /* UIButtonExtension.swift in Sources */,
 				084C5F6F1B5F17B700DD5586 /* Location.swift in Sources */,
 				E416EF431B6757FA00DD3DD6 /* UITextFieldExtension.swift in Sources */,
 				084C5F731B5F1ED600DD5586 /* UserTokenMgr.swift in Sources */,
