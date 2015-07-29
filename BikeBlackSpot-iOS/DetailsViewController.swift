@@ -58,7 +58,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         self.pickerView = picker
         self.alert = alert
         
-        setNextButton("NEXT", segueIdentifier: "PhotoSegue")
+        addNextButton("NEXT", segueIdentifier: "PhotoSegue")
         
         NSNotificationCenter.defaultCenter().addObserver(self,
             selector: "preferredContentSizeChanged:",

@@ -14,7 +14,7 @@ class ThankyouViewController: BaseViewController {
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: navigationController, action: nil)
         navigationItem.leftBarButtonItem = backButton
 
-        setNextButton("SEND ANOTHER REPORT")
+        addNextButton("SEND ANOTHER REPORT")
         nextButton()!.addTarget(self, action: "nextButtonTapped:", forControlEvents: UIControlEvents.TouchUpInside)
 
         APIService.sharedInstance.isUserConfirmed()

@@ -28,7 +28,7 @@ class UserDetailsViewController: FormViewController, UITextFieldDelegate {
         emailField.keyboardType = UIKeyboardType.EmailAddress
         postcodeField.keyboardType = UIKeyboardType.NumberPad
         
-        setNextButton("SUBMIT", segueIdentifier: "ThankYouSegue")
+        addNextButton("SUBMIT", segueIdentifier: "ThankYouSegue")
     }
     
     func autoFillTextFields(savedUser:User){

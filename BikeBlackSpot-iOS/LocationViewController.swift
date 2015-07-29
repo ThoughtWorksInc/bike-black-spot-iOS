@@ -66,7 +66,7 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
         
         self.mapView = mapView
         
-        setNextButton("REPORT", segueIdentifier:"DetailsSegue")
+        addNextButton("REPORT", segueIdentifier:"DetailsSegue")
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "locationUpdated:", name: CurrentLocationUpdated, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self,

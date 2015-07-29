@@ -20,18 +20,17 @@ public class BaseViewController : UIViewController {
         setBackground()
     }
     
-    func setNextButton(text:String, segueIdentifier:String? = nil) {
+    func addNextButton(text:String, segueIdentifier:String? = nil) {
         var button = UIButton()
         button.layer.cornerRadius = 5.0
         button.clipsToBounds = true
         button.setBackgroundColor(Colour.Yellow, forState:UIControlState.Normal)
         button.setBackgroundColor(Colour.DarkYellow, forState:UIControlState.Disabled)
         
-        let title = NSMutableAttributedString(string: text, attributes: [NSFontAttributeName:Font.buttonTitle()])
-        button.setAttributedTitle(title, forState: UIControlState.Normal)
-        
         self.view.addSubview(button)
         self.button = button
+        
+        setNextButtonTitle(text)
         
         constrain(button) { button in
             button.height == 40
@@ -43,6 +42,13 @@ public class BaseViewController : UIViewController {
         if let id = segueIdentifier {
             self.segueIdentifier = id
             button.addTarget(self, action: "performSegue", forControlEvents: UIControlEvents.TouchUpInside)
+        }
+    }
+    
+    func setNextButtonTitle(title:String) {
+        if let button = self.button {
+           let title = NSMutableAttributedString(string: title, attributes: [NSFontAttributeName:Font.buttonTitle()])
+            button.setAttributedTitle(title, forState: UIControlState.Normal)
         }
     }
     

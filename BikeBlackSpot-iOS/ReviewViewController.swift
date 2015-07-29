@@ -60,7 +60,7 @@ class ReviewViewController: FormViewController {
             photoView.hidden = true
         }
         
-        setNextButton("SUBMIT", segueIdentifier: "ThankYouSegue")
+        addNextButton("SUBMIT", segueIdentifier: "ThankYouSegue")
     }
     
     override func didReceiveMemoryWarning() {
