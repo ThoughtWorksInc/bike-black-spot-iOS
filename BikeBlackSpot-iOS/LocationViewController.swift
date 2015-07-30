@@ -88,13 +88,16 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
         let savedLocation = Report.getCurrentReport().location
         
         if !self.locationLoaded && savedLocation != nil  {
+            self.mapView!.settings.myLocationButton = true
             mapView!.camera = GMSCameraPosition.cameraWithTarget(CLLocationCoordinate2D(latitude: savedLocation!.latitude!, longitude: savedLocation!.longitude!), zoom: 15)
         }
         else {
             if let currentLocation = LocationService.sharedInstance.getCurrentLocation() {
+                self.mapView!.settings.myLocationButton = true
                 mapView!.camera = GMSCameraPosition.cameraWithTarget(currentLocation.coordinate, zoom: 15)
             }
             else {
+                self.mapView!.settings.myLocationButton = false
                 mapView!.camera = GMSCameraPosition.cameraWithTarget(DEFAULT_COORDINATES, zoom: Constants.DEFAULT_ZOOM_LEVEL)
             }
         }
