@@ -86,7 +86,6 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
         
         if !self.locationLoaded && savedLocation != nil  {
             mapView!.camera = GMSCameraPosition.cameraWithTarget(CLLocationCoordinate2D(latitude: savedLocation!.latitude!, longitude: savedLocation!.longitude!), zoom: 15)
-            self.locationLoaded = true
         }
         else {
             if let currentLocation = LocationService.sharedInstance.getCurrentLocation() {
@@ -96,6 +95,7 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
                 mapView!.camera = GMSCameraPosition.cameraWithTarget(DEFAULT_COORDINATES, zoom: Constants.DEFAULT_ZOOM_LEVEL)
             }
         }
+        self.locationLoaded=true
     }
     
     override func viewDidAppear(animated: Bool) {
