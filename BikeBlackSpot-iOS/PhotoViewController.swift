@@ -58,7 +58,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         
         galleryPhotoButton.addTarget(self, action: "openPhotoGallery:", forControlEvents: UIControlEvents.TouchUpInside)
         
-        imageAttachedIconView.image = UIImage(named: ("image-attached"))
+        imageAttachedIconView.image = UIImage(named: ("remove-photo"))
         imageAttachedIconView.contentMode = UIViewContentMode.ScaleAspectFit
         imageAttachedIconView.userInteractionEnabled = true
         imageAttachedIconView.hidden = true
