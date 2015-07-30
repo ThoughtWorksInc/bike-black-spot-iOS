@@ -31,7 +31,9 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         }
         
         categoryTextField.setHeadingFont()
-        categoryTextField.attributedPlaceholder = NSAttributedString(string: CATEGORY_PLACEHOLDER.uppercaseString, attributes: [NSForegroundColorAttributeName: UIColor.blackColor()])
+        categoryTextField.attributedPlaceholder = NSAttributedString(string: CATEGORY_PLACEHOLDER.uppercaseString, attributes: [NSForegroundColorAttributeName: UIColor.grayColor()])
+//        categoryTextField.opaque = false
+//        categoryTextField.backgroundColor = UIColor.clearColor()
         categoryTextField.delegate = self
         
         registerTextFields([descTextView, categoryTextField])
@@ -119,11 +121,14 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if row == 0 {
             Report.getCurrentReport().category = nil
+            categoryTextField.text = nil
         }
         else {
             if let selectedCategory = Categories.categories[row] as? ReportCategory {
                 Report.getCurrentReport().category = selectedCategory
                 categoryTextField.text = selectedCategory.name?.uppercaseString
+                categoryTextField.textColor = UIColor.blackColor()
+                
                 if let categoryDescription = selectedCategory.desc{
                     descTextView.setPlaceHolderText(categoryDescription + " (Tap to edit)")
                 }
@@ -134,12 +139,13 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     
     func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView!) -> UIView {
         let pickerLabel = UILabel()
-        pickerLabel.setBodyFont()
+
+        pickerLabel.setPickerFontLarge()
         pickerLabel.textAlignment = NSTextAlignment.Center
-        //UIFont(descriptor: <#UIFontDescriptor#>, size: <#CGFloat#>)
+        
         if row == 0 {
             Report.getCurrentReport().category = nil
-            categoryTextField.text = CATEGORY_PLACEHOLDER.uppercaseString
+            categoryTextField.text = nil
             descTextView.setPlaceHolderText(DESC_TEXTVIEW_PLACEHOLDER)
             pickerLabel.text = CATEGORY_PLACEHOLDER
             return pickerLabel
