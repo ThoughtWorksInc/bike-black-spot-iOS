@@ -6,7 +6,7 @@ public class FormViewController : BaseViewController {
     let DEFAULT_ERROR_MSG = "Please provide required information"
     
     //let placeholderTextColor = UIColor.lightGrayColor()
-    let textFieldBorderColor = UIColor.lightGrayColor()
+    let textFieldBorderColor = UIColor.clearColor()
     let textColor = UIColor.blackColor()
     var textFields:[AnyObject]?
     
