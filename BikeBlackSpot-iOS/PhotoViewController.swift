@@ -5,19 +5,33 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
     
     let IMAGE_MAX_WIDTH:CGFloat = 1000.0
     let IMAGE_MAX_HEIGHT:CGFloat = 1000.0
-
+    
     let picker = UIImagePickerController()
     let buttonAspectRatio = 0.2719486081
     
     let takePhotoButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
     let galleryPhotoButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+    
+    let imageAttachedIconView = UIImageView()
     var buttonSeparatorLabel:UILabel?
+    var imageOptionalLabel:UILabel = UILabel()
+    var imageOptionalText:UILabel = UILabel()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "PHOTO"
         
         buttonSeparatorLabel = UILabel()
+        
+        imageOptionalLabel.text = "OPTIONAL:"
+        imageOptionalLabel.setBodyFont()
+        imageOptionalLabel.textColor = UIColor.whiteColor()
+        imageOptionalLabel.setHeadingFontLarge()
+        
+        imageOptionalText.text = "you can skip to the next step"
+        imageOptionalText.setBodyFont()
+        imageOptionalText.textColor = UIColor.whiteColor()
         
         picker.delegate = self
         
@@ -44,29 +58,53 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         
         galleryPhotoButton.addTarget(self, action: "openPhotoGallery:", forControlEvents: UIControlEvents.TouchUpInside)
         
+        imageAttachedIconView.image = UIImage(named: ("image-attached"))
+        imageAttachedIconView.contentMode = UIViewContentMode.ScaleAspectFit
+        
+        self.view.addSubview(imageOptionalLabel)
+        self.view.addSubview(imageOptionalText)
         self.view.addSubview(buttonSeparatorLabel!)
         self.view.addSubview(takePhotoButton)
         self.view.addSubview(galleryPhotoButton)
+        self.view.addSubview(imageAttachedIconView)
+        
+        
+        constrain(imageOptionalLabel) { optionalLabel in
+            optionalLabel.centerX == optionalLabel.superview!.centerX
+            optionalLabel.centerY == (optionalLabel.superview!.centerY - 40) - 140
+        }
+        constrain(imageOptionalText, imageOptionalLabel) { optionalText, optionalLabel in
+            optionalText.centerX == optionalText.superview!.centerX
+            optionalText.centerY == optionalLabel.bottom + 10
+        }
         
         constrain(takePhotoButton) { takePhotoButton in
             takePhotoButton.centerX == takePhotoButton.superview!.centerX
-            takePhotoButton.centerY == takePhotoButton.superview!.centerY - 50
+            takePhotoButton.centerY == (takePhotoButton.superview!.centerY - 40) - 50
             takePhotoButton.width == takePhotoButton.superview!.width * 0.8
             takePhotoButton.height == takePhotoButton.width * self.buttonAspectRatio
         }
         
         constrain(buttonSeparatorLabel!) { buttonSeparatorLabel in
-            buttonSeparatorLabel.center == buttonSeparatorLabel.superview!.center
+            buttonSeparatorLabel.centerY == buttonSeparatorLabel.superview!.centerY - 40
+            buttonSeparatorLabel.centerX == buttonSeparatorLabel.superview!.centerX
         }
+        
+        addNextButton("SKIP", segueIdentifier: "ReviewSegue")
         
         constrain(galleryPhotoButton) { galleryPhotoButton in
             galleryPhotoButton.centerX == galleryPhotoButton.superview!.centerX
-            galleryPhotoButton.centerY == galleryPhotoButton.superview!.centerY + 50
+            galleryPhotoButton.centerY == (galleryPhotoButton.superview!.centerY - 40) + 50
             galleryPhotoButton.width == galleryPhotoButton.superview!.width * 0.8
             galleryPhotoButton.height == galleryPhotoButton.width * self.buttonAspectRatio
         }
         
-        addNextButton("SKIP", segueIdentifier: "ReviewSegue")
+        constrain(imageAttachedIconView, galleryPhotoButton, button!) { iconView, galleryButton, baseButton in
+            iconView.centerX == iconView.superview!.centerX
+            
+            iconView.centerY == (iconView.superview!.centerY - 40) + 140
+            iconView.height == iconView.superview!.height * 0.1
+        }
         
         NSNotificationCenter.defaultCenter().addObserver(self,
             selector: "preferredContentSizeChanged:",
