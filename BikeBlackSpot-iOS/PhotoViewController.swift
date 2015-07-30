@@ -63,7 +63,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         imageAttachedIconView.userInteractionEnabled = true
         imageAttachedIconView.hidden = true
         
-        let removeImage = UITapGestureRecognizer(target: self, action: Selector("removeImage"))
+        let removeImage = UITapGestureRecognizer(target: self, action: Selector("askToRemoveImage"))
         imageAttachedIconView.addGestureRecognizer(removeImage)
         
         self.view.addSubview(imageOptionalLabel)
@@ -119,8 +119,16 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
     }
     
     func removeImage(){
+        
         Report.getCurrentReport().image = nil
-        imageAttachedIconView.hidden = true
+        self.imageAttachedIconView.hidden = true
+        
+    }
+    func askToRemoveImage(){
+        let alertView = UIAlertController(title: "", message: "Are you sure you wish to remove the photo?", preferredStyle: .Alert)
+        alertView.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.Default, handler: nil))
+        alertView.addAction(UIAlertAction(title: "Remove", style: UIAlertActionStyle.Default, handler: {(alertView) -> Void in self.removeImage()} ))
+        presentViewController(alertView, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
