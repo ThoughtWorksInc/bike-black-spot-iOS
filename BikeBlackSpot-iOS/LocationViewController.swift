@@ -14,7 +14,7 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
     var locationLoaded:Bool =  false
     var addressBoxView:UIView?
     
-//    @IBOutlet weak var reportButton: UIBarButtonItem!
+    //    @IBOutlet weak var reportButton: UIBarButtonItem!
     
     required init(coder aDecoder:NSCoder) {
         self.viewModel = LocationViewModel()
@@ -41,6 +41,7 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
         //addressLabel!.font = UIFont.systemFontOfSize(13.0)
         addressLabel!.textAlignment = NSTextAlignment.Center
         addressLabel!.numberOfLines = 0
+        addressLabel!.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
         
         addressBoxView = UIView()
         addressBoxView!.backgroundColor = UIColor(white: 0.0, alpha: 0.4)
@@ -85,7 +86,7 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
         
         if !self.locationLoaded && savedLocation != nil  {
             mapView!.camera = GMSCameraPosition.cameraWithTarget(CLLocationCoordinate2D(latitude: savedLocation!.latitude!, longitude: savedLocation!.longitude!), zoom: 15)
-                self.locationLoaded = true
+            self.locationLoaded = true
         }
         else {
             if let currentLocation = LocationService.sharedInstance.getCurrentLocation() {
@@ -125,7 +126,7 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
                 
                 if self.viewModel.isValid() {
                     Report.getCurrentReport().location = Location(latitude:location.coordinate.latitude, longitude: location.coordinate.longitude, description: self.viewModel.getDescription())
-
+                    
                     self.nextButton()!.enabled = true
                     self.addressLabel!.text = self.viewModel.getDescription()
                 }
@@ -156,9 +157,10 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
     }
     
     func preferredContentSizeChanged(notification: NSNotification) {
-        addressLabel!.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        //addressLabel!.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
         addressLabel!.setBodyFont()
-        println(addressLabel!.frame.height)
+        addressLabel!.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
+        //println(addressLabel!.frame.height)
         //detailsView!.sizeToFit()
     }
 }

@@ -22,6 +22,14 @@ public class Font {
     static func heading(size:CGFloat) -> UIFont {
         return UIFont(name: "AlternateGothicLT-No2", size: size)!
     }
+    
+    static func preferredFontForTextStyle(style:NSString) -> UIFont {
+        var contentSize = UIApplication.sharedApplication().preferredContentSizeCategory
+        var styleDictionary = Constants.FONT_SIZE_TABLE[style]
+        var fontSize = styleDictionary![contentSize] as! CGFloat
+        return UIFont.systemFontOfSize(fontSize)
+    }
+    
 }
 
 public class Colour {
@@ -50,5 +58,4 @@ public class Styles {
                 forState: UIControlState.Normal)
     }
 }
-
 
