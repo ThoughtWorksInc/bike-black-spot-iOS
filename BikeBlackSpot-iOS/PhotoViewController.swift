@@ -181,7 +181,15 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
     
     func preferredContentSizeChanged(notification: NSNotification) {
         takePhotoButton.titleLabel!.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
+        takePhotoButton.titleLabel!.setHeadingFontLarge()
         galleryPhotoButton.titleLabel!.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
+        galleryPhotoButton.titleLabel!.setHeadingFontLarge()
+        imageOptionalLabel.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
+        imageOptionalLabel.setBodyFont()
+        imageOptionalText.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
+        imageOptionalText.setBodyFont()
+        buttonSeparatorLabel!.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
+        buttonSeparatorLabel!.setBodyFont()
     }
     
     

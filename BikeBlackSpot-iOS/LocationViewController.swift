@@ -157,11 +157,8 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
     }
     
     func preferredContentSizeChanged(notification: NSNotification) {
-        //addressLabel!.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
         addressLabel!.setBodyFont()
         addressLabel!.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
-        //println(addressLabel!.frame.height)
-        //detailsView!.sizeToFit()
     }
 }
 

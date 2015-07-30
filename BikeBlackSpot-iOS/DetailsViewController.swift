@@ -174,5 +174,6 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     func preferredContentSizeChanged(notification: NSNotification) {
         descTextView!.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
         categoryTextField!.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
+        categoryTextField.setHeadingFont()
     }
 }
