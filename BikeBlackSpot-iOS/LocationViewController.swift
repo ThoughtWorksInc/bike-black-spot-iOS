@@ -12,6 +12,7 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
     var labelView:UILabel?
     var viewModel:LocationViewModel
     var locationLoaded:Bool =  false
+    var detailsView:UIView?
     
 //    @IBOutlet weak var reportButton: UIBarButtonItem!
     
@@ -41,10 +42,10 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
         labelView!.textAlignment = NSTextAlignment.Center
         labelView!.numberOfLines = 0
         
-        var detailsView = UIView()
-        detailsView.backgroundColor = UIColor(white: 0.0, alpha: 0.4)
-        detailsView.addSubview(labelView!)
-        self.view.addSubview(detailsView)
+        detailsView = UIView()
+        detailsView!.backgroundColor = UIColor(white: 0.0, alpha: 0.4)
+        detailsView!.addSubview(labelView!)
+        self.view.addSubview(detailsView!)
         
         constrain(labelView!) { labelView in
             labelView.left == labelView.superview!.left+10
@@ -52,7 +53,7 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
             labelView.centerY == labelView.superview!.centerY
         }
         
-        constrain(mapView, markerView, detailsView) { mapView, markerView, detailsView in
+        constrain(mapView, markerView, detailsView!) { mapView, markerView, detailsView in
             mapView.edges == mapView.superview!.edges
             
             markerView.bottom == markerView.superview!.centerY
@@ -156,6 +157,10 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
     
     func preferredContentSizeChanged(notification: NSNotification) {
         labelView!.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        labelView!.setBodyFont()
+        detailsView!.frame.height
+        println(labelView!.frame.height)
+        //detailsView!.sizeToFit()
     }
 }
 
