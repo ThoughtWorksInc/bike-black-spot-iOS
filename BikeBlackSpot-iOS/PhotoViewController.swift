@@ -60,6 +60,11 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         
         imageAttachedIconView.image = UIImage(named: ("image-attached"))
         imageAttachedIconView.contentMode = UIViewContentMode.ScaleAspectFit
+        imageAttachedIconView.userInteractionEnabled = true
+        imageAttachedIconView.hidden = true
+        
+        let removeImage = UITapGestureRecognizer(target: self, action: Selector("removeImage"))
+        imageAttachedIconView.addGestureRecognizer(removeImage)
         
         self.view.addSubview(imageOptionalLabel)
         self.view.addSubview(imageOptionalText)
@@ -103,7 +108,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
             iconView.centerX == iconView.superview!.centerX
             
             iconView.centerY == (iconView.superview!.centerY - 40) + 140
-            iconView.height == iconView.superview!.height * 0.1
+            iconView.height == iconView.superview!.height * 0.2
         }
         
         NSNotificationCenter.defaultCenter().addObserver(self,
@@ -111,6 +116,11 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
             name: UIContentSizeCategoryDidChangeNotification,
             object: nil)
         
+    }
+    
+    func removeImage(){
+        Report.getCurrentReport().image = nil
+        imageAttachedIconView.hidden = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -151,6 +161,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         Report.getCurrentReport().image = UIImageJPEGRepresentation(resizedImage, 1.0) //http://pinkstone.co.uk/how-to-save-a-uiimage-in-core-data-and-retrieve-it/
         
         setNextButtonTitle("CONTINUE")
+        imageAttachedIconView.hidden = false
         println("Image taken~!")
         
         dismissViewControllerAnimated(true, completion: nil)
