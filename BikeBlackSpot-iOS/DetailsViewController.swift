@@ -31,9 +31,16 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         }
         
         categoryTextField.setHeadingFont()
-        categoryTextField.attributedPlaceholder = NSAttributedString(string: CATEGORY_PLACEHOLDER.uppercaseString, attributes: [NSForegroundColorAttributeName: UIColor.grayColor()])
-//        categoryTextField.opaque = false
-//        categoryTextField.backgroundColor = UIColor.clearColor()
+        categoryTextField.attributedPlaceholder = NSAttributedString(string: CATEGORY_PLACEHOLDER, attributes: [NSForegroundColorAttributeName: UIColor.grayColor()])
+        
+        let categoryButton = UIButton()
+        categoryButton.addTarget(self, action: "openCategory", forControlEvents: .TouchUpInside)
+        let dropDownImage = UIImage(named: "dropdown-arrow")
+        
+        categoryButton.setImage(dropDownImage, forState: UIControlState.Normal)
+        categoryButton.frame = CGRectMake(0, 0, 35, 35)
+        categoryTextField.rightView = categoryButton
+        categoryTextField.rightViewMode = UITextFieldViewMode.Always
         categoryTextField.delegate = self
         
         registerTextFields([descTextView, categoryTextField])
@@ -42,6 +49,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         let select = UIAlertAction(title: "Select", style: .Cancel) { (action) in
             self.pickerView?.resignFirstResponder()
         }
+
         alert.addAction(select)
         
         var picker = UIPickerView()
@@ -64,6 +72,9 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
             name: UIContentSizeCategoryDidChangeNotification,
             object: nil)
     }
+    func openCategory() {
+        categoryTextField.becomeFirstResponder()
+    }
     
     override func viewWillDisappear(animated: Bool) {
         
@@ -78,7 +89,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         
         // set selected values if any
         descTextView.setDefaultText(Report.getCurrentReport().description)
-        categoryTextField.text = Report.getCurrentReport().category?.name!.uppercaseString
+        categoryTextField.text = Report.getCurrentReport().category?.name!
     }
     
     override func didReceiveMemoryWarning() {
@@ -126,7 +137,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         else {
             if let selectedCategory = Categories.categories[row] as? ReportCategory {
                 Report.getCurrentReport().category = selectedCategory
-                categoryTextField.text = selectedCategory.name?.uppercaseString
+                categoryTextField.text = selectedCategory.name
                 categoryTextField.textColor = UIColor.blackColor()
                 
                 if let categoryDescription = selectedCategory.desc{
