@@ -12,12 +12,12 @@ import UIKit
 extension UITextView {
     
     func setBodyFont() {
-        self.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        self.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
         self.font = Font.body(self.font.pointSize)
     }
     
     func setHeadingFont() {
-        self.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        self.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
         self.font = Font.heading(self.font.pointSize)
     }
 }
