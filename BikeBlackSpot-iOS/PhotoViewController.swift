@@ -107,7 +107,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         constrain(imageAttachedIconView, galleryPhotoButton, button!) { iconView, galleryButton, baseButton in
             iconView.centerX == iconView.superview!.centerX
             
-            iconView.centerY == (iconView.superview!.centerY - 40) + 140
+            iconView.centerY == (iconView.superview!.centerY - 40) + 150
             iconView.height == iconView.superview!.height * 0.2
         }
         
@@ -125,9 +125,9 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         
     }
     func askToRemoveImage(){
-        let alertView = UIAlertController(title: "", message: "Are you sure you wish to remove the photo?", preferredStyle: .Alert)
-        alertView.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.Default, handler: nil))
-        alertView.addAction(UIAlertAction(title: "Remove", style: UIAlertActionStyle.Default, handler: {(alertView) -> Void in self.removeImage()} ))
+        let alertView = UIAlertController(title: "", message: "Remove the photo", preferredStyle: .Alert)
+        alertView.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+        alertView.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Cancel, handler: {(alertView) -> Void in self.removeImage()} ))
         presentViewController(alertView, animated: true, completion: nil)
     }
     
