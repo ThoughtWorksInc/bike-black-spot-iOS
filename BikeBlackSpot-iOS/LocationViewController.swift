@@ -28,6 +28,9 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
         var mapView = GMSMapView.mapWithFrame(CGRectZero, camera: nil)
         mapView.myLocationEnabled = true
         mapView.delegate = self
+        mapView.settings.myLocationButton = true
+        mapView.padding = UIEdgeInsetsMake(64, 0, 64, 0);
+
         self.view.addSubview(mapView)
         
         var markerView = UIImageView(image: UIImage(named: "pin"))
