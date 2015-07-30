@@ -258,6 +258,8 @@
 		E2CA71DBC06A47B5C2FCF838 /* OMGUserAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 810943686839FFE8FF1A2DBE /* OMGUserAgent.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		E3081252DC12A2A141CE97BA /* Quick.h in Headers */ = {isa = PBXBuildFile; fileRef = A452A59ED8892C2D224C2BAA /* Quick.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E4F915D99D4151761E1BB25B /* NSString+QCKSelectorName.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA00F0921B13D38D4FBA748 /* NSString+QCKSelectorName.m */; };
+		E4F91AE21B69B4DA00FF1B69 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F49280DB1BEF1262F25070CD /* PromiseKit.framework */; };
+		E4F91AE31B69B4DA00FF1B69 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B43ABC663B2818A0CCB1A716 /* PromiseKit.framework */; };
 		E68FCEC55E76C0CE26A87AAE /* BeLogical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EAA22F99F3CA9923FB8FC3 /* BeLogical.swift */; };
 		E6D9059DF2819DA5F52BFEB4 /* QCKDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E4CF49F05E79968E033E98 /* QCKDSL.m */; };
 		E70E3F815A0CE09AB65F1F3A /* OMGUserAgent.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F795D0B6C2C62AF78CB7850 /* OMGUserAgent.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -730,6 +732,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4F91AE21B69B4DA00FF1B69 /* PromiseKit.framework in Frameworks */,
+				E4F91AE31B69B4DA00FF1B69 /* PromiseKit.framework in Frameworks */,
 				C75E2ACE820A2B2FB40756EA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
