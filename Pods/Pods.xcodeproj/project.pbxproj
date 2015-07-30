@@ -2338,7 +2338,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0702961943BF6A601284AF7C /* Pods-BikeBlackSpot-iOSTests-PromiseKit-Private.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2365,7 +2365,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9A25B272D79CA19A9DB49CC6 /* Pods-BikeBlackSpot-iOS-SwiftLoader-Private.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2393,7 +2393,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0702961943BF6A601284AF7C /* Pods-BikeBlackSpot-iOSTests-PromiseKit-Private.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2448,7 +2448,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D81E0CA42C368864B3FDDB6A /* Pods-BikeBlackSpot-iOSTests.release.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2477,7 +2477,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0B5458ECB38BEDC6462ED7C3 /* Pods-BikeBlackSpot-iOS-SwiftyJSON-Private.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2504,7 +2504,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 50897090EC89456EDB9A39DB /* Pods-BikeBlackSpot-iOS-Alamofire-Private.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2531,8 +2531,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9C1CC509EB57CC890729FE1B /* Pods-BikeBlackSpot-iOS.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: John Geddes (2PL596X372)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: John Geddes (2PL596X372)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2549,7 +2549,7 @@
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = Pods_BikeBlackSpot_iOS;
-				PROVISIONING_PROFILE = "6d2f43e5-7a45-46eb-bc5d-633e14d47457";
+				PROVISIONING_PROFILE = "4c491e91-9b53-4878-b6ed-c12882021bcb";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2562,7 +2562,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E647D148CB45DA38DFA9BD40 /* Pods-BikeBlackSpot-iOSTests-Nimble-Private.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2589,7 +2589,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC5CE05310F96CB1199D82D1 /* Pods-BikeBlackSpot-iOS-OMGHTTPURLRQ-Private.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2657,7 +2657,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0B5458ECB38BEDC6462ED7C3 /* Pods-BikeBlackSpot-iOS-SwiftyJSON-Private.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2685,7 +2685,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC40930D512BA3B96999E112 /* Pods-BikeBlackSpot-iOS-Cartography-Private.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2739,7 +2739,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 00B9882578C0E68CE02FAD70 /* Pods-BikeBlackSpot-iOSTests-OMGHTTPURLRQ-Private.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2766,7 +2766,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7D45453083806975179F8D0C /* Pods-BikeBlackSpot-iOS-PromiseKit-Private.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2821,7 +2821,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4844C6D6555362660B0B21A7 /* Pods-BikeBlackSpot-iOSTests-Alamofire-Private.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2904,7 +2904,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 54BFD07C0288D9885C43D00E /* Pods-BikeBlackSpot-iOSTests-Cartography-Private.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2931,7 +2931,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 00B9882578C0E68CE02FAD70 /* Pods-BikeBlackSpot-iOSTests-OMGHTTPURLRQ-Private.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2958,7 +2958,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E647D148CB45DA38DFA9BD40 /* Pods-BikeBlackSpot-iOSTests-Nimble-Private.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2986,7 +2986,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC5CE05310F96CB1199D82D1 /* Pods-BikeBlackSpot-iOS-OMGHTTPURLRQ-Private.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -3013,7 +3013,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 50897090EC89456EDB9A39DB /* Pods-BikeBlackSpot-iOS-Alamofire-Private.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -3041,7 +3041,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 79E7E7CE713438BAC96A8446 /* Pods-BikeBlackSpot-iOSTests.debug.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -3071,7 +3071,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 54BFD07C0288D9885C43D00E /* Pods-BikeBlackSpot-iOSTests-Cartography-Private.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -3164,7 +3164,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7D45453083806975179F8D0C /* Pods-BikeBlackSpot-iOS-PromiseKit-Private.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -3191,7 +3191,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4844C6D6555362660B0B21A7 /* Pods-BikeBlackSpot-iOSTests-Alamofire-Private.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -3219,8 +3219,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9FAD19FE7DCAD2E500C1E9B3 /* Pods-BikeBlackSpot-iOS.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: John Geddes (2PL596X372)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: John Geddes (2PL596X372)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -3237,7 +3237,7 @@
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = Pods_BikeBlackSpot_iOS;
-				PROVISIONING_PROFILE = "6d2f43e5-7a45-46eb-bc5d-633e14d47457";
+				PROVISIONING_PROFILE = "4c491e91-9b53-4878-b6ed-c12882021bcb";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3278,7 +3278,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC40930D512BA3B96999E112 /* Pods-BikeBlackSpot-iOS-Cartography-Private.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
