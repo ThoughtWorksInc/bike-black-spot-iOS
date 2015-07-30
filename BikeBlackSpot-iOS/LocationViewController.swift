@@ -9,10 +9,10 @@ let DEFAULT_COORDINATES = CLLocationCoordinate2D(latitude: Constants.DEFAULT_MAP
 class LocationViewController: BaseViewController, GMSMapViewDelegate {
     
     var mapView:GMSMapView?
-    var labelView:UILabel?
+    var addressLabel:UILabel?
     var viewModel:LocationViewModel
     var locationLoaded:Bool =  false
-    var detailsView:UIView?
+    var addressBoxView:UIView?
     
 //    @IBOutlet weak var reportButton: UIBarButtonItem!
     
@@ -33,27 +33,27 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
         var markerView = UIImageView(image: UIImage(named: "pin"))
         self.view.addSubview(markerView)
         
-        labelView = UILabel()
-        labelView!.text = LOCATION_PLACEHOLDER
-        labelView!.setBodyFont()
-        labelView!.backgroundColor = UIColor.clearColor()
-        labelView!.textColor = UIColor.whiteColor()
-        //labelView!.font = UIFont.systemFontOfSize(13.0)
-        labelView!.textAlignment = NSTextAlignment.Center
-        labelView!.numberOfLines = 0
+        addressLabel = UILabel()
+        addressLabel!.text = LOCATION_PLACEHOLDER
+        addressLabel!.setBodyFont()
+        addressLabel!.backgroundColor = UIColor.clearColor()
+        addressLabel!.textColor = UIColor.whiteColor()
+        //addressLabel!.font = UIFont.systemFontOfSize(13.0)
+        addressLabel!.textAlignment = NSTextAlignment.Center
+        addressLabel!.numberOfLines = 0
         
-        detailsView = UIView()
-        detailsView!.backgroundColor = UIColor(white: 0.0, alpha: 0.4)
-        detailsView!.addSubview(labelView!)
-        self.view.addSubview(detailsView!)
+        addressBoxView = UIView()
+        addressBoxView!.backgroundColor = UIColor(white: 0.0, alpha: 0.4)
+        addressBoxView!.addSubview(addressLabel!)
+        self.view.addSubview(addressBoxView!)
         
-        constrain(labelView!) { labelView in
+        constrain(addressLabel!) { labelView in
             labelView.left == labelView.superview!.left+10
             labelView.right == labelView.superview!.right-10
             labelView.centerY == labelView.superview!.centerY
         }
         
-        constrain(mapView, markerView, detailsView!) { mapView, markerView, detailsView in
+        constrain(mapView, markerView, addressBoxView!) { mapView, markerView, detailsView in
             mapView.edges == mapView.superview!.edges
             
             markerView.bottom == markerView.superview!.centerY
@@ -127,11 +127,11 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
                     Report.getCurrentReport().location = Location(latitude:location.coordinate.latitude, longitude: location.coordinate.longitude, description: self.viewModel.getDescription())
 
                     self.nextButton()!.enabled = true
-                    self.labelView!.text = self.viewModel.getDescription()
+                    self.addressLabel!.text = self.viewModel.getDescription()
                 }
                 else {
                     Report.getCurrentReport().location = nil
-                    self.labelView!.text = LOCATION_ERROR_PLACEHOLDER
+                    self.addressLabel!.text = LOCATION_ERROR_PLACEHOLDER
                 }
             }
         })
@@ -156,10 +156,9 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
     }
     
     func preferredContentSizeChanged(notification: NSNotification) {
-        labelView!.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
-        labelView!.setBodyFont()
-        detailsView!.frame.height
-        println(labelView!.frame.height)
+        addressLabel!.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        addressLabel!.setBodyFont()
+        println(addressLabel!.frame.height)
         //detailsView!.sizeToFit()
     }
 }
