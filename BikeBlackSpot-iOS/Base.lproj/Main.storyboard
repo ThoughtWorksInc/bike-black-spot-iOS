@@ -45,42 +45,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7I-F8-pdq">
-                                <rect key="frame" x="152" y="338" width="297" height="65"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="297" id="3Hd-xx-cfS"/>
-                                    <constraint firstAttribute="height" constant="65" id="NKb-eB-T5k"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7I-F8-pdq">
+                                <rect key="frame" x="300.5" y="0.0" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0B-Yw-Uyj">
-                                <rect key="frame" x="186" y="432" width="229" height="58"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="229" id="W4A-eI-NBK"/>
-                                    <constraint firstAttribute="height" constant="58" id="p9H-Eb-rNw"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0B-Yw-Uyj">
+                                <rect key="frame" x="300.5" y="0.0" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email-sent" translatesAutoresizingMaskIntoConstraints="NO" id="hSh-Qg-XXW">
-                                <rect key="frame" x="250" y="147" width="100" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="aa1-OZ-MwT"/>
-                                    <constraint firstAttribute="height" constant="80" id="e49-Kt-9Ag"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="email-sent" translatesAutoresizingMaskIntoConstraints="NO" id="hSh-Qg-XXW">
+                                <rect key="frame" x="240" y="0.0" width="120" height="79"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hSh-Qg-XXW" firstAttribute="centerX" secondItem="P7I-F8-pdq" secondAttribute="centerX" id="GcO-EO-N3f"/>
-                            <constraint firstItem="AMC-9i-s01" firstAttribute="top" secondItem="s0B-Yw-Uyj" secondAttribute="bottom" constant="110" id="Onk-Pj-IMD"/>
-                            <constraint firstItem="s0B-Yw-Uyj" firstAttribute="top" secondItem="P7I-F8-pdq" secondAttribute="bottom" constant="29" id="X7k-rh-HBh"/>
-                            <constraint firstItem="s0B-Yw-Uyj" firstAttribute="centerX" secondItem="P7I-F8-pdq" secondAttribute="centerX" id="bhJ-KE-VFA"/>
-                            <constraint firstItem="hSh-Qg-XXW" firstAttribute="top" secondItem="6LP-Th-2GT" secondAttribute="bottom" constant="83" id="h8X-he-mhH"/>
-                            <constraint firstItem="P7I-F8-pdq" firstAttribute="centerX" secondItem="MEk-o8-PyC" secondAttribute="centerX" id="vtk-WN-JoC"/>
+                            <constraint firstItem="P7I-F8-pdq" firstAttribute="centerX" secondItem="hSh-Qg-XXW" secondAttribute="centerX" id="2AF-ps-MPb"/>
+                            <constraint firstItem="P7I-F8-pdq" firstAttribute="centerX" secondItem="s0B-Yw-Uyj" secondAttribute="centerX" id="4Ni-Md-rzv"/>
+                            <constraint firstItem="P7I-F8-pdq" firstAttribute="centerX" secondItem="MEk-o8-PyC" secondAttribute="centerX" id="9ot-KL-KKn"/>
                         </constraints>
                     </view>
                     <toolbarItems/>

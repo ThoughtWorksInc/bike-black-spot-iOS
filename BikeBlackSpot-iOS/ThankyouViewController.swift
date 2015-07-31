@@ -25,7 +25,6 @@ class ThankyouViewController: BaseViewController {
         self.title = "SUCCESS"
         
         middleMessage.setHeadingFontLarge()
-//        middleMessage.layoutMargins.bottom = CGFloat(Constants.BASE_PADDING)
         bottomMessage.setBodyFont()
         bottomMessage.sizeToFit()
 
@@ -62,12 +61,12 @@ class ThankyouViewController: BaseViewController {
         constrain(bottomMessage, middleMessage){ bottomLabel, middleLabel in
             bottomLabel.width == bottomLabel.superview!.width * 0.8
             bottomLabel.centerX == bottomLabel.superview!.centerX
-            bottomLabel.top == middleLabel.bottom
+            bottomLabel.top == middleLabel.bottom + Constants.BASE_PADDING * 3
         }
         constrain(emailSentImageView, middleMessage){ emailIcon, middleLabel in
             emailIcon.centerX == emailIcon.superview!.centerX
             emailIcon.width == emailIcon.superview!.width * 0.2
-            emailIcon.bottom == middleLabel.top
+            emailIcon.bottom == middleLabel.top - Constants.BASE_PADDING * 4
         }
     }
     
