@@ -13,9 +13,9 @@ class ReviewViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "REVIEW REPORT"
+        self.title = "REVIEW"
  
-        registerTextFields([locationTextField,categoryTextField,descriptionTextView])
+        // registerTextFields([locationTextField,categoryTextField,descriptionTextView])
 
         var descFlag = false
         setupCategoryFields()
@@ -27,7 +27,7 @@ class ReviewViewController: FormViewController {
             categoryLabel.width == categoryLabel.superview!.width * 0.8
         }
         
-        self.view.backgroundColor = UIColor.whiteColor()
+//        self.view.backgroundColor = UIColor.whiteColor()
         addNextButton("SUBMIT", segueIdentifier: "ThankYouSegue")
     }
     
@@ -85,9 +85,6 @@ class ReviewViewController: FormViewController {
         }
     }
 
-    override func showDefaultBackground() -> Bool {
-        return false
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
