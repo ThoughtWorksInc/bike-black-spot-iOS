@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qsh-3z-Bs8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qsh-3z-Bs8">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -343,14 +343,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="As a first time user, please provide a few details" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xd-Dp-Gm1">
-                                <rect key="frame" x="21" y="84" width="558" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a one time registration please enter required fields." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xd-Dp-Gm1">
+                                <rect key="frame" x="36" y="84" width="528" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mzo-TA-FNS">
-                                <rect key="frame" x="21" y="122" width="558" height="40"/>
+                                <rect key="frame" x="36" y="140" width="528" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ugg-6X-y8G"/>
                                 </constraints>
@@ -358,7 +358,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GrT-ia-PDP">
-                                <rect key="frame" x="21" y="182" width="558" height="40"/>
+                                <rect key="frame" x="36" y="185" width="528" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="irL-kj-wPK"/>
                                 </constraints>
@@ -366,7 +366,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Postcode" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SzA-cw-dNg">
-                                <rect key="frame" x="21" y="242" width="558" height="40"/>
+                                <rect key="frame" x="36" y="230" width="528" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ZWw-yF-SVg"/>
                                 </constraints>
@@ -376,20 +376,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="9xd-Dp-Gm1" secondAttribute="trailing" constant="5" id="3G5-IJ-UbB"/>
-                            <constraint firstItem="9xd-Dp-Gm1" firstAttribute="leading" secondItem="yGH-QO-2Ry" secondAttribute="leadingMargin" constant="5" id="9FV-2L-R1v"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="SzA-cw-dNg" secondAttribute="trailing" constant="5" id="9YN-mf-CXm"/>
-                            <constraint firstItem="SzA-cw-dNg" firstAttribute="top" secondItem="GrT-ia-PDP" secondAttribute="bottom" constant="20" id="Amb-yt-lmE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9xd-Dp-Gm1" secondAttribute="trailing" constant="5" id="LGb-JT-KX4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Mzo-TA-FNS" secondAttribute="trailing" constant="5" id="MVy-tS-arr"/>
-                            <constraint firstItem="GrT-ia-PDP" firstAttribute="top" secondItem="Mzo-TA-FNS" secondAttribute="bottom" constant="20" id="OTS-DT-W8t"/>
-                            <constraint firstItem="9xd-Dp-Gm1" firstAttribute="leading" secondItem="yGH-QO-2Ry" secondAttribute="leadingMargin" constant="5" id="SFB-Ub-2ci"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GrT-ia-PDP" secondAttribute="trailing" constant="5" id="b2x-WQ-A4b"/>
-                            <constraint firstItem="SzA-cw-dNg" firstAttribute="leading" secondItem="yGH-QO-2Ry" secondAttribute="leadingMargin" constant="5" id="bA9-Kc-LLR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9xd-Dp-Gm1" secondAttribute="trailing" constant="20" id="3G5-IJ-UbB"/>
+                            <constraint firstItem="9xd-Dp-Gm1" firstAttribute="leading" secondItem="yGH-QO-2Ry" secondAttribute="leadingMargin" constant="20" id="9FV-2L-R1v"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SzA-cw-dNg" secondAttribute="trailing" constant="20" id="9YN-mf-CXm"/>
+                            <constraint firstItem="SzA-cw-dNg" firstAttribute="top" secondItem="GrT-ia-PDP" secondAttribute="bottom" constant="5" id="Amb-yt-lmE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9xd-Dp-Gm1" secondAttribute="trailing" constant="20" id="LGb-JT-KX4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mzo-TA-FNS" secondAttribute="trailing" constant="20" id="MVy-tS-arr"/>
+                            <constraint firstItem="GrT-ia-PDP" firstAttribute="top" secondItem="Mzo-TA-FNS" secondAttribute="bottom" constant="5" id="OTS-DT-W8t"/>
+                            <constraint firstItem="9xd-Dp-Gm1" firstAttribute="leading" secondItem="yGH-QO-2Ry" secondAttribute="leadingMargin" constant="20" id="SFB-Ub-2ci"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GrT-ia-PDP" secondAttribute="trailing" constant="20" id="b2x-WQ-A4b"/>
+                            <constraint firstItem="SzA-cw-dNg" firstAttribute="leading" secondItem="yGH-QO-2Ry" secondAttribute="leadingMargin" constant="20" id="bA9-Kc-LLR"/>
                             <constraint firstItem="9xd-Dp-Gm1" firstAttribute="top" secondItem="q1K-Mo-Ar1" secondAttribute="bottom" constant="20" id="dW2-Fw-lyd"/>
-                            <constraint firstItem="GrT-ia-PDP" firstAttribute="leading" secondItem="yGH-QO-2Ry" secondAttribute="leadingMargin" constant="5" id="eIH-Zj-7qG"/>
+                            <constraint firstItem="GrT-ia-PDP" firstAttribute="leading" secondItem="yGH-QO-2Ry" secondAttribute="leadingMargin" constant="20" id="eIH-Zj-7qG"/>
                             <constraint firstItem="9xd-Dp-Gm1" firstAttribute="top" secondItem="q1K-Mo-Ar1" secondAttribute="bottom" constant="20" id="kSH-0j-zWg"/>
-                            <constraint firstItem="Mzo-TA-FNS" firstAttribute="leading" secondItem="yGH-QO-2Ry" secondAttribute="leadingMargin" constant="5" id="lKF-6J-CVV"/>
+                            <constraint firstItem="Mzo-TA-FNS" firstAttribute="leading" secondItem="yGH-QO-2Ry" secondAttribute="leadingMargin" constant="20" id="lKF-6J-CVV"/>
                             <constraint firstItem="Mzo-TA-FNS" firstAttribute="top" secondItem="9xd-Dp-Gm1" secondAttribute="bottom" constant="20" id="vac-uL-zln"/>
                         </constraints>
                     </view>
@@ -397,6 +397,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="emailField" destination="GrT-ia-PDP" id="phE-2G-ci9"/>
+                        <outlet property="label" destination="9xd-Dp-Gm1" id="Qwh-ke-xSN"/>
                         <outlet property="nameField" destination="Mzo-TA-FNS" id="4l6-Ko-Wwp"/>
                         <outlet property="postcodeField" destination="SzA-cw-dNg" id="19N-oU-bnU"/>
                         <segue destination="lsj-SY-bHK" kind="show" identifier="ThankYouSegue" id="QMh-cf-Tjd"/>
