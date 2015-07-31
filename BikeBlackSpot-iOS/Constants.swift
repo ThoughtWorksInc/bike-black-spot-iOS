@@ -9,6 +9,8 @@
 import Foundation
 
 public class Constants {
+    static let BASE_PADDING:Double = 10
+    
     static let DEFAULT_MAP_LAT:Double = -27.921
     static let DEFAULT_MAP_LONG:Double = 133.247
     

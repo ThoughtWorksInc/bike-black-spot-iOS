@@ -13,8 +13,7 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
     var viewModel:LocationViewModel
     var locationLoaded:Bool =  false
     var addressBoxView:UIView?
-    
-    //    @IBOutlet weak var reportButton: UIBarButtonItem!
+    var markerView:UIImageView?
     
     required init(coder aDecoder:NSCoder) {
         self.viewModel = LocationViewModel()
@@ -25,54 +24,23 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
         super.viewDidLoad()
         self.title = "LOCATION"
         
-        var mapView = GMSMapView.mapWithFrame(CGRectZero, camera: nil)
-        mapView.myLocationEnabled = true
-        mapView.delegate = self
-        mapView.settings.myLocationButton = true
-        mapView.padding = UIEdgeInsetsMake(64, 0, 64, 0);
+        setupMapView()
 
-        self.view.addSubview(mapView)
+        setupAddressLabel()
+        setupAddressBoxView()
         
-        var markerView = UIImageView(image: UIImage(named: "pin"))
-        self.view.addSubview(markerView)
-        
-        addressLabel = UILabel()
-        addressLabel!.text = LOCATION_PLACEHOLDER
-        addressLabel!.setBodyFont()
-        addressLabel!.backgroundColor = UIColor.clearColor()
-        addressLabel!.textColor = UIColor.whiteColor()
-        //addressLabel!.font = UIFont.systemFontOfSize(13.0)
-        addressLabel!.textAlignment = NSTextAlignment.Center
-        addressLabel!.numberOfLines = 0
-        addressLabel!.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
-        
-        addressBoxView = UIView()
-        addressBoxView!.backgroundColor = UIColor(white: 0.0, alpha: 0.4)
-        addressBoxView!.addSubview(addressLabel!)
+        self.view.addSubview(self.mapView!)
+        self.view.addSubview(markerView!)
         self.view.addSubview(addressBoxView!)
-        
-        constrain(addressLabel!) { labelView in
-            labelView.left == labelView.superview!.left+10
-            labelView.right == labelView.superview!.right-10
-            labelView.centerY == labelView.superview!.centerY
-        }
-        
-        constrain(mapView, markerView, addressBoxView!) { mapView, markerView, detailsView in
-            mapView.edges == mapView.superview!.edges
-            
-            markerView.bottom == markerView.superview!.centerY
-            markerView.centerX == markerView.superview!.centerX
-            
-            detailsView.height == 40
-            detailsView.top == detailsView.superview!.top
-            detailsView.left == detailsView.superview!.left
-            detailsView.right == detailsView.superview!.right
-        }
-        
-        self.mapView = mapView
         
         addNextButton("REPORT", segueIdentifier:"DetailsSegue")
         
+        addConstraints()
+        
+        addNotificationObservers()
+    }
+    
+    func addNotificationObservers(){
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "locationUpdated:", name: CurrentLocationUpdated, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self,
             selector: "preferredContentSizeChanged:",
@@ -80,10 +48,65 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
             object: nil)
     }
     
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+    func setupMapView() -> GMSMapView {
+        mapView = GMSMapView.mapWithFrame(CGRectZero, camera: nil)
+        mapView!.myLocationEnabled = true
+        mapView!.delegate = self
+        mapView!.settings.myLocationButton = true
+        mapView!.padding = UIEdgeInsetsMake(64, 0, 64, 0);
+        markerView = UIImageView(image: UIImage(named: "pin"))
+        return mapView!
     }
     
+    func setupAddressLabel(){
+        addressLabel = UILabel()
+        addressLabel!.text = LOCATION_PLACEHOLDER
+        addressLabel!.setBodyFont()
+        addressLabel!.backgroundColor = UIColor.clearColor()
+        addressLabel!.textColor = UIColor.whiteColor()
+        addressLabel!.textAlignment = NSTextAlignment.Center
+        addressLabel!.numberOfLines = 0
+        addressLabel!.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
+    }
+    
+    func setupAddressBoxView(){
+        addressBoxView = UIView()
+        addressBoxView!.backgroundColor = UIColor(white: 0.0, alpha: 0.4)
+        addressBoxView!.addSubview(addressLabel!)
+    }
+    
+    func addConstraints(){
+        constrain(addressLabel!) { labelView in
+            labelView.left == labelView.superview!.left + Constants.BASE_PADDING
+            labelView.right == labelView.superview!.right - Constants.BASE_PADDING
+            labelView.centerY == labelView.superview!.centerY
+        }
+        
+        constrain(mapView!){ mapView in
+            mapView.edges == mapView.superview!.edges
+        }
+        constrain(markerView!){ markerView in
+            markerView.bottom == markerView.superview!.centerY
+            markerView.centerX == markerView.superview!.centerX
+        }
+        constrain(addressBoxView!) { detailsView in
+            detailsView.height == 40
+            detailsView.top == detailsView.superview!.top
+            detailsView.left == detailsView.superview!.left
+            detailsView.right == detailsView.superview!.right
+        }
+    }
+    
+    //while moving disable nextButton
+    func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {
+        nextButton()!.enabled = false
+    }
+    
+    func mapView(mapView: GMSMapView!, idleAtCameraPosition position: GMSCameraPosition!) {
+        var coordinate = mapView.camera.target
+        setCurrentLocation( CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude))
+    }
+
     func locationUpdated(sender:NSNotification) {
         let savedLocation = Report.getCurrentReport().location
         
@@ -102,26 +125,6 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
             }
         }
         self.locationLoaded=true
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        LocationService.sharedInstance.requestAuthorization()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // same as below but disable on move
-    func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {
-        nextButton()!.enabled = false
-    }
-    
-    func mapView(mapView: GMSMapView!, idleAtCameraPosition position: GMSCameraPosition!) {
-        var coordinate = mapView.camera.target
-        setCurrentLocation( CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude))
     }
     
     func setCurrentLocation( location: CLLocation){
@@ -144,7 +147,25 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
         })
     }
     
-    //zoom out slower
+    func preferredContentSizeChanged(notification: NSNotification) {
+        addressLabel!.setBodyFont()
+        addressLabel!.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        LocationService.sharedInstance.requestAuthorization()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     override func performSegueWithIdentifier(identifier: String?, sender: AnyObject?) {
         // content validation, should never actually run
         if(Report.getCurrentReport().location == nil) {
@@ -160,11 +181,6 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
         }
         self.locationLoaded = false
         super.performSegueWithIdentifier(identifier, sender: sender)
-    }
-    
-    func preferredContentSizeChanged(notification: NSNotification) {
-        addressLabel!.setBodyFont()
-        addressLabel!.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
     }
 }
 
