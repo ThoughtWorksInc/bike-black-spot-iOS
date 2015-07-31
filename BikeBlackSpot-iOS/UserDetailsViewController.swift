@@ -28,6 +28,7 @@ class UserDetailsViewController: FormViewController, UITextFieldDelegate {
         var fields = [nameField, emailField, postcodeField]
         var icons = [FontAwesome.User, FontAwesome.Envelope, FontAwesome.LocationArrow]
         var placeholders = ["Name", "Email", "Postcode (optional)"]
+        
         registerTextFields(fields, icons: icons, placeholders: placeholders)
         
         if let savedUser = Report.getCurrentReport().user {
@@ -52,21 +53,6 @@ class UserDetailsViewController: FormViewController, UITextFieldDelegate {
         }
         allFieldsValid()
     }
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        super.touchesBegan(touches, withEvent: event)
-        self.view.endEditing(true)
-    }
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        setUser() // back button pressed
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
     
     func setUser() {
         var user = User()
@@ -91,7 +77,7 @@ class UserDetailsViewController: FormViewController, UITextFieldDelegate {
         if isFieldValid(textField){
             textField.layer.borderColor = textFieldBorderColor.CGColor
         }
-        else{
+        else {
             textField.layer.borderColor = textFieldErrorBorderColor.CGColor
         }
     }
@@ -114,6 +100,21 @@ class UserDetailsViewController: FormViewController, UITextFieldDelegate {
             return valid
         }
         return false
+    }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        super.touchesBegan(touches, withEvent: event)
+        self.view.endEditing(true)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        setUser() // back button pressed
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     override func performSegueWithIdentifier(identifier: String?, sender: AnyObject?) {
