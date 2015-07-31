@@ -70,7 +70,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
     }
     
     func setupTakePhotoButton(){
-        takePhotoButton.setTitle("Take a photo".uppercaseString, forState: UIControlState.Normal)
+        takePhotoButton.setTitle("    Take a photo".uppercaseString, forState: UIControlState.Normal)
         takePhotoButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
         takePhotoButton.titleLabel?.setHeadingFontLarge()
         
@@ -81,7 +81,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
     }
     
     func setupGalleryPhotoButton(){
-        galleryPhotoButton.setTitle("Upload a photo".uppercaseString, forState: .Normal)
+        galleryPhotoButton.setTitle("    Upload a photo".uppercaseString, forState: .Normal)
         galleryPhotoButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
         galleryPhotoButton.titleLabel?.setHeadingFontLarge()
         galleryPhotoButton.titleLabel?.font
