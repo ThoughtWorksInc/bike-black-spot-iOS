@@ -22,6 +22,75 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         super.viewDidLoad()
         self.title = "DETAILS"
         
+        addDescriptionTextView()
+        addCategoryTextField()
+        
+        addCategoriesPicker()
+        
+        addNextButton("NEXT", segueIdentifier: "PhotoSegue")
+        
+        registerTextFields([descTextView, categoryTextField])
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "preferredContentSizeChanged:",
+            name: UIContentSizeCategoryDidChangeNotification,
+            object: nil)
+    }
+    
+    func addCategoryTextField(){
+        categoryTextField.setHeadingFont()
+        categoryTextField.attributedPlaceholder = NSAttributedString(string: CATEGORY_PLACEHOLDER, attributes: [NSForegroundColorAttributeName: UIColor.grayColor()])
+        categoryTextField.rightView = createCategoryDropDownButton()
+        categoryTextField.rightViewMode = UITextFieldViewMode.Always
+        categoryTextField.delegate = self
+    }
+    
+    func createCategoryDropDownButton() -> UIButton{
+        let categoryButton = UIButton()
+        let dropDownImage = UIImage(named: "down-arrow")
+        categoryButton.addTarget(self, action: "openCategory", forControlEvents: .TouchUpInside)
+        categoryButton.setImage(dropDownImage, forState: UIControlState.Normal)
+        categoryButton.frame = CGRectMake(0, 0, 35, 35)
+        return categoryButton
+    }
+    
+    func addCategoriesPicker(){
+        self.alert = createPickerAlert()
+        var picker = createPickerView()
+        
+        self.alert!.view.addSubview(picker)
+        self.pickerView = picker
+        
+        if Categories.isNotLoaded() {
+            Categories.setupCallback(self)
+        }
+    }
+    
+    func createPickerAlert() -> UIAlertController{
+        var alert = UIAlertController(title: nil, message: "\n\n\n\n\n\n\n", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Select", style: .Cancel) { (action) in
+            self.pickerView?.resignFirstResponder()})
+        return alert
+    }
+    func createPickerView() -> UIPickerView{
+        var picker = UIPickerView()
+        picker.showsSelectionIndicator = true
+        picker.frame = CGRect(origin: CGPointZero, size: CGSizeMake(CGRectGetWidth(self.alert!.view.frame), PICKER_HEIGHT))
+        picker.delegate = self
+        picker.dataSource = self
+        return picker
+    }
+    
+    func openCategory() {
+        categoryTextField.becomeFirstResponder()
+    }
+    
+    func reloadCategories() {
+        pickerView!.reloadAllComponents()
+    }
+    
+    func addDescriptionTextView(){
         descTextView.textColor = textColor
         descTextView.placeholderTextColor = UIColor.grayColor()
         descTextView.placeholderText = DESC_TEXTVIEW_PLACEHOLDER
@@ -29,76 +98,10 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         if let savedDescription = Report.getCurrentReport().description {
             descTextView.text = savedDescription
         }
-        
-        categoryTextField.setHeadingFont()
-        categoryTextField.attributedPlaceholder = NSAttributedString(string: CATEGORY_PLACEHOLDER, attributes: [NSForegroundColorAttributeName: UIColor.grayColor()])
-        
-        let categoryButton = UIButton()
-        categoryButton.addTarget(self, action: "openCategory", forControlEvents: .TouchUpInside)
-        let dropDownImage = UIImage(named: "down-arrow")
-        
-        categoryButton.setImage(dropDownImage, forState: UIControlState.Normal)
-        categoryButton.frame = CGRectMake(0, 0, 35, 35)
-        categoryTextField.rightView = categoryButton
-        categoryTextField.rightViewMode = UITextFieldViewMode.Always
-        categoryTextField.delegate = self
-        
-        registerTextFields([descTextView, categoryTextField])
-        
-        var alert = UIAlertController(title: nil, message: "\n\n\n\n\n\n\n", preferredStyle: UIAlertControllerStyle.ActionSheet)
-        let select = UIAlertAction(title: "Select", style: .Cancel) { (action) in
-            self.pickerView?.resignFirstResponder()
-        }
-
-        alert.addAction(select)
-        
-        var picker = UIPickerView()
-        picker.showsSelectionIndicator = true
-        picker.frame = CGRect(origin: CGPointZero, size: CGSizeMake(CGRectGetWidth(alert.view.frame), PICKER_HEIGHT))
-        picker.delegate = self
-        picker.dataSource = self
-        if Categories.isNotLoaded() {
-            Categories.setupCallback(self)
-        }
-        alert.view.addSubview(picker)
-        
-        self.pickerView = picker
-        self.alert = alert
-        
-        addNextButton("NEXT", segueIdentifier: "PhotoSegue")
-        
-        NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "preferredContentSizeChanged:",
-            name: UIContentSizeCategoryDidChangeNotification,
-            object: nil)
-    }
-    func openCategory() {
-        categoryTextField.becomeFirstResponder()
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        
-        setReportDescription()
-        super.viewWillDisappear(animated)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.pickerView?.reloadAllComponents()
-        
-        // set selected values if any
-        descTextView.setDefaultText(Report.getCurrentReport().description)
-        categoryTextField.text = Report.getCurrentReport().category?.name!
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        super.touchesBegan(touches, withEvent: event)
-        setReportDescription()
+    func setReportDescription() {
+        Report.getCurrentReport().description = descTextView.getText()
     }
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
@@ -150,7 +153,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     
     func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView!) -> UIView {
         let pickerLabel = UILabel()
-
+        
         pickerLabel.setPickerFontLarge()
         pickerLabel.textAlignment = NSTextAlignment.Center
         
@@ -167,12 +170,34 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         return pickerLabel
     }
     
-    func setReportDescription() {
-        Report.getCurrentReport().description = descTextView.getText()
+    func preferredContentSizeChanged(notification: NSNotification) {
+        descTextView!.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
+        categoryTextField!.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
+        categoryTextField.setHeadingFont()
     }
     
-    func reloadCategories() {
-        pickerView!.reloadAllComponents()
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.pickerView?.reloadAllComponents()
+        
+        // set selected values if any
+        descTextView.setDefaultText(Report.getCurrentReport().description)
+        categoryTextField.text = Report.getCurrentReport().category?.name!
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        setReportDescription()
+        super.viewWillDisappear(animated)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        super.touchesBegan(touches, withEvent: event)
+        setReportDescription()
     }
     
     override func performSegueWithIdentifier(identifier: String?, sender: AnyObject?) {
@@ -186,11 +211,5 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
             return
         }
         super.performSegueWithIdentifier(identifier, sender: sender)
-    }
-    
-    func preferredContentSizeChanged(notification: NSNotification) {
-        descTextView!.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
-        categoryTextField!.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
-        categoryTextField.setHeadingFont()
     }
 }
