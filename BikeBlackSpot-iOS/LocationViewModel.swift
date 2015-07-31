@@ -49,14 +49,6 @@ public class LocationViewModel {
                         desc += landmark
                     }
                 }
-                
-                if let suburb = placemark.locality {
-                    desc += ", " + suburb
-                }
-                
-                if let postcode = placemark.postalCode {
-                    desc += " " + postcode
-                }
             }
         }
         return desc
