@@ -5,7 +5,7 @@ let VALIDATION_ERROR = "Please provide valid details"
 
 class UserDetailsViewController: FormViewController, UITextFieldDelegate {
     
-    @IBOutlet var label: UILabel!
+    @IBOutlet var UserPromptLabel: UILabel!
     @IBOutlet var nameField: UITextField!
     @IBOutlet var emailField: UITextField!
     @IBOutlet var postcodeField: UITextField!
@@ -16,12 +16,15 @@ class UserDetailsViewController: FormViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.title = "USER DETAILS"
         
-        label.setBodyFont()
-        label.textColor = UIColor.whiteColor()
-        
         nameField.delegate = self
         emailField.delegate = self
         postcodeField.delegate = self
+        
+        UserPromptLabel.setBodyFont()
+        UserPromptLabel.textColor = UIColor.whiteColor()
+        nameField.setBodyFont()
+        emailField.setBodyFont()
+        postcodeField.setBodyFont()
         
         reportViewModel = ReportViewModel()
         
@@ -39,6 +42,11 @@ class UserDetailsViewController: FormViewController, UITextFieldDelegate {
         postcodeField.keyboardType = UIKeyboardType.NumberPad
         
         addNextButton("REGISTER", segueIdentifier: "ThankYouSegue")
+
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "preferredContentSizeChanged:",
+            name: UIContentSizeCategoryDidChangeNotification,
+            object: nil)
     }
     
     func autoFillTextFields(savedUser:User){
@@ -124,5 +132,16 @@ class UserDetailsViewController: FormViewController, UITextFieldDelegate {
         }
         setUser()
         super.performSegueWithIdentifier(identifier, sender: sender)
+    }
+    
+    func preferredContentSizeChanged(notification: NSNotification) {
+        UserPromptLabel.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
+        UserPromptLabel.setBodyFont()
+        nameField.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
+        nameField.setBodyFont()
+        emailField.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
+        emailField.setBodyFont()
+        postcodeField.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
+        postcodeField.setBodyFont()
     }
 }

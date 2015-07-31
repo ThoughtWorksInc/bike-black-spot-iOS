@@ -383,6 +383,7 @@ then refresh the screen.</string>
                     <toolbarItems/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
+                        <outlet property="UserPromptLabel" destination="9xd-Dp-Gm1" id="o3L-yr-xmP"/>
                         <outlet property="emailField" destination="GrT-ia-PDP" id="phE-2G-ci9"/>
                         <outlet property="label" destination="9xd-Dp-Gm1" id="Qwh-ke-xSN"/>
                         <outlet property="nameField" destination="Mzo-TA-FNS" id="4l6-Ko-Wwp"/>
@@ -423,6 +424,6 @@ then refresh the screen.</string>
         <image name="no-internet" width="92" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ccZ-dh-abl"/>
+        <segue reference="QMh-cf-Tjd"/>
     </inferredMetricsTieBreakers>
 </document>
