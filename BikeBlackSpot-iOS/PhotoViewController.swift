@@ -39,10 +39,9 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         self.view.addSubview(takePhotoButton)
         self.view.addSubview(galleryPhotoButton)
         self.view.addSubview(imageAttachedIconView)
-        
-        addConstraints()
-        
+    
         addNextButton("SKIP", segueIdentifier: "ReviewSegue")
+        addConstraints()
         
         setupNotificationObserver()
     }
@@ -204,7 +203,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
             galleryPhotoButton.height == galleryPhotoButton.width * self.buttonAspectRatio
         }
         
-        constrain(imageAttachedIconView, galleryPhotoButton, button!) { iconView, galleryButton, baseButton in
+        constrain(imageAttachedIconView) { iconView in
             iconView.centerX == iconView.superview!.centerX
             iconView.centerY == (iconView.superview!.centerY - self.BUTTON_HEIGHT) + 150
             iconView.height == iconView.superview!.height * 0.2
