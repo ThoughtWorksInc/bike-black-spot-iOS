@@ -13,7 +13,7 @@ class ReviewViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "REVIEW"
+        self.title = "REVIEW REPORT"
  
         registerTextFields([locationTextField,categoryTextField,descriptionTextView])
 
