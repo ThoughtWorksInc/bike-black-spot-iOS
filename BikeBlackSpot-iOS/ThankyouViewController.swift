@@ -1,85 +1,70 @@
 import UIKit
 import SwiftLoader
 import PromiseKit
-
+import Cartography
 class ThankyouViewController: BaseViewController {
     
     @IBOutlet weak var middleMessage: UILabel!
     @IBOutlet weak var bottomMessage: UILabel!
+    @IBOutlet weak var emailSentImageView: UIImageView!
+    
+    let THANK_YOU_HEADING = "THANK YOU FOR SUBMITTING YOUR REPORT"
+    let THANK_YOU_MESSAGE = "A copy of your Bike Blackspot has been sent via email."
+    
+    let VERIFY_HEADING = "PLEASE VERIFY YOUR EMAIL ADDRESS"
+    let VERIFY_MESSAGE = "Thank you for submitting your report, an email has been sent to your address, please verify your email."
+    
+    let UPLOADING_MESSAGE = "Uploading image"
+    
+    let ERROR_REGISTERING = "Error registering user"
+    let ERROR_SUBMITTING = "Error submitting report"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "THANK YOU"
+        self.title = "SUCCESS"
+        
+        middleMessage.setHeadingFontLarge()
+        bottomMessage.setBodyFont()
+
         
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: navigationController, action: nil)
         navigationItem.leftBarButtonItem = backButton
         
-        addNextButton("SEND ANOTHER REPORT")
+        addNextButton("NEW REPORT")
         nextButton()!.addTarget(self, action: "nextButtonTapped:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        
+        addConstraints()
         
         APIService.sharedInstance.isUserConfirmed()
             .then { result -> Void in
-                
-                //                self.nextButton()!.enabled = true
-                
                 if result {
-                    self.middleMessage.text = "THANK YOU FOR SUBMITTING YOUR REPORT"
-                    self.bottomMessage.text = "A copy of your blackspot has been sent via email."
+                    self.middleMessage.text = self.THANK_YOU_HEADING
+                    self.bottomMessage.text = self.THANK_YOU_MESSAGE
+                    self.bottomMessage.sizeToFit()
                 } else{
-                    self.middleMessage.text = "PLEASE VERIFY YOUR EMAIL ADDRESS"
-                    self.bottomMessage.text = "Thank you for submitting your report, an email has been sent to your address, please verify your email."
+                    self.middleMessage.text = self.VERIFY_HEADING
+                    self.bottomMessage.text = self.VERIFY_MESSAGE
+                    self.bottomMessage.sizeToFit()
                 }
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        let report = Report.getCurrentReport()
-        
-        var loadingMsg:String?
-        if(report.hasImage()) {
-            loadingMsg = "Uploading image"
+    func addConstraints(){
+        constrain(middleMessage){ middleLabel in
+            middleLabel.centerY == middleLabel.superview!.centerX
+            middleLabel.centerX == middleLabel.superview!.centerY
+            middleLabel.width == middleLabel.superview!.width * 0.8
         }
-        setBusy(true, text:loadingMsg)
-        
-        var isRegistered = UserTokenMgr.sharedInstance.hasToken()
-        
-        var promise = Promise()
-        
-        if(!isRegistered) {
-            
-            // register user
-            if let user = report.user {
-                promise = APIService.sharedInstance.registerUser(user)
-                    .then { uuid -> Void in
-                        
-                        // set user uuid on report
-                        Report.getCurrentReport().userUUID = uuid
-                }
-                promise.catch { error in
-                    self.setBusy(false)
-                    let alert = UIAlertView(title: "Error", message: "Error registering user", delegate: nil, cancelButtonTitle: "OK")
-                }
-            }
+        constrain(bottomMessage, middleMessage){ bottomLabel, middleLabel in
+            bottomLabel.width == bottomLabel.superview!.width * 0.8
+            bottomLabel.centerX == bottomLabel.superview!.centerX
+            bottomLabel.top == middleLabel.bottom + Constants.BASE_PADDING
         }
-        
-        // now submit report
-        promise
-            .then {
-                APIService.sharedInstance.createReport(report)
-                return Promise<Void>()
-            }
-            . then { () -> Void in
-                self.setBusy(false)
-            }
-            .catch { error -> Void in
-                self.setBusy(false)
-                UIAlertView(title: "Error", message: "Error submitting report", delegate: nil, cancelButtonTitle: "OK").show()
+        constrain(emailSentImageView, middleMessage){ emailIcon, middleLabel in
+            emailIcon.centerX == emailIcon.superview!.centerX
+            emailIcon.bottom == middleLabel.top - Constants.BASE_PADDING
         }
     }
     
@@ -101,5 +86,55 @@ class ThankyouViewController: BaseViewController {
         Report.clearReport()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.showDefaultViewController()
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        let report = Report.getCurrentReport()
+        
+        var loadingMsg:String?
+        if(report.hasImage()) {
+            loadingMsg = UPLOADING_MESSAGE
+        }
+        setBusy(true, text:loadingMsg)
+        
+        var isRegistered = UserTokenMgr.sharedInstance.hasToken()
+        
+        var promise = Promise()
+        
+        if(!isRegistered) {
+            
+            // register user
+            if let user = report.user {
+                promise = APIService.sharedInstance.registerUser(user)
+                    .then { uuid -> Void in
+                        
+                        // set user uuid on report
+                        Report.getCurrentReport().userUUID = uuid
+                }
+                promise.catch { error in
+                    self.setBusy(false)
+                    let alert = UIAlertView(title: "Error", message: self.ERROR_REGISTERING, delegate: nil, cancelButtonTitle: "OK")
+                }
+            }
+        }
+        
+        // now submit report
+        promise
+            .then {
+                APIService.sharedInstance.createReport(report)
+                return Promise<Void>()
+            }
+            . then { () -> Void in
+                self.setBusy(false)
+            }
+            .catch { error -> Void in
+                self.setBusy(false)
+                UIAlertView(title: "Error", message: self.ERROR_SUBMITTING, delegate: nil, cancelButtonTitle: "OK").show()
+        }
     }
 }
