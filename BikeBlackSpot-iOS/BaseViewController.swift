@@ -15,6 +15,7 @@ public class BaseViewController : UIViewController {
     
     var segueIdentifier:String?
     var button:UIButton?
+    let BUTTON_HEIGHT:Double = 40
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +35,7 @@ public class BaseViewController : UIViewController {
         setNextButtonTitle(text)
         
         constrain(button) { button in
-            button.height == 40
+            button.height == self.BUTTON_HEIGHT
             button.bottom == button.superview!.bottom - 10.0
             button.left == button.superview!.left + 10.0
             button.right == button.superview!.right - 10.0

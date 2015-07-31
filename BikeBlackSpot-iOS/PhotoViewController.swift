@@ -13,7 +13,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
     let galleryPhotoButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
     
     let imageAttachedIconView = UIImageView()
-    var buttonSeparatorLabel:UILabel?
+    var buttonSeparatorLabel:UILabel = UILabel()
     var imageOptionalLabel:UILabel = UILabel()
     var imageOptionalText:UILabel = UILabel()
     
@@ -22,108 +22,85 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         super.viewDidLoad()
         self.title = "PHOTO"
         
-        buttonSeparatorLabel = UILabel()
+        picker.delegate = self
         
+        setupImageOptionalLabel()
+        setupImageOptionalText()
+        
+        setupTakePhotoButton()
+        setupButtonSeperatorLabel()
+        setupGalleryPhotoButton()
+        
+        setupImageAttachedIcon()
+        
+        self.view.addSubview(imageOptionalLabel)
+        self.view.addSubview(imageOptionalText)
+        self.view.addSubview(buttonSeparatorLabel)
+        self.view.addSubview(takePhotoButton)
+        self.view.addSubview(galleryPhotoButton)
+        self.view.addSubview(imageAttachedIconView)
+        
+        addConstraints()
+        
+        addNextButton("SKIP", segueIdentifier: "ReviewSegue")
+        
+        setupNotificationObserver()
+    }
+    
+    func setupImageOptionalLabel(){
         imageOptionalLabel.text = "OPTIONAL:"
         imageOptionalLabel.setBodyFont()
         imageOptionalLabel.textColor = UIColor.whiteColor()
         imageOptionalLabel.setHeadingFontLarge()
-        
+    }
+    
+    func setupImageOptionalText(){
         imageOptionalText.text = "you can skip to the next step"
         imageOptionalText.setBodyFont()
         imageOptionalText.textColor = UIColor.whiteColor()
-        
-        picker.delegate = self
-        
-        buttonSeparatorLabel?.setBodyFont()
-        buttonSeparatorLabel!.text = "or"
-        buttonSeparatorLabel!.textColor = UIColor.whiteColor()
-        
+    }
+    
+    func setupButtonSeperatorLabel(){
+        buttonSeparatorLabel.setBodyFont()
+        buttonSeparatorLabel.text = "or"
+        buttonSeparatorLabel.textColor = UIColor.whiteColor()
+    }
+    
+    func setupTakePhotoButton(){
         takePhotoButton.setTitle("Take a photo".uppercaseString, forState: UIControlState.Normal)
         takePhotoButton.setTitleColor(UIColor.greenColor(), forState: .Highlighted)
         takePhotoButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
         takePhotoButton.titleLabel?.setHeadingFontLarge()
+        
         takePhotoButton.setBackgroundImage(UIImage(named: "camera_button.png"), forState: UIControlState.Normal)
         takePhotoButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
         
         takePhotoButton.addTarget(self, action: "openCamera:", forControlEvents: UIControlEvents.TouchUpInside)
-        
+    }
+    
+    func setupGalleryPhotoButton(){
         galleryPhotoButton.setTitle("Upload a photo".uppercaseString, forState: .Normal)
         galleryPhotoButton.setTitleColor(UIColor.greenColor(), forState: .Highlighted)
         galleryPhotoButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
         galleryPhotoButton.titleLabel?.setHeadingFontLarge()
         galleryPhotoButton.titleLabel?.font
+        
         galleryPhotoButton.setBackgroundImage(UIImage(named: "album_button.png"), forState: UIControlState.Normal)
         galleryPhotoButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
         
         galleryPhotoButton.addTarget(self, action: "openPhotoGallery:", forControlEvents: UIControlEvents.TouchUpInside)
-        
+    }
+    func setupImageAttachedIcon(){
         imageAttachedIconView.image = UIImage(named: ("remove-photo"))
         imageAttachedIconView.contentMode = UIViewContentMode.ScaleAspectFit
+        
         imageAttachedIconView.userInteractionEnabled = true
         imageAttachedIconView.hidden = true
         
         let removeImage = UITapGestureRecognizer(target: self, action: Selector("askToRemoveImage"))
         imageAttachedIconView.addGestureRecognizer(removeImage)
-        
-        self.view.addSubview(imageOptionalLabel)
-        self.view.addSubview(imageOptionalText)
-        self.view.addSubview(buttonSeparatorLabel!)
-        self.view.addSubview(takePhotoButton)
-        self.view.addSubview(galleryPhotoButton)
-        self.view.addSubview(imageAttachedIconView)
-        
-        
-        constrain(imageOptionalLabel) { optionalLabel in
-            optionalLabel.centerX == optionalLabel.superview!.centerX
-            optionalLabel.centerY == (optionalLabel.superview!.centerY - 40) - 140
-        }
-        constrain(imageOptionalText, imageOptionalLabel) { optionalText, optionalLabel in
-            optionalText.centerX == optionalText.superview!.centerX
-            optionalText.centerY == optionalLabel.bottom + 10
-        }
-        
-        constrain(takePhotoButton) { takePhotoButton in
-            takePhotoButton.centerX == takePhotoButton.superview!.centerX
-            takePhotoButton.centerY == (takePhotoButton.superview!.centerY - 40) - 50
-            takePhotoButton.width == takePhotoButton.superview!.width * 0.8
-            takePhotoButton.height == takePhotoButton.width * self.buttonAspectRatio
-        }
-        
-        constrain(buttonSeparatorLabel!) { buttonSeparatorLabel in
-            buttonSeparatorLabel.centerY == buttonSeparatorLabel.superview!.centerY - 40
-            buttonSeparatorLabel.centerX == buttonSeparatorLabel.superview!.centerX
-        }
-        
-        addNextButton("SKIP", segueIdentifier: "ReviewSegue")
-        
-        constrain(galleryPhotoButton) { galleryPhotoButton in
-            galleryPhotoButton.centerX == galleryPhotoButton.superview!.centerX
-            galleryPhotoButton.centerY == (galleryPhotoButton.superview!.centerY - 40) + 50
-            galleryPhotoButton.width == galleryPhotoButton.superview!.width * 0.8
-            galleryPhotoButton.height == galleryPhotoButton.width * self.buttonAspectRatio
-        }
-        
-        constrain(imageAttachedIconView, galleryPhotoButton, button!) { iconView, galleryButton, baseButton in
-            iconView.centerX == iconView.superview!.centerX
-            
-            iconView.centerY == (iconView.superview!.centerY - 40) + 150
-            iconView.height == iconView.superview!.height * 0.2
-        }
-        
-        NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "preferredContentSizeChanged:",
-            name: UIContentSizeCategoryDidChangeNotification,
-            object: nil)
-        
     }
     
-    func removeImage(){
-        
-        Report.getCurrentReport().image = nil
-        self.imageAttachedIconView.hidden = true
-        
-    }
     func askToRemoveImage(){
         let alertView = UIAlertController(title: "", message: "Remove the photo", preferredStyle: .Alert)
         alertView.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
@@ -131,12 +108,11 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         presentViewController(alertView, animated: true, completion: nil)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func removeImage(){
+        Report.getCurrentReport().image = nil
+        self.imageAttachedIconView.hidden = true
     }
     
-    // http://makeapppie.com/2014/12/04/swift-swift-using-the-uiimagepickercontroller-for-a-camera-and-photo-library/
     func openCamera(sender:UIButton!)
     {
         if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
@@ -144,7 +120,6 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
             picker.sourceType = UIImagePickerControllerSourceType.Camera
             picker.cameraCaptureMode = .Photo
             presentViewController(picker, animated: true, completion: nil)
-            
         }
         else
         {
@@ -188,8 +163,57 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         imageOptionalLabel.setBodyFont()
         imageOptionalText.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
         imageOptionalText.setBodyFont()
-        buttonSeparatorLabel!.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
-        buttonSeparatorLabel!.setBodyFont()
+        buttonSeparatorLabel.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
+        buttonSeparatorLabel.setBodyFont()
+    }
+    
+    func setupNotificationObserver(){
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "preferredContentSizeChanged:",
+            name: UIContentSizeCategoryDidChangeNotification,
+            object: nil)
+    }
+    
+    func addConstraints(){
+        constrain(imageOptionalLabel) { optionalLabel in
+            optionalLabel.centerX == optionalLabel.superview!.centerX
+            optionalLabel.centerY == (optionalLabel.superview!.centerY - self.BUTTON_HEIGHT) - 140
+        }
+        
+        constrain(imageOptionalText, imageOptionalLabel) { optionalText, optionalLabel in
+            optionalText.centerX == optionalText.superview!.centerX
+            optionalText.centerY == optionalLabel.bottom + Constants.BASE_PADDING
+        }
+        
+        constrain(takePhotoButton) { takePhotoButton in
+            takePhotoButton.centerX == takePhotoButton.superview!.centerX
+            takePhotoButton.centerY == (takePhotoButton.superview!.centerY - self.BUTTON_HEIGHT) - 50
+            takePhotoButton.width == takePhotoButton.superview!.width * 0.8
+            takePhotoButton.height == takePhotoButton.width * self.buttonAspectRatio
+        }
+        
+        constrain(buttonSeparatorLabel) { buttonSeparatorLabel in
+            buttonSeparatorLabel.centerY == buttonSeparatorLabel.superview!.centerY - self.BUTTON_HEIGHT
+            buttonSeparatorLabel.centerX == buttonSeparatorLabel.superview!.centerX
+        }
+        
+        constrain(galleryPhotoButton) { galleryPhotoButton in
+            galleryPhotoButton.centerX == galleryPhotoButton.superview!.centerX
+            galleryPhotoButton.centerY == (galleryPhotoButton.superview!.centerY - self.BUTTON_HEIGHT) + 50
+            galleryPhotoButton.width == galleryPhotoButton.superview!.width * 0.8
+            galleryPhotoButton.height == galleryPhotoButton.width * self.buttonAspectRatio
+        }
+        
+        constrain(imageAttachedIconView, galleryPhotoButton, button!) { iconView, galleryButton, baseButton in
+            iconView.centerX == iconView.superview!.centerX
+            iconView.centerY == (iconView.superview!.centerY - self.BUTTON_HEIGHT) + 150
+            iconView.height == iconView.superview!.height * 0.2
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     
