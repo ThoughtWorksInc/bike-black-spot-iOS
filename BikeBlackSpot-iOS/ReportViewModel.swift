@@ -32,7 +32,7 @@ class ReportViewModel {
             let predicate = NSPredicate(format:"SELF MATCHES %@", regex)
             valid = predicate.evaluateWithObject(value)
         }
-    
+        
         return valid
     }
 }

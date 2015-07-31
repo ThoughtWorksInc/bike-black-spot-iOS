@@ -13,14 +13,14 @@ class ThankyouViewController: BaseViewController {
         
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: navigationController, action: nil)
         navigationItem.leftBarButtonItem = backButton
-
+        
         addNextButton("SEND ANOTHER REPORT")
         nextButton()!.addTarget(self, action: "nextButtonTapped:", forControlEvents: UIControlEvents.TouchUpInside)
-
+        
         APIService.sharedInstance.isUserConfirmed()
             .then { result -> Void in
-
-//                self.nextButton()!.enabled = true
+                
+                //                self.nextButton()!.enabled = true
                 
                 if result {
                     self.middleMessage.text = "THANK YOU FOR SUBMITTING YOUR REPORT"
@@ -48,7 +48,7 @@ class ThankyouViewController: BaseViewController {
         setBusy(true, text:loadingMsg)
         
         var isRegistered = UserTokenMgr.sharedInstance.hasToken()
-
+        
         var promise = Promise()
         
         if(!isRegistered) {
@@ -60,11 +60,11 @@ class ThankyouViewController: BaseViewController {
                         
                         // set user uuid on report
                         Report.getCurrentReport().userUUID = uuid
-                    }
-                    promise.catch { error in
-                        self.setBusy(false)
-                        let alert = UIAlertView(title: "Error", message: "Error registering user", delegate: nil, cancelButtonTitle: "OK")
-                    }
+                }
+                promise.catch { error in
+                    self.setBusy(false)
+                    let alert = UIAlertView(title: "Error", message: "Error registering user", delegate: nil, cancelButtonTitle: "OK")
+                }
             }
         }
         
@@ -80,7 +80,7 @@ class ThankyouViewController: BaseViewController {
             .catch { error -> Void in
                 self.setBusy(false)
                 UIAlertView(title: "Error", message: "Error submitting report", delegate: nil, cancelButtonTitle: "OK").show()
-            }
+        }
     }
     
     func setBusy(busy:Bool, text:String? = nil) {

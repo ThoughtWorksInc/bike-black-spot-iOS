@@ -25,7 +25,7 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
         self.title = "LOCATION"
         
         setupMapView()
-
+        
         setupAddressLabel()
         setupAddressBoxView()
         
@@ -106,7 +106,7 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
         var coordinate = mapView.camera.target
         setCurrentLocation( CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude))
     }
-
+    
     func locationUpdated(sender:NSNotification) {
         let savedLocation = Report.getCurrentReport().location
         

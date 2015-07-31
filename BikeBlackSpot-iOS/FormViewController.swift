@@ -9,7 +9,7 @@ public class FormViewController : BaseViewController {
     let textFieldBackgroundColour = UIColor(white:1.0, alpha:0.7)
     let textFieldBorderColor = UIColor.clearColor()
     let textFieldErrorBorderColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
-
+    
     let textColor = UIColor.blackColor()
     var textFields:[AnyObject]?
     
@@ -34,7 +34,7 @@ public class FormViewController : BaseViewController {
         self.view.endEditing(true)
     }
     
-
+    
     func revalidateFields() -> Bool{
         resetFields()
         return allFieldsValid()
@@ -49,7 +49,7 @@ public class FormViewController : BaseViewController {
                 view.layer.borderColor = textFieldBorderColor.CGColor
                 view.layer.borderWidth = 1.0
                 view.layer.cornerRadius = 5.0
-
+                
                 var frame = view.frame
                 frame.size.height = 80
                 view.frame = frame

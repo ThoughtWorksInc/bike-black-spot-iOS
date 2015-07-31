@@ -39,7 +39,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         self.view.addSubview(takePhotoButton)
         self.view.addSubview(galleryPhotoButton)
         self.view.addSubview(imageAttachedIconView)
-    
+        
         addNextButton("SKIP", segueIdentifier: "ReviewSegue")
         addConstraints()
         
