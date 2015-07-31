@@ -23,27 +23,35 @@ public class BaseViewController : UIViewController {
     }
     
     func addNextButton(text:String, segueIdentifier:String? = nil) {
-        var button = UIButton()
-        button.layer.cornerRadius = 5.0
-        button.clipsToBounds = true
-        button.setBackgroundColor(Colour.Yellow, forState:UIControlState.Normal)
-        button.setBackgroundColor(Colour.DarkYellow, forState:UIControlState.Disabled)
+        var button = createNextButton()
         
         self.view.addSubview(button)
         self.button = button
         
         setNextButtonTitle(text)
         
-        constrain(button) { button in
-            button.height == self.BUTTON_HEIGHT
-            button.bottom == button.superview!.bottom - 10.0
-            button.left == button.superview!.left + 10.0
-            button.right == button.superview!.right - 10.0
-        }
+        addConstraints()
         
         if let id = segueIdentifier {
             self.segueIdentifier = id
             button.addTarget(self, action: "performSegue", forControlEvents: UIControlEvents.TouchUpInside)
+        }
+    }
+    func createNextButton() -> UIButton{
+        var button = UIButton()
+        button.layer.cornerRadius = 5.0
+        button.clipsToBounds = true
+        button.setBackgroundColor(Colour.Yellow, forState:UIControlState.Normal)
+        button.setBackgroundColor(Colour.DarkYellow, forState:UIControlState.Disabled)
+        return button
+    }
+    
+    func addConstraints(){
+        constrain(button!) { button in
+            button.height == self.BUTTON_HEIGHT
+            button.bottom == button.superview!.bottom - Constants.BASE_PADDING
+            button.left == button.superview!.left + Constants.BASE_PADDING
+            button.right == button.superview!.right - Constants.BASE_PADDING
         }
     }
     

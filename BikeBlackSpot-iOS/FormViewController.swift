@@ -13,14 +13,13 @@ public class FormViewController : BaseViewController {
     let textColor = UIColor.blackColor()
     var textFields:[AnyObject]?
     
-    public override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        self.view.endEditing(true)
-    }
-    
     public override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil)
+        setupNotificationObservers()
+    }
+    
+    public override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
     }
     
     func keyboardWillShow(notification: NSNotification) {
@@ -110,7 +109,7 @@ public class FormViewController : BaseViewController {
         }
         return valid
     }
-    
+    // Should be overriden
     func isFieldValid(field:AnyObject) -> Bool {
         return false
     }
@@ -135,5 +134,10 @@ public class FormViewController : BaseViewController {
     
     func showErrorAlert(message:String?) {
         UIAlertView(title: "Error", message: message ?? DEFAULT_ERROR_MSG, delegate: nil, cancelButtonTitle: "OK").show()
+    }
+    
+    func setupNotificationObservers(){
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil)
     }
 }
