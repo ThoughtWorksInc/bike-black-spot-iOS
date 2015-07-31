@@ -29,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    
     func startReachabilityMonitoring() {
         
         reachability!.whenReachable = { reachability in

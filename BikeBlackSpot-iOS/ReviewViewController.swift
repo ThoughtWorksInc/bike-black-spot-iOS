@@ -63,6 +63,10 @@ class ReviewViewController: FormViewController {
             photoView.hidden = true
         }
         
+        constrain(categoryLabel) { categoryLabel in
+            categoryLabel.width == categoryLabel.superview!.width * 0.8
+        }
+        
         addNextButton("SUBMIT", segueIdentifier: "ThankYouSegue")
     }
     

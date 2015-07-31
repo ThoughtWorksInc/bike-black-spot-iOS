@@ -16,10 +16,10 @@ public class Constants {
     static let STATE_ZOOM_LEVEL:Float = 8.0
     
     static let FONT_SIZE_TABLE:Dictionary<NSString, Dictionary<String, NSNumber>> = ["UICTFontTextStyleBody" : [
-        "UICTContentSizeCategoryAccessibilityXXXL": 23,
-        "UICTContentSizeCategoryAccessibilityXXL": 23,
-        "UICTContentSizeCategoryAccessibilityXL": 23,
-        "UICTContentSizeCategoryAccessibilityL": 23,
+        "UICTContentSizeCategoryAccessibilityXXXL": 28,
+        "UICTContentSizeCategoryAccessibilityXXL": 26,
+        "UICTContentSizeCategoryAccessibilityXL": 25,
+        "UICTContentSizeCategoryAccessibilityL": 24,
         "UICTContentSizeCategoryAccessibilityM": 23,
         "UICTContentSizeCategoryXXXL": 23,
         "UICTContentSizeCategoryXXL": 21,
