@@ -9,7 +9,6 @@ class ReviewViewController: FormViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var locationTextField: UITextField!
-    @IBOutlet weak var imageLabel: UILabel! //<<<<We were here last, investigating whether this is nessesary
     @IBOutlet weak var photoView: UIImageView!
     
     override func viewDidLoad() {
@@ -17,51 +16,12 @@ class ReviewViewController: FormViewController {
         self.title = "REVIEW"
         
         registerTextFields([locationTextField,categoryTextField,descriptionTextView])
-        
-        
-        let report = Report.getCurrentReport()
+
         var descFlag = false
-        categoryLabel.setHeadingFontSmall()
-        categoryLabel.text! = categoryLabel.text!.uppercaseString
-        categoryTextField.setBodyFont()
-        locationLabel.setHeadingFontSmall()
-        locationLabel.text! = locationLabel.text!.uppercaseString
-        locationTextField.setBodyFont()
-        descriptionTextView.setBodyFont()
-        descriptionLabel.setHeadingFontSmall()
-        
-        if let locationDescription = report.location?.desc {
-            locationTextField.text = locationDescription
-        }
-        
-        if let categoryName = report.category?.name {
-            categoryTextField.text = categoryName
-        } 
-        
-        if let description = report.description {
-            descriptionLabel.hidden = false
-            descriptionTextView.hidden = false
-            descriptionTextView.text = description
-            descFlag = true
-        } else {
-            descriptionLabel.hidden = true
-            descriptionTextView.hidden = true
-        }
-        
-        if let image = report.image {
-            photoView.image = UIImage(data:image);
-            photoView.contentMode = UIViewContentMode.ScaleAspectFit;
-
-            if descriptionTextView.hidden {
-                constrain(photoView, categoryTextField) { photoView, categoryTextField in
-                    photoView.top == categoryTextField.bottom+20
-                }
-            }else{
-
-            }
-        } else {
-            photoView.hidden = true
-        }
+        setupCategoryFields()
+        setupLocationFields()
+        setupDescriptionFields()
+        setupImageFields()
         
         constrain(categoryLabel) { categoryLabel in
             categoryLabel.width == categoryLabel.superview!.width * 0.8
@@ -69,7 +29,53 @@ class ReviewViewController: FormViewController {
         
         addNextButton("SUBMIT", segueIdentifier: "ThankYouSegue")
     }
+    func setupCategoryFields(){
+        categoryLabel.setHeadingFontSmall()
+        categoryLabel.text! = categoryLabel.text!.uppercaseString
+        categoryTextField.setBodyFont()
+        if let categoryName = Report.getCurrentReport().category?.name {
+            categoryTextField.text = categoryName
+        }
+    }
     
+    func setupLocationFields(){
+        locationLabel.setHeadingFontSmall()
+        locationLabel.text! = locationLabel.text!.uppercaseString
+        locationTextField.setBodyFont()
+        if let locationDescription = Report.getCurrentReport().location?.desc {
+            locationTextField.text = locationDescription
+        }
+    }
+    
+    func setupDescriptionFields(){
+        descriptionTextView.setBodyFont()
+        descriptionLabel.setHeadingFontSmall()
+        if let description = Report.getCurrentReport().description {
+            descriptionLabel.hidden = false
+            descriptionTextView.hidden = false
+            descriptionTextView.text = description
+        } else {
+            descriptionLabel.hidden = true
+            descriptionTextView.hidden = true
+        }
+    }
+    
+    func setupImageFields(){
+        if let image = Report.getCurrentReport().image {
+            photoView.image = UIImage(data:image);
+            photoView.contentMode = UIViewContentMode.ScaleAspectFit;
+            
+            if descriptionTextView.hidden {
+                constrain(photoView, categoryTextField) { photoView, categoryTextField in
+                    photoView.top == categoryTextField.bottom+20
+                }
+            }else{
+                
+            }
+        } else {
+            photoView.hidden = true
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
