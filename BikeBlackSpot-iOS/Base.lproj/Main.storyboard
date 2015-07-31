@@ -263,7 +263,7 @@ then refresh the app.</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oyl-AS-Ap1">
-                                <rect key="frame" x="26" y="299" width="543" height="241"/>
+                                <rect key="frame" x="16" y="299" width="568" height="241"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJz-te-Qu4">
                                 <rect key="frame" x="16" y="126" width="75" height="25"/>
@@ -283,10 +283,10 @@ then refresh the app.</string>
                             <constraint firstItem="GKq-2q-ExQ" firstAttribute="leading" secondItem="8Dp-5c-0G0" secondAttribute="leadingMargin" id="AXO-cS-EoK"/>
                             <constraint firstItem="GKq-2q-ExQ" firstAttribute="top" secondItem="gmg-To-RbX" secondAttribute="bottom" constant="10" id="BFl-ji-z2k"/>
                             <constraint firstItem="AAc-bE-5UE" firstAttribute="trailing" secondItem="uG7-jg-BTq" secondAttribute="trailing" id="BnN-2A-637"/>
-                            <constraint firstItem="oyl-AS-Ap1" firstAttribute="leading" secondItem="8Dp-5c-0G0" secondAttribute="leadingMargin" constant="10" id="C1L-0z-i9d"/>
+                            <constraint firstItem="oyl-AS-Ap1" firstAttribute="leading" secondItem="8Dp-5c-0G0" secondAttribute="leadingMargin" id="C1L-0z-i9d"/>
                             <constraint firstItem="EJz-te-Qu4" firstAttribute="trailing" secondItem="GKq-2q-ExQ" secondAttribute="trailing" id="GBR-Fm-uAV"/>
-                            <constraint firstItem="oyl-AS-Ap1" firstAttribute="centerX" secondItem="ftt-zy-bNn" secondAttribute="centerX" id="Gjh-U7-MqP"/>
                             <constraint firstItem="EJz-te-Qu4" firstAttribute="leading" secondItem="AAc-bE-5UE" secondAttribute="leading" id="LUu-IG-n7m"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oyl-AS-Ap1" secondAttribute="trailing" id="MNr-rd-GTq"/>
                             <constraint firstItem="ftt-zy-bNn" firstAttribute="top" secondItem="hRI-bL-igp" secondAttribute="bottom" constant="-5" id="N70-RD-xRM"/>
                             <constraint firstItem="oyl-AS-Ap1" firstAttribute="top" secondItem="ftt-zy-bNn" secondAttribute="bottom" constant="10" id="STK-oE-Xgw"/>
                             <constraint firstItem="uG7-jg-BTq" firstAttribute="leading" secondItem="EJz-te-Qu4" secondAttribute="leading" id="VjF-mZ-7H0"/>
