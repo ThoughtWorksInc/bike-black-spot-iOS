@@ -77,7 +77,7 @@ public class FormViewController : BaseViewController {
                     textField.attributedPlaceholder = text
                 }
             } else if let textView = field as? UITextView {
-                textView.setTitleFont()
+                textView.setBodyFont()
             }
         }
         self.textFields = textFields
