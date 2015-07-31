@@ -177,11 +177,15 @@ YOU'VE LOST CONNECTION</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-internet" translatesAutoresizingMaskIntoConstraints="NO" id="61w-G0-IgC">
-                                <rect key="frame" x="254" y="140" width="92" height="80"/>
+                                <rect key="frame" x="270" y="170" width="60" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="AAI-nu-7Tn"/>
+                                    <constraint firstAttribute="width" constant="60" id="Tk3-ar-4Tm"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07W-Sh-5VL">
-                                <rect key="frame" x="179" y="395" width="243.5" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07W-Sh-5VL">
+                                <rect key="frame" x="179" y="370" width="243.5" height="33"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Please check your internet connection,
 then refresh the screen.</string>
@@ -193,9 +197,11 @@ then refresh the screen.</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="c0u-cy-Gyh" secondAttribute="centerY" id="DUV-5G-GK1"/>
+                            <constraint firstAttribute="centerX" secondItem="07W-Sh-5VL" secondAttribute="centerX" id="MEs-nA-igy"/>
                             <constraint firstAttribute="centerX" secondItem="c0u-cy-Gyh" secondAttribute="centerX" id="UWO-br-eDv"/>
                             <constraint firstAttribute="centerX" secondItem="61w-G0-IgC" secondAttribute="centerX" id="diT-4A-rjX"/>
-                            <constraint firstItem="c0u-cy-Gyh" firstAttribute="top" secondItem="61w-G0-IgC" secondAttribute="bottom" constant="60" id="rK4-tb-UrV"/>
+                            <constraint firstItem="c0u-cy-Gyh" firstAttribute="top" secondItem="61w-G0-IgC" secondAttribute="bottom" constant="50" id="rK4-tb-UrV"/>
+                            <constraint firstItem="07W-Sh-5VL" firstAttribute="top" secondItem="c0u-cy-Gyh" secondAttribute="bottom" constant="50" id="sdG-JH-fE6"/>
                         </constraints>
                     </view>
                     <connections>
@@ -205,7 +211,7 @@ then refresh the screen.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Fa-ei-9Ct" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="367" y="610"/>
+            <point key="canvasLocation" x="349" y="617"/>
         </scene>
         <!--ReviewController-->
         <scene sceneID="Zsh-pE-e3t">
