@@ -20,4 +20,8 @@ extension UITextView {
         self.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
         self.font = Font.heading(self.font.pointSize)
     }
+    
+    func setTitleFont() {
+        self.font = Font.heading(20.0)
+    }
 }

@@ -5,11 +5,12 @@ public class FormViewController : BaseViewController {
     
     let DEFAULT_ERROR_MSG = "Please provide required information"
     
-    //let placeholderTextColor = UIColor.lightGrayColor()
+    let textFieldBackgroundColour = UIColor(white:1.0, alpha:0.3)
     let textFieldBorderColor = UIColor.clearColor()
+    let textFieldErrorBorderColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
+
     let textColor = UIColor.blackColor()
     var textFields:[AnyObject]?
-    
     
     public override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
@@ -44,11 +45,17 @@ public class FormViewController : BaseViewController {
                 view.layer.borderColor = textFieldBorderColor.CGColor
                 view.layer.borderWidth = 1.0
                 view.layer.cornerRadius = 5.0
+
+                var frame = view.frame
+                frame.size.height = 80
+                view.frame = frame
+                
+                view.backgroundColor = textFieldBackgroundColour
             }
             if let textField = field as? UITextField {
-                textField.setBodyFont()
+                textField.setTitleFont()
             } else if let textView = field as? UITextView {
-                textView.setBodyFont()
+                textView.setTitleFont()
             }
         }
         self.textFields = textFields

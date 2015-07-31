@@ -12,7 +12,7 @@ import UIKit
 public class Font {
     
     static func buttonTitle() -> UIFont {
-        return Font.heading(18.0)
+        return Font.heading(20.0)
     }
     
     static func body(size:CGFloat) -> UIFont {

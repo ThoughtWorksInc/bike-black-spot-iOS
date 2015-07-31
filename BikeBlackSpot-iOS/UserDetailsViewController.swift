@@ -3,6 +3,7 @@ let VALIDATION_ERROR = "Please provide valid details"
 
 class UserDetailsViewController: FormViewController, UITextFieldDelegate {
     
+    @IBOutlet var label: UILabel!
     @IBOutlet var nameField: UITextField!
     @IBOutlet var emailField: UITextField!
     @IBOutlet var postcodeField: UITextField!
@@ -12,6 +13,9 @@ class UserDetailsViewController: FormViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "USER DETAILS"
+        
+        label.setBodyFont()
+        label.textColor = UIColor.whiteColor()
         
         nameField.delegate = self
         emailField.delegate = self
@@ -83,10 +87,10 @@ class UserDetailsViewController: FormViewController, UITextFieldDelegate {
             textField.layer.borderColor = textFieldBorderColor.CGColor
         }
         else{
-            textField.layer.borderColor = UIColor.redColor().CGColor
+            textField.layer.borderColor = textFieldErrorBorderColor.CGColor
         }
-        
     }
+    
     override func isFieldValid(field: AnyObject) -> Bool {
         if let textField = field as? UITextField {
             var value = textField.text.trim()
