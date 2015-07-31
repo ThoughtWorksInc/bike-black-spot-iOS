@@ -50,6 +50,7 @@ code_sign() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Alamofire.framework'
   install_framework 'Cartography.framework'
+  install_framework 'FontAwesome_swift.framework'
   install_framework 'Nimble.framework'
   install_framework 'OMGHTTPURLRQ.framework'
   install_framework 'PromiseKit.framework'
@@ -60,6 +61,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Alamofire.framework'
   install_framework 'Cartography.framework'
+  install_framework 'FontAwesome_swift.framework'
   install_framework 'Nimble.framework'
   install_framework 'OMGHTTPURLRQ.framework'
   install_framework 'PromiseKit.framework'

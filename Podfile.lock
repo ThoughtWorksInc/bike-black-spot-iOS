@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (1.2.3)
   - Cartography (0.5.0)
+  - FontAwesome.swift (0.4.3)
   - GoogleMaps (1.10.1)
   - Nimble (1.0.0)
   - OMGHTTPURLRQ (2.1.3):
@@ -29,6 +30,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 1.2.3)
   - Cartography (~> 0.5.0)
+  - FontAwesome.swift
   - GoogleMaps
   - Nimble (= 1.0.0)
   - PromiseKit (~> 2.1)
@@ -39,6 +41,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 5550bf0b575ed1a4bf9be572f9463e1015cc169e
   Cartography: 774e5cc446f5a6bca5d4345c5aa6af9a1fe74dc6
+  FontAwesome.swift: 4f3dbf913b9ef9db275d02b75f6b794fa3bcbabc
   GoogleMaps: ebf08677f181d9c2dcdbd1721d206f02beccc9b1
   Nimble: 8bee528e5fcc403653076545db562d2b5db7bb87
   OMGHTTPURLRQ: c4268dea4295b585d711055dbcd87bfa82badd5f

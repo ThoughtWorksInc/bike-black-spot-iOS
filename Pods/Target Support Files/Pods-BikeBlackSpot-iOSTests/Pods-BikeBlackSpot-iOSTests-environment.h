@@ -18,6 +18,12 @@
 #define COCOAPODS_VERSION_MINOR_Cartography 5
 #define COCOAPODS_VERSION_PATCH_Cartography 0
 
+// FontAwesome.swift
+#define COCOAPODS_POD_AVAILABLE_FontAwesome_swift
+#define COCOAPODS_VERSION_MAJOR_FontAwesome_swift 0
+#define COCOAPODS_VERSION_MINOR_FontAwesome_swift 4
+#define COCOAPODS_VERSION_PATCH_FontAwesome_swift 3
+
 // GoogleMaps
 #define COCOAPODS_POD_AVAILABLE_GoogleMaps
 #define COCOAPODS_VERSION_MAJOR_GoogleMaps 1

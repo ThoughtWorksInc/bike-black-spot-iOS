@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import FontAwesome_swift
 
 public class FormViewController : BaseViewController {
     
@@ -39,8 +40,12 @@ public class FormViewController : BaseViewController {
         resetFields()
         return allFieldsValid()
     }
-    func registerTextFields(textFields:[AnyObject]) {
-        for field in textFields {
+    
+    func registerTextFields(textFields:[AnyObject], icons:[FontAwesome]? = nil, placeholders:[String]? = nil) {
+        for (index, field) in enumerate(textFields) {
+            
+            var placeholder:NSMutableAttributedString?
+            
             if let view = field as? UIView {
                 view.layer.borderColor = textFieldBorderColor.CGColor
                 view.layer.borderWidth = 1.0
@@ -51,9 +56,27 @@ public class FormViewController : BaseViewController {
                 view.frame = frame
                 
                 view.backgroundColor = textFieldBackgroundColour
+                
+                // set icon + placeholder text
+                if(icons != nil && placeholders != nil) {
+                    var iconFont = UIFont.fontAwesomeOfSize(20)
+                    var iconText = NSAttributedString(string: String.fontAwesomeIconWithName(icons![index]) + "\t", attributes: [NSFontAttributeName : iconFont])
+                    
+                    var textFont = Font.buttonTitle()
+                    var placeholderText = NSAttributedString(string: placeholders![index], attributes: [NSFontAttributeName : textFont])
+                    
+                    placeholder = NSMutableAttributedString()
+                    placeholder!.appendAttributedString(iconText)
+                    placeholder!.appendAttributedString(placeholderText)
+                }
             }
             if let textField = field as? UITextField {
                 textField.setTitleFont()
+                
+                if let text = placeholder {
+                    textField.placeholder = nil
+                    textField.attributedPlaceholder = text
+                }
             } else if let textView = field as? UITextView {
                 textView.setTitleFont()
             }

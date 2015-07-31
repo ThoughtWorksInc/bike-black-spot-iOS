@@ -9,6 +9,7 @@ def import_pods
     pod 'Alamofire', '~> 1.2.3'
     pod 'SwiftyJSON', '~> 2.2.0'
     pod 'SwiftLoader', '0.2.2'
+    pod 'FontAwesome.swift'
 end
 
 

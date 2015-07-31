@@ -1,4 +1,6 @@
 import UIKit
+import FontAwesome_swift
+
 let VALIDATION_ERROR = "Please provide valid details"
 
 class UserDetailsViewController: FormViewController, UITextFieldDelegate {
@@ -24,7 +26,10 @@ class UserDetailsViewController: FormViewController, UITextFieldDelegate {
         reportViewModel = ReportViewModel()
         
         var fields = [nameField, emailField, postcodeField]
-        registerTextFields(fields)
+        var icons = [FontAwesome.User, FontAwesome.Envelope, FontAwesome.MapMarker]
+        var placeholders = ["Name", "Email", "Postcode (optional)"]
+        registerTextFields(fields, icons: icons, placeholders: placeholders)
+        
         if let savedUser = Report.getCurrentReport().user {
             autoFillTextFields(savedUser)
         }
