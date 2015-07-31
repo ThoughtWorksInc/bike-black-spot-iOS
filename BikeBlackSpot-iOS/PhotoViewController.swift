@@ -92,10 +92,14 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         imageAttachedIconView.contentMode = UIViewContentMode.ScaleAspectFit
         
         imageAttachedIconView.userInteractionEnabled = true
-        imageAttachedIconView.hidden = true
+
         
         let removeImage = UITapGestureRecognizer(target: self, action: Selector("askToRemoveImage"))
         imageAttachedIconView.addGestureRecognizer(removeImage)
+        
+        if Report.getCurrentReport().image == nil{
+            imageAttachedIconView.hidden = true
+        }
     }
     
     func askToRemoveImage(){
@@ -174,7 +178,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
     func addConstraints(){
         constrain(imageOptionalLabel) { optionalLabel in
             optionalLabel.centerX == optionalLabel.superview!.centerX
-            optionalLabel.centerY == (optionalLabel.superview!.centerY - self.BUTTON_HEIGHT) - 140
+            optionalLabel.centerY == (optionalLabel.superview!.centerY - self.BUTTON_HEIGHT) - 145
         }
         
         constrain(imageOptionalText, imageOptionalLabel) { optionalText, optionalLabel in
@@ -203,8 +207,8 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         
         constrain(imageAttachedIconView) { iconView in
             iconView.centerX == iconView.superview!.centerX
-            iconView.centerY == (iconView.superview!.centerY - self.BUTTON_HEIGHT) + 150
-            iconView.height == iconView.superview!.height * 0.2
+            iconView.centerY == (iconView.superview!.centerY - self.BUTTON_HEIGHT) + 145
+            iconView.height == iconView.superview!.height * 0.15
         }
     }
     
