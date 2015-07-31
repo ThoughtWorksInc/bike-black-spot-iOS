@@ -188,7 +188,7 @@ YOU'VE LOST CONNECTION</string>
                                 <rect key="frame" x="179" y="370" width="244" height="33"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Please check your internet connection,
-then refresh the screen.</string>
+then refresh the app.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

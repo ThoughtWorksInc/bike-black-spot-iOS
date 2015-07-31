@@ -24,6 +24,8 @@ class ThankyouViewController: BaseViewController {
         super.viewDidLoad()
         self.title = "SUCCESS"
         
+        emailSentImageView.hidden = true
+        
         middleMessage.setHeadingFontLarge()
         bottomMessage.setBodyFont()
         bottomMessage.sizeToFit()
@@ -44,10 +46,12 @@ class ThankyouViewController: BaseViewController {
                     self.middleMessage.text = self.THANK_YOU_HEADING
                     self.bottomMessage.text = self.THANK_YOU_MESSAGE
                     self.bottomMessage.sizeToFit()
+                    self.emailSentImageView.hidden = false
                 } else{
                     self.middleMessage.text = self.VERIFY_HEADING
                     self.bottomMessage.text = self.VERIFY_MESSAGE
                     self.bottomMessage.sizeToFit()
+                    self.emailSentImageView.hidden = false
                 }
         }
         

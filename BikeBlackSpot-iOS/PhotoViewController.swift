@@ -41,13 +41,17 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         self.view.addSubview(imageAttachedIconView)
         
         addNextButton("SKIP", segueIdentifier: "ReviewSegue")
+        
+        if Report.getCurrentReport().image != nil {
+            setNextButtonTitle("CONTINUE")
+        }
         addConstraints()
         
         setupNotificationObserver()
     }
     
     func setupImageOptionalLabel(){
-        imageOptionalLabel.text = "OPTIONAL:"
+        imageOptionalLabel.text = "OPTIONAL"
         imageOptionalLabel.setBodyFont()
         imageOptionalLabel.textColor = UIColor.whiteColor()
         imageOptionalLabel.setHeadingFontLarge()
@@ -92,7 +96,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         imageAttachedIconView.contentMode = UIViewContentMode.ScaleAspectFit
         
         imageAttachedIconView.userInteractionEnabled = true
-
+        
         
         let removeImage = UITapGestureRecognizer(target: self, action: Selector("askToRemoveImage"))
         imageAttachedIconView.addGestureRecognizer(removeImage)
