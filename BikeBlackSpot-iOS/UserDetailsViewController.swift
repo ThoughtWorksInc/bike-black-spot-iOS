@@ -26,7 +26,7 @@ class UserDetailsViewController: FormViewController, UITextFieldDelegate {
         reportViewModel = ReportViewModel()
         
         var fields = [nameField, emailField, postcodeField]
-        var icons = [FontAwesome.User, FontAwesome.Envelope, FontAwesome.MapMarker]
+        var icons = [FontAwesome.User, FontAwesome.Envelope, FontAwesome.LocationArrow]
         var placeholders = ["Name", "Email", "Postcode (optional)"]
         registerTextFields(fields, icons: icons, placeholders: placeholders)
         
@@ -37,7 +37,7 @@ class UserDetailsViewController: FormViewController, UITextFieldDelegate {
         emailField.keyboardType = UIKeyboardType.EmailAddress
         postcodeField.keyboardType = UIKeyboardType.NumberPad
         
-        addNextButton("SUBMIT", segueIdentifier: "ThankYouSegue")
+        addNextButton("REGISTER", segueIdentifier: "ThankYouSegue")
     }
     
     func autoFillTextFields(savedUser:User){
