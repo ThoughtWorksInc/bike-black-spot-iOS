@@ -107,7 +107,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select report category" adjustsFontSizeToFit="NO" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="V99-cg-mNf">
-                                <rect key="frame" x="21" y="84" width="558" height="40"/>
+                                <rect key="frame" x="36" y="84" width="528" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="zLV-jk-1R9"/>
                                 </constraints>
@@ -115,7 +115,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleToFill" text="Enter description" translatesAutoresizingMaskIntoConstraints="NO" id="Mte-eP-496" customClass="CustomTextView" customModule="BikeBlackSpot_iOS" customModuleProvider="target">
-                                <rect key="frame" x="21" y="144" width="558" height="150"/>
+                                <rect key="frame" x="36" y="129" width="528" height="150"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="paC-bZ-9ko"/>
@@ -126,12 +126,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="V99-cg-mNf" firstAttribute="leading" secondItem="zh4-8I-Rbh" secondAttribute="leadingMargin" constant="5" id="RtY-xb-H6L"/>
-                            <constraint firstItem="Mte-eP-496" firstAttribute="top" secondItem="V99-cg-mNf" secondAttribute="bottom" constant="20" id="UT9-k5-kFT"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Mte-eP-496" secondAttribute="trailing" constant="5" id="WtB-30-ZyN"/>
+                            <constraint firstItem="V99-cg-mNf" firstAttribute="leading" secondItem="zh4-8I-Rbh" secondAttribute="leadingMargin" constant="20" id="RtY-xb-H6L"/>
+                            <constraint firstItem="Mte-eP-496" firstAttribute="top" secondItem="V99-cg-mNf" secondAttribute="bottom" constant="5" id="UT9-k5-kFT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mte-eP-496" secondAttribute="trailing" constant="20" id="WtB-30-ZyN"/>
                             <constraint firstItem="V99-cg-mNf" firstAttribute="top" secondItem="w3A-W7-jhZ" secondAttribute="bottom" constant="20" id="iu9-ct-0sn"/>
-                            <constraint firstItem="Mte-eP-496" firstAttribute="leading" secondItem="zh4-8I-Rbh" secondAttribute="leadingMargin" constant="5" id="qJn-9H-f9U"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="V99-cg-mNf" secondAttribute="trailing" constant="5" id="sm1-KA-PPc"/>
+                            <constraint firstItem="Mte-eP-496" firstAttribute="leading" secondItem="zh4-8I-Rbh" secondAttribute="leadingMargin" constant="20" id="qJn-9H-f9U"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="V99-cg-mNf" secondAttribute="trailing" constant="20" id="sm1-KA-PPc"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
