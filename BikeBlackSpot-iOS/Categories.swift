@@ -2,7 +2,6 @@ import Foundation
 import SwiftLoader
 
 public class Categories : NSObject {
-    // fetch categories
     private static var isLoaded = false
     private static var numberOfAttempts = 0
     private static var callBackViewController:DetailsViewController?
