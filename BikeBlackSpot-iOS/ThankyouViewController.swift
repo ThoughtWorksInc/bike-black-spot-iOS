@@ -25,7 +25,9 @@ class ThankyouViewController: BaseViewController {
         self.title = "SUCCESS"
         
         middleMessage.setHeadingFontLarge()
+//        middleMessage.layoutMargins.bottom = CGFloat(Constants.BASE_PADDING)
         bottomMessage.setBodyFont()
+        bottomMessage.sizeToFit()
 
         
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: navigationController, action: nil)
@@ -53,18 +55,19 @@ class ThankyouViewController: BaseViewController {
     
     func addConstraints(){
         constrain(middleMessage){ middleLabel in
-            middleLabel.centerY == middleLabel.superview!.centerX
-            middleLabel.centerX == middleLabel.superview!.centerY
+            middleLabel.centerY == middleLabel.superview!.centerY - self.BUTTON_HEIGHT / 2
+            middleLabel.centerX == middleLabel.superview!.centerX
             middleLabel.width == middleLabel.superview!.width * 0.8
         }
         constrain(bottomMessage, middleMessage){ bottomLabel, middleLabel in
             bottomLabel.width == bottomLabel.superview!.width * 0.8
             bottomLabel.centerX == bottomLabel.superview!.centerX
-            bottomLabel.top == middleLabel.bottom + Constants.BASE_PADDING
+            bottomLabel.top == middleLabel.bottom
         }
         constrain(emailSentImageView, middleMessage){ emailIcon, middleLabel in
             emailIcon.centerX == emailIcon.superview!.centerX
-            emailIcon.bottom == middleLabel.top - Constants.BASE_PADDING
+            emailIcon.width == emailIcon.superview!.width * 0.2
+            emailIcon.bottom == middleLabel.top
         }
     }
     
