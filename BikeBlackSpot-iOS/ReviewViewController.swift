@@ -14,7 +14,7 @@ class ReviewViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "REVIEW"
-        
+ 
         registerTextFields([locationTextField,categoryTextField,descriptionTextView])
 
         var descFlag = false
@@ -27,8 +27,10 @@ class ReviewViewController: FormViewController {
             categoryLabel.width == categoryLabel.superview!.width * 0.8
         }
         
+        self.view.backgroundColor = UIColor.whiteColor()
         addNextButton("SUBMIT", segueIdentifier: "ThankYouSegue")
     }
+    
     func setupCategoryFields(){
         categoryLabel.setHeadingFontSmall()
         categoryLabel.text! = categoryLabel.text!.uppercaseString
@@ -42,6 +44,12 @@ class ReviewViewController: FormViewController {
         locationLabel.setHeadingFontSmall()
         locationLabel.text! = locationLabel.text!.uppercaseString
         locationTextField.setBodyFont()
+
+        descriptionTextView.setBodyFont()
+        descriptionLabel.setHeadingFontSmall()
+        descriptionLabel.text! = descriptionLabel.text!.uppercaseString
+        descriptionLabel.layer.borderWidth = 0.0 // no border
+        
         if let locationDescription = Report.getCurrentReport().location?.desc {
             locationTextField.text = locationDescription
         }
@@ -76,6 +84,11 @@ class ReviewViewController: FormViewController {
             photoView.hidden = true
         }
     }
+
+    override func showDefaultBackground() -> Bool {
+        return false
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

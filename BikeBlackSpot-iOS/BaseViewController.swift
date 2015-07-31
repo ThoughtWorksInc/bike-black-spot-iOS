@@ -11,7 +11,14 @@ public class BaseViewController : UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        setBackground()
+        
+        if(showDefaultBackground()) {
+            setBackground()
+        }
+    }
+    
+    func showDefaultBackground() -> Bool {
+        return true
     }
     
     func addNextButton(text:String, segueIdentifier:String? = nil) {
