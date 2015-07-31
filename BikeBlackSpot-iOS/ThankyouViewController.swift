@@ -50,6 +50,11 @@ class ThankyouViewController: BaseViewController {
                     self.bottomMessage.sizeToFit()
                 }
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "preferredContentSizeChanged:",
+            name: UIContentSizeCategoryDidChangeNotification,
+            object: nil)
     }
     
     func addConstraints(){
@@ -139,4 +144,13 @@ class ThankyouViewController: BaseViewController {
                 UIAlertView(title: "Error", message: self.ERROR_SUBMITTING, delegate: nil, cancelButtonTitle: "OK").show()
         }
     }
+    
+    func preferredContentSizeChanged(notification: NSNotification) {
+        middleMessage.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
+        middleMessage.setHeadingFontLarge()
+        bottomMessage.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
+        bottomMessage.setBodyFont()
+        bottomMessage.sizeToFit()
+    }
+
 }
