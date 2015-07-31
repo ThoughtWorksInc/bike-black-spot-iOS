@@ -1,11 +1,3 @@
-//
-//  UIViewControllerExtension.swift
-//  BikeBlackSpot-iOS
-//
-//  Created by Anita Santoso on 29/07/2015.
-//  Copyright (c) 2015 ThoughtWorks. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
@@ -23,8 +15,6 @@ extension UIViewController {
 }
 
 extension UIView {
-    
-    
     func setBackground() {
         UIGraphicsBeginImageContext(self.frame.size)
         UIImage(named: "background.png")?.drawInRect(self.bounds)

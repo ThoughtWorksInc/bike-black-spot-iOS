@@ -1,11 +1,3 @@
-//
-//  FormViewModel.swift
-//  BikeBlackSpot-iOS
-//
-//  Created by Anita Santoso on 24/07/2015.
-//  Copyright (c) 2015 ThoughtWorks. All rights reserved.
-//
-
 import Foundation
 
 enum ReportField {

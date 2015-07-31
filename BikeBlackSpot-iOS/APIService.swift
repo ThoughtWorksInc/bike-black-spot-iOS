@@ -1,11 +1,3 @@
-//
-//  APIService.swift
-//  BikeBlackSpot-iOS
-//
-//  Created by Anita Santoso on 20/07/2015.
-//  Copyright (c) 2015 ThoughtWorks. All rights reserved.
-//
-
 import Foundation
 import PromiseKit
 import Alamofire

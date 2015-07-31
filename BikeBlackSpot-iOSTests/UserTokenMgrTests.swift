@@ -1,11 +1,3 @@
-//
-//  UserTokenMgrTests.swift
-//  BikeBlackSpot-iOS
-//
-//  Created by Anita Santoso on 27/07/2015.
-//  Copyright (c) 2015 ThoughtWorks. All rights reserved.
-//
-
 import Foundation
 import Quick
 import Nimble

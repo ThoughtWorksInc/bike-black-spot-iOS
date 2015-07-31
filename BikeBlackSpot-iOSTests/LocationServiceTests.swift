@@ -1,11 +1,3 @@
-//
-//  LocationServiceTests.swift
-//  BikeBlackSpot-iOS
-//
-//  Created by Anita Santoso on 23/07/2015.
-//  Copyright (c) 2015 ThoughtWorks. All rights reserved.
-//
-
 import Foundation
 import CoreLocation
 import Quick
