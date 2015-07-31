@@ -66,7 +66,7 @@ class ThankyouViewController: BaseViewController {
         constrain(emailSentImageView, middleMessage){ emailIcon, middleLabel in
             emailIcon.centerX == emailIcon.superview!.centerX
             emailIcon.width == emailIcon.superview!.width * 0.2
-            emailIcon.bottom == middleLabel.top - Constants.BASE_PADDING * 4
+            emailIcon.bottom == middleLabel.top - Constants.BASE_PADDING * 3
         }
     }
     
