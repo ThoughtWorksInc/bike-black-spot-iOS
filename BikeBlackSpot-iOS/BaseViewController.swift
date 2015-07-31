@@ -22,7 +22,12 @@ public class BaseViewController : UIViewController {
         
         setNextButtonTitle(text)
         
-        addConstraints()
+        constrain(button) { button in
+            button.height == self.BUTTON_HEIGHT
+            button.bottom == button.superview!.bottom - Constants.BASE_PADDING
+            button.left == button.superview!.left + Constants.BASE_PADDING
+            button.right == button.superview!.right - Constants.BASE_PADDING
+        }
         
         if let id = segueIdentifier {
             self.segueIdentifier = id
@@ -36,15 +41,6 @@ public class BaseViewController : UIViewController {
         button.setBackgroundColor(Colour.Yellow, forState:UIControlState.Normal)
         button.setBackgroundColor(Colour.DarkYellow, forState:UIControlState.Disabled)
         return button
-    }
-    
-    func addConstraints(){
-        constrain(button!) { button in
-            button.height == self.BUTTON_HEIGHT
-            button.bottom == button.superview!.bottom - Constants.BASE_PADDING
-            button.left == button.superview!.left + Constants.BASE_PADDING
-            button.right == button.superview!.right - Constants.BASE_PADDING
-        }
     }
     
     func setNextButtonTitle(title:String) {

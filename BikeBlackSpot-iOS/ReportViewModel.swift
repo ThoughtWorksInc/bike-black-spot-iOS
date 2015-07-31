@@ -10,8 +10,6 @@ enum ReportField {
 
 class ReportViewModel {
     
-    //Changed regex to match server side one
-//    let EMAIL_REGEX = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
     let EMAIL_REGEX = "^[\\w+\\-.]+@[a-z\\d\\-]+(\\.[a-z]+)*\\.[a-z]+$"
     let POSTCODE_REGEX = "^([0-9]{4})?$"
     
@@ -26,7 +24,6 @@ class ReportViewModel {
     func isValid(field:ReportField, value:String) -> Bool {
         var valid = true
         
-        // if required field, check not empty
         if(contains(requiredFields, field)) {
             valid = !value.isEmpty
         }

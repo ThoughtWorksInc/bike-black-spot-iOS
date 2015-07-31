@@ -13,9 +13,6 @@ public class Report {
 
     public var description:String?
     
-    public func hasImage() -> Bool {
-        return self.image != nil
-    }
     
     public static func getCurrentReport() -> Report {
         if currentReport == nil {
@@ -46,5 +43,9 @@ public class Report {
             vals["image"] = base64String
         }
         return vals
+    }
+    
+    public func hasImage() -> Bool {
+        return self.image != nil
     }
 }

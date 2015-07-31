@@ -16,18 +16,17 @@ public class LocationViewModel {
     }
     
     public func getDescription() -> String {
-        var desc = String()
         if let placemark = self.placemark {
             if(mapZoomLevel <= Constants.DEFAULT_ZOOM_LEVEL) {
                 if let country = placemark.country{
-                    desc = country
+                    return country
                 }
             }  else if(mapZoomLevel <= Constants.STATE_ZOOM_LEVEL) {
                 if let state = placemark.administrativeArea{
-                    desc = state
+                    return state
                 }
             } else {
-                
+                var desc = String()
                 if let no = placemark.subThoroughfare {
                     desc += no + " "
                 }
@@ -38,11 +37,12 @@ public class LocationViewModel {
                 
                 if(desc.isEmpty) {
                     if let landmark = placemark.name {
-                        desc += landmark
+                        return landmark
                     }
                 }
+                return desc
             }
         }
-        return desc
+        return ""
     }
 }
