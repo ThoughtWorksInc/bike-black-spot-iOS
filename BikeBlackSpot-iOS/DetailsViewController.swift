@@ -50,7 +50,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         let dropDownImage = UIImage(named: "down-arrow")
         categoryButton.addTarget(self, action: "openCategory", forControlEvents: .TouchUpInside)
         categoryButton.setImage(dropDownImage, forState: UIControlState.Normal)
-        categoryButton.frame = CGRectMake(0, 0, 40, 40)
+        categoryButton.frame = CGRectMake(0, 0, 40, 40.8)
         return categoryButton
     }
     
