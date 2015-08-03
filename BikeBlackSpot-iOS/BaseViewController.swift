@@ -52,7 +52,7 @@ public class BaseViewController : UIViewController {
     
     func setNextButtonTitle(title:String) {
         if let button = self.button {
-            let title = NSMutableAttributedString(string: title, attributes: [NSFontAttributeName:Font.buttonTitle()])
+            let title = NSMutableAttributedString(string: title, attributes: [NSFontAttributeName:Font.heading(27)])
             button.setAttributedTitle(title, forState: UIControlState.Normal)
         }
     }

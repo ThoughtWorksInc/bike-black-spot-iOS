@@ -38,8 +38,8 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     }
     
     func addCategoryTextField(){
-        categoryTextField.setHeadingFont()
         categoryTextField.attributedPlaceholder = NSAttributedString(string: CATEGORY_PLACEHOLDER, attributes: [NSForegroundColorAttributeName: UIColor.grayColor()])
+        categoryTextField.setHeadingFont()
         categoryTextField.rightView = createCategoryDropDownButton()
         categoryTextField.rightViewMode = UITextFieldViewMode.Always
         categoryTextField.delegate = self
@@ -172,6 +172,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     
     func preferredContentSizeChanged(notification: NSNotification) {
         descTextView!.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
+        descTextView!.setBodyFont()
         categoryTextField!.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
         categoryTextField.setHeadingFont()
     }

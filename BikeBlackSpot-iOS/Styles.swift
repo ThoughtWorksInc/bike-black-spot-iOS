@@ -4,7 +4,7 @@ import UIKit
 public class Font {
     
     static func buttonTitle() -> UIFont {
-        return Font.heading(20.0)
+        return Font.heading(21.0)
     }
     
     static func body(size:CGFloat) -> UIFont {
@@ -41,7 +41,7 @@ public class Styles {
         UINavigationBar.appearance().translucent = false
         
         // nav bar title font
-        let attributes: [String:AnyObject] = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName : Font.heading(20.0)]
+        let attributes: [String:AnyObject] = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName : Font.heading(25.0)]
         UINavigationBar.appearance().titleTextAttributes = attributes
         
         // back button font

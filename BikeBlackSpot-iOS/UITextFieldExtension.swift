@@ -5,12 +5,12 @@ extension UITextField {
     
     func setBodyFont() {
         self.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
-        self.font = Font.body(self.font.pointSize)
+        self.font = Font.body(self.font.pointSize + 4)
     }
     
     func setHeadingFont() {
         self.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
-        self.font = Font.heading(self.font.pointSize)
+        self.font = Font.heading(self.font.pointSize + 6.0)
     }
     
     func setTitleFont() {
