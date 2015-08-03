@@ -3,7 +3,7 @@ import UIKit
 import FontAwesome_swift
 
 public class FormViewController : BaseViewController {
-    
+    var DO_NOT_SHOW_DONE_BUTTON = false
     let DEFAULT_ERROR_MSG = "Please provide required information"
     
     let textFieldBackgroundColour = UIColor(white:1.0, alpha:0.7)
@@ -23,7 +23,9 @@ public class FormViewController : BaseViewController {
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "DONE", style: UIBarButtonItemStyle.Done, target: self, action: "closeKeyboard:")
+        if !DO_NOT_SHOW_DONE_BUTTON {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "DONE", style: UIBarButtonItemStyle.Done, target: self, action: "closeKeyboard:")
+        }
     }
     
     func keyboardWillHide(notification: NSNotification) {

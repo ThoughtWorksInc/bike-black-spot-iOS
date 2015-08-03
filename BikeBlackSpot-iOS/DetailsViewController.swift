@@ -15,17 +15,17 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     @IBOutlet var descTextView: CustomTextView!
     @IBOutlet var categoryTextField: UITextField!
     
-    var alert:UIAlertController?
     var pickerView:UIPickerView?
+    var toolbar:UIToolbar?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "DETAILS"
         
+        addCategoriesPicker()
+        
         addDescriptionTextView()
         addCategoryTextField()
-        
-        addCategoriesPicker()
         
         addNextButton("NEXT", segueIdentifier: "PhotoSegue")
         
@@ -41,8 +41,9 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         categoryTextField.attributedPlaceholder = NSAttributedString(string: CATEGORY_PLACEHOLDER, attributes: [NSForegroundColorAttributeName: UIColor.grayColor()])
         categoryTextField.setHeadingFont()
         categoryTextField.rightView = createCategoryDropDownButton()
-        categoryTextField.rightViewMode = UITextFieldViewMode.Always
+        categoryTextField.rightViewMode = UITextFieldViewMode.Never
         categoryTextField.delegate = self
+        categoryTextField.inputView = pickerView!
     }
     
     func createCategoryDropDownButton() -> UIButton{
@@ -55,10 +56,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     }
     
     func addCategoriesPicker(){
-        self.alert = createPickerAlert()
         var picker = createPickerView()
-        
-        self.alert!.view.addSubview(picker)
         self.pickerView = picker
         
         if Categories.isNotLoaded() {
@@ -66,22 +64,37 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         }
     }
     
-    func createPickerAlert() -> UIAlertController{
-        var alert = UIAlertController(title: nil, message: "\n\n\n\n\n\n\n", preferredStyle: UIAlertControllerStyle.ActionSheet)
-        
-        alert.addAction(UIAlertAction(title: "Select", style: .Cancel) { (action) in
-            self.pickerView?.resignFirstResponder()})
-        return alert
-    }
     func createPickerView() -> UIPickerView{
         var picker = UIPickerView()
         picker.showsSelectionIndicator = true
-        picker.frame = CGRect(origin: CGPointZero, size: CGSizeMake(CGRectGetWidth(self.alert!.view.frame), PICKER_HEIGHT))
+        picker.backgroundColor = UIColor.whiteColor()
+        picker.alpha = 0.7
+        picker.opaque = false
         picker.delegate = self
         picker.dataSource = self
+        picker.frame = CGRectMake(0.0,0.0, CGRectGetWidth(self.view.frame),  162.0)
+        
+        toolbar = UIToolbar()
+        let space = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
+        space.width = self.view.frame.width - CGFloat(BUTTON_HEIGHT * 1.5)
+        toolbar!.frame = CGRectMake(0.0,CGFloat(BUTTON_HEIGHT * -1), CGRectGetWidth(self.view.frame), CGFloat(BUTTON_HEIGHT ))
+        toolbar!.alpha = 1.0
+        toolbar!.tintColor = UIColor.whiteColor()
+        toolbar!.barTintColor = Colour.Blue
+        toolbar!.translucent = false
+        
+        let doneButton = UIBarButtonItem(title: "DONE",style: .Plain,
+            target:self,
+            action:"categorySelected:")
+        
+        toolbar!.items = [space, doneButton]
+        picker.addSubview(toolbar!)
         return picker
     }
     
+    func categorySelected(){
+        categoryTextField.endEditing(true)
+    }
     func openCategory() {
         categoryTextField.becomeFirstResponder()
     }
@@ -106,13 +119,16 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         if(textField == categoryTextField) {
-            self.view.endEditing(true)
+                    toolbar?.hidden = false
+            self.navigationItem.rightBarButtonItem?.title = ""
+            DO_NOT_SHOW_DONE_BUTTON = true
         }
-        presentViewController(alert!, animated: true, completion: nil)
-        return false
+        return true
     }
     
     func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+        DO_NOT_SHOW_DONE_BUTTON = false
+        toolbar?.hidden = true
         self.view.endEditing(true)
         self.navigationItem.rightBarButtonItem?.title = ""
         return true
