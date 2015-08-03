@@ -66,7 +66,6 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
         addressLabel!.textColor = UIColor.whiteColor()
         addressLabel!.textAlignment = NSTextAlignment.Center
         addressLabel!.numberOfLines = 0
-        addressLabel!.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
     }
     
     func setupAddressBoxView(){
