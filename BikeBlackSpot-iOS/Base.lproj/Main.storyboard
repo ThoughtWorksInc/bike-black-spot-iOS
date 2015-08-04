@@ -239,17 +239,14 @@ then refresh the app.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Description string" translatesAutoresizingMaskIntoConstraints="NO" id="E4y-hY-Mk8">
-                                        <rect key="frame" x="10" y="155" width="575" height="95"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="95" id="Wp2-sD-UW3"/>
-                                        </constraints>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Description string" translatesAutoresizingMaskIntoConstraints="NO" id="E4y-hY-Mk8">
+                                        <rect key="frame" x="10" y="156" width="575" height="33"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W4g-ai-Euq">
-                                        <rect key="frame" x="15" y="260" width="570" height="280"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="W4g-ai-Euq">
+                                        <rect key="frame" x="15" y="199" width="570" height="341"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fex-qj-l4d">
                                         <rect key="frame" x="15" y="88" width="75" height="25"/>
@@ -277,7 +274,6 @@ then refresh the app.</string>
                                     <constraint firstItem="7Lx-tv-YcU" firstAttribute="leading" secondItem="6uZ-gm-pw1" secondAttribute="leading" id="W2g-Gg-azs"/>
                                     <constraint firstItem="fex-qj-l4d" firstAttribute="trailing" secondItem="qKj-1d-7gW" secondAttribute="trailing" id="WAN-ai-Nhs"/>
                                     <constraint firstItem="6uZ-gm-pw1" firstAttribute="leading" secondItem="fex-qj-l4d" secondAttribute="leading" id="Zw5-1J-z3J"/>
-                                    <constraint firstItem="E4y-hY-Mk8" firstAttribute="top" secondItem="6uZ-gm-pw1" secondAttribute="bottom" constant="25" id="bXx-eH-1eE"/>
                                     <constraint firstItem="7Lx-tv-YcU" firstAttribute="top" secondItem="6uZ-gm-pw1" secondAttribute="bottom" constant="10" id="bkC-ao-oTL"/>
                                     <constraint firstItem="fex-qj-l4d" firstAttribute="leading" secondItem="4eb-T2-dda" secondAttribute="leading" id="d7K-HY-lhv"/>
                                     <constraint firstItem="E4y-hY-Mk8" firstAttribute="trailing" secondItem="7Lx-tv-YcU" secondAttribute="trailing" id="ex3-Tb-VBj"/>
@@ -292,6 +288,7 @@ then refresh the app.</string>
                                     <constraint firstItem="W4g-ai-Euq" firstAttribute="leading" secondItem="7Lx-tv-YcU" secondAttribute="leading" id="vqE-qP-gSl"/>
                                     <constraint firstAttribute="bottom" secondItem="W4g-ai-Euq" secondAttribute="bottom" constant="60" id="wS8-qZ-gGd"/>
                                     <constraint firstItem="W4g-ai-Euq" firstAttribute="trailing" secondItem="E4y-hY-Mk8" secondAttribute="trailing" id="yb6-up-pk9"/>
+                                    <constraint firstItem="E4y-hY-Mk8" firstAttribute="top" secondItem="7Lx-tv-YcU" secondAttribute="bottom" constant="-5" id="zFL-rH-RmS"/>
                                 </constraints>
                             </view>
                         </subviews>

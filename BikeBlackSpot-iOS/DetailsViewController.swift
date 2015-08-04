@@ -110,6 +110,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
     }
     
     func addDescriptionTextView(){
+        descTextView.maxLength = 200
         descTextView.textColor = textColor
         descTextView.placeholderTextColor = UIColor.grayColor()
         descTextView.placeholderText = DESC_TEXTVIEW_PLACEHOLDER

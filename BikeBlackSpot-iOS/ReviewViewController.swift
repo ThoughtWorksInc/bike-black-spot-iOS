@@ -16,8 +16,6 @@ class ReviewViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "REVIEW"
- 
-        // registerTextFields([locationTextField,categoryTextField,descriptionTextView])
 
         var descFlag = false
         setupCategoryFields()
@@ -30,7 +28,6 @@ class ReviewViewController: FormViewController {
         }
         
         self.formView.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
-//        self.view.backgroundColor = UIColor.whiteColor()
         addNextButton("SUBMIT", segueIdentifier: "ThankYouSegue")
     }
     

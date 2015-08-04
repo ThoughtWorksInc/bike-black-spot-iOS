@@ -3,6 +3,7 @@ import UIKit
 
 class CustomTextView : UITextView, UITextViewDelegate {
     
+    var maxLength:Int?
     var placeholderTextColor:UIColor?
     var placeholderText:String = ""
     var defaultTextColor:UIColor?
@@ -62,5 +63,13 @@ class CustomTextView : UITextView, UITextViewDelegate {
             }
         }
         return self.text
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange,
+        replacementText text: String) -> Bool {
+            if let maxLength = self.maxLength {
+                return count(self.text) + (count(text) - range.length) <= maxLength;
+            }
+            return true
     }
 }
