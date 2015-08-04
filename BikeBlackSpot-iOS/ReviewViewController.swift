@@ -11,6 +11,8 @@ class ReviewViewController: FormViewController {
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var photoView: UIImageView!
     
+    @IBOutlet var formView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "REVIEW"
@@ -27,6 +29,7 @@ class ReviewViewController: FormViewController {
             categoryLabel.width == categoryLabel.superview!.width * 0.8
         }
         
+        self.formView.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
 //        self.view.backgroundColor = UIColor.whiteColor()
         addNextButton("SUBMIT", segueIdentifier: "ThankYouSegue")
     }
