@@ -80,12 +80,18 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         toolbar!.frame = CGRectMake(0.0,CGFloat(BUTTON_HEIGHT * -1), CGRectGetWidth(self.view.frame), CGFloat(BUTTON_HEIGHT ))
         toolbar!.alpha = 1.0
         toolbar!.tintColor = UIColor.whiteColor()
-        toolbar!.barTintColor = Colour.Blue
+        toolbar!.barTintColor = Colour.Yellow
         toolbar!.translucent = false
         
         let doneButton = UIBarButtonItem(title: "DONE",style: .Plain,
             target:self,
             action:"categorySelected:")
+        //doneButton.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.blackColor()], forState: UIControlState.Normal)
+        
+       doneButton.setTitleTextAttributes([
+            NSFontAttributeName : UIFont(name: "AlternateGothicLT-No2", size: 20)!,
+            NSForegroundColorAttributeName : UIColor.blackColor()],
+            forState: UIControlState.Normal)
         
         toolbar!.items = [space, doneButton]
         picker.addSubview(toolbar!)
