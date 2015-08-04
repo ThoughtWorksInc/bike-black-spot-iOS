@@ -41,7 +41,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         categoryTextField.attributedPlaceholder = NSAttributedString(string: CATEGORY_PLACEHOLDER, attributes: [NSForegroundColorAttributeName: UIColor.grayColor()])
         categoryTextField.setHeadingFont()
         categoryTextField.rightView = createCategoryDropDownButton()
-        categoryTextField.rightViewMode = UITextFieldViewMode.Never
+        categoryTextField.rightViewMode = UITextFieldViewMode.Always
         categoryTextField.delegate = self
         categoryTextField.inputView = pickerView!
     }
