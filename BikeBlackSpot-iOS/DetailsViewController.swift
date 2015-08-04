@@ -2,7 +2,7 @@ import UIKit
 import PromiseKit
 import SwiftyJSON
 
-let DESC_TEXTVIEW_PLACEHOLDER = "Enter report description"
+let DESC_TEXTVIEW_PLACEHOLDER = "Enter report description (max 200 characters)"
 let CATEGORY_PLACEHOLDER = "Select a category"
 let SERVICE_UNAVAILABLE = "Service is currently unavailable"
 let PLEASE_SELECT_A_CATEGORY = "Please enter required information"
@@ -79,7 +79,7 @@ class DetailsViewController: FormViewController, UITextViewDelegate, UITextField
         space.width = self.view.frame.width - CGFloat(BUTTON_HEIGHT * 1.5)
         toolbar!.frame = CGRectMake(0.0,CGFloat(BUTTON_HEIGHT * -1), CGRectGetWidth(self.view.frame), CGFloat(BUTTON_HEIGHT ))
         toolbar!.alpha = 1.0
-        toolbar!.tintColor = UIColor.whiteColor()
+        toolbar!.tintColor = UIColor.blackColor()
         toolbar!.barTintColor = Colour.Yellow
         toolbar!.translucent = false
         
