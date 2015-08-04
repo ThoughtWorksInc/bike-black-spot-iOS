@@ -17,6 +17,10 @@ public class BaseViewController : UIViewController {
         }
     }
     
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     func showDefaultBackground() -> Bool {
         return true
     }

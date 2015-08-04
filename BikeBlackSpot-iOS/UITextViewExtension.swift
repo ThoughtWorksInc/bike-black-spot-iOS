@@ -8,9 +8,14 @@ extension UITextView {
         self.font = Font.body(self.font.pointSize + 4)
     }
     
+    func setBodyFontSmall() {
+        self.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
+        self.font = Font.body(self.font.pointSize + 2)
+    }
+    
     func setHeadingFont() {
         self.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
-        self.font = Font.heading(self.font.pointSize + 4)
+        self.font = Font.heading(self.font.pointSize + 6.0)
     }
     
     func setTitleFont() {

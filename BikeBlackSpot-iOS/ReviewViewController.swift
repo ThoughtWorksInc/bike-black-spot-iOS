@@ -29,12 +29,35 @@ class ReviewViewController: FormViewController {
         
         self.formView.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
         addNextButton("SUBMIT", segueIdentifier: "ThankYouSegue")
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "preferredContentSizeChanged:",
+            name: UIContentSizeCategoryDidChangeNotification,
+            object: nil)
+    }
+    
+    func preferredContentSizeChanged(notification: NSNotification) {
+        for label in [locationLabel, categoryLabel, descriptionLabel] {
+            label.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
+            label.setHeadingFontSmall()
+        }
+        
+        for field in [locationTextField, categoryTextField, descriptionTextView] {
+            
+            if let textField = field as? UITextField {
+                textField.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
+                textField.setBodyFontSmall()
+            } else if let textView = field as? UITextView {
+                textView.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
+                textView.setBodyFontSmall()
+            }
+        }
     }
     
     func setupCategoryFields(){
         categoryLabel.setHeadingFontSmall()
         categoryLabel.text! = categoryLabel.text!.uppercaseString
-        categoryTextField.setBodyFont()
+        categoryTextField.setBodyFontSmall()
         if let categoryName = Report.getCurrentReport().category?.name {
             categoryTextField.text = categoryName
         }
@@ -43,9 +66,9 @@ class ReviewViewController: FormViewController {
     func setupLocationFields(){
         locationLabel.setHeadingFontSmall()
         locationLabel.text! = locationLabel.text!.uppercaseString
-        locationTextField.setBodyFont()
+        locationTextField.setBodyFontSmall()
 
-        descriptionTextView.setBodyFont()
+        descriptionTextView.setBodyFontSmall()
         descriptionLabel.setHeadingFontSmall()
         descriptionLabel.text! = descriptionLabel.text!.uppercaseString
         descriptionLabel.layer.borderWidth = 0.0 // no border
@@ -56,7 +79,7 @@ class ReviewViewController: FormViewController {
     }
     
     func setupDescriptionFields(){
-        descriptionTextView.setBodyFont()
+        descriptionTextView.setBodyFontSmall()
         descriptionLabel.setHeadingFontSmall()
         if let description = Report.getCurrentReport().description {
             descriptionLabel.hidden = false
