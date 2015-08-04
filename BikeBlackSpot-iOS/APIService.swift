@@ -37,14 +37,16 @@ public class APIService {
             var params = user.toDictionary()
             let request = Alamofire.request(.POST, serviceURL + "/users", parameters: params)
             request.responseString { _, response, string, error in
+                let statusCode = response?.statusCode
                 if(error != nil) {
                     reject(error!)
-                } else if(string == nil) {
+                } else if(string == nil || statusCode != 200) {
                     // if no uuid was returned
-                    let statusCode = response?.statusCode
+ 
                     reject(NSError(domain: self.serviceURL, code: statusCode!, userInfo: nil))
                 } else {
                     var uuid = string!.stringByReplacingOccurrencesOfString("\"", withString: "")
+                    println("Token is: |" + uuid + "|")
                     UserTokenMgr.sharedInstance.saveToken(uuid)
                     fulfill(uuid)
                 }
