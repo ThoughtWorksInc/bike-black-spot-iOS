@@ -40,7 +40,7 @@ public class APIService {
                 let statusCode = response?.statusCode
                 if(error != nil) {
                     reject(error!)
-                } else if(string == nil || statusCode != 200) {
+                } else if(string == nil || statusCode != 201) {
                     // if no uuid was returned
  
                     reject(NSError(domain: self.serviceURL, code: statusCode!, userInfo: nil))
