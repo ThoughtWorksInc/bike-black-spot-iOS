@@ -150,7 +150,6 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         
         setNextButtonTitle("CONTINUE")
         imageAttachedIconView.hidden = false
-        println("Image taken~!")
         
         dismissViewControllerAnimated(true, completion: nil)
     }

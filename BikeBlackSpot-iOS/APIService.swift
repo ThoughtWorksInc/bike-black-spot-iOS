@@ -46,7 +46,6 @@ public class APIService {
                     reject(NSError(domain: self.serviceURL, code: statusCode!, userInfo: nil))
                 } else {
                     var uuid = string!.stringByReplacingOccurrencesOfString("\"", withString: "")
-                    println("Token is: |" + uuid + "|")
                     UserTokenMgr.sharedInstance.saveToken(uuid)
                     fulfill(uuid)
                 }
@@ -65,7 +64,6 @@ public class APIService {
                         let statusCode = response?.statusCode
                         reject(NSError(domain: self.serviceURL, code: statusCode!, userInfo: nil))
                     } else {
-                        println(string!)
                         fulfill(string!.rangeOfString("true") != nil)
                     }
                 }
