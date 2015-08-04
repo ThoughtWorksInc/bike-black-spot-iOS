@@ -32,8 +32,6 @@ class UserDetailsViewController: FormViewController, UITextFieldDelegate {
         reportViewModel = ReportViewModel()
         
         var fields = [nameField, emailField, postcodeField]
-        //var icons = [FontAwesome.User, FontAwesome.Envelope, FontAwesome.LocationArrow]
-        //var placeholders = ["Name", "Email", "Postcode (optional)"]
         
         registerTextFields(fields, icons: icons, placeholders: placeholders)
         
@@ -149,5 +147,8 @@ class UserDetailsViewController: FormViewController, UITextFieldDelegate {
         
         var fields = [nameField, emailField, postcodeField]
         registerTextFields(fields, icons: icons, placeholders: placeholders)
+        
+        emailField.keyboardType = UIKeyboardType.EmailAddress
+        postcodeField.keyboardType = UIKeyboardType.NumberPad
     }
 }
