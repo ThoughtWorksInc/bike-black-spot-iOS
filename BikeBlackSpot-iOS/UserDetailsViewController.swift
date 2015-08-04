@@ -12,6 +12,9 @@ class UserDetailsViewController: FormViewController, UITextFieldDelegate {
     
     var reportViewModel:ReportViewModel!
     
+    var icons = [FontAwesome.User, FontAwesome.Envelope, FontAwesome.LocationArrow]
+    var placeholders = ["Name", "Email", "Postcode (optional)"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "USER DETAILS"
@@ -29,8 +32,8 @@ class UserDetailsViewController: FormViewController, UITextFieldDelegate {
         reportViewModel = ReportViewModel()
         
         var fields = [nameField, emailField, postcodeField]
-        var icons = [FontAwesome.User, FontAwesome.Envelope, FontAwesome.LocationArrow]
-        var placeholders = ["Name", "Email", "Postcode (optional)"]
+        //var icons = [FontAwesome.User, FontAwesome.Envelope, FontAwesome.LocationArrow]
+        //var placeholders = ["Name", "Email", "Postcode (optional)"]
         
         registerTextFields(fields, icons: icons, placeholders: placeholders)
         
@@ -143,5 +146,8 @@ class UserDetailsViewController: FormViewController, UITextFieldDelegate {
         emailField.setBodyFont()
         postcodeField.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
         postcodeField.setBodyFont()
+        
+        var fields = [nameField, emailField, postcodeField]
+        registerTextFields(fields, icons: icons, placeholders: placeholders)
     }
 }
