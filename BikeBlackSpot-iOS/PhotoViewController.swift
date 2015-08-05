@@ -118,6 +118,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
     func setupImageAttachedIcon(){
         imageAttachedIconView.contentMode = UIViewContentMode.ScaleAspectFill
         imageAttachedIconView.clipsToBounds = true
+        imageAttachedIconView.userInteractionEnabled = true
         
         imageAttachedIconView.layer.cornerRadius = 5.0
         imageAttachedIconView.layer.borderWidth = 1.0
