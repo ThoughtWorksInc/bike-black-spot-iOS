@@ -122,7 +122,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         
         imageAttachedIconView.layer.cornerRadius = 5.0
         imageAttachedIconView.layer.borderWidth = 1.0
-        imageAttachedIconView.layer.borderColor = UIColor(white: 1.0, alpha: 0.7).CGColor
+        imageAttachedIconView.layer.borderColor = UIColor.whiteColor().CGColor
         
         var closeButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
         closeButton.tag = 100
