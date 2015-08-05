@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func launchApplication() -> Bool{
+        //Add your google maps key here
         GMSServices.provideAPIKey(gMapsKey)
         Styles.apply()
         
