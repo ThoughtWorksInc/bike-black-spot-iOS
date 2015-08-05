@@ -17,7 +17,7 @@ public class APIService {
             request.responseJSON{ (request, response, data, error) in
                 var statusCode = response?.statusCode
                 
-                if(error != nil) {
+                if(error != nil || statusCode != 200) {
                     reject(error!)
                 } else {
                     var json = JSON(data!)
@@ -58,9 +58,10 @@ public class APIService {
             if let uuid = UserTokenMgr.sharedInstance.token() {
                 let request = Alamofire.request(.GET, serviceURL + "/users?uuid=" + uuid)
                 request.responseString { _, response, string, error in
+                    let statusCode = response?.statusCode
                     if(error != nil) {
                         reject(error!)
-                    } else if(string == nil) {
+                    } else if(string == nil || statusCode != 200) {
                         let statusCode = response?.statusCode
                         reject(NSError(domain: self.serviceURL, code: statusCode!, userInfo: nil))
                     } else {
@@ -80,7 +81,7 @@ public class APIService {
             let request = Alamofire.request(.POST, serviceURL + "/reports", parameters: params)
             request.responseJSON{ (request, response, data, error) in
                 var statusCode = response?.statusCode
-                if(error != nil) {
+                if(error != nil || statusCode != 201) {
                     reject(error!)
                 } else {
                     fulfill(true)

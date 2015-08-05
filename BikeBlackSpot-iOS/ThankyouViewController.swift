@@ -16,8 +16,8 @@ class ThankyouViewController: BaseViewController {
     
     let UPLOADING_MESSAGE = "Uploading image"
     
-    let ERROR_REGISTERING = "Error registering user"
-    let ERROR_SUBMITTING = "Error submitting report"
+    let ERROR_REGISTERING = "Error registering user, could not be sent to server."
+    let ERROR_SUBMITTING = "Error submitting report, the report could not be sent to the server."
     
     
     override func viewDidLoad() {
@@ -59,6 +59,55 @@ class ThankyouViewController: BaseViewController {
             selector: "preferredContentSizeChanged:",
             name: UIContentSizeCategoryDidChangeNotification,
             object: nil)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        let report = Report.getCurrentReport()
+        
+        var loadingMsg:String?
+        if(report.hasImage()) {
+            loadingMsg = UPLOADING_MESSAGE
+        }
+        setBusy(true, text:loadingMsg)
+        
+        var isRegistered = UserTokenMgr.sharedInstance.hasToken()
+        
+        var promise = Promise()
+        
+        if(!isRegistered) {
+            
+            // register user
+            if let user = report.user {
+                promise = APIService.sharedInstance.registerUser(user)
+                    .then { uuid -> Void in
+                        
+                        // set user uuid on report
+                        Report.getCurrentReport().userUUID = uuid
+                }
+                promise.catch { error in
+                    self.setBusy(false)
+                    let alert = UIAlertView(title: "Error", message: self.ERROR_REGISTERING, delegate: nil, cancelButtonTitle: "OK")
+                }
+            }
+        }
+        
+        // now submit report
+        promise
+            .then {
+                return APIService.sharedInstance.createReport(report)
+            }
+            .catch { error -> Void in
+                self.setBusy(false)
+                UIAlertView(title: "Error", message: self.ERROR_SUBMITTING, delegate: nil, cancelButtonTitle: "OK").show()
+            }
+            promise.then { () -> Void in
+                self.setBusy(false)
+            }
+            .catch { error -> Void in
+                self.setBusy(false)
+                UIAlertView(title: "Error", message: self.ERROR_SUBMITTING, delegate: nil, cancelButtonTitle: "OK").show()
+        }
     }
     
     func addConstraints(){
@@ -103,51 +152,7 @@ class ThankyouViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        let report = Report.getCurrentReport()
-        
-        var loadingMsg:String?
-        if(report.hasImage()) {
-            loadingMsg = UPLOADING_MESSAGE
-        }
-        setBusy(true, text:loadingMsg)
-        
-        var isRegistered = UserTokenMgr.sharedInstance.hasToken()
-        
-        var promise = Promise()
-        
-        if(!isRegistered) {
-            
-            // register user
-            if let user = report.user {
-                promise = APIService.sharedInstance.registerUser(user)
-                    .then { uuid -> Void in
-                        
-                        // set user uuid on report
-                        Report.getCurrentReport().userUUID = uuid
-                }
-                promise.catch { error in
-                    self.setBusy(false)
-                    let alert = UIAlertView(title: "Error", message: self.ERROR_REGISTERING, delegate: nil, cancelButtonTitle: "OK")
-                }
-            }
-        }
-        
-        // now submit report
-        promise
-            .then {
-                APIService.sharedInstance.createReport(report)
-                return Promise<Void>()
-            }
-            . then { () -> Void in
-                self.setBusy(false)
-            }
-            .catch { error -> Void in
-                self.setBusy(false)
-                UIAlertView(title: "Error", message: self.ERROR_SUBMITTING, delegate: nil, cancelButtonTitle: "OK").show()
-        }
-    }
+
     
     func preferredContentSizeChanged(notification: NSNotification) {
         middleMessage.font = Font.preferredFontForTextStyle(UIFontTextStyleBody)
