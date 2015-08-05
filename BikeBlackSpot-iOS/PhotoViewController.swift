@@ -226,8 +226,8 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
             
             takePhotoButton.centerX == takePhotoButton.superview!.centerX
 
-            takePhotoButton.top == optionalText.bottom + Constants.BASE_PADDING
-            takePhotoButton.width == takePhotoButton.superview!.width * 0.8
+            takePhotoButton.top == optionalText.bottom + Constants.BASE_PADDING*2
+            takePhotoButton.width == takePhotoButton.superview!.width * 0.65
             takePhotoButton.height == takePhotoButton.width * self.buttonAspectRatio
         }
         
@@ -237,13 +237,13 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
             
             galleryPhotoButton.centerX == galleryPhotoButton.superview!.centerX
             galleryPhotoButton.top == buttonSeparatorLabel.bottom
-            galleryPhotoButton.width == galleryPhotoButton.superview!.width * 0.8
+            galleryPhotoButton.width == galleryPhotoButton.superview!.width * 0.65
             galleryPhotoButton.height == galleryPhotoButton.width * self.buttonAspectRatio
         }
     
         constrain(galleryPhotoButton, imageAttachedIconView) { button, iconView in
             iconView.centerX == iconView.superview!.centerX
-            iconView.top == button.bottom + Constants.BASE_PADDING
+            iconView.top == button.bottom + Constants.BASE_PADDING*2
             iconView.height == iconView.superview!.height * 0.3
             iconView.width == iconView.height
         }
