@@ -1,5 +1,6 @@
 import UIKit
 import Cartography
+import FontAwesome_swift
 
 class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
@@ -17,7 +18,6 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
     var imageOptionalLabel:UILabel = UILabel()
     var imageOptionalText:UILabel = UILabel()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "PHOTO"
@@ -33,19 +33,28 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         
         setupImageAttachedIcon()
         
-        self.view.addSubview(imageOptionalLabel)
-        self.view.addSubview(imageOptionalText)
-        self.view.addSubview(buttonSeparatorLabel)
-        self.view.addSubview(takePhotoButton)
-        self.view.addSubview(galleryPhotoButton)
-        self.view.addSubview(imageAttachedIconView)
+        var contentView = UIView()
+        contentView.addSubview(imageOptionalLabel)
+        contentView.addSubview(imageOptionalText)
+        contentView.addSubview(buttonSeparatorLabel)
+        contentView.addSubview(takePhotoButton)
+        contentView.addSubview(galleryPhotoButton)
+        contentView.addSubview(imageAttachedIconView)
+        self.view.addSubview(contentView)
         
         addNextButton("SKIP", segueIdentifier: "ReviewSegue")
         
         if Report.getCurrentReport().image != nil {
             setNextButtonTitle("CONTINUE")
         }
+        
         addConstraints()
+        contentView.sizeToFit()
+        constrain(contentView, button!) { view, button in
+            view.height == view.superview!.height*0.8
+            view.width == view.superview!.width
+            view.bottom == button.top-Constants.BASE_PADDING
+        }
         
         setupNotificationObserver()
     }
@@ -91,22 +100,49 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         
         galleryPhotoButton.addTarget(self, action: "openPhotoGallery:", forControlEvents: UIControlEvents.TouchUpInside)
     }
-    func setupImageAttachedIcon(){
-        imageAttachedIconView.image = UIImage(named: ("remove-photo"))
-        imageAttachedIconView.contentMode = UIViewContentMode.ScaleAspectFit
+    
+    func setDisplayImage(image:UIImage?) {
+        var currentImage = image != nil ? image : UIImage(named: "image_placeholder")
         
-        imageAttachedIconView.userInteractionEnabled = true
+        UIView.transitionWithView(self.imageAttachedIconView,
+            duration:0.5,
+            options: UIViewAnimationOptions.TransitionCrossDissolve,
+            animations: { self.imageAttachedIconView.image = currentImage },
+            completion: nil)
         
-        
-        let removeImage = UITapGestureRecognizer(target: self, action: Selector("askToRemoveImage"))
-        imageAttachedIconView.addGestureRecognizer(removeImage)
-        
-        if Report.getCurrentReport().image == nil{
-            imageAttachedIconView.hidden = true
+        if let closeButton = imageAttachedIconView.viewWithTag(100) {
+            closeButton.hidden = image == nil
         }
     }
     
-    func askToRemoveImage(){
+    func setupImageAttachedIcon(){
+        imageAttachedIconView.contentMode = UIViewContentMode.ScaleAspectFill
+        imageAttachedIconView.clipsToBounds = true
+        
+        imageAttachedIconView.layer.cornerRadius = 5.0
+        imageAttachedIconView.layer.borderWidth = 1.0
+        imageAttachedIconView.layer.borderColor = UIColor(white: 1.0, alpha: 0.7).CGColor
+        
+        var closeButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        closeButton.tag = 100
+        closeButton.titleLabel!.font = UIFont.fontAwesomeOfSize(20)
+        closeButton.setTitle(String.fontAwesomeIconWithName(FontAwesome.Close), forState:UIControlState.Normal)
+        closeButton.addTarget(self, action: "askToRemoveImage:", forControlEvents: UIControlEvents.TouchUpInside)
+        imageAttachedIconView.addSubview(closeButton)
+        
+        constrain(closeButton) { label in
+            label.top == label.superview!.top
+            label.right == label.superview!.right
+        }
+        
+        if let imageData = Report.getCurrentReport().image {
+            setDisplayImage(UIImage(data: imageData))
+        } else {
+            setDisplayImage(nil)
+        }
+    }
+    
+    func askToRemoveImage(sender:UIButton){
         let alertView = UIAlertController(title: "", message: "Remove the photo", preferredStyle: .Alert)
         alertView.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
         alertView.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Cancel, handler: {(alertView) -> Void in self.removeImage()} ))
@@ -115,7 +151,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
     
     func removeImage(){
         Report.getCurrentReport().image = nil
-        self.imageAttachedIconView.hidden = true
+        setDisplayImage(nil)
     }
     
     func openCamera(sender:UIButton!)
@@ -149,7 +185,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         Report.getCurrentReport().image = UIImageJPEGRepresentation(resizedImage, 1.0) //http://pinkstone.co.uk/how-to-save-a-uiimage-in-core-data-and-retrieve-it/
         
         setNextButtonTitle("CONTINUE")
-        imageAttachedIconView.hidden = false
+        setDisplayImage(resizedImage)
         
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -179,39 +215,36 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
     }
     
     func addConstraints(){
-        constrain(imageOptionalLabel) { optionalLabel in
+        
+        constrain(imageOptionalText, imageOptionalLabel, takePhotoButton) { optionalText, optionalLabel, takePhotoButton in
             optionalLabel.centerX == optionalLabel.superview!.centerX
-            optionalLabel.centerY == (optionalLabel.superview!.centerY - self.BUTTON_HEIGHT) - 145
-        }
-        
-        constrain(imageOptionalText, imageOptionalLabel) { optionalText, optionalLabel in
+            optionalLabel.top == optionalLabel.superview!.top
+            
             optionalText.centerX == optionalText.superview!.centerX
-            optionalText.centerY == optionalLabel.bottom + Constants.BASE_PADDING
-        }
-        
-        constrain(takePhotoButton) { takePhotoButton in
+            optionalText.top == optionalLabel.bottom + Constants.BASE_PADDING/2.0
+            
             takePhotoButton.centerX == takePhotoButton.superview!.centerX
-            takePhotoButton.centerY == (takePhotoButton.superview!.centerY - self.BUTTON_HEIGHT) - 50
+
+            takePhotoButton.top == optionalText.bottom + Constants.BASE_PADDING
             takePhotoButton.width == takePhotoButton.superview!.width * 0.8
             takePhotoButton.height == takePhotoButton.width * self.buttonAspectRatio
         }
         
-        constrain(buttonSeparatorLabel) { buttonSeparatorLabel in
-            buttonSeparatorLabel.centerY == buttonSeparatorLabel.superview!.centerY - self.BUTTON_HEIGHT
+        constrain(takePhotoButton, buttonSeparatorLabel, galleryPhotoButton) { takePhotoButton, buttonSeparatorLabel, galleryPhotoButton in
             buttonSeparatorLabel.centerX == buttonSeparatorLabel.superview!.centerX
-        }
-        
-        constrain(galleryPhotoButton) { galleryPhotoButton in
+            buttonSeparatorLabel.top == takePhotoButton.bottom
+            
             galleryPhotoButton.centerX == galleryPhotoButton.superview!.centerX
-            galleryPhotoButton.centerY == (galleryPhotoButton.superview!.centerY - self.BUTTON_HEIGHT) + 50
+            galleryPhotoButton.top == buttonSeparatorLabel.bottom
             galleryPhotoButton.width == galleryPhotoButton.superview!.width * 0.8
             galleryPhotoButton.height == galleryPhotoButton.width * self.buttonAspectRatio
         }
-        
-        constrain(imageAttachedIconView) { iconView in
+    
+        constrain(galleryPhotoButton, imageAttachedIconView) { button, iconView in
             iconView.centerX == iconView.superview!.centerX
-            iconView.centerY == (iconView.superview!.centerY - self.BUTTON_HEIGHT) + 145
-            iconView.height == iconView.superview!.height * 0.15
+            iconView.top == button.bottom + Constants.BASE_PADDING
+            iconView.height == iconView.superview!.height * 0.3
+            iconView.width == iconView.height
         }
     }
     
