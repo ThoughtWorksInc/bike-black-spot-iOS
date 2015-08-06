@@ -14,7 +14,7 @@ class ThankyouViewController: BaseViewController {
     let VERIFY_HEADING = "PLEASE VERIFY YOUR EMAIL ADDRESS"
     let VERIFY_MESSAGE = "Thank you for submitting your report, an email has been sent to your address, please verify your email."
     
-    let UPLOADING_MESSAGE = "Uploading image"
+    let UPLOADING_MESSAGE = "Uploading Image"
     
     let ERROR_REGISTERING = "Error registering user, could not be sent to server."
     let ERROR_SUBMITTING = "Error submitting report, the report could not be sent to the server."

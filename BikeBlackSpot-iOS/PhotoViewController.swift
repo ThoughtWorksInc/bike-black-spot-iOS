@@ -1,6 +1,5 @@
 import UIKit
 import Cartography
-import FontAwesome_swift
 
 class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
@@ -126,8 +125,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         
         var closeButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
         closeButton.tag = 100
-        closeButton.titleLabel!.font = UIFont.fontAwesomeOfSize(20)
-        closeButton.setTitle(String.fontAwesomeIconWithName(FontAwesome.Close), forState:UIControlState.Normal)
+        closeButton.setImage(UIImage(named: "close"), forState: UIControlState.Normal)
         closeButton.addTarget(self, action: "askToRemoveImage:", forControlEvents: UIControlEvents.TouchUpInside)
         imageAttachedIconView.addSubview(closeButton)
         
@@ -144,7 +142,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
     }
     
     func askToRemoveImage(sender:UIButton){
-        let alertView = UIAlertController(title: "", message: "Remove the photo", preferredStyle: .Alert)
+        let alertView = UIAlertController(title: "Confirm", message: "Are you sure you want to remove this photo?", preferredStyle: .Alert)
         alertView.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
         alertView.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Cancel, handler: {(alertView) -> Void in self.removeImage()} ))
         presentViewController(alertView, animated: true, completion: nil)
