@@ -28,7 +28,7 @@ class ReviewViewController: FormViewController {
         }
         
         self.formView.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
-        addNextButton("SUBMIT", segueIdentifier: "ThankYouSegue")
+        addNextButton("SEND REPORT", segueIdentifier: "ThankYouSegue")
         
         NSNotificationCenter.defaultCenter().addObserver(self,
             selector: "preferredContentSizeChanged:",
