@@ -16,6 +16,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
     var buttonSeparatorLabel:UILabel = UILabel()
     var imageOptionalLabel:UILabel = UILabel()
     var imageOptionalText:UILabel = UILabel()
+    var closeButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         setupGalleryPhotoButton()
         
         setupImageAttachedIcon()
+        setupImageRemoveIcon()
         
         var contentView = UIView()
         contentView.addSubview(imageOptionalLabel)
@@ -39,13 +41,18 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         contentView.addSubview(takePhotoButton)
         contentView.addSubview(galleryPhotoButton)
         contentView.addSubview(imageAttachedIconView)
+        contentView.addSubview(closeButton)
+
         self.view.addSubview(contentView)
+
         
         addNextButton("SKIP", segueIdentifier: "ReviewSegue")
         
         if Report.getCurrentReport().image != nil {
             setNextButtonTitle("CONTINUE")
         }
+        
+
         
         addConstraints()
         contentView.sizeToFit()
@@ -123,22 +130,22 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         imageAttachedIconView.layer.borderWidth = 1.0
         imageAttachedIconView.layer.borderColor = UIColor.whiteColor().CGColor
         
-        var closeButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
-        closeButton.tag = 100
-        closeButton.setImage(UIImage(named: "close"), forState: UIControlState.Normal)
-        closeButton.addTarget(self, action: "askToRemoveImage:", forControlEvents: UIControlEvents.TouchUpInside)
-        imageAttachedIconView.addSubview(closeButton)
-        
-        constrain(closeButton) { label in
-            label.top == label.superview!.top
-            label.right == label.superview!.right
-        }
-        
         if let imageData = Report.getCurrentReport().image {
             setDisplayImage(UIImage(data: imageData))
         } else {
             setDisplayImage(nil)
         }
+    }
+    
+    func setupImageRemoveIcon(){
+        closeButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        closeButton.tag = 100
+        closeButton.setImage(UIImage(named: "close-grey"), forState: UIControlState.Normal)
+//        closeButton.frame = CGRectMake(0.0,0.0,10.0,10.0)
+        closeButton.addTarget(self, action: "askToRemoveImage:", forControlEvents: UIControlEvents.TouchUpInside)
+//        closeButton.imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)
+        closeButton.transform = CGAffineTransformMakeScale(0.75, 0.75)
+        closeButton.hidden = true
     }
     
     func askToRemoveImage(sender:UIButton){
@@ -151,6 +158,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
     func removeImage(){
         Report.getCurrentReport().image = nil
         setDisplayImage(nil)
+        closeButton.hidden = true
     }
     
     func openCamera(sender:UIButton!)
@@ -185,6 +193,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         
         setNextButtonTitle("CONTINUE")
         setDisplayImage(resizedImage)
+        closeButton.hidden = false
         
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -241,9 +250,13 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
     
         constrain(galleryPhotoButton, imageAttachedIconView) { button, iconView in
             iconView.centerX == iconView.superview!.centerX
-            iconView.top == button.bottom + Constants.BASE_PADDING*2
+            iconView.top == button.bottom + Constants.BASE_PADDING * 2.15
             iconView.height == iconView.superview!.height * 0.3
             iconView.width == iconView.height
+        }
+        constrain(closeButton, imageAttachedIconView) { label, icon in
+            label.centerX == icon.left
+            label.centerY == icon.top
         }
     }
     
