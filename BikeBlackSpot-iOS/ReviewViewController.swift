@@ -93,10 +93,8 @@ class ReviewViewController: FormViewController {
     
     func setupImageFields(){
         if let image = Report.getCurrentReport().image {
-            
-            let croppedImage = UIImage(data:image)?.cropToSquare()
-
-            photoView.image = croppedImage
+          
+            photoView.image = UIImage(data:image)
             photoView.contentMode = UIViewContentMode.ScaleAspectFit
 
             if descriptionTextView.hidden {
