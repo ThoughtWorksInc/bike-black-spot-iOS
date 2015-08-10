@@ -81,8 +81,10 @@ public class APIService {
             let request = Alamofire.request(.POST, serviceURL + "/reports", parameters: params)
             request.responseJSON{ (request, response, data, error) in
                 var statusCode = response?.statusCode
-                if(error != nil || statusCode != 201) {
+                if(error != nil) {
                     reject(error!)
+                } else if statusCode != 201 {
+                    reject(NSError(domain: self.serviceURL, code: statusCode!, userInfo: nil))
                 } else {
                     fulfill(true)
                 }
