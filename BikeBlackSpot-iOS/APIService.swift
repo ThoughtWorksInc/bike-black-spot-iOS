@@ -61,7 +61,7 @@ public class APIService {
                     let statusCode = response?.statusCode
                     if(error != nil) {
                         reject(error!)
-                    } else if(string == nil || statusCode != 200) {
+                    } else if(string == nil || statusCode != 200 || string == "null") {
                         let statusCode = response?.statusCode
                         reject(NSError(domain: self.serviceURL, code: statusCode!, userInfo: nil))
                     } else {
