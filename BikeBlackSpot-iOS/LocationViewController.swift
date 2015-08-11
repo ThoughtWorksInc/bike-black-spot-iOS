@@ -24,6 +24,11 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
         super.viewDidLoad()
         self.title = "LOCATION"
         
+        createViews()
+        addNotificationObservers()
+    }
+    
+    func createViews() {
         setupMapView()
         
         setupAddressLabel()
@@ -36,8 +41,7 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
         addNextButton("REPORT", segueIdentifier:"DetailsSegue")
         
         addConstraints()
-        
-        addNotificationObservers()
+        LocationService.sharedInstance.requestAuthorization()
     }
     
     func addNotificationObservers(){
@@ -46,6 +50,16 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
             selector: "preferredContentSizeChanged:",
             name: UIContentSizeCategoryDidChangeNotification,
             object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshMapView:", name: UIApplicationDidBecomeActiveNotification, object: nil)
+    }
+    
+    // Note: need to refresh map after app comes back from background, otherwise map is showing blank
+    func refreshMapView(sender:AnyObject) {
+        for view in self.view.subviews {
+            view.removeFromSuperview()
+        }
+        createViews()
     }
     
     func setupMapView() -> GMSMapView {
@@ -157,7 +171,6 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        LocationService.sharedInstance.requestAuthorization()
     }
     
     override func didReceiveMemoryWarning() {
