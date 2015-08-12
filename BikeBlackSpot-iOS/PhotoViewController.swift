@@ -33,7 +33,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         
         setupImageRemoveIcon()
         setupImageAttachedIcon()
-
+        
         
         var contentView = UIView()
         contentView.addSubview(imageOptionalLabel)
@@ -43,9 +43,9 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         contentView.addSubview(galleryPhotoButton)
         contentView.addSubview(imageAttachedIconView)
         contentView.addSubview(closeButton)
-
+        
         self.view.addSubview(contentView)
-
+        
         
         addNextButton("SKIP", segueIdentifier: "ReviewSegue")
         
@@ -53,7 +53,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
             setNextButtonTitle("CONTINUE")
         }
         
-
+        
         
         addConstraints()
         contentView.sizeToFit()
@@ -117,9 +117,8 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
             animations: { self.imageAttachedIconView.image = currentImage },
             completion: nil)
         
-        if let closeButton = view.viewWithTag(100) {
-            closeButton.hidden = image == nil
-        }
+        
+        closeButton.hidden = image == nil
     }
     
     func setupImageAttachedIcon(){
@@ -231,7 +230,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
             optionalText.top == optionalLabel.bottom + Constants.BASE_PADDING/2.0
             
             takePhotoButton.centerX == takePhotoButton.superview!.centerX
-
+            
             takePhotoButton.top == optionalText.bottom + Constants.BASE_PADDING*2
             takePhotoButton.width == takePhotoButton.superview!.width * 0.65
             takePhotoButton.height == takePhotoButton.width * self.buttonAspectRatio
@@ -246,7 +245,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
             galleryPhotoButton.width == galleryPhotoButton.superview!.width * 0.65
             galleryPhotoButton.height == galleryPhotoButton.width * self.buttonAspectRatio
         }
-    
+        
         constrain(galleryPhotoButton, imageAttachedIconView) { button, iconView in
             iconView.centerX == iconView.superview!.centerX
             iconView.top == button.bottom + Constants.BASE_PADDING * 2.15
