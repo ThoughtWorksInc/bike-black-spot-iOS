@@ -31,8 +31,9 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         setupButtonSeperatorLabel()
         setupGalleryPhotoButton()
         
-        setupImageAttachedIcon()
         setupImageRemoveIcon()
+        setupImageAttachedIcon()
+
         
         var contentView = UIView()
         contentView.addSubview(imageOptionalLabel)
@@ -116,7 +117,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
             animations: { self.imageAttachedIconView.image = currentImage },
             completion: nil)
         
-        if let closeButton = imageAttachedIconView.viewWithTag(100) {
+        if let closeButton = view.viewWithTag(100) {
             closeButton.hidden = image == nil
         }
     }
@@ -141,9 +142,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         closeButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
         closeButton.tag = 100
         closeButton.setImage(UIImage(named: "close-grey"), forState: UIControlState.Normal)
-//        closeButton.frame = CGRectMake(0.0,0.0,10.0,10.0)
         closeButton.addTarget(self, action: "askToRemoveImage:", forControlEvents: UIControlEvents.TouchUpInside)
-//        closeButton.imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)
         closeButton.transform = CGAffineTransformMakeScale(0.75, 0.75)
         closeButton.hidden = true
     }
