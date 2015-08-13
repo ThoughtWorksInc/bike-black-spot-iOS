@@ -50,7 +50,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         addNextButton("SKIP", segueIdentifier: "ReviewSegue")
         
         if Report.getCurrentReport().image != nil {
-            setNextButtonTitle("CONTINUE")
+            setNextButtonTitle("NEXT")
         }
         
         
@@ -189,7 +189,7 @@ class PhotoViewController: BaseViewController,UIImagePickerControllerDelegate,UI
         
         Report.getCurrentReport().image = UIImageJPEGRepresentation(resizedImage, 1.0) //http://pinkstone.co.uk/how-to-save-a-uiimage-in-core-data-and-retrieve-it/
         
-        setNextButtonTitle("CONTINUE")
+        setNextButtonTitle("NEXT")
         setDisplayImage(resizedImage)
         closeButton.hidden = false
         
