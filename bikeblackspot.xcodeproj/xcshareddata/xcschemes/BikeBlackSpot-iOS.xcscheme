@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "26CF8CA31B4382D500C82362"
-               BuildableName = "BikeBlackSpot-iOS.app"
-               BlueprintName = "BikeBlackSpot-iOS"
-               ReferencedContainer = "container:BikeBlackSpot-iOS.xcodeproj">
+               BuildableName = "bikeblackspot.app"
+               BlueprintName = "bikeblackspot"
+               ReferencedContainer = "container:bikeblackspot.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "26CF8CB81B4382D600C82362"
-               BuildableName = "BikeBlackSpot-iOSTests.xctest"
-               BlueprintName = "BikeBlackSpot-iOSTests"
-               ReferencedContainer = "container:BikeBlackSpot-iOS.xcodeproj">
+               BuildableName = "bikeblackspotTests.xctest"
+               BlueprintName = "bikeblackspotTests"
+               ReferencedContainer = "container:bikeblackspot.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "26CF8CB81B4382D600C82362"
-               BuildableName = "BikeBlackSpot-iOSTests.xctest"
-               BlueprintName = "BikeBlackSpot-iOSTests"
-               ReferencedContainer = "container:BikeBlackSpot-iOS.xcodeproj">
+               BuildableName = "bikeblackspotTests.xctest"
+               BlueprintName = "bikeblackspotTests"
+               ReferencedContainer = "container:bikeblackspot.xcodeproj">
             </BuildableReference>
             <SkippedTests>
                <Test
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "26CF8CA31B4382D500C82362"
-            BuildableName = "BikeBlackSpot-iOS.app"
-            BlueprintName = "BikeBlackSpot-iOS"
-            ReferencedContainer = "container:BikeBlackSpot-iOS.xcodeproj">
+            BuildableName = "bikeblackspot.app"
+            BlueprintName = "bikeblackspot"
+            ReferencedContainer = "container:bikeblackspot.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -82,9 +82,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "26CF8CA31B4382D500C82362"
-            BuildableName = "BikeBlackSpot-iOS.app"
-            BlueprintName = "BikeBlackSpot-iOS"
-            ReferencedContainer = "container:BikeBlackSpot-iOS.xcodeproj">
+            BuildableName = "bikeblackspot.app"
+            BlueprintName = "bikeblackspot"
+            ReferencedContainer = "container:bikeblackspot.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -101,9 +101,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "26CF8CA31B4382D500C82362"
-            BuildableName = "BikeBlackSpot-iOS.app"
-            BlueprintName = "BikeBlackSpot-iOS"
-            ReferencedContainer = "container:BikeBlackSpot-iOS.xcodeproj">
+            BuildableName = "bikeblackspot.app"
+            BlueprintName = "bikeblackspot"
+            ReferencedContainer = "container:bikeblackspot.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

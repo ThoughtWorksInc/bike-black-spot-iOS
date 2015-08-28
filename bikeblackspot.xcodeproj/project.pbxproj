@@ -98,14 +98,14 @@
 		08C5669D1B688AC000A04204 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		08F8221A1B673E2200A904E5 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		08F8221C1B67415E00A904E5 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
-		26CF8CA41B4382D500C82362 /* BikeBlackSpot-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BikeBlackSpot-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26CF8CA41B4382D500C82362 /* bikeblackspot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bikeblackspot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CF8CA81B4382D500C82362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26CF8CA91B4382D500C82362 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26CF8CAB1B4382D500C82362 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		26CF8CAE1B4382D500C82362 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26CF8CB01B4382D500C82362 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		26CF8CB31B4382D500C82362 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		26CF8CB91B4382D600C82362 /* BikeBlackSpot-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BikeBlackSpot-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26CF8CB91B4382D600C82362 /* bikeblackspotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bikeblackspotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CF8CBE1B4382D600C82362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FD2BD68CD059784B300B724 /* Pods_BikeBlackSpot_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikeBlackSpot_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C5358A51B65E03600C3D41F /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
@@ -232,8 +232,8 @@
 		26CF8CA51B4382D500C82362 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				26CF8CA41B4382D500C82362 /* BikeBlackSpot-iOS.app */,
-				26CF8CB91B4382D600C82362 /* BikeBlackSpot-iOSTests.xctest */,
+				26CF8CA41B4382D500C82362 /* bikeblackspot.app */,
+				26CF8CB91B4382D600C82362 /* bikeblackspotTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -363,9 +363,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		26CF8CA31B4382D500C82362 /* BikeBlackSpot-iOS */ = {
+		26CF8CA31B4382D500C82362 /* bikeblackspot */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 26CF8CC31B4382D600C82362 /* Build configuration list for PBXNativeTarget "BikeBlackSpot-iOS" */;
+			buildConfigurationList = 26CF8CC31B4382D600C82362 /* Build configuration list for PBXNativeTarget "bikeblackspot" */;
 			buildPhases = (
 				AED5B0953FC9B5E5A6E5BD76 /* Check Pods Manifest.lock */,
 				26CF8CA01B4382D500C82362 /* Sources */,
@@ -378,14 +378,14 @@
 			);
 			dependencies = (
 			);
-			name = "BikeBlackSpot-iOS";
+			name = bikeblackspot;
 			productName = "BikeBlackSpot-iOS";
-			productReference = 26CF8CA41B4382D500C82362 /* BikeBlackSpot-iOS.app */;
+			productReference = 26CF8CA41B4382D500C82362 /* bikeblackspot.app */;
 			productType = "com.apple.product-type.application";
 		};
-		26CF8CB81B4382D600C82362 /* BikeBlackSpot-iOSTests */ = {
+		26CF8CB81B4382D600C82362 /* bikeblackspotTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 26CF8CC61B4382D600C82362 /* Build configuration list for PBXNativeTarget "BikeBlackSpot-iOSTests" */;
+			buildConfigurationList = 26CF8CC61B4382D600C82362 /* Build configuration list for PBXNativeTarget "bikeblackspotTests" */;
 			buildPhases = (
 				93916B5D42EE4C61EAFD54D6 /* Check Pods Manifest.lock */,
 				26CF8CB51B4382D600C82362 /* Sources */,
@@ -399,9 +399,9 @@
 			dependencies = (
 				26CF8CBB1B4382D600C82362 /* PBXTargetDependency */,
 			);
-			name = "BikeBlackSpot-iOSTests";
+			name = bikeblackspotTests;
 			productName = "BikeBlackSpot-iOSTests";
-			productReference = 26CF8CB91B4382D600C82362 /* BikeBlackSpot-iOSTests.xctest */;
+			productReference = 26CF8CB91B4382D600C82362 /* bikeblackspotTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -411,11 +411,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
-				ORGANIZATIONNAME = ThoughtWorks;
+				ORGANIZATIONNAME = org;
 				TargetAttributes = {
 					26CF8CA31B4382D500C82362 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = V25DK7S622;
+						DevelopmentTeam = 86F88A6S29;
 					};
 					26CF8CB81B4382D600C82362 = {
 						CreatedOnToolsVersion = 6.4;
@@ -424,7 +424,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 26CF8C9F1B4382D500C82362 /* Build configuration list for PBXProject "BikeBlackSpot-iOS" */;
+			buildConfigurationList = 26CF8C9F1B4382D500C82362 /* Build configuration list for PBXProject "bikeblackspot" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -437,8 +437,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				26CF8CA31B4382D500C82362 /* BikeBlackSpot-iOS */,
-				26CF8CB81B4382D600C82362 /* BikeBlackSpot-iOSTests */,
+				26CF8CA31B4382D500C82362 /* bikeblackspot */,
+				26CF8CB81B4382D600C82362 /* bikeblackspotTests */,
 			);
 		};
 /* End PBXProject section */
@@ -629,7 +629,7 @@
 /* Begin PBXTargetDependency section */
 		26CF8CBB1B4382D600C82362 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 26CF8CA31B4382D500C82362 /* BikeBlackSpot-iOS */;
+			target = 26CF8CA31B4382D500C82362 /* bikeblackspot */;
 			targetProxy = 26CF8CBA1B4382D600C82362 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -748,8 +748,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Janet Rice (5QVDLEGF9Q)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Janet Rice (5QVDLEGF9Q)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
@@ -757,8 +757,8 @@
 				INFOPLIST_FILE = "BikeBlackSpot-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ab6853b6-69d0-4a1e-9417-07838ea9b2bf";
+				PRODUCT_NAME = bikeblackspot;
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BikeBlackSpot-iOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -771,8 +771,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Janet Rice (5QVDLEGF9Q)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Janet Rice (5QVDLEGF9Q)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
@@ -780,8 +780,8 @@
 				INFOPLIST_FILE = "BikeBlackSpot-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ab6853b6-69d0-4a1e-9417-07838ea9b2bf";
+				PRODUCT_NAME = bikeblackspot;
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BikeBlackSpot-iOS-Bridging-Header.h";
 			};
 			name = Release;
@@ -803,7 +803,7 @@
 				);
 				INFOPLIST_FILE = "BikeBlackSpot-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = bikeblackspotTests;
 				PROVISIONING_PROFILE = "ab6853b6-69d0-4a1e-9417-07838ea9b2bf";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikeBlackSpot-iOS.app/BikeBlackSpot-iOS";
 			};
@@ -822,7 +822,7 @@
 				);
 				INFOPLIST_FILE = "BikeBlackSpot-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = bikeblackspotTests;
 				PROVISIONING_PROFILE = "ab6853b6-69d0-4a1e-9417-07838ea9b2bf";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikeBlackSpot-iOS.app/BikeBlackSpot-iOS";
 			};
@@ -831,7 +831,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		26CF8C9F1B4382D500C82362 /* Build configuration list for PBXProject "BikeBlackSpot-iOS" */ = {
+		26CF8C9F1B4382D500C82362 /* Build configuration list for PBXProject "bikeblackspot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				26CF8CC11B4382D600C82362 /* Debug */,
@@ -840,7 +840,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		26CF8CC31B4382D600C82362 /* Build configuration list for PBXNativeTarget "BikeBlackSpot-iOS" */ = {
+		26CF8CC31B4382D600C82362 /* Build configuration list for PBXNativeTarget "bikeblackspot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				26CF8CC41B4382D600C82362 /* Debug */,
@@ -849,7 +849,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		26CF8CC61B4382D600C82362 /* Build configuration list for PBXNativeTarget "BikeBlackSpot-iOSTests" */ = {
+		26CF8CC61B4382D600C82362 /* Build configuration list for PBXNativeTarget "bikeblackspotTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				26CF8CC71B4382D600C82362 /* Debug */,

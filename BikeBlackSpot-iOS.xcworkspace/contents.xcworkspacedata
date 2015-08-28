@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:BikeBlackSpot-iOS.xcodeproj">
+      location = "group:/Users/Claire/Documents/BikeBlackSpot/bike-black-spot-iOS/bikeblackspot.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
