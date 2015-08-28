@@ -105,7 +105,7 @@
 		26CF8CAE1B4382D500C82362 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26CF8CB01B4382D500C82362 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		26CF8CB31B4382D500C82362 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		26CF8CB91B4382D600C82362 /* bikeblackspotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bikeblackspotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		26CF8CB91B4382D600C82362 /* bikeblackspot.Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bikeblackspot.Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CF8CBE1B4382D600C82362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FD2BD68CD059784B300B724 /* Pods_BikeBlackSpot_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikeBlackSpot_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C5358A51B65E03600C3D41F /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
@@ -233,7 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				26CF8CA41B4382D500C82362 /* bikeblackspot.app */,
-				26CF8CB91B4382D600C82362 /* bikeblackspotTests.xctest */,
+				26CF8CB91B4382D600C82362 /* bikeblackspot.Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -401,7 +401,7 @@
 			);
 			name = bikeblackspotTests;
 			productName = "BikeBlackSpot-iOSTests";
-			productReference = 26CF8CB91B4382D600C82362 /* bikeblackspotTests.xctest */;
+			productReference = 26CF8CB91B4382D600C82362 /* bikeblackspot.Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -419,7 +419,7 @@
 					};
 					26CF8CB81B4382D600C82362 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = V25DK7S622;
+						DevelopmentTeam = 86F88A6S29;
 						TestTargetID = 26CF8CA31B4382D500C82362;
 					};
 				};
@@ -791,8 +791,8 @@
 			baseConfigurationReference = 834D251975389590A9F48D8F /* Pods-BikeBlackSpot-iOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Janet Rice (5QVDLEGF9Q)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Janet Rice (5QVDLEGF9Q)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -803,9 +803,9 @@
 				);
 				INFOPLIST_FILE = "BikeBlackSpot-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = bikeblackspotTests;
-				PROVISIONING_PROFILE = "ab6853b6-69d0-4a1e-9417-07838ea9b2bf";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikeBlackSpot-iOS.app/BikeBlackSpot-iOS";
+				PRODUCT_NAME = bikeblackspot.Tests;
+				PROVISIONING_PROFILE = "";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bikeblackspot.app/bikeblackspot";
 			};
 			name = Debug;
 		};
@@ -814,17 +814,17 @@
 			baseConfigurationReference = 840B5826A47F33948E5A090A /* Pods-BikeBlackSpot-iOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Janet Rice (5QVDLEGF9Q)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Janet Rice (5QVDLEGF9Q)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "BikeBlackSpot-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = bikeblackspotTests;
-				PROVISIONING_PROFILE = "ab6853b6-69d0-4a1e-9417-07838ea9b2bf";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikeBlackSpot-iOS.app/BikeBlackSpot-iOS";
+				PRODUCT_NAME = bikeblackspot.Tests;
+				PROVISIONING_PROFILE = "";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bikeblackspot.app/bikeblackspot";
 			};
 			name = Release;
 		};
