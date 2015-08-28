@@ -8,7 +8,7 @@
         <!--Location-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LocationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LocationViewController" customModule="bikeblackspot" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LocationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LocationViewController" customModule="BlackSpot" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -36,7 +36,7 @@
         <!--Thankyou View Controller-->
         <scene sceneID="jGI-Of-PLr">
             <objects>
-                <viewController storyboardIdentifier="ThanksController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lsj-SY-bHK" customClass="ThankyouViewController" customModule="bikeblackspot" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThanksController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lsj-SY-bHK" customClass="ThankyouViewController" customModule="BlackSpot" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6LP-Th-2GT"/>
                         <viewControllerLayoutGuide type="bottom" id="AMC-9i-s01"/>
@@ -83,7 +83,7 @@
         <!--DetailsController-->
         <scene sceneID="bPR-LL-3Yf">
             <objects>
-                <viewController title="DetailsController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4MV-d5-fNw" customClass="DetailsViewController" customModule="bikeblackspot" sceneMemberID="viewController">
+                <viewController title="DetailsController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4MV-d5-fNw" customClass="DetailsViewController" customModule="BlackSpot" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="w3A-W7-jhZ"/>
                         <viewControllerLayoutGuide type="bottom" id="C4Z-T1-kqc"/>
@@ -100,7 +100,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleToFill" text="Enter description" translatesAutoresizingMaskIntoConstraints="NO" id="Mte-eP-496" customClass="CustomTextView" customModule="bikeblackspot" customModuleProvider="target">
+                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleToFill" text="Enter description" translatesAutoresizingMaskIntoConstraints="NO" id="Mte-eP-496" customClass="CustomTextView" customModule="BlackSpot" customModuleProvider="target">
                                 <rect key="frame" x="36" y="129" width="528" height="150"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -158,7 +158,7 @@
         <!--Error Page-->
         <scene sceneID="Y0b-pY-Zxq">
             <objects>
-                <viewController storyboardIdentifier="ErrorViewController" title="Error Page" id="tve-Sk-WPj" customClass="ErrorPageViewController" customModule="bikeblackspot" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ErrorViewController" title="Error Page" id="tve-Sk-WPj" customClass="ErrorPageViewController" customModule="BlackSpot" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gch-DW-aav"/>
                         <viewControllerLayoutGuide type="bottom" id="xCI-u2-MQW"/>
@@ -216,7 +216,7 @@ then refresh the app.</string>
         <!--ReviewController-->
         <scene sceneID="Zsh-pE-e3t">
             <objects>
-                <viewController title="ReviewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2zU-Pw-4Fa" customClass="ReviewViewController" customModule="bikeblackspot" sceneMemberID="viewController">
+                <viewController title="ReviewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2zU-Pw-4Fa" customClass="ReviewViewController" customModule="BlackSpot" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gmg-To-RbX"/>
                         <viewControllerLayoutGuide type="bottom" id="YfU-Ai-3Ja"/>
@@ -333,7 +333,7 @@ then refresh the app.</string>
         <!--Sign Up-->
         <scene sceneID="t1Q-JX-a7q">
             <objects>
-                <viewController title="Sign Up" id="Jzd-8g-gDU" customClass="UserDetailsViewController" customModule="bikeblackspot" sceneMemberID="viewController">
+                <viewController title="Sign Up" id="Jzd-8g-gDU" customClass="UserDetailsViewController" customModule="BlackSpot" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="q1K-Mo-Ar1"/>
                         <viewControllerLayoutGuide type="bottom" id="OxV-EF-ZGm"/>
@@ -409,7 +409,7 @@ then refresh the app.</string>
         <!--Photo View Controller-->
         <scene sceneID="k9H-Ug-W46">
             <objects>
-                <viewController storyboardIdentifier="PhotoController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nrw-Wj-BL7" customClass="PhotoViewController" customModule="bikeblackspot" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nrw-Wj-BL7" customClass="PhotoViewController" customModule="BlackSpot" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8xT-j5-383"/>
                         <viewControllerLayoutGuide type="bottom" id="oSk-GM-hnb"/>
