@@ -1,20 +1,12 @@
 # BikeBlackspot app
 
-## Ship.io build status
-<a href='https://app.ship.io/dashboard#/jobs/8929/history' target='_blank'><img src='https://app.ship.io/jobs/Y2bPZLCgeFCln1Uh/build_status.png' style='width:160px' /></a>
-
-Ship.io was chosen for the build pipeline due to its integration with HockeyApp and Slack and because it works with iOS. 
-
 ##Setup
 You will need to setup your xcode to have your apple developer account.
 
 run: gem install cocoapods
 
-You will need a Google Maps API key https://developers.google.com/maps/documentation/ios/start?hl=en
+You will need a Google Maps API key https://developers.google.com/maps/documentation/ios/start#step_5_get_an_ios_api_key
 Put this key in the AppDelegate class where the comment indicates.
-
-### Obtaining Google Maps API Key
-This app utilizes Google Maps API, and therefore would need a Google Maps API key in order to make requests to the Google Maps API. The full instructions for obtaining a key and connecting it to the app can be found [here](https://developers.google.com/maps/documentation/ios/start#step_5_get_an_ios_api_key). You would need a Google Account to create a Google Maps API key.
 
 ##Adding new pods
 1. Add to podfile
