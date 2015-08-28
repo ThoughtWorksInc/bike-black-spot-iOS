@@ -8,6 +8,8 @@
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
 	<string>org.$(PRODUCT_NAME:rfc1034identifier)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Blackspot</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -34,7 +36,7 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We use your location to show where you are on the map</string>
 	<key>ServiceURL</key>
-	<string>https://staging-env-bike-black-spot.herokuapp.com</string>
+	<string>https://bikeblackspot.herokuapp.com</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Linotype - Alternate Gothic LT No2.ttf</string>
