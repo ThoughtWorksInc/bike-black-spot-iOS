@@ -98,7 +98,7 @@
 		08C5669D1B688AC000A04204 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		08F8221A1B673E2200A904E5 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		08F8221C1B67415E00A904E5 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
-		26CF8CA41B4382D500C82362 /* BlackSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		26CF8CA41B4382D500C82362 /* bikeblackspot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bikeblackspot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CF8CA81B4382D500C82362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26CF8CA91B4382D500C82362 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26CF8CAB1B4382D500C82362 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 		26CF8CA51B4382D500C82362 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				26CF8CA41B4382D500C82362 /* BlackSpot.app */,
+				26CF8CA41B4382D500C82362 /* bikeblackspot.app */,
 				26CF8CB91B4382D600C82362 /* bikeblackspot.Tests.xctest */,
 			);
 			name = Products;
@@ -380,7 +380,7 @@
 			);
 			name = bikeblackspot;
 			productName = "BikeBlackSpot-iOS";
-			productReference = 26CF8CA41B4382D500C82362 /* BlackSpot.app */;
+			productReference = 26CF8CA41B4382D500C82362 /* bikeblackspot.app */;
 			productType = "com.apple.product-type.application";
 		};
 		26CF8CB81B4382D600C82362 /* bikeblackspotTests */ = {
@@ -761,6 +761,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BikeBlackSpot-iOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -783,6 +784,7 @@
 				PRODUCT_NAME = bikeblackspot;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BikeBlackSpot-iOS-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
