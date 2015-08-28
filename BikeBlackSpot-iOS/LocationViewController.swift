@@ -23,25 +23,23 @@ class LocationViewController: BaseViewController, GMSMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "LOCATION"
-        
         createViews()
         addNotificationObservers()
     }
     
     func createViews() {
+        LocationService.sharedInstance.requestAuthorization()
         setupMapView()
         
         setupAddressLabel()
         setupAddressBoxView()
-        
         self.view.addSubview(self.mapView!)
         self.view.addSubview(markerView!)
         self.view.addSubview(addressBoxView!)
         
         addNextButton("REPORT", segueIdentifier:"DetailsSegue")
-        
+
         addConstraints()
-        LocationService.sharedInstance.requestAuthorization()
     }
     
     func addNotificationObservers(){
