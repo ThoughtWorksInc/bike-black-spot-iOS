@@ -13,6 +13,9 @@ run: gem install cocoapods
 You will need a Google Maps API key https://developers.google.com/maps/documentation/ios/start?hl=en
 Put this key in the AppDelegate class where the comment indicates.
 
+### Obtaining Google Maps API Key
+This app utilizes Google Maps API, and therefore would need a Google Maps API key in order to make requests to the Google Maps API. The full instructions for obtaining a key and connecting it to the app can be found [here](https://developers.google.com/maps/documentation/ios/start#step_5_get_an_ios_api_key). You would need a Google Account to create a Google Maps API key.
+
 ##Adding new pods
 1. Add to podfile
 2. run: pod install
